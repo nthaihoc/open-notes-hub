@@ -1,0 +1,115 @@
+# 01. setup title with the name of the site
+site_name: OpenNotesHub
+
+# 02. setup logo, icon, format, etc.
+theme:
+  favicon: assets/images/logo.png
+  palette:
+    primary: white 
+    accent: red
+  font:
+    text: Roboto
+  name: material
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+    repo: fontawesome/brands/github
+  logo: assets/images/logo.png
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - header.autohide
+    - navigation.top
+    - navigation.footer
+
+repo_url: https://github.com/nthaihoc/open-notes-hub
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# 03. setup markdown extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - def_list
+  - md_in_html
+  - attr_list
+  - footnotes
+  - meta
+  - pymdownx.caret
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.mark 
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+plugins:
+  - macros
+  - search
+
+copyright: ©️ 2025 by Thai Hoc Nguyen
+
+# 04. setup navigation
+nav:
+  - Home: index.md
+
+  - Research Logs: 
+    - Research Logs: research-logs/README.md
+    - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology.md
+
+  - Course Notes:
+    - Course Notes: course-notes/README.md
+
+  - Knowledge Base:
+    - Knowledge Base: knowledge-base/README.md
+    - English Knowledge Base: research-logs/cervical-cancer-cytology.md
+
+# 05. setup other configurations
+extra:
+  social:
+    - icon: octicons/mail-16
+      link: mailto:<thaihocit02@gmail.com>
+      name: Email
+    - icon: material/web
+      link: https://nthaihoc.github.io/about-me
+      name: Author
+    - icon: simple/workplace
+      link: https://iast.ictu.edu.vn
+      name: Institute of Applied Science Technology
+  analytics:
+    provider: google
+    property: UA-XXXXXXXX-X
