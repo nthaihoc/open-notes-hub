@@ -16,7 +16,6 @@
 </div>
 
 # ☘️ OpenNotesHub
----
 
 > 🌵 **"Be kind. Be curious. Be courageous"**
 > 
@@ -31,7 +30,6 @@
 [![Static Badge](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
 
 ## 👀 Về tôi
----
 
 👋 Xin chào! Tôi là [Nguyễn Thái Học](https://nthaihoc.github.io/about-me) - kỹ sư và nhà nghiên cứu Trí tuệ nhân tạo (Artificial Intelligence - AI) tại [Viện Khoa học & Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), trực thuộc [Trường Đại học Công nghệ Thông tin & Truyền thông (ICTU)](https://ictu.edu.vn). 
 
@@ -58,7 +56,6 @@ Ngoài ra, tôi cũng quan tâm và có sở thích nghiên cứu ở một số
 🚀 Tôi hy vọng nơi đây sẽ trở thành một nguồn tài nguyên hữu ích – nơi bạn có thể tìm thấy điều mình đang tìm kiếm, hoặc đơn giản là cùng tôi học thêm điều mới mỗi ngày.
 
 ## ☎️ Liên hệ
----
 
 Bạn có thể xem thêm thông tin hoặc kết nối với tôi qua những nền tảng dưới dây:
 
@@ -67,5 +64,3 @@ Bạn có thể xem thêm thông tin hoặc kết nối với tôi qua những n
 | ✉️ Email | [thaihoc.ictu@gmail.com](mailto:thaihoc.ictu@gmail.com) |
 | 💬 Facebook | [facebook.com/nthaihoc02](https://facebook.com/nthaihoc02) |
 | 🌐 Website | [nthaihoc.github.io/about-me](https://nthaihoc.github.io/about-me) |
-
----
