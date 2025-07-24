@@ -129,7 +129,7 @@ c_ij
 #         [-0.3346,  0.9952,  0.9397]])
 ```
 
-Quay trở lại với mục tiêu chính của BT Loss, mục tiêu đầu tiên là tăng cường tính tương quan trên đường chéo - chính là việc đi tính Invariance Term (1) trong công thức (1). Để tính được IT, chỉ cần lấy các giá trị trên đương chéo chính thực hiện tính toán. Trong ví dụ này có ba gía trị trên đương chéo là [0.3007; 0.6156; 0.9397].
+Quay trở lại với mục tiêu chính của BT Loss, mục tiêu đầu tiên là tăng cường tính tương quan trên đường chéo - chính là việc đi tính Invariance Term (IT) trong công thức (1). Để tính được IT, chỉ cần lấy các giá trị trên đương chéo chính thực hiện tính toán. Trong ví dụ này có ba gía trị trên đương chéo là [0.3007; 0.6156; 0.9397].
 
 $$\text{IT} = (1-0.3007)^2 + (1-0.6156)^2 + (1-0.9397)^2 = 2.0347$$
 
