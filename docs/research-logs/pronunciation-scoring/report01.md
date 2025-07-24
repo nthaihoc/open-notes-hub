@@ -1,8 +1,6 @@
 ---
 title: Tổng quan về Pronunciation Scoring - PS
 icon: material/information
-hide:
-    - toc
 ---
 
 # Tổng quan về Pronunciation Scoring - PS

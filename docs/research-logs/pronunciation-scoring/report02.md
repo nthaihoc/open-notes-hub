@@ -1,8 +1,6 @@
 ---
 title: Triển khai mô hình cơ bản, đánh giá và phân tích lỗi 
 icon: material/tools
-hide:
-    - toc
 ---
 
 # Triển khai mô hình cơ bản, đánh giá và phân tích lỗi 

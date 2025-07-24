@@ -1,8 +1,6 @@
 ---
 title: Self-Supervised Learining Paper Design Notes
 icon: material/information
-hide:
-    - toc
 ---
 
 # Self-Supervised Learining Paper Design Notes
