@@ -1,8 +1,6 @@
 ---
-icon: material/numeric-1-circle
 hide: 
     - navigation
-    - toc
 ---
 
  ---
@@ -14,7 +12,7 @@ hide:
 | :------- | :--- | :----: | :---------- | :-------: |
 | ==16/09 -> 16/11, 2024== | Nghiên cứu Ensemble Learning cho phân loại Ung thư cổ tử cung tế bào học | :material-check-all: | (--) Nghiên cứu kỹ thuật Ensemble Leanring và các phương pháp của chúng. <br> (--) Lên phương án thực nghiệm cho bộ dữ liệu thực tế. <br> (--) Triển khai đánh giá, và cài đặt huấn luyện nhằm so sánh hiệu suất giữa mô hình đơn lẻ và mô hình kết hợp.| [**[Paper]**](https://) [**[Slides]**](../research-logs/ccc-slides/iast01_ensemble_learning_for_cervical_cancer_cytology.pdf) [**[Code]**](https://) |
 | ==06/01/2025 -> Current== | Nghiên cứu nền tảng & định hướng mô hình sử dụng Self-Supervised Learning (Phần 01) | :material-check-all: | (--) Nghiên cứu tổng quan về Self-Supervised Learning (SSL). <br> (--) Tìm hiểu về một số mô hình SSL phổ biến: BYOL, MoCo, SimCLR. <br> (--) Phân tích chi tiết kiến trúc của SimCLR: backbone, loss function, augmentation & projection head, v.v. | [**[Paper]**](https://arxiv.org/pdf/2002.05709) [**[Slides]**](../research-logs/ccc-slides/iast02_the_simclr_model.pdf) |
-|  | Thiết kế & triển khai mô hình SimCLR (Phần 02) | :material-check-all: | (--) Cài đặt kiến trúc SimCLR, đánh giá tính phù hợp và huấn luyện cho bài toán phân loại tế bào học. <br> (--) Lên phương án thực nghiệm nhanh, sau đó đánh giá kết quả sơ bộ và lên kế hoạch điều chỉnh. <br> (--)Tối ưu hóa và mở rộng tinh chỉnh, gia tăng hiệu suất cho mô hình.| [**[Repo]**](https://github.com/google-research/simclr) [**[Notes]**](../research-logs/ccc-notes/note03.md) [**[Code]**](../research-logs/ccc-notes/note05.md) |
+|  | Thiết kế & triển khai mô hình SimCLR (Phần 02) | :material-check-all: | (--) Cài đặt kiến trúc SimCLR, đánh giá tính phù hợp và huấn luyện cho bài toán phân loại tế bào học. <br> (--) Lên phương án thực nghiệm nhanh, sau đó đánh giá kết quả sơ bộ và lên kế hoạch điều chỉnh. <br> (--)Tối ưu hóa và mở rộng tinh chỉnh, gia tăng hiệu suất cho mô hình.| [**[Repo]**](https://github.com/google-research/simclr) [**[Notes]**](ssl_paper_design.md) [**[Code]**](../research-logs/ccc-notes/ssl_paper_design.md) |
 
 ## :octicons-link-16: Quick Links - Liên kết nhanh
 
@@ -35,4 +33,3 @@ Bộ dữ liệu về ung thư cổ tử cung này được thu thập và gán 
 :material-form-textbox-password: Password: {++BenhvienAThaiNguyen++}  
 
 ---
-<br />

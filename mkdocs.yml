@@ -5,10 +5,13 @@ site_name: OpenNotesHub
 theme:
   favicon: assets/images/logo.png
   palette:
-    primary: white 
+    primary: black
     accent: red
+  
   font:
     text: Roboto
+    code: Roboto Mono
+    
   name: material
   icon:
     admonition:
@@ -27,24 +30,27 @@ theme:
     repo: fontawesome/brands/github
   logo: assets/images/logo.png
   features:
+    - content.code.annotate 
+    - content.footnote.tooltips
     - navigation.tabs
     - navigation.instant
-    - navigation.tabs.sticky
     - navigation.indexes
+    - navigation.path
     - toc.follow
     - search.suggest
-    - header.autohide
     - navigation.top
     - navigation.footer
+    - navigation.instant.preview
+    - navigation.tracking
 
+repo_name: nthaihoc/open-notes-hub
 repo_url: https://github.com/nthaihoc/open-notes-hub
 
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/extra.js
-  - javascripts/mathjax.js
+  - javascripts/mathjax.js  
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 # 03. setup markdown extensions
@@ -56,25 +62,28 @@ markdown_extensions:
   - attr_list
   - footnotes
   - meta
-  - pymdownx.caret
+  - toc:
+      title: Mục Lục
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.blocks.caption
   - pymdownx.keys
+  - pymdownx.caret
   - pymdownx.mark 
   - pymdownx.tilde
-  - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.blocks.definition
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - tables
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
 plugins:
@@ -89,7 +98,14 @@ nav:
 
   - Research Logs: 
     - Research Logs: research-logs/README.md
-    - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology.md
+    - Cervical Cancer Cytology: 
+      - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology/README.md
+      - Self-Supervised Learining Paper Design Notes: research-logs/cervical-cancer-cytology/ssl_paper_design.md
+    - Pronunciation Scoring:
+      - Pronunciation Scoring: research-logs/pronunciation-scoring/README.md
+      - Tổng quan về Pronunciation Scoring: research-logs/pronunciation-scoring/report01.md
+      - Triển khai mô hình cơ bản, đánh giá và phân tích lỗi: research-logs/pronunciation-scoring/report02.md
+
 
   - Course Notes:
     - Course Notes: course-notes/README.md
@@ -112,4 +128,4 @@ extra:
       name: Institute of Applied Science Technology
   analytics:
     provider: google
-    property: UA-XXXXXXXX-X
+    property: UA-XXXXXXXX-X  
