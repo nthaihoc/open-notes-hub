@@ -66,7 +66,7 @@ Toàn bộ ảnh sau đó được tổ chức thành 2 batch riêng biệt, tư
 - Batch A: $Z_A = [x_{a1}; x_{b1}, x_{c1}]$.
 - Batch B: $Z_B = [x_{a2}; x_{b2}, x_{c2}]$. 
 
-Cả hai batch này được đưa qua một encoder chung thu được embedding tương ứng như sau:
+Cả hai batch này được đưa qua một encoder chung thu được embedding, sau đó đưa qua một projection head với số chiêu là 3 thu được các tensor tương ứng như sau:
 
 ```python
 torch.manual_seed(42)
