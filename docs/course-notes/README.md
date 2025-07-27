@@ -1,6 +1,5 @@
 ---
 hide:
-    - navigation
     - toc
 ---
 
@@ -22,30 +21,42 @@ hide:
 </div>
 
 # 🎓 Course Notes
+---
+> ✨ **"Don’t wait for opportunity. Create it."**
+>
+> 🌼 **"You don’t have to be great to start, but you have to start to be great."**
 
-[![Static Badge](https://img.shields.io/badge/CS229-Machine_Learning-purple?style=flat&logo=coursera&logoColor=white)](https://) [![Static Badge](https://img.shields.io/badge/Geekfor-Geeks-Silver?style=flat&logo=geeksforgeeks&logoColor=red)](https://) [![Static Badge](https://img.shields.io/badge/Google-Colab-red?style=flat&logo=googlecolab&logoColor=orange)](https://) [![Static Badge](https://img.shields.io/badge/Tensorflow-docs-tavily?logo=tensorflow&logoColor=orange)]([https://](https://www.tensorflow.org/))
+[![Python](https://img.shields.io/badge/python-org-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![PyTorch](https://img.shields.io/badge/pytorch-framework-yellow?style=for-the-badge&logo=pytorch&logoColor=brown)](https://pytorch.org)
+[![MLFlow](https://img.shields.io/badge/MLflow-tracking-blue?style=for-the-badge&logo=mlflow&logoColor=blue)](https://mlflow.org)
+[![NumPy](https://img.shields.io/badge/NumPy-library-purple?style=for-the-badge&logo=numpy&logoColor=blue)](https://numpy.org)
 
-## 🧭 Mục tiêu và định hướng
+[![HuggingFace](https://img.shields.io/badge/hugging_face-framework-pink?style=for-the-badge&logo=huggingface&logoColor=yellow)](https://huggingface.co)
+[![Pandas](https://img.shields.io/badge/pandas-framework-brown?style=for-the-badge&logo=pandas&logoColor=purple)](https://pandas.pydata.org)
+[![Google Colab](https://img.shields.io/badge/google-colab-green?style=for-the-badge&logo=googlecolab&logoColor=orange)](https://colab.research.google.com)
 
-Các khóa học tại đây được tôi biên soạn và tổng hợp dựa trên quá trình tự học, nghiên cứu và ứng dụng thực tế. Mỗi khóa học đều tập trung vào thực hành và giúp bạn nắm rõ bản chất của vấn đề trong thời gian ngắn. Cá nhân tôi nghĩ, những nội dung này phù hợp cho:
 
-- Sinh viện, người tự học về lĩnh vực AI/Data Science
+## ✳️ Tổng quan
+---
 
-- Kỹ sư muốn bổ sung thêm kỹ năng chuyên sâu
+Trong suốt hành trình học tập và nghiên cứu về trí tuệ nhân tạo, tôi đã không ngừng tổng hợp, ghi chú và diễn giải lại những kiến thức căn bản theo góc nhìn và cách hiểu của riêng mình. Không dừng lại ở việc lưu trữ cá nhân, tôi đã chủ động hệ thống hóa những nội dung này thành các khóa học ngắn gọn, dễ tiếp cận - với hai mục tiêu chính: Một là tạo nên một không gian học tập cá nhân linh hoạt, nơi tôi có thể ôn luyện và củng cố lại nền tảng kiến thức bất cứ lúc nào; Hai là chia sẻ những gì mình biết đến cộng đồng, đặc biệt là những người mới bắt đầu, với hy vọng góp phần lan tỏa tri thức và khơi dậy niềm yêu thích với lĩnh vực đầy tiềm năng này.
 
-- Người dạy học muốn tham khảo nội dung có một cấu trúc đầy đủ, hoàn chỉnh
+## 🍒 Danh sách khóa học
+---
+??? tip "Chú thích"
 
-Mỗi khóa học đều được chia thành từng chủ để nhỏ, mỗi chủ đề có thể gồm: ghi chú ngắn, code ví dụ và bài tập. Bạn có thể học theo thứ tự hoặc chọn phần mà mình quan tâm. Tài nguyên trong toàn bộ khóa học này là miễn phí, cho phép bạn có thể tái sử dụng bất kì lúc nào khi bạn cần.
+    - :white_check_mark: Đã hoàn thành
+    - :hammer_and_wrench: Đang phát triển
+    - :hourglass: Chưa bắt đầu
 
-## 📕 Danh sách khóa học (dự kiến biên soạn)
-
-| STT | Tên khóa học | Mô tả | Liên kết |
-| :---: | :----- | :------ | :-------: |
-| 1 | `🤖 Applied Machine Learning` | Cung cấp kiến thức lý thuyết nền tảng về các mô hình học máy, kết hợp với hướng dẫn thực hành từng bước để xây dựng và triển khai mô hình từ đầu đến cuối | [[Link]](ml_course/) |
-| 2 | `📷 Computer Vision Foundations` | Tổng quan về xử lý ảnh, augmentation, và các kiến trúc CNN cơ bản | [[Link]](https://) |
-| 3 | `🔠 Large Language Models` | Giới thiệu về LLMs, các mô hình nổi bật, ứng dụng và triển khai chúng từ đầu | [[Link]](https://) |
+| STT | Khóa học | Trạng thái | Mô tả | Liên kết |
+| :-: | :------- | :--------: | :---- | :------: |
+|  01  | Applied Machine Learning | :hammer_and_wrench: | (-) Cung cấp các kiến thúc nền tảng về các kỹ thuật và thuật toán quan trọng trong Machine Learning. <br> (-) Hướng dẫn triển khai, xây dựng và huấn luyện các mô hình từ đầu tới cuối. | [**[Link]**](applied-machine-learning/README.md) | 
+| 02 | Computer Vision Foundations | :hammer_and_wrench: | (-) Trình bày các kiến thức cốt lõi về Deep Learning, với trọng tâm là xử lý ảnh và thị giác máy tính. <br> (-) Giải thích nguyên lý hoạt động của các kiến trúc mạng nơ-ron tích chập (CNN), các kỹ thuật tiền xử lý ảnh, và một số tác vụ phổ biến. | [**[Link]**]() |
+| 03 | Large Language Models for Beginner | :hammer_and_wrench: | (-) Giới thiệu tổng quan về các mô hình ngôn ngữ lớn (LLMs), bao gồm cách thức hoạt động, kiến trúc cơ bản và các ứng dụng tiêu biểu. <br> (-) Phân tích các khái niệm như attention, transformer, embedding cùng với quy trình huấn luyện và sử dụng mô hình. <br> (-) Phù hợp cho người mới bắt đầu làm quen với lĩnh vực xử lý ngôn ngữ tự nhiên. | [**[Link]**]() |
 
 ## 📬 Đóng góp & Góp ý
+---
 
 Tất cả nội dung trên website này là kết quả của quá trình tự học, nghiên cứu và tổng hợp dưới góc nhìn cá nhân. Do đó, không thể tránh khỏi những thiếu sót hoặc cách diễn đạt còn hạn chế. Tôi luôn mong muốn cải thiện và mở rộng nội dung tại đây để phục vụ tốt hơn cho cộng đồng.
 
