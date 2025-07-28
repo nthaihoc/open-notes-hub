@@ -9,6 +9,15 @@ p {
   text-justify: inter-word;
 }
 
+.md-typeset .admonition {
+  font-size: 16px;
+}
+
+.md-typeset a {
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
 .md-grid {
   max-width: 1234px;
 }
@@ -19,7 +28,8 @@ p {
 }
 
 .md-typeset h1,
-.md-typeset h2 {
+.md-typeset h2,
+.md-typeset h3 {
   color: black;
   font-weight: bold;
 }
@@ -34,14 +44,21 @@ p {
 }
 
 .md-typeset mark {
-  background-color: #FFC107;
+  color: #2E7D32;
+  background-color: #E8F5E9; 
+  font-weight: bold;
 }
 
 .md-typeset ins {
-  text-decoration: none;
+  text-decoration: None;
   font-style: normal;
   font-weight: bold;
-  color: #C62828
+  color: #C62828;
+}
+
+.md-typeset ins.critic {
+  color: #6A1B9A;             
+  background-color: #F3E5F5; 
 }
 
 .md-typeset table:not([align]) {

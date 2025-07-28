@@ -100,7 +100,7 @@ nav:
     - Research Logs: research-logs/README.md
     - Cervical Cancer Cytology: 
       - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology/README.md
-      - Self-Supervised Learining Paper Design Notes: research-logs/cervical-cancer-cytology/ssl_paper_design.md
+      - Self-Supervised Learning for Cervical Cancer Classification: research-logs/cervical-cancer-cytology/notes/ssl_for_cervical_cancer.md
     - Pronunciation Scoring:
       - Pronunciation Scoring: research-logs/pronunciation-scoring/README.md
       - Tổng quan về Pronunciation Scoring: research-logs/pronunciation-scoring/report01.md

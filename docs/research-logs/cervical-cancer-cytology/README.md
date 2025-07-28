@@ -1,35 +1,67 @@
 ---
-hide: 
-    - navigation
+title: Cervical Cancer Cytology
+icon: material/roman-numeral-1
 ---
 
- ---
-> Đây là dự án được nghiên cứu và triển khai bởi [**Viện KH & CNUD**](https://iast.ictu.edu.vn) với sự hợp tác của [**Bệnh viện A - Thái Nguyên**]() nhằm tạo ra một hệ thống AI có khả năng hỗ trợ các bác sĩ chuyên khoa tế bào học trong việc sàng lọc, dự báo và tư vấn liên quan đến bệnh Ung thư cổ tử cung dựa trên hình ảnh tế bào học.
+<div style="
+    background-image: url('../../assets/images/research_cervical_cancer_classification.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+">
+</div>
 
-## :octicons-tasklist-16: Research Logbook - Sổ tay nghiên cứu
+# 🏥 Cervical Cancer Cytology
+---
 
-| Deadline | Name | Status | Description | Materials |
-| :------- | :--- | :----: | :---------- | :-------: |
-| ==16/09 -> 16/11, 2024== | Nghiên cứu Ensemble Learning cho phân loại Ung thư cổ tử cung tế bào học | :material-check-all: | (--) Nghiên cứu kỹ thuật Ensemble Leanring và các phương pháp của chúng. <br> (--) Lên phương án thực nghiệm cho bộ dữ liệu thực tế. <br> (--) Triển khai đánh giá, và cài đặt huấn luyện nhằm so sánh hiệu suất giữa mô hình đơn lẻ và mô hình kết hợp.| [**[Paper]**](https://) [**[Slides]**](../research-logs/ccc-slides/iast01_ensemble_learning_for_cervical_cancer_cytology.pdf) [**[Code]**](https://) |
-| ==06/01/2025 -> Current== | Nghiên cứu nền tảng & định hướng mô hình sử dụng Self-Supervised Learning (Phần 01) | :material-check-all: | (--) Nghiên cứu tổng quan về Self-Supervised Learning (SSL). <br> (--) Tìm hiểu về một số mô hình SSL phổ biến: BYOL, MoCo, SimCLR. <br> (--) Phân tích chi tiết kiến trúc của SimCLR: backbone, loss function, augmentation & projection head, v.v. | [**[Paper]**](https://arxiv.org/pdf/2002.05709) [**[Slides]**](../research-logs/ccc-slides/iast02_the_simclr_model.pdf) |
-|  | Thiết kế & triển khai mô hình SimCLR (Phần 02) | :material-check-all: | (--) Cài đặt kiến trúc SimCLR, đánh giá tính phù hợp và huấn luyện cho bài toán phân loại tế bào học. <br> (--) Lên phương án thực nghiệm nhanh, sau đó đánh giá kết quả sơ bộ và lên kế hoạch điều chỉnh. <br> (--)Tối ưu hóa và mở rộng tinh chỉnh, gia tăng hiệu suất cho mô hình.| [**[Repo]**](https://github.com/google-research/simclr) [**[Notes]**](ssl_paper_design.md) [**[Code]**](../research-logs/ccc-notes/ssl_paper_design.md) |
+!!! info ""
+    Cervical Cancer Cytology (Ung thư cổ tử cung – Tế bào học) là một dự án nghiên cứu và phát triển được thực hiện trong khuôn khổ hợp tác giữa Viện Khoa học và Công nghệ Ứng dụng và Bệnh viện A, Thái Nguyên. Mục tiêu chính của dự án là xây dựng một hệ thống hỗ trợ bác sĩ trong việc sàng lọc và ra quyết định nhanh chóng trên hình ảnh tế bào học bằng các phương pháp AI hiện đại.
 
-## :octicons-link-16: Quick Links - Liên kết nhanh
-
-Toàn bộ **materials** (tài liệu tham khảo) và  **resources** (mã nguồn) của nhật ký nghiên cứu có thể được truy cập nhanh tại đường dẫn sau.
-
-[Resources :paperclips:](https://){.md-button} 
-
-[Materials :material-file-document-outline:](https://){.md-button}
+    Trang này sẽ tổng hợp toàn bộ nhật ký nghiên cứu, mã nguồn cá nhân trong quá trình xây dựng hệ thống, cũng như bộ dữ liệu ảnh tế bào học quy mô lớn được cung cấp và cho phép sử dụng công khai từ Bệnh viện A, Thái Nguyên.
 
 
-## :material-database-settings: Datasets - Bộ dữ liệu
+## I. My Research Work
+### 1. Research Topics Overview
 
-Bộ dữ liệu về ung thư cổ tử cung này được thu thập và gán nhãn thủ công bởi các bác sĩ chuyên khoa tại Bệnh viện A, Thái Nguyên. Dữ liệu hiện đã được công khai, phục vụ cho mục đích tham khảo và nghiên cứu.
+| No. | Topic | Status | Description |
+| :-: | :---- | :----: | :---------- |
+| 01 | **Ensemble Learning for Cervical Cancer Cytology** <br> [[**notes**](https://)] [[**code**](https://)] | :material-check-all: | <ul><li>Nghiên cứu và đánh giá hiệu suất các phương pháp học tập tổ hợp (ensemble methods) trong phân loại ảnh tế bào học.</li><li>Thiết kế thí nghiệm và huấn luyện mô hình trên các bộ dữ liệu thực tế về ung thư cổ tử cung.</li><li>Đánh giá hiệu năng của mô hình dựa trên nhiều tiêu chí khác nhau.</li><li>Công bố kết quả nghiên cứu tại một hội nghị chuyên ngành về Trí tuệ Nhân tạo.</li></ul> |
+| 02 | **Improving Cervical Cancer Screening Through Self-Supervised Learning** <br> [[**notes**](../cervical-cancer-cytology/notes/ssl_for_cervical_cancer.md)] [[**code**](https://)] | :material-close: | <ul><li>Khảo sát các kỹ thuật học tự giám sát trong phân tích ảnh y tế.</li><li>Xây dựng bộ dữ liệu và lựa chọn các tác vụ tiền huấn luyện phù hợp với ảnh tế bào học.</li><li>Thiết kế bộ tiêu chí đánh giá để so sánh với các phương pháp truyền thống.</li></ul> |
 
-[Atlat Datasets :material-web:](https://label.ai4med.vn/auth/login){.md-button}
+### 2. Materials Related to the Research
 
-:material-account: Account: {++BOCSDL@ai4med.com++}  
-:material-form-textbox-password: Password: {++BenhvienAThaiNguyen++}  
+**Topic 01. Ensemble Learning for Cervical Cancer Cytology:**
+
+- Paper A: [**Analysis of Cytology Pap Smear Images Based on Ensemble Deep Learning Approach**](https://www.mdpi.com/2075-4418/12/11/2756)
+- Paper B: [**A Deep Learning Ensemble Method to Assist Cytopathologists in Pap Test Image Classification**](https://www.mdpi.com/2313-433X/7/7/111)
+- Paper C: [**A fuzzy rank-based ensemble of CNN models for classification of cervical cytology**](https://www.nature.com/articles/s41598-021-93783-8)
+- Paper D: [**Automated cervical cell segmentation using deep ensemble learning**](https://link.springer.com/content/pdf/10.1186/s12880-023-01096-1.pdf)
+- Paper E: [**An ensemble machine learning-based approach to predict cervical cancer using hybrid feature selection**](https://www.sciencedirect.com/science/article/pii/S2772528624000141)
+
+**Topic 02. Improving Cervical Cancer Screening Through Self-Supervised Learning:**
+
+- Paper A: [**A Simple Framework for Contrastive Learning of Visual Representations**](https://arxiv.org/pdf/2002.05709)
+- Paper B: [**Emerging Properties in Self-Supervised Vision Transformers**](https://arxiv.org/pdf/2104.14294)
+- Paper C: [**Bootstrap Your Own Latent A New Approach to Self-Supervised Learning**](https://arxiv.org/pdf/2006.07733)
+
+---
+## II. Quick Links
+
+Toàn bộ ghi chú (notes), code (mã) và tập dữ liệu (datasets) về Ung thư cổ tử cung liên quan đến dự án có thể tìm thấy tại đây:
+
+- [**Notes for Project**](https://)
+
+- [**Code for Project**](https://)
+
+- [**Atlat Datasets**](https://label.ai4med.vn/auth/login) - [ *account:* {++BOCSDL@ai4med.com++} | *password:*{++BenhvienAThaiNguyen++} ]
 
 ---

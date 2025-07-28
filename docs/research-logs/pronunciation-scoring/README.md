@@ -1,6 +1,6 @@
 ---
-hide:
-    - toc
+title: Pronunciation Scoring
+icon: material/roman-numeral-2
 ---
 
 <div style="

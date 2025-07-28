@@ -1,12 +1,73 @@
 ---
-title: Self-Supervised Learining Paper Design Notes
-icon: material/information
+title: Self-Supervised Learning (SSL) for Cervical Cancer Classification
+icon:
+hide: navigation
 ---
 
-# Self-Supervised Learining Paper Design Notes
+# Topic 01. Self-Supervised Learning for Cervical Cancer Classification
 ---
 
-## 1. Main contribution details
+## I. Experimental Setup
+### 1. Datasets
+
+**Herlev datasets.** Bộ dữ liệu tế bào học cổ tử cung được sử dụng rộng rãi trong nghiên cứu về nhận dạng và phân loại tế bào ung thư cổ tử cung từ ảnh hiển vi ([**Jan Jantzen et al., 2006**](https://www.researchgate.net/publication/282157686_The_Pap_Smear_Benchmark)), được thu thập tại Herlev University Hospital, Đan Mạch. Thống kê bộ dữ liệu được mô tả trong **Bảng 1**. Bộ dữ liệu gồm 917 ảnh với 7 loại nhãn khác nhau, trong đó có 3 nhãn là normal (bình thường) và 4 nhãn là bất thường (abnormal). 
+
+| Label | Number for label | Types |
+| :---- | :--------------: | :---: |
+| superficiel | 74 | Normal | 
+| intermediate | 70 | Normal |
+| columnar | 98 | Normal |
+| light dysplastic | 182 | Abnormal | 
+| severe dysplastic | 197 | Abnormal |
+| moderate_dysplastic | 146 | Abnormal | 
+| carcinoma in situ | 150 | Abnormal |
+| **Total** | **917** | |
+
+/// caption
+**Bảng 1.** Thống kê mô tả bộ dữ liệu Herlev Pap-smear.
+///
+
+**LBC Pap smear datasets.** LBC (Liquid-Based Cytology) là một trong các xét nghiệm sàng lọc ung thư cổ tử cung ([**Elima Husain et al., 2020**](https://pmc.ncbi.nlm.nih.gov/articles/PMC7186519/)). Bộ dữ liệu này bao gồm tổng cộng 963 ảnh LBC, được chia thành bốn nhóm tương ứng với bốn lớp tổn thương: NILM, LSIL, HSIL và SCC. Các lớp này đại diện cho các tổn thương tiền ung thư và ung thư cổ tử cung. Hình ảnh được thu thập từ 460 bệnh nhân, với nhiều vấn đề phụ khoa khác nhau. Mô tả thống kê của bộ dữ liệu được cung cấp trong **Bảng 2**.
+
+| Label | Number for label | Types |
+| :---- | :--------------: | :---: |
+| LSIL  | 113 | Precancerous |
+| NILM  | 613 | Precancerous |
+| HSIL  | 163 | Precancerous |
+| SCC   | 74  | Cancer       |
+| **Total** | **963** |      |
+
+/// caption
+**Bảng 2.** Bộ dữ liệu LBC bao gồm bốn đại diện tổn thương: NILM, LSIL, HSIL và SCC.
+///
+
+**HiCerix datasets.** Bộ dữ liệu tế bào học cổ tử cung lớn nhất và đa trung tâm nhất được công bố công khai ([**De Cai et al., 2024**](https://ieeexplore.ieee.org/document/10571965)). HiCervix bao gồm 40.299 ảnh tế bào cổ tử cung được cắt từ 4.496 ảnh lát cắt toàn bộ (whole slide images), được phân loại thành 29 lớp và có chú thích. Các lớp này được tổ chức theo một cây phân cấp ba tằng nhằm nắm bắt thông tin chi tiết về các nhóm nhỏ (fine-grained subtypes).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ## 1. Main contribution details
 ### __1.1 Tác động của các kỹ thuật augmentation__
 
 **Ý tưởng.** Phân tích nhóm tác động và chức năng của các phương pháp augmentation.
@@ -203,4 +264,4 @@ $$
 
 **Ý tưởng.** Sử dụng bộ dữ liệu 22k ảnh kết hợp thêm với một số bộ dữ liệu công khai có nhãn tuông đương hoặc khác, nhằm tạo ra sự đa dạng và khác biệt giúp mô hình tổng quát hóa, biểu diễn tốt cho dữ liệu trong quá trình huấn luyện không nhãn.
 
-**Phương pháp thực hiện.** Sử dụng bộ dữ liệu Herlev, SIPakMed, Mendeley và HiCervix. 
+**Phương pháp thực hiện.** Sử dụng bộ dữ liệu Herlev, SIPakMed, Mendeley và HiCervix.  -->
