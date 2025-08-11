@@ -37,7 +37,7 @@ hide:
 [![Static Badge](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
 
 
-## 👀 Về tôi
+## 👀 About Me
 ---
 
 !!! warning ""
@@ -71,7 +71,7 @@ hide:
 
     🚀 Tôi hy vọng nơi đây sẽ trở thành một nguồn tài nguyên hữu ích – nơi bạn có thể tìm thấy điều mình đang tìm kiếm, hoặc đơn giản là cùng tôi học thêm điều mới mỗi ngày.
 
-## ☎️ Liên hệ
+## ☎️ Contact
 ---
 
 !!! warning ""

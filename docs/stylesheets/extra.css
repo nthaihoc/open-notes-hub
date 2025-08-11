@@ -61,6 +61,10 @@ p {
   background-color: #F3E5F5; 
 }
 
+.md-footer__title {
+  font-size: 18px;
+}
+
 .md-typeset table:not([align]) {
   font-size: 90%;
 }

@@ -1,13 +1,14 @@
 ---
 title: Self-Supervised Learning (SSL) for Cervical Cancer Classification
 icon:
-hide: navigation
+hide: 
+    - navigation
 ---
 
 # Topic 01. Self-Supervised Learning for Cervical Cancer Classification
 ---
 
-## I. Experimental Setup
+## I. Experimental setup
 ### 1. Datasets
 
 **Herlev datasets.** Bộ dữ liệu tế bào học cổ tử cung được sử dụng rộng rãi trong nghiên cứu về nhận dạng và phân loại tế bào ung thư cổ tử cung từ ảnh hiển vi ([**Jan Jantzen et al., 2006**](https://www.researchgate.net/publication/282157686_The_Pap_Smear_Benchmark)), được thu thập tại Herlev University Hospital, Đan Mạch. Thống kê bộ dữ liệu được mô tả trong **Bảng 1**. Bộ dữ liệu gồm 917 ảnh với 7 loại nhãn khác nhau, trong đó có 3 nhãn là normal (bình thường) và 4 nhãn là bất thường (abnormal). 
@@ -41,11 +42,64 @@ hide: navigation
 **Bảng 2.** Bộ dữ liệu LBC bao gồm bốn đại diện tổn thương: NILM, LSIL, HSIL và SCC.
 ///
 
-**HiCerix datasets.** Bộ dữ liệu tế bào học cổ tử cung lớn nhất và đa trung tâm nhất được công bố công khai ([**De Cai et al., 2024**](https://ieeexplore.ieee.org/document/10571965)). HiCervix bao gồm 40.299 ảnh tế bào cổ tử cung được cắt từ 4.496 ảnh lát cắt toàn bộ (whole slide images), được phân loại thành 29 lớp và có chú thích. Các lớp này được tổ chức theo một cây phân cấp ba tằng nhằm nắm bắt thông tin chi tiết về các nhóm nhỏ (fine-grained subtypes).
+**HiCerix datasets.** Bộ dữ liệu tế bào học cổ tử cung lớn nhất và đa trung tâm nhất được công bố công khai ([**De Cai et al., 2024**](https://ieeexplore.ieee.org/document/10571965)). HiCervix bao gồm 40.299 ảnh tế bào cổ tử cung được cắt từ 4.496 ảnh lát cắt toàn bộ (whole slide images), được phân loại thành 29 lớp và có chú thích. Các lớp này được tổ chức theo một cây phân cấp ba tằng nhằm nắm bắt thông tin chi tiết về các nhóm nhỏ (fine-grained subtypes). Trong bộ dữ liệu này có chứa 8.840 hình ảnh thuộc 5 nhãn mục tiêu cho giai đoạn downstream task (thống kê mô tả **Bảng 3**).
 
+| Label | Number for label | Types |
+| :---- | :--------------: | :---: |
+| ASC_H | 1437 | Precancerous |
+| ASC_US  | 2599 | Precancerous |
+| HSIL  | 1988 | Precancerous |
+| LSIL   | 1744  | Precancerous |
+| SCC | 1072 | Cancer |
+| **Total** | **8840** |      |
 
+/// caption
+**Bảng 3.** Các nhãn mục tiêu cho giai đoạn downstream task được trích xuất từ bộ dữ liệu Hicervix.
+///
 
+**SIPaKMed datasets.** Là một trong những bộ dữ liệu được sử dụng rộng rãi trong bài toán phân loại tế bào cổ tử cung từ ảnh Pap smear. Bao gồm 4.090 ảnh tế bào riêng biệt được crop thủ công từ 966 ảnh nhớm tế bào Pap smear. SiPaKMed phân loại tế bào theo năm lớp dựa trên đặc điểm hình thái (mô tả chi tiết trong **Bảng 4**).
 
+| Label | Number for label | Types |
+| :---- | :--------------: | :---: |
+| Dyskeratotic (DYSK) | 813 | abnormal |
+| Koilocytotic (KOIL) | 825 | abnormal |
+| Metaplastic (META)  | 793 | benign |
+| Parabasal (PARA)    | 787 | normal |
+| Superficial-Moderate (SM) | 831 | normal |
+| **Total** | **4090** |      |
+
+/// caption
+**Bảng 4.** Bộ dữ liệu SIPaKMed gồm năm lớp chính, được thu thập từ 966 ảnh nhóm tế bào Pap smear.
+///
+
+**Hospital A datasets.** Bộ dữ liệu thu thập từ Bệnh viên A thái nguyên, gồm 22.434 ảnh tế bào gồm năm nhãn lớp chính (**Bảng 5**).
+
+| Label | Number for label | Types |
+| :---- | :--------------: | :---: |
+| ASC_H | 5.669  | precancerous |
+| ASC_US | 3.869 | precancerous |
+| HSIL  | 6.355 | precancerous |
+| LSIL   | 4.780  | precancerous |
+| SCC | 1.761 | cancer |
+| **Total** | **22.434** |      |
+
+/// caption
+**Bảng 5.** Phân phối chi tiết bộ dữ liệu thu thập từ Bệnh viện A, Thái Nguyên trên năm nhãn chính.
+///
+
+### 2. Data design strategy
+
+Để phục vụ cho quá trình thực nghiệm, làm rõ một số vấn đề, các bộ dữ liệu (đã được mô tả ở [Phần 1](#1-datasets)) sẽ được thiết kế để đảm bảo tính đa dạng, khả thi và phù hợp:
+
+* **HSLBC datasets.** Gộp ba bộ dữ liệu Herlev, SIPakMed và LBC.
+
+* **HSLBCHi datasets.** Mở rộng thêm bộ dữ liệu **HSLBC** bằng cách thêm vào bộ Hicervix.
+
+Bộ dữ liệu ở bệnh viện A là bộ dữ liệu mục tiêu chính cho giai đoạn downstream task, bộ dữ liệu này sẽ được chia thành các tập dữ liệu con phục vụ cho quá trình huấn luyện, kiểm thử và đánh giá.
+
+| #train (70%) | #val (15%)  | #test (15%) |
+| :---:  | :-:   | :--:  |
+| 15.704 | 3.366 | 3.364 |
 
 
 

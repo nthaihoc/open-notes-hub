@@ -64,13 +64,13 @@ Chi tiết nội dung bài học của từng Module được mô tả chi tiế
 
 Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập được những tri thức dưới đây: 
 
-- Nắm vững các thuật toán học máy cơ bản như Linear Regression, Support Vector Machine, Decision Trees, K-mean Clustering, $\ldots$
+- Nắm vững các thuật toán học máy cơ bản như Linear Regression, Support Vector Machine, Decision Trees, K-mean Clustering,v.v.
 
 - Thành thạo quy trình xây dựng mô hình ML từ dữ liệu thô đến đánh giá kết quả.
 
 - Hiểu và áp dụng kỹ thuật thu thập, tiền xử lý và trực quan hóa dữ liệu.
 
-- Thực hành triển khai mô hình bằng Python và các thư viện như: Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn, $\ldots$
+- Thực hành triển khai mô hình bằng Python và các thư viện như: Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn,v.v.
 
 - Áp dụng mô hình vào các bài toán thực tế qua mini-projects và case studies.
 
