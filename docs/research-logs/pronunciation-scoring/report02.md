@@ -1,6 +1,6 @@
 ---
 title: Triển khai mô hình cơ bản, đánh giá và phân tích lỗi 
-icon: material/tools
+icon: material/numeric-2-circle
 hide:
     -navigation
 ---

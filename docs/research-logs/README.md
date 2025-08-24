@@ -41,7 +41,7 @@ hide:
 
 Trong quá trình nghiên cứu tại [Viện Khoa học và Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), tôi đã có cơ hội tham gia vào nhiều dự án liên quan đến ứng dụng trí tuệ nhân tạo (AI) trong lĩnh vực chăm sóc sức khỏe và giáo dục. Trong các dự án này, tôi trực tiếp đảm nhiệm một số nhiệm vụ nghiên cứu và triển khai các giải pháp kỹ thuật.
 
-Mỗi dự án được chia thành nhiều chủ đề nhỏ nhằm mở rộng hướng tiếp cận và khai thác đa chiều bài toán thực tiễn. Toàn bộ các chủ đề cũng như báo cáo chi tiết về từng nhiệm vụ tôi đã thực hiện đều được hệ thống hóa và trình bày tại mục [Research Notes](../research-logs/README.md).
+Mỗi dự án được chia thành nhiều chủ đề nhỏ nhằm mở rộng hướng tiếp cận và khai thác đa chiều bài toán thực tiễn. Toàn bộ các chủ đề cũng như báo cáo chi tiết về từng nhiệm vụ tôi đã thực hiện đều được hệ thống hóa và trình bày tại mục [[Research Notes](../research-logs/README.md)].
 
 ## 🏷️ Chủ đề nghiên cứu
 ---
@@ -52,11 +52,11 @@ Mỗi dự án được chia thành nhiều chủ đề nhỏ nhằm mở rộng
     - :hammer_and_wrench: Đang phát triển
     - :hourglass: Chưa bắt đầu
 
-| No. | Project | Status | Key Task | Resources |
-| :-: | :------ | :----- | :------- | :--: |
-|  1  | **`🏥 Ứng dụng AI hỗ trợ bác sĩ trong phân loại ung thư cổ tử cung tế bào học`** | :white_check_mark: | Xây dựng và phát triển mô hình AI hỗ trợ phân loại và hỗ trợ các bác sĩ gán nhãn tự động | [**`[link]`**](cervical-cancer-cytology/README.md) |
-|  2  | **`🏫 Ứng dụng công nghệ AI hỗ trợ giáo dục phổ thông (Ứng dụng hỗ trợ học và dạy tiếng Anh)`** | :hammer_and_wrench: | Nghiên cứu các kỹ thuật và phương pháp cho bài toán Pronunciation Scoring (PS) - Chấm điểm phát âm tiếng Anh cho người Việt | [**`[link]`**](pronunciation-scoring/README.md) |
-|  3  | **`💊 Ứng dụng AI hỗ trợ y học`** | :hourglass: | Nghiên cứu phát triển hệ thống AI hỗ trợ bác sĩ trong quá trình quản lý, đưa ra tư vấn v.v, liên quan đến thuốc | [**`[link]`**]() |
-|  4  | **`🩺 Ứng dụng AI hỗ trợ phân loại ung thư đại trực tràng`** | :hourglass: | Triển khai hệ thống hỗ trợ bác sĩ phân loại ung thư đại trực tràng, gán nhãn và xây dựng tài liệu học tập | [**`[link]`**]() |
+| No. | Project | Status | Key Task |
+| :-: | :------ | :---:  | :------- |
+|  1  | 🏥 Ứng dụng AI hỗ trợ bác sĩ trong phân loại ung thư cổ tử cung tế bào học <br> [[Link](../research-logs/cervical-cancer-cytology/README.md)] | :white_check_mark: | Xây dựng và phát triển mô hình AI hỗ trợ phân loại và hỗ trợ các bác sĩ gán nhãn tự động |
+|  2  | 🏫 Ứng dụng công nghệ AI hỗ trợ giáo dục phổ thông (Ứng dụng hỗ trợ học và dạy tiếng Anh) <br> [[Link](../research-logs/pronunciation-scoring/README.md)] | :hammer_and_wrench: | Nghiên cứu các kỹ thuật và phương pháp cho bài toán Pronunciation Scoring (PS) - Chấm điểm phát âm tiếng Anh cho người Việt |
+|  3  | 💊 Ứng dụng AI hỗ trợ y học | :hourglass: | Nghiên cứu phát triển hệ thống AI hỗ trợ bác sĩ trong quá trình quản lý, đưa ra tư vấn v.v, liên quan đến thuốc |
+|  4  | 🩺 Ứng dụng AI hỗ trợ phân loại ung thư đại trực tràng | :hourglass: | Triển khai hệ thống hỗ trợ bác sĩ phân loại ung thư đại trực tràng, gán nhãn và xây dựng tài liệu học tập |
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: Tổng quan về Pronunciation Scoring - PS
-icon: material/information
+icon: material/numeric-1-circle
 hide:
     - navigation
 ---

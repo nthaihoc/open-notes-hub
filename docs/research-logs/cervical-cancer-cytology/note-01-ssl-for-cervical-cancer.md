@@ -1,15 +1,13 @@
 ---
-title: Self-Supervised Learning (SSL) for Cervical Cancer Classification
-icon:
-hide: 
-    - navigation
+title: Self-Supervised Learning for Cervical Cancer Classification
+icon: material/numeric-1-circle
 ---
 
 # Topic 01. Self-Supervised Learning for Cervical Cancer Classification
 ---
 
-## I. Experimental setup
-### 1. Datasets
+## Experimental setup
+### Datasets
 
 **Herlev datasets.** Bộ dữ liệu tế bào học cổ tử cung được sử dụng rộng rãi trong nghiên cứu về nhận dạng và phân loại tế bào ung thư cổ tử cung từ ảnh hiển vi ([**Jan Jantzen et al., 2006**](https://www.researchgate.net/publication/282157686_The_Pap_Smear_Benchmark)), được thu thập tại Herlev University Hospital, Đan Mạch. Thống kê bộ dữ liệu được mô tả trong **Bảng 1**. Bộ dữ liệu gồm 917 ảnh với 7 loại nhãn khác nhau, trong đó có 3 nhãn là normal (bình thường) và 4 nhãn là bất thường (abnormal). 
 
@@ -87,7 +85,7 @@ hide:
 **Bảng 5.** Phân phối chi tiết bộ dữ liệu thu thập từ Bệnh viện A, Thái Nguyên trên năm nhãn chính.
 ///
 
-### 2. Data design strategy
+### Data design strategy
 
 Để phục vụ cho quá trình thực nghiệm, làm rõ một số vấn đề, các bộ dữ liệu (đã được mô tả ở [Phần 1](#1-datasets)) sẽ được thiết kế để đảm bảo tính đa dạng, khả thi và phù hợp:
 

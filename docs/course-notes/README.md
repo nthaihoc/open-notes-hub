@@ -42,6 +42,7 @@ hide:
 Trong suốt hành trình học tập và nghiên cứu về trí tuệ nhân tạo, tôi đã không ngừng tổng hợp, ghi chú và diễn giải lại những kiến thức căn bản theo góc nhìn và cách hiểu của riêng mình. Không dừng lại ở việc lưu trữ cá nhân, tôi đã chủ động hệ thống hóa những nội dung này thành các khóa học ngắn gọn, dễ tiếp cận - với hai mục tiêu chính: Một là tạo nên một không gian học tập cá nhân linh hoạt, nơi tôi có thể ôn luyện và củng cố lại nền tảng kiến thức bất cứ lúc nào; Hai là chia sẻ những gì mình biết đến cộng đồng, đặc biệt là những người mới bắt đầu, với hy vọng góp phần lan tỏa tri thức và khơi dậy niềm yêu thích với lĩnh vực đầy tiềm năng này.
 
 ## 🍒 Danh sách khóa học
+
 ---
 ??? tip "Chú thích"
 
@@ -49,11 +50,11 @@ Trong suốt hành trình học tập và nghiên cứu về trí tuệ nhân t�
     - :hammer_and_wrench: Đang phát triển
     - :hourglass: Chưa bắt đầu
 
-| STT | Khóa học | Trạng thái | Mô tả | Liên kết |
-| :-: | :------- | :--------: | :---- | :------: |
-|  01  | Applied Machine Learning | :hammer_and_wrench: | (-) Cung cấp các kiến thúc nền tảng về các kỹ thuật và thuật toán quan trọng trong Machine Learning. <br> (-) Hướng dẫn triển khai, xây dựng và huấn luyện các mô hình từ đầu tới cuối. | [**[Link]**](applied-machine-learning/README.md) | 
-| 02 | Computer Vision Foundations | :hammer_and_wrench: | (-) Trình bày các kiến thức cốt lõi về Deep Learning, với trọng tâm là xử lý ảnh và thị giác máy tính. <br> (-) Giải thích nguyên lý hoạt động của các kiến trúc mạng nơ-ron tích chập (CNN), các kỹ thuật tiền xử lý ảnh, và một số tác vụ phổ biến. | [**[Link]**]() |
-| 03 | Large Language Models for Beginner | :hammer_and_wrench: | (-) Giới thiệu tổng quan về các mô hình ngôn ngữ lớn (LLMs), bao gồm cách thức hoạt động, kiến trúc cơ bản và các ứng dụng tiêu biểu. <br> (-) Phân tích các khái niệm như attention, transformer, embedding cùng với quy trình huấn luyện và sử dụng mô hình. <br> (-) Phù hợp cho người mới bắt đầu làm quen với lĩnh vực xử lý ngôn ngữ tự nhiên. | [**[Link]**]() |
+| No. | Course Name | Status | Description |
+| :-: | :---------- | :---:  | :---------- |
+|  01  | Applied Machine Learning <br> [[Link](../course-notes/applied-machine-learning/README.md)] | :hammer_and_wrench: | (-) Cung cấp các kiến thúc nền tảng về các kỹ thuật và thuật toán quan trọng trong Machine Learning. <br> (-) Hướng dẫn triển khai, xây dựng và huấn luyện các mô hình từ đầu tới cuối. |
+| 02 | Computer Vision Foundations | :hammer_and_wrench: | (-) Trình bày các kiến thức cốt lõi về Deep Learning, với trọng tâm là xử lý ảnh và thị giác máy tính. <br> (-) Giải thích nguyên lý hoạt động của các kiến trúc mạng nơ-ron tích chập (CNN), các kỹ thuật tiền xử lý ảnh, và một số tác vụ phổ biến. |
+| 03 | Large Language Models for Beginner | :hammer_and_wrench: | (-) Giới thiệu tổng quan về các mô hình ngôn ngữ lớn (LLMs), bao gồm cách thức hoạt động, kiến trúc cơ bản và các ứng dụng tiêu biểu. <br> (-) Phân tích các khái niệm như attention, transformer, embedding cùng với quy trình huấn luyện và sử dụng mô hình. <br> (-) Phù hợp cho người mới bắt đầu làm quen với lĩnh vực xử lý ngôn ngữ tự nhiên. |
 
 ## 📬 Đóng góp & Góp ý
 ---

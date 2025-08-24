@@ -1,6 +1,8 @@
 ---
 title: Pronunciation Scoring
-icon: material/roman-numeral-2
+icon: material/school-outline
+hide:
+    -toc
 ---
 
 <div style="

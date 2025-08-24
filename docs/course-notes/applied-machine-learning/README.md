@@ -1,7 +1,7 @@
 ---
 title: Applied Machine Learning (AML)
+icon: material/slot-machine
 hide:
-    - navigation
 ---
 
 <div style="
@@ -37,7 +37,8 @@ hide:
 ![Static Badge](https://img.shields.io/badge/Code-for_course-red?style=for-the-badge&logo=lintcode&logoColor=brown)
 ![Static Badge](https://img.shields.io/badge/Materials-for_course-yellow?style=for-the-badge&logo=bookstack)
 
-## I. Course Introduction
+## Course Introduction
+---
 
 **Mô tả.** Applied Machine Learning (AML) được ghi chú và tổng hợp theo định dạng một khóa học, nhằm cung cấp cho người học cái nhìn tổng quan và toàn diện về lĩnh vực Machine Learning (ML) - từ lý thuyết cốt lõi đến thực hành triển khai. Toàn bộ nội dung tập trung vào các kỹ thuật và thuật toán nền tảng, giúp bạn nắm vững cách thức thu thập dữ liệu, tiền xử lý, và xây dựng các mô hình học máy một cách bài bản và có hệ thống. Khóa học không chỉ chú trọng vào kiến thức lý thuyết mà còn hướng dẫn người học từng bước triển khai, huấn luyện và đánh giá mô hình ML từ đầu đến cuối, qua các bài tập thực hành và dự án thực tế.
 
@@ -59,8 +60,8 @@ Chi tiết nội dung bài học của từng Module được mô tả chi tiế
 - [**Code for Course**](https://)
 - [**Materials for Course**](https://)
 
+## What will you learn?
 ---
-## II. What will you learn ?
 
 Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập được những tri thức dưới đây: 
 
@@ -74,8 +75,8 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 
 - Áp dụng mô hình vào các bài toán thực tế qua mini-projects và case studies.
 
+## Requirements
 ---
-## III. Requirements
 
 Để có thể tiếp cận nội dung của toàn bộ khóa học một cách dễ dàng, người đọc cần có sẵn một số kiến thức nền tảng như:
 
@@ -85,8 +86,9 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 
 - Kỹ năng tự học và giải quyết vấn đề: Sẵn sàng tiếp cận tài liệu học thuật, nghiên cứu thuật toán, và thử nghiệm mô hình trong môi trường thực tế.
 
+
+## Syllabus
 ---
-## IV. Syllabus
 
 | Dealine | Module | Lecture | Description | 
 | :-----: | :----- | :------ | :---------- | 
@@ -111,8 +113,9 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 |         | ^^Module 5: ML Pipelines & Deployment^^ | **Lecture 15: Pipelines & Hyperparameter Tuning** | <li>scikit-learn pipelines <li>Cross-validation <li>GridSearchCV; RandomizedSearchCV <li>Feature selection tích hợp <li>Đánh giá & tối ưu mô hình |
 | | | **Lecture 16. Model Deployment & Inference Optimization** | <li>Hiểu lầm phổ biến khi triển khai <li>Batch vs Online prediction <li>Kết hợp batch và streaming pipeline <li>Tối ưu mô hình: pruning, quantization, distillation | 
 
+## Materials
 ---
-## V. Materials
+
 phần này tổng
 Phần này tổng hợp toàn bộ tài liệu được sử dụng trong suốt khóa học, tài liệu đọc thêm và liên kết tham khảo. Ngoài ra, bạn cũng sẽ tìm thấy các nguồn học tập mở rộng giúp củng cố và đào sâu kiến thức.
 
@@ -120,3 +123,5 @@ Phần này tổng hợp toàn bộ tài liệu được sử dụng trong suố
 
 - Book: [**Machine Learning cơ bản - Vũ Hữu Tiệp**](https://) - Chương 1
 - Book: [**Design Machine Learning Systems - Chip Huyen**](https://)
+
+---
