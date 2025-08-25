@@ -1,6 +1,5 @@
 ---
 hide: 
-    - toc
 ---
 
 <div style="
@@ -54,9 +53,9 @@ Mỗi dự án được chia thành nhiều chủ đề nhỏ nhằm mở rộng
 
 | No. | Project | Status | Key Task |
 | :-: | :------ | :---:  | :------- |
-|  1  | 🏥 Ứng dụng AI hỗ trợ bác sĩ trong phân loại ung thư cổ tử cung tế bào học <br> [[Link](../research-logs/cervical-cancer-cytology/README.md)] | :white_check_mark: | Xây dựng và phát triển mô hình AI hỗ trợ phân loại và hỗ trợ các bác sĩ gán nhãn tự động |
-|  2  | 🏫 Ứng dụng công nghệ AI hỗ trợ giáo dục phổ thông (Ứng dụng hỗ trợ học và dạy tiếng Anh) <br> [[Link](../research-logs/pronunciation-scoring/README.md)] | :hammer_and_wrench: | Nghiên cứu các kỹ thuật và phương pháp cho bài toán Pronunciation Scoring (PS) - Chấm điểm phát âm tiếng Anh cho người Việt |
-|  3  | 💊 Ứng dụng AI hỗ trợ y học | :hourglass: | Nghiên cứu phát triển hệ thống AI hỗ trợ bác sĩ trong quá trình quản lý, đưa ra tư vấn v.v, liên quan đến thuốc |
-|  4  | 🩺 Ứng dụng AI hỗ trợ phân loại ung thư đại trực tràng | :hourglass: | Triển khai hệ thống hỗ trợ bác sĩ phân loại ung thư đại trực tràng, gán nhãn và xây dựng tài liệu học tập |
+|  01  | **Ứng dụng AI hỗ trợ bác sĩ trong phân loại ung thư cổ tử cung tế bào học** <br> [[Link](../research-logs/cervical-cancer-cytology/README.md)] | :white_check_mark: | Xây dựng và phát triển mô hình AI hỗ trợ phân loại và hỗ trợ các bác sĩ gán nhãn tự động |
+|  02  | **Ứng dụng công nghệ AI hỗ trợ giáo dục phổ thông (Ứng dụng hỗ trợ học và dạy tiếng Anh)** <br> [[Link](../research-logs/pronunciation-scoring/README.md)] | :hammer_and_wrench: | Nghiên cứu các kỹ thuật và phương pháp cho bài toán Pronunciation Scoring (PS) - Chấm điểm phát âm tiếng Anh cho người Việt |
+|  03  | **Ứng dụng AI hỗ trợ y học** | :hourglass: | Nghiên cứu phát triển hệ thống AI hỗ trợ bác sĩ trong quá trình quản lý, đưa ra tư vấn v.v, liên quan đến thuốc |
+|  04  | **Ứng dụng AI hỗ trợ phân loại ung thư đại trực tràng** | :hourglass: | Triển khai hệ thống hỗ trợ bác sĩ phân loại ung thư đại trực tràng, gán nhãn và xây dựng tài liệu học tập |
 
 ---

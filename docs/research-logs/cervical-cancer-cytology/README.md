@@ -29,15 +29,15 @@ icon: material/hospital-box
     Trang này sẽ tổng hợp toàn bộ nhật ký nghiên cứu, mã nguồn cá nhân trong quá trình xây dựng hệ thống, cũng như bộ dữ liệu ảnh tế bào học quy mô lớn được cung cấp và cho phép sử dụng công khai từ Bệnh viện A, Thái Nguyên.
 
 
-## My Research Work
-### Research Topics Overview
+## My research work
+### Research topics overview
 
 | No. | Topic | Status | Description |
 | :-: | :---- | :----: | :---------- |
 | 01 | **Ensemble Learning for Cervical Cancer Cytology** <br> [[**notes**](https://)] [[**code**](https://)] | :material-check-all: | <ul><li>Nghiên cứu và đánh giá hiệu suất các phương pháp học tập tổ hợp (ensemble methods) trong phân loại ảnh tế bào học.</li><li>Thiết kế thí nghiệm và huấn luyện mô hình trên các bộ dữ liệu thực tế về ung thư cổ tử cung.</li><li>Đánh giá hiệu năng của mô hình dựa trên nhiều tiêu chí khác nhau.</li><li>Công bố kết quả nghiên cứu tại một hội nghị chuyên ngành về Trí tuệ Nhân tạo.</li></ul> |
 | 02 | **Improving Cervical Cancer Screening Through Self-Supervised Learning** <br> [[**notes**](../cervical-cancer-cytology/notes/ssl_for_cervical_cancer.md)] [[**code**](https://)] | :material-close: | <ul><li>Khảo sát các kỹ thuật học tự giám sát trong phân tích ảnh y tế.</li><li>Xây dựng bộ dữ liệu và lựa chọn các tác vụ tiền huấn luyện phù hợp với ảnh tế bào học.</li><li>Thiết kế bộ tiêu chí đánh giá để so sánh với các phương pháp truyền thống.</li></ul> |
 
-### Materials Related to the Research
+### Materials related to the research
 
 **Topic 01. Ensemble Learning for Cervical Cancer Cytology:**
 
@@ -54,7 +54,7 @@ icon: material/hospital-box
 - Paper C: [**Bootstrap Your Own Latent A New Approach to Self-Supervised Learning**](https://arxiv.org/pdf/2006.07733)
 
 ---
-## Quick Links
+## Quick links
 
 Toàn bộ ghi chú (notes), code (mã) và tập dữ liệu (datasets) về Ung thư cổ tử cung liên quan đến dự án có thể tìm thấy tại đây:
 

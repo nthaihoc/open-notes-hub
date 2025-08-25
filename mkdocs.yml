@@ -5,7 +5,7 @@ site_name: OpenNotesHub
 theme:
   favicon: assets/images/logo.png
   palette:
-    primary: black
+    primary: blue grey
     accent: red
   
   font:
@@ -100,7 +100,8 @@ nav:
     - Research Logs: research-logs/README.md
     - Cervical Cancer Cytology: 
       - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology/README.md
-      - Topic 01. Ensemble Learning for Cervical Cancer: research-logs/cervical-cancer-cytology/note-01-ssl-for-cervical-cancer.md
+      - Topic 01. Ensemble Learning Techniques: research-logs/cervical-cancer-cytology/note-01-ssl-for-cervical-cancer.md
+      - Topic 02. Self Supervised Learning Algorithm: research-logs/cervical-cancer-cytology/note-01-ensemble-learning-for-cervical-cancer.md
     - Pronunciation Scoring:
       - Pronunciation Scoring: research-logs/pronunciation-scoring/README.md
       - Tổng quan về Pronunciation Scoring: research-logs/pronunciation-scoring/report01.md
