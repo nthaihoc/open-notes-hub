@@ -102,11 +102,10 @@ nav:
       - Cervical Cancer Cytology: research-logs/cervical-cancer-cytology/README.md
       - Topic 01. Ensemble Learning Techniques: research-logs/cervical-cancer-cytology/note-01-ssl-for-cervical-cancer.md
       - Topic 02. Self Supervised Learning Algorithm: research-logs/cervical-cancer-cytology/note-01-ensemble-learning-for-cervical-cancer.md
-    - Pronunciation Scoring:
-      - Pronunciation Scoring: research-logs/pronunciation-scoring/README.md
-      - Tổng quan về Pronunciation Scoring: research-logs/pronunciation-scoring/report01.md
-      - Triển khai mô hình cơ bản, đánh giá và phân tích lỗi: research-logs/pronunciation-scoring/report02.md
-
+    # - Pronunciation Scoring:
+    #   - Pronunciation Scoring: research-logs/pronunciation-scoring/README.md
+    #   - Tổng quan về Pronunciation Scoring: research-logs/pronunciation-scoring/report01.md
+    #   - Triển khai mô hình cơ bản, đánh giá và phân tích lỗi: research-logs/pronunciation-scoring/report02.md
 
   - Course Notes:
     - Course Notes: course-notes/README.md
