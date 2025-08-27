@@ -194,5 +194,5 @@ cython_debug/
 .cursorindexingignore
 
 # hide folder path
-research-logs/pronunciation-scoring/
+docs/research-logs/pronunciation-scoring/
 .venv/
