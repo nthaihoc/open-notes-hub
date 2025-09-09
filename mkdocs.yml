@@ -63,7 +63,7 @@ markdown_extensions:
   - footnotes
   - meta
   - toc:
-      title: Mục Lục
+      title: Table of Contents
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.critic
@@ -110,7 +110,10 @@ nav:
   - Course Notes:
     - Course Notes: course-notes/README.md
     - Applied Machine Learning: course-notes/applied-machine-learning/README.md
-
+    - Large Language Models:
+      - Large Language Models: course-notes/large-language-models/README.md
+      - Lesson 03. Attention Mechanisms Knowledge Base: course-notes/large-language-models/lesson-03-attention_mechanisms_knowledge_base.md
+      
   - Knowledge Base:
     - Knowledge Base: knowledge-base/README.md
     # - MLOps Tutorials: knowledge-base/mlops-tutorials/README.md
