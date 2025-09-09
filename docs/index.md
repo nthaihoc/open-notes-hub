@@ -59,9 +59,9 @@ hide:
 
     [[OpenNotesHub](https://nthaihoc.github.io/open-notes)] là một không gian nhỏ mà tôi tạo ra chủ yếu là để tập hợp nhiều ghi chú và tài liệu phục vụ cho mục đích học tập, nghiên cứu và chia sẻ kiến thức. Trong đó chứa một số thành phần sau: 
 
-    - [[Research Logs](research-logs/README.md)] - Tổng hợp các tài liệu, ghi chú và kết quả thực nghiệm liên quan đến phương pháp và kỹ thuật nghiên cứu trong quá trình làm việc.
+    - [[Research Logs](research/README.md)] - Tổng hợp các tài liệu, ghi chú và kết quả thực nghiệm liên quan đến phương pháp và kỹ thuật nghiên cứu trong quá trình làm việc.
 
-    - [[Course Notes](course-notes/README.md)] - Sắp xếp và tổng hợp lại những ghi chú trong suốt quá trình nghiên cứu và học tập, sau đó biên soạn lại thành những khóa học ngắn gọn, dễ tiếp cận.
+    - [[Course Notes](courses/README.md)] - Sắp xếp và tổng hợp lại những ghi chú trong suốt quá trình nghiên cứu và học tập, sau đó biên soạn lại thành những khóa học ngắn gọn, dễ tiếp cận.
 
     - [[Knowledge Base](knowledge-base/README.md)] - Bao gồm các kiến thực nền tảng và tài liệu tham khảo ở nhiều lĩnh vực khác nhau, được hệ thống hóa hỗ trợ cho việc học tập và nghiên cứu.
 
