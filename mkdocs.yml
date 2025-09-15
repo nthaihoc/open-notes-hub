@@ -97,33 +97,33 @@ nav:
   - Home: index.md
 
   - Research Logs: 
-    - Overview: research/README.md
+    - Research Logs: research/README.md
 
     - Cervical Cancer Cytology:
-      - Overview: research/cervical-cancer-cytology/README.md
+      - Cervical Cancer Cytology: research/cervical-cancer-cytology/README.md
       - Experiment 01 - Ensemble Learning: research/cervical-cancer-cytology/experiments/note-01-ssl-for-cervical-cancer.md
       - Experiment 02 - Self-Supervised Learning: research/cervical-cancer-cytology/experiments/note-01-ensemble-learning-for-cervical-cancer.md
 
-    - Pronunciation Scoring:
-      - Overview: research/pronunciation-scoring/README.md
-      - Report 01 - Introduction: research/pronunciation-scoring/experiments/report01.md
-      - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/experiments/report02.md
+    # - Pronunciation Scoring:
+    #   - Overview: research/pronunciation-scoring/README.md
+    #   - Report 01 - Introduction: research/pronunciation-scoring/experiments/report01.md
+    #   - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/experiments/report02.md
 
   - Course Notes:
-    - Overview: courses/README.md
+    - Course Notes: courses/README.md
 
     - Applied Machine Learning: courses/applied-machine-learning/README.md
 
     - Large Language Models:
-      - Overview: courses/large-language-models/README.md
+      - Large Language Models: courses/large-language-models/README.md
       - Lesson 03. Attention Mechanisms: courses/large-language-models/lesson-03-attention_mechanisms_knowledge_base.md
       
   - Knowledge Base:
-    - Overview: knowledge-base/README.md
+    - Knowledge Base: knowledge-base/README.md
 
     # - MLOps Tutorials: knowledge-base/mlops-tutorials/README.md
     - FastAPI Tutorials:
-      - Overview: knowledge-base/fastapi-tutorials/README.md
+      - FastAPI Tutorials: knowledge-base/fastapi-tutorials/README.md
       - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi-tutorials/lesson-01-fastapi_overview_and_project_setup.md
 
 # 05. setup other configurations
@@ -147,3 +147,4 @@ extra:
     - icon: material/facebook
       link: https://www.facebook.com/nthaihoc.02
       name: Facebook
+      

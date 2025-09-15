@@ -10,7 +10,7 @@ p {
 }
 
 .md-typeset .admonition {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .md-typeset a {
@@ -24,7 +24,7 @@ p {
 
 .md-typeset {
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .md-typeset h1,
@@ -62,7 +62,7 @@ p {
 }
 
 .md-footer__title {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .md-typeset table:not([align]) {
