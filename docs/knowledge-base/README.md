@@ -3,7 +3,7 @@ hide:
     - toc
 ---
 
-<div style="
+<!-- <div style="
     background-image: url('../assets/images/notes.jpg');
     background-size: cover;
     background-position: center;
@@ -18,7 +18,7 @@ hide:
     padding: 40px 20px;
     margin-bottom: 30px;
 ">
-</div>
+</div> -->
 
 # 🫒 Knowledge Base
 ---

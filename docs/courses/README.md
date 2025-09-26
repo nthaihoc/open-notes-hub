@@ -3,7 +3,7 @@ hide:
     - toc
 ---
 
-<div style="
+<!-- <div style="
     background-image: url('../assets/images/courses.jpg');
     background-size: cover;
     background-position: center;
@@ -18,7 +18,7 @@ hide:
     padding: 40px 20px;
     margin-bottom: 30px;
 ">
-</div>
+</div> -->
 
 # 🎓 Course Notes
 ---

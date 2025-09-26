@@ -3,7 +3,7 @@ hide:
     - navigation
     - toc
 ---
-
+<!-- 
 <div style="
     background-image: url('assets/images/home.jpg');
     background-size: cover;
@@ -19,7 +19,7 @@ hide:
     padding: 40px 20px;
     margin-bottom: 30px;
 ">
-</div>
+</div> -->
 
 # ☘️ OpenNotesHub
 ---
@@ -38,7 +38,6 @@ hide:
 
 
 ## 👀 About Me
----
 
 !!! warning ""
     
@@ -53,7 +52,6 @@ hide:
     - Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
 
 ## 🧠 OpenNotesHub
----
 
 !!! warning ""
 
@@ -68,7 +66,6 @@ hide:
     🚀 Tôi hy vọng nơi đây sẽ trở thành một nguồn tài nguyên hữu ích – nơi bạn có thể tìm thấy điều mình đang tìm kiếm, hoặc đơn giản là cùng tôi học thêm điều mới mỗi ngày.
 
 ## ☎️ Contact
----
 
 !!! warning ""
 

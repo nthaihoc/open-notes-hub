@@ -2,7 +2,7 @@
 hide: 
 ---
 
-<div style="
+<!-- <div style="
     background-image: url('../assets/images/research.jpg');
     background-size: cover;
     background-position: center;
@@ -17,7 +17,7 @@ hide:
     padding: 40px 20px;
     margin-bottom: 30px;
 ">
-</div>
+</div> -->
 
 # 🔬 Research Logs
 ---
@@ -29,9 +29,10 @@ hide:
 [![Python](https://img.shields.io/badge/python-org-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![PyTorch](https://img.shields.io/badge/pytorch-framework-yellow?style=for-the-badge&logo=pytorch&logoColor=brown)](https://pytorch.org)
 [![MLFlow](https://img.shields.io/badge/MLflow-tracking-blue?style=for-the-badge&logo=mlflow&logoColor=blue)](https://mlflow.org)
-[![NumPy](https://img.shields.io/badge/NumPy-library-purple?style=for-the-badge&logo=numpy&logoColor=blue)](https://numpy.org)
 
+[![NumPy](https://img.shields.io/badge/NumPy-library-purple?style=for-the-badge&logo=numpy&logoColor=blue)](https://numpy.org) 
 [![HuggingFace](https://img.shields.io/badge/hugging_face-framework-pink?style=for-the-badge&logo=huggingface&logoColor=yellow)](https://huggingface.co)
+
 [![Pandas](https://img.shields.io/badge/pandas-framework-brown?style=for-the-badge&logo=pandas&logoColor=purple)](https://pandas.pydata.org)
 [![Google Colab](https://img.shields.io/badge/google-colab-green?style=for-the-badge&logo=googlecolab&logoColor=orange)](https://colab.research.google.com)
 
