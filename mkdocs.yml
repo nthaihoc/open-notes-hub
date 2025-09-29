@@ -101,8 +101,8 @@ nav:
 
     - Cervical Cancer Cytology:
       - Cervical Cancer Cytology: research/cervical-cancer-cytology/README.md
-      - experiment-01-data_aggeration_training_evaluation : research/cervical-cancer-cytology/experiments/exp-01-ensemble_learning.md 
-      - experiment-02-self_supervised_learning: research/cervical-cancer-cytology/experiments/exp-02-self_supervised_learning.md
+      - Experiment 01. Data Aggeration Training Evaluation : research/cervical-cancer-cytology/experiments/exp-01-ensemble_learning.md 
+      - Experiment 02. Self Supervised Learning: research/cervical-cancer-cytology/experiments/exp-02-self_supervised_learning.md
 
     # - Pronunciation Scoring:
     #   - Overview: research/pronunciation-scoring/README.md
@@ -124,7 +124,7 @@ nav:
     # - MLOps Tutorials: knowledge-base/mlops-tutorials/README.md
     - FastAPI Tutorials:
       - FastAPI Tutorials: knowledge-base/fastapi-tutorials/README.md
-      - lesson-01-fastAPI_overview_and_project_setup: knowledge-base/fastapi-tutorials/lesson-01-fastapi_overview_and_project_setup.md
+      - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi-tutorials/lesson-01-fastapi_overview_and_project_setup.md
 
 # 05. setup other configurations
 extra:
