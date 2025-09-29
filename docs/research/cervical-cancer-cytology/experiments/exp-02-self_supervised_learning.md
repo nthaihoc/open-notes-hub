@@ -1,6 +1,5 @@
 ---
 title: Self-Supervised Learning for Cervical Cancer Classification
-icon: material/numeric-1-circle
 ---
 
 # Topic 01. Self-Supervised Learning for Cervical Cancer Classification

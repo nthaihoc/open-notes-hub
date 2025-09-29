@@ -1,6 +1,5 @@
 ---
 title: Notes on Data Aggregation, Training, and Evaluation Strategies
-icon: material/numeric-1-circle
 ---
 
 # Notes on Data Aggregation, Training, and Evaluation Strategies
