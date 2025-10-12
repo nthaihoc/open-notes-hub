@@ -3,7 +3,7 @@ hide:
     - navigation
     - toc
 ---
-<!-- 
+
 <div style="
     background-image: url('assets/images/home.jpg');
     background-size: cover;
@@ -19,7 +19,7 @@ hide:
     padding: 40px 20px;
     margin-bottom: 30px;
 ">
-</div> -->
+</div>
 
 # ☘️ OpenNotesHub
 ---
