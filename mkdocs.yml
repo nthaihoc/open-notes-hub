@@ -123,8 +123,8 @@ nav:
 
     # - MLOps Tutorials: knowledge-base/mlops-tutorials/README.md
     - FastAPI Tutorials:
-      - FastAPI Tutorials: knowledge-base/fastapi-tutorials/README.md
-      - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi-tutorials/lesson-01-fastapi_overview_and_project_setup.md
+      - FastAPI Tutorials: knowledge-base/fastapi/README.md
+      - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
 
 # 05. setup other configurations
 extra:
