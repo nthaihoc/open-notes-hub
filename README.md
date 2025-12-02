@@ -30,12 +30,12 @@
 [![Static Badge](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
 
 ## 👀 Về tôi
-
+---
 👋 Xin chào! Tôi là [Nguyễn Thái Học](https://nthaihoc.github.io/about-me) - kỹ sư và nhà nghiên cứu Trí tuệ nhân tạo (Artificial Intelligence - AI) tại [Viện Khoa học & Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), trực thuộc [Trường Đại học Công nghệ Thông tin & Truyền thông (ICTU)](https://ictu.edu.vn). 
 
 Tôi bắt đầu theo học chương trình kỹ sư chuyên nghành Khoa học dữ liệu & Trí tuệ nhân tạo (Data Science & Artificial Intelligence) tại ICTU vào năm 2020 và dự kiến tốt nghiệp vào năm 2025. Niềm đam mê với AI của tôi chỉ thực sự bùng nổ vào cuối năm thứ ba đại học, khi tôi bắt đầu tiếp cận sâu hơn các môn học chuyên nghành.
 
-Tháng 08/2024, tôi tham gia nghiên cứu tại Viện IAST với vai trò thực tập sinh thị giác máy tính (Computer Vision Intern). Tại đây, tôi vừa củng cố kiến thức nền tảng vừa trực tiếp nghiên cứu và phát triển một số ứng dụng AI trong lĩnh vực chăm sóc sức khỏe (healthcare) và giáo dục (education).
+Tháng 08/2023, tôi tham gia nghiên cứu tại Viện IAST với vai trò thực tập sinh thị giác máy tính (Computer Vision Intern). Tại đây, tôi vừa củng cố kiến thức nền tảng vừa trực tiếp nghiên cứu và phát triển một số ứng dụng AI trong lĩnh vực chăm sóc sức khỏe (healthcare) và giáo dục (education).
 
 🏣 Hiện tại, tôi đang tập trung vào việc nghiên cứu và phát triển các ứng dụng Machine Learning và Computer Vision nhằm giải quyết các bài toán thực tiễn trong lĩnh vực chăm sóc sức khỏe và giáo dục trực tuyến. Bên cạnh đó, tôi cũng làm việc với các mô hình ngôn ngữ lớn (Large Language Models) và mô hình kết hợp giữa ngôn ngữ và thị giác (Vision-Language Models) với mục tiêu nâng cao chất lượng và hiệu quả cho các giải pháp công nghệ ứng dụng trong đời sống.
 
