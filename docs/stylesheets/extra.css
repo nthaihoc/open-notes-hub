@@ -71,9 +71,9 @@ p {
 
 .md-typeset hr {
   border: 0;
-  width: 10%; 
+  width: 80%; 
   border-top: 3px solid #0033a0; 
   border-radius: 5px; 
   margin: 4em auto; 
-  opacity: 0.7;
+  opacity: 0.2;
 }
