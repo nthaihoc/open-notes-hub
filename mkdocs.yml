@@ -5,7 +5,7 @@ site_name: OpenNotesHub
 theme:
   favicon: octicons/book-24
   palette:
-    primary: blue grey
+    primary: white
     accent: red
   
   font:
