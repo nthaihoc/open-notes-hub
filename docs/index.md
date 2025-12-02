@@ -28,13 +28,16 @@ hide:
 > 
 > 🌾 **"What I cannot create, I do not understand"**
 
-[![Static Badge](https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue)](https://nthaihoc.github.io/about-me)
-[![Static Badge](https://img.shields.io/badge/email-thaihoc.ictu-yellow?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thaihoc.ictu@gmail.com)
-[![Static Badge](https://img.shields.io/badge/Google-Scholar-orange?style=for-the-badge&logo=googlescholar&logoColor=blue)](https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi)
-[![Static Badge](https://img.shields.io/badge/Facebook-nthoc02-pink?style=for-the-badge&logo=facebook&logoColor=blue)](https://www.facebook.com/nthoc02)
-[![Static Badge](https://img.shields.io/badge/Kaggle-thaihoc-brown?style=for-the-badge&logo=kaggle&logoColor=blue)](https://www.kaggle.com/nguyenthaihoc)
-[![Static Badge](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
+<br>
 
+<div align="center">
+    [![Static Badge](https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue)](https://nthaihoc.github.io/about-me)
+    [![Static Badge](https://img.shields.io/badge/email-thaihoc.ictu-yellow?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thaihoc.ictu@gmail.com)
+    [![Static Badge](https://img.shields.io/badge/Google-Scholar-orange?style=for-the-badge&logo=googlescholar&logoColor=blue)](https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi)
+    [![Static Badge](https://img.shields.io/badge/Facebook-nthoc02-pink?style=for-the-badge&logo=facebook&logoColor=blue)](https://www.facebook.com/nthoc02)
+    [![Static Badge](https://img.shields.io/badge/Kaggle-thaihoc-brown?style=for-the-badge&logo=kaggle&logoColor=blue)](https://www.kaggle.com/nguyenthaihoc)
+    [![Static Badge](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
+</div>
 
 ## 👀 About Me
 ---
