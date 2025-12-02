@@ -2,7 +2,7 @@
 title: Self-Supervised Learning for Cervical Cancer Classification
 ---
 
-# Topic 01. Self-Supervised Learning for Cervical Cancer Classification
+# #topic-02-self_supervised_learning_for_cervical_cancer_classification
 ---
 
 ## Experimental setup

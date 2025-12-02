@@ -26,7 +26,7 @@ icon: material/hospital-box
 !!! info ""
     Cervical Cancer Cytology (Ung thư cổ tử cung – Tế bào học) là một dự án nghiên cứu và phát triển được thực hiện trong khuôn khổ hợp tác giữa Viện Khoa học và Công nghệ Ứng dụng và Bệnh viện A, Thái Nguyên. Mục tiêu chính của dự án là xây dựng một hệ thống hỗ trợ bác sĩ trong việc sàng lọc và ra quyết định nhanh chóng trên hình ảnh tế bào học bằng các phương pháp AI hiện đại.
 
-    Trang này sẽ tổng hợp toàn bộ nhật ký nghiên cứu, mã nguồn cá nhân trong quá trình xây dựng hệ thống, cũng như bộ dữ liệu ảnh tế bào học quy mô lớn được cung cấp và cho phép sử dụng công khai từ Bệnh viện A, Thái Nguyên.
+    Trang này sẽ tổng hợp toàn bộ nhật ký nghiên cứu, mã nguồn cá nhân trong quá trình xây dựng hệ thống, cũng như bộ dữ liệu ảnh tế bào học quy mô lớn được cung cấp và cho phép sử dụng công khai từ Bệnh viện A, Thái Nguyên. 
 
 
 ## My research work

@@ -195,4 +195,4 @@ cython_debug/
 
 # hide folder path
 docs/research/pronunciation-scoring/
-.venv/
+.base/
