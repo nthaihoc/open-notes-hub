@@ -30,11 +30,26 @@ hide:
 
 <br>
 
-<div align="center">
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue)](https://nthaihoc.github.io/about-me) [![Email](https://img.shields.io/badge/email-thaihoc.ictu-yellow?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thaihoc.ictu@gmail.com) [![Scholar](https://img.shields.io/badge/Google-Scholar-orange?style=for-the-badge&logo=googlescholar&logoColor=blue)](https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi) [![Facebook](https://img.shields.io/badge/Facebook-nthoc02-pink?style=for-the-badge&logo=facebook&logoColor=blue)](https://www.facebook.com/nthoc02) [![Kaggle](https://img.shields.io/badge/Kaggle-thaihoc-brown?style=for-the-badge&logo=kaggle&logoColor=blue)](https://www.kaggle.com/nguyenthaihoc) [![GitHub](https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nthaihoc)
-
-</div>
+<p align="center">
+  <a href="https://nthaihoc.github.io/about-me">
+    <img src="https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue" alt="Portfolio">
+  </a>
+  <a href="mailto:thaihoc.ictu@gmail.com">
+    <img src="https://img.shields.io/badge/email-thaihoc.ictu-yellow?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi">
+    <img src="https://img.shields.io/badge/Google-Scholar-orange?style=for-the-badge&logo=googlescholar&logoColor=blue" alt="Scholar">
+  </a>
+  <a href="https://www.facebook.com/nthoc02">
+    <img src="https://img.shields.io/badge/Facebook-nthoc02-pink?style=for-the-badge&logo=facebook&logoColor=blue" alt="Facebook">
+  </a>
+  <a href="https://www.kaggle.com/nguyenthaihoc">
+    <img src="https://img.shields.io/badge/Kaggle-thaihoc-brown?style=for-the-badge&logo=kaggle&logoColor=blue" alt="Kaggle">
+  </a>
+  <a href="https://github.com/nthaihoc">
+    <img src="https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+</p>
 
 ## 👀 About Me
 ---
