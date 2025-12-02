@@ -4,18 +4,7 @@ hide:
     - toc
 ---
 
-<div style="
-    background-image: url('assets/images/field.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    margin-bottom: 2rem;
-">
-</div>
+<div class="hero-banner" style="background-image: url('assets/images/field.jpg');"></div>
 
 <div align="center">
     <h1 style="margin-bottom: 10px; font-size: 2.5em;">☘️ OpenNotesHub</h1>
@@ -46,7 +35,6 @@ hide:
       </a>
     </p>
 </div>
-
 
 ## 👀 About Me
 ---

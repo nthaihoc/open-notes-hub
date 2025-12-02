@@ -4,39 +4,40 @@ hide:
     - navigation
 ---
 
-<div style="
-    background-image: url('../assets/images/rice-terraces.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-">
+<div class="hero-banner" style="background-image: url('../assets/images/rice-terraces.jpg')"></div>
+
+<div align="center">
+    <h1 style="margin-bottom: 10px; font-size: 2.5em;">🍎 Research Logs</h1>
+    
+    <div style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.6;">
+        "Dream big. Start small. Act now"<br>
+        "The expert in anything was once a beginner"
+    </div>
+
+    <p style="text-align: center;">
+      <a href="https://www.python.org">
+        <img src="https://img.shields.io/badge/python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+      </a>
+      <a href="https://pytorch.org">
+        <img src="https://img.shields.io/badge/pytorch-framework-orange?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch">
+      </a>
+      <a href="https://numpy.org">
+        <img src="https://img.shields.io/badge/NumPy-library-blue?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+      </a>
+      <a href="https://pandas.pydata.org">
+        <img src="https://img.shields.io/badge/pandas-library-purple?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+      </a>
+      <a href="https://mlflow.org">
+        <img src="https://img.shields.io/badge/MLflow-tracking-blue?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLFlow">
+      </a>
+      <a href="https://huggingface.co">
+        <img src="https://img.shields.io/badge/hugging_face-models-yellow?style=for-the-badge&logo=huggingface&logoColor=black" alt="HuggingFace">
+      </a>
+      <a href="https://colab.research.google.com">
+        <img src="https://img.shields.io/badge/google-colab-orange?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Google Colab">
+      </a>
+    </p>
 </div>
-
-# 🍎 Research Logs
----
-
-> 🌹 **"Dream big. Start small. Act now"**
->
-> 🌻 **"The expert in anything was once a beginner"**
-
-[![Python](https://img.shields.io/badge/python-org-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
-[![PyTorch](https://img.shields.io/badge/pytorch-framework-yellow?style=for-the-badge&logo=pytorch&logoColor=brown)](https://pytorch.org)
-[![MLFlow](https://img.shields.io/badge/MLflow-tracking-blue?style=for-the-badge&logo=mlflow&logoColor=blue)](https://mlflow.org)
-
-[![NumPy](https://img.shields.io/badge/NumPy-library-purple?style=for-the-badge&logo=numpy&logoColor=blue)](https://numpy.org) 
-[![HuggingFace](https://img.shields.io/badge/hugging_face-framework-pink?style=for-the-badge&logo=huggingface&logoColor=yellow)](https://huggingface.co)
-
-[![Pandas](https://img.shields.io/badge/pandas-framework-brown?style=for-the-badge&logo=pandas&logoColor=purple)](https://pandas.pydata.org)
-[![Google Colab](https://img.shields.io/badge/google-colab-green?style=for-the-badge&logo=googlecolab&logoColor=orange)](https://colab.research.google.com)
 
 ## I. Tổng quan
 ---

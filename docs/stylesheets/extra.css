@@ -75,3 +75,14 @@ p {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #0033a0, rgba(0, 0, 0, 0));
   margin: 0em 0; 
 }
+
+.hero-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+}
