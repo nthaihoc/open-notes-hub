@@ -68,3 +68,8 @@ p {
 .md-typeset table:not([align]) {
   font-size: 90%;
 }
+
+.md-typeset hr {
+    border-bottom: 2px dashed #0033a0; /* Đường kẻ nét đứt màu xanh */
+    margin: 2em 0; /* Khoảng cách trên dưới */
+}
