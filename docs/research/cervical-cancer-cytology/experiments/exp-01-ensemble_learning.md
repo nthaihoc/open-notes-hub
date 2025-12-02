@@ -1,4 +1,7 @@
 ---
+hide:
+    - navigation
+    - toc
 title: Notes on Data Aggregation, Training, and Evaluation Strategies
 ---
 

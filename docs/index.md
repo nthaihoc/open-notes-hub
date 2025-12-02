@@ -9,10 +9,10 @@ hide:
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px; /* Chiều cao cố định vừa phải, không quá lớn */
+    height: 300px;
     width: 100%;
-    border-radius: 15px; /* Bo tròn góc tạo sự mềm mại */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Đổ bóng tạo chiều sâu */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     margin-bottom: 2rem;
 ">
 </div>
@@ -25,7 +25,7 @@ hide:
         "What I cannot create, I do not understand"
     </div>
 
-    <p>
+    <p style="text-align: center;">
       <a href="https://nthaihoc.github.io/about-me">
         <img src="https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue" alt="Portfolio">
       </a>
@@ -47,7 +47,6 @@ hide:
     </p>
 </div>
 
-<br><br>
 
 ## 👀 About Me
 ---
