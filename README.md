@@ -1,5 +1,5 @@
 <div style="
-    background-image: url('docs/assets/images/home.jpg');
+    background-image: url('docs/assets/images/field.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -4,7 +4,7 @@ icon: material/hospital-box
 ---
 
 <div style="
-    background-image: url('../../assets/images/research_cervical_cancer_classification.jpg');
+    background-image: url('../../assets/images/cervical_cancer.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

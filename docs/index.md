@@ -5,7 +5,7 @@ hide:
 ---
 
 <div style="
-    background-image: url('assets/images/home.jpg');
+    background-image: url('assets/images/field.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

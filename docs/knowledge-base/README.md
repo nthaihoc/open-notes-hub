@@ -4,7 +4,7 @@ hide:
 ---
 
 <div style="
-    background-image: url('../assets/images/notes.jpg');
+    background-image: url('../assets/images/rice.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

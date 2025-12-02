@@ -3,7 +3,7 @@ hide:
 ---
 
 <div style="
-    background-image: url('../assets/images/research.jpg');
+    background-image: url('../assets/images/rice-terraces.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
