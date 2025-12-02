@@ -70,6 +70,6 @@ p {
 }
 
 .md-typeset hr {
-    border-bottom: 2px dashed #0033a0; /* Đường kẻ nét đứt màu xanh */
-    margin: 2em 0; /* Khoảng cách trên dưới */
+    border-bottom: 2px dashed #0033a0; 
+    margin: 2em 0; 
 }
