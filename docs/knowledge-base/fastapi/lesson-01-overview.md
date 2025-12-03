@@ -1,13 +1,19 @@
 ---
 title: Lesson 01. FastAPI Overview and Project Setup
+hide:
+    - toc
 ---
 
 # ❄️ Lesson 01. FastAPI Overview and Project Setup
----
-!!! tip ""
-    Nội dung trong bài này cung cấp các kiến thức, cấu trúc cơ bản và vững chắc về FastAPI. Bạn sẽ có thể thiết lập một dự án mới, định nghĩa được các endpoint API, nắm bắt được cách xử lý dữ liệu với FastAPI.
+<br>
+!!! tip "Table of Contents"
 
-## Technical requirements
+    [**1. Technical requirements**](#technical-requirements)
+
+    [**2. Setting up development environment**](#setting-up-development-environment)
+
+## 1. Technical requirements
+---
 
 Để triển khai thành công một dự án với FastAPI, cần thiết lập một môi trường hỗ trợ phát triển Python và các chức năng của FastAPI. Một số thành phần kỹ thuật quan trọng cần cài đặt:
 
@@ -23,7 +29,8 @@ title: Lesson 01. FastAPI Overview and Project Setup
 
 - Git: Là công cụ được sử dụng rộng rãi cho phép quản lý phiên bản.
 
-## Setting up development environment
+## 2. Setting up development environment
+---
 
 **Cài đặt Python trên Windows.** FastAPI họat động với Python, vì vậy cần kiểm tra phiên bản Python trước khi sử dụng, đây là bước quan trọng để thiết lập FastAPI.
 

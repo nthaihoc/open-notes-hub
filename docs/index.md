@@ -9,29 +9,34 @@ hide:
 <div align="center">
     <h1 style="margin-bottom: 10px; font-size: 2.5em;">☘️ OpenNotesHub</h1>
     
-    <div style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.6;">
+    <div style="font-style: italic; color: #666; margin-bottom: 25px; line-height: 1.6;">
         "Be kind. Be curious. Be courageous"<br>
         "What I cannot create, I do not understand"
     </div>
 
     <p style="text-align: center;">
       <a href="https://nthaihoc.github.io/about-me">
-        <img src="https://img.shields.io/badge/Portfolio-Website-red?style=for-the-badge&logo=westernunion&logoColor=blue" alt="Portfolio">
+        <img src="https://img.shields.io/badge/Portfolio-24292e?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio">
       </a>
+      
       <a href="mailto:thaihoc.ictu@gmail.com">
-        <img src="https://img.shields.io/badge/email-thaihoc.ictu-yellow?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+        <img src="https://img.shields.io/badge/Email-24292e?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
       </a>
+      
       <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi">
-        <img src="https://img.shields.io/badge/Google-Scholar-orange?style=for-the-badge&logo=googlescholar&logoColor=blue" alt="Scholar">
+        <img src="https://img.shields.io/badge/Scholar-24292e?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar">
       </a>
+
       <a href="https://www.facebook.com/nthoc02">
-        <img src="https://img.shields.io/badge/Facebook-nthoc02-pink?style=for-the-badge&logo=facebook&logoColor=blue" alt="Facebook">
+        <img src="https://img.shields.io/badge/Facebook-24292e?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
       </a>
+
       <a href="https://www.kaggle.com/nguyenthaihoc">
-        <img src="https://img.shields.io/badge/Kaggle-thaihoc-brown?style=for-the-badge&logo=kaggle&logoColor=blue" alt="Kaggle">
+        <img src="https://img.shields.io/badge/Kaggle-24292e?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle">
       </a>
+
       <a href="https://github.com/nthaihoc">
-        <img src="https://img.shields.io/badge/Repo-Available-green?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        <img src="https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
       </a>
     </p>
 </div>
@@ -42,11 +47,7 @@ hide:
 
 🏣 Tháng 08/2023, tôi tham gia nghiên cứu tại Viện IAST với vai trò thực tập sinh thị giác máy tính (Computer Vision Intern). Tại đây, tôi vừa củng cố kiến thức nền tảng vừa trực tiếp nghiên cứu và phát triển một số ứng dụng AI trong lĩnh vực chăm sóc sức khỏe (healthcare) và giáo dục (education). Hiện tại, tôi đang tập trung vào việc nghiên cứu và phát triển các ứng dụng Machine Learning và Computer Vision nhằm giải quyết các bài toán thực tiễn trong lĩnh vực chăm sóc sức khỏe và giáo dục trực tuyến.
     
-Bên cạnh đó, tôi cũng làm việc với các mô hình ngôn ngữ lớn (Large Language Models) và mô hình kết hợp giữa ngôn ngữ và thị giác (Vision-Language Models) với mục tiêu nâng cao chất lượng và hiệu quả cho các giải pháp công nghệ ứng dụng trong đời sống. Bên cạnh đó, tôi cũng quan tâm và có sở thích nghiên cứu ở một số lĩnh vực như:
-
-- Ứng dụng MLOps, DLOps, LLMOps để tối ưu hóa quy trình phát triển, triển khai và vận hành các mô hình AI.
-
-- Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
+Bên cạnh đó, tôi cũng làm việc với các mô hình ngôn ngữ lớn (Large Language Models) và mô hình kết hợp giữa ngôn ngữ và thị giác (Vision-Language Models) với mục tiêu nâng cao chất lượng và hiệu quả cho các giải pháp công nghệ ứng dụng trong đời sống. Bên cạnh đó, tôi cũng quan tâm và có sở thích nghiên cứu ở một số lĩnh vực như: (1) Ứng dụng MLOps, DLOps, LLMOps để tối ưu hóa quy trình phát triển, triển khai và vận hành các mô hình AI và (2) Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
 
 ## 🧠 OpenNotesHub
 ---
@@ -70,4 +71,7 @@ Bạn có thể xem thêm thông tin hoặc kết nối với tôi qua những n
 | 💬 Facebook | [facebook.com/nthaihoc02](https://facebook.com/nthaihoc02) |
 | 🌐 Website | [nthaihoc.github.io/about-me](https://nthaihoc.github.io/about-me) |
 
+<div class="footer-garden">
+    <span>🌾</span><span>🌿</span><span>🌻</span><span>🌿</span><span>🌾</span>
+</div>
 ---
