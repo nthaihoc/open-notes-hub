@@ -45,7 +45,7 @@ Ngoài ra, tôi cũng quan tâm và có sở thích nghiên cứu ở một số
 
 - Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
 
-🧠 [OpenNotesHub](https://nthaihoc.github.io/open-notes) là một không gian nhỏ mà tôi tạo ra chủ yếu là để tập hợp nhiều ghi chú và tài liệu phục vụ cho mục đích học tập, nghiên cứu và chia sẻ kiến thức.
+⚙️ [OpenNotesHub](https://nthaihoc.github.io/open-notes) là một không gian nhỏ mà tôi tạo ra chủ yếu là để tập hợp nhiều ghi chú và tài liệu phục vụ cho mục đích học tập, nghiên cứu và chia sẻ kiến thức.
 
 - [Research Notes](research/) - Tổng hợp các tài liệu, ghi chú và kết quả thực nghiệm liên quan đến phương pháp và kỹ thuật nghiên cứu trong quá trình làm việc.
 

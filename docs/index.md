@@ -49,7 +49,7 @@ hide:
     
 Bên cạnh đó, tôi cũng làm việc với các mô hình ngôn ngữ lớn (Large Language Models) và mô hình kết hợp giữa ngôn ngữ và thị giác (Vision-Language Models) với mục tiêu nâng cao chất lượng và hiệu quả cho các giải pháp công nghệ ứng dụng trong đời sống. Bên cạnh đó, tôi cũng quan tâm và có sở thích nghiên cứu ở một số lĩnh vực như: (1) Ứng dụng MLOps, DLOps, LLMOps để tối ưu hóa quy trình phát triển, triển khai và vận hành các mô hình AI và (2) Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
 
-## 🧠 OpenNotesHub
+## ⚙️ OpenNotesHub
 ---
 [OpenNotesHub](https://nthaihoc.github.io/open-notes) là một không gian nhỏ mà tôi tạo ra chủ yếu là để tập hợp nhiều ghi chú và tài liệu phục vụ cho mục đích học tập, nghiên cứu và chia sẻ kiến thức. Trong đó:
 

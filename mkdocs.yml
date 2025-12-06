@@ -129,6 +129,9 @@ nav:
       - FastAPI Tutorials: knowledge-base/fastapi/README.md
       - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
 
+  - IAST Lab:
+    - Introduction: iast-lab/README.md
+
 # 05. setup other configurations
 extra:
   social:
