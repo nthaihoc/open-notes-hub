@@ -93,7 +93,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
 
 </div>
 
-## :material-presentation: Weekly Seminar
+## :octicons-tasklist-16: Weekly Seminar
 ---
 
 === "Báo cáo cập nhật tiến độ (Progress Reports)"
@@ -102,7 +102,9 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
         **Mục tiêu:** Rà soát, kiểm tra khối lượng công việc thực tế đạt được so với kế hoạch đề ra.
 
         - Kết quả công việc đã hoàn thành trong tuần qua bao gồm tài liệu, nhật ký ghi chú, code thực nghiệm, v.v.
-        - Các vấn đề kỹ thuật hoặc khó khăn phát sinh trong quá trình nghiên cứu (Blockers/Issues).
+
+        - Các vấn đề kỹ thuật hoặc khó khăn phát sinh trong quá trình nghiên cứu.
+
         - Kế hoạch cụ thể cho tuần tiếp theo.
 
 === "Trình bày nghiên cứu khoa học (Paper Review)"
@@ -111,10 +113,12 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
         **Mục tiêu:** Cập nhật tri thức mới, rèn luyện kỹ năng đọc hiểu và tư duy phản biện.
 
         - Mỗi tuần, một thành viên (theo lịch luân phiên) sẽ chọn và trình bày một bài báo khoa học.
-        - Nội dung trình bày: Bài toán giải quyết (Problem), Phương pháp (Method), Kết quả (Experiments) và Nhận xét cá nhân (Review) về ưu/nhược điểm.
+
+        - Nội dung trình bày: Bài toán giải quyết (problem), phương pháp (method), kết quả (experiments) và Nhận xét cá nhân (review) về pros/cons (ưu/nhược điểm).
+
         - Các thành viên còn lại có trách nhiệm tham gia thảo luận và đặt câu hỏi phản biện.
 
-## :material-map-clock: Time & Location
+## :octicons-location-16: Time & Location
 ---
 
 Để đảm bảo quy trình vận hành của Lab được trơn tru, các thành viên vui lòng ghi nhớ địa điểm sinh hoạt và các mốc deadline cố định hàng tuần. 
@@ -126,7 +130,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
 
     - **🏢 Offline:** <br> Viện KH&CNUD - Phòng 403 - Toà nhà C6 <br> *(Địa điểm có thể thay đổi để đảm bảo không gian làm việc luôn luôn mới mé phụ thuộc vào thành viên của nhóm)*
 
-    - **🎥 Online:** <br> [Google Meet Link](#) <br> *(Dành cho thành viên/khách mời - Remote/Intern)*
+    - **🎥 Online:** <br> **[:simple-googlemeet: Google Meet Link](#)** <br> *(Dành cho thành viên hoặc khách mời tham dự trực tuyến)*
 
     </div>
 
@@ -167,23 +171,23 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
 
         {++**Bước 1: Lựa chọn bài báo (Paper Selection)**++}
 
-        - Thành viên ưu tiên lựa chọn các công trình nghiên cứu từ các hội nghị hàng đầu (Top-tier conferences: CVPR, ICCV, ICASSP, Interspeech, NeurIPS...) hoặc các tạp chí uy tín (Q1, Q2).
+        - Thành viên ưu tiên lựa chọn các công trình nghiên cứu từ các hội nghị hàng đầu (Top-tier conferences: CVPR, ICCV, ICASSP, Interspeech, NeurIPS...) hoặc các tạp chí uy tín (Q1, Q2, Q3).
         - Bài báo phải có tính cập nhật hoặc là các bài báo nền tảng, là kiến thức mới đối với các thành viên.
 
         {++**Bước 2: Đăng ký chủ đề (Registration)**++}
 
-        - Thành viên điền thông tin bài báo (Tiêu đề, Tác giả, Link PDF, Lĩnh vực) vào link đăng ký chung [[List_Registration_Paper](#)].
-        - Deadline đăng ký: **Thứ 7 hàng tuần**, để đảm bảo thời gian xét duyệt.
+        - Thành viên điền đầy đủ thông tin bài báo (tên thành viên, tiêu đề, hội nghị, năm công bố, lĩnh vực, link PDF...) vào [**[:material-table-edit: ListPaper](https://docs.google.com/spreadsheets/d/1rLwiwSMnBNsj-SEgDYBTchc7u9wENrCx97TL6-DyzYA/edit?usp=drive_link)**].
+        - **Deadline:** *23:59 Thứ 7 hàng tuần (để đảm bảo thời gian xét duyệt).*
 
         {++**Bước 3: Phê duyệt & Lên lịch (Approval & Scheduling)**++}
 
-        - Team Lead (hoặc người phụ trách chuyên môn) sẽ xem xét tính phù hợp của bài báo mà thành viên đã đăng ký.
+        - Team Lead (hoặc tất cả các thành viên trong nhóm) sẽ xem xét tính phù hợp của bài báo mà thành viên đã đăng ký.
         - Sau khi được phê duyệt, lịch trình bày chính thức sẽ được cập nhật lên lịch chung của nhóm.
 
         {++**Bước 4: Chuẩn bị tài liệu (Preparation)**++}
 
-        - Thành viên chuẩn bị slides/notes/docs trình bày lên kho tài nguyên chung trước buổi thảo luận 24 giờ.
-        - Các thành viên còn lại đọc tài liệu và chuẩn bị câu hỏi phản biện.
+        - Thành viên chủ động nghiên cứu, chuẩn bị nội dung trình bày. Toàn bộ tài liệu liên quan phải được upload lên [**[:material-folder-google-drive: IASTLab](https://drive.google.com/drive/folders/1MEaVeBwm0gDWSt0ibtaRSTuY5EySxaum?usp=drive_link)**] trước buổi thảo luận 24 giờ.
+        - Các thành viên còn lại có trách nhiệm đọc trước tài liệu và chuẩn bị câu hỏi phản biện.
 
 ## :material-calendar: Scheduler
 ---
@@ -200,7 +204,12 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     <div style="text-align: center;">
         <iframe src="https://calendar.google.com/calendar/embed?src=thaihocit02%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
-
+<!-- 
 ## :material-database: Resources
 ---
 
+### Quick Links
+
+### Materials -->
+
+---
