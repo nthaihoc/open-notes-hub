@@ -14,12 +14,13 @@ title: IAST Lab
     </div>
 </div>
 
-## :fontawesome-solid-hands: About Us
+
+## :material-hub-outline: About Us
 ---
 
 Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ Ứng dụng - IAST](https://iast.ictu.edu.vn), IAST Lab thực chất là một góc nhỏ để các anh em nghiên cứu viên tại Viện cùng ngồi lại với nhau thay vì làm việc độc lập. Chúng tôi tổ chức các buổi gặp gỡ định kỳ hàng tuần để cùng review những bài báo khoa học hay, gỡ rối các vấn đề kỹ thuật phát sinh trong dự án và chia sẻ những nguồn tài liệu hữu ích cho nhau. Mục tiêu của nhóm rất đơn giản, đó là xây dựng một môi trường gần gũi để mọi người cùng chia sẻ kiến thức, giải quyết khó khăn và cùng nhau hoàn thiện kỹ năng nghiên cứu mỗi ngày.
 
-## :material-account-group: Members
+## :material-account-group-outline: Members
 ---
 
 <div class="grid cards" markdown>
@@ -29,7 +30,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     ^^Nguyễn Thái Học^^
 
     ---
-    🌱 **Team Lead**
+    🌴 **Team Lead**
 
     ==Focus:==
 
@@ -38,14 +39,10 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     - Multimodal Learning
     - AI in Healthcare & Education
 
-    [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
+    [:octicons-home-16:](https://nthaihoc.github.io/about-me) &nbsp;&nbsp; 
     [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp; 
     [:octicons-mark-github-16:](https://github.com/nthaihoc) &nbsp;&nbsp; 
     [:material-school:](https://)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   <img src="images/sung_a_khua.jpg" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto; border: 3px solid #e0e0e0">
 
@@ -80,7 +77,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
     [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp; 
 
--   <img src="https://avatars.githubusercontent.com/u/6?v=4" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto;">
+<!-- -   <img src="https://avatars.githubusercontent.com/u/6?v=4" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto;">
 
     ^^Nguyễn Thuỳ Trang^^
 
@@ -89,14 +86,14 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     🌱 **Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
-    [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp; 
+    [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp;  -->
 
 </div>
 
-## :octicons-tasklist-16: Meeting Structure
+## :material-sitemap-outline: Meeting Structure
 ---
 
-:octicons-info-16: ==Interim Reports (Báo cáo cập nhật tiến độ).==
+:material-trending-up: ==Interim Reports (Báo cáo cập nhật tiến độ).==
 
 - **Mục tiêu:** Báo cáo tiến độ hằng tuần nhằm rà soát, kiểm tra khối lượng công việc thực tế đạt được so với kế hoạch đề ra.
 
@@ -106,7 +103,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     - Các vấn đề kỹ thuật và khó khăn phát sinh trong quá trình nghiên cứu.
     - Lên kế hoạch cụ thể cho tuần tiếp theo.
 
-:octicons-info-16: ==Scientific Talk (Thảo luận khoa học).==
+:material-trending-up: ==Scientific Talk (Thảo luận khoa học).==
 
 - **Mục tiêu:** Trình bày nghiên cứu khoa học hằng tuần giúp cập nhật tri thức mới, rèn luyện kỹ năng đọc hiểu và tư duy phản biện.
 
@@ -137,12 +134,12 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     | **Thứ 6 (hằng tuần)** | **23:59** | Thành viên tiến hành đăng ký bài báo thuyết trình cho tuần kế tiếp để đảm bảo thời gian xét duyệt. |
     | **Thứ 7 (hằng tuần)** | **13:30 - 17:30** | :material-microphone: **Weekly Seminar** |
     
-*:fontawesome-solid-warning: Để đảm bảo quy trình vận hành của Lab được thống nhất và chuyên nghiệp, các thành viên vui lòng ghi nhớ địa điểm sinh hoạt và các mốc deadline cố định hàng tuần.*
+^^*:fontawesome-solid-warning: Để đảm bảo quy trình vận hành của Lab được thống nhất và chuyên nghiệp, các thành viên vui lòng ghi nhớ địa điểm sinh hoạt và các mốc deadline cố định hàng tuần.*^^
 
-## :material-dots-vertical-circle-outline: Guidelines
+## :material-book-cog-outline: Guidelines
 ---
 
-:material-book-edit-outline: ==Guidelines for Progress Reporting (Hướng dẫn báo cáo tiến độ).==
+:material-script-text-outline: ==Guidelines for Progress Reporting (Hướng dẫn báo cáo tiến độ).==
 
 - {++Step 01: Planing (Lập kế hoạch):++}
 
@@ -153,19 +150,19 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
 
         1. Deep Research
 
-            - [:material-check-circle-outline:] Paper Reading: Đọc tối thiểu 2-3 papers mới liên quan trực tiếp đến công việc đang nghiên cứu.
+            - [:material-check-circle:] Paper Reading: Đọc tối thiểu 2-3 papers mới liên quan trực tiếp đến công việc đang nghiên cứu.
 
-            - [:material-check-circle-outline:] Competitor Analysis: Kiểm tra xem có repo code mới nào giải quyết bài toán tương tự không.
+            - [:material-check-circle:] Competitor Analysis: Kiểm tra xem có repo code mới nào giải quyết bài toán tương tự không.
 
             - $\ldots$
 
         2. Engineering & Experimentation (Thực nghiệm)
 
-            - [:material-check-circle-outline:] Datasets Survey (Khảo sát dữ liệu): Tìm kiếm, nghiên cứu về các bộ dữ liệu liên quan v.v.
+            - [:material-check-circle:] Datasets Survey (Khảo sát dữ liệu): Tìm kiếm, nghiên cứu về các bộ dữ liệu liên quan v.v.
 
-            - [:material-check-circle-outline:] Lựa chọn và lên các kịch bản huấn luyện mô hình.
+            - [:material-check-circle:] Lựa chọn và lên các kịch bản huấn luyện mô hình.
 
-            - [:material-check-circle-outline:] Đánh giá và viết báo cáo kết quả v.v.
+            - [:material-check-circle:] Đánh giá và viết báo cáo kết quả v.v.
 
             - $\ldots$
         
@@ -184,7 +181,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     - Đề xuất phương án khắc phục cụ thể và cam kết deadline mới cho tuần kế tiếp.
 
 
-:material-book-edit-outline: ==Seminar Registration Guidelines (Hướng dẫn đăng kí seminar).==
+:material-script-text-outline: ==Seminar Registration Guidelines (Hướng dẫn đăng kí seminar).==
 
 - {++Step 01: Topic Selection (Lựa chọn chủ đề):++}
 
@@ -207,28 +204,68 @@ Lấy tên gọi từ nơi làm việc chung [Viện Khoa Học & Công nghệ �
     - Thành viên chủ động nghiên cứu, chuẩn bị nội dung trình bày. Toàn bộ tài liệu liên quan phải được upload lên [**[:material-folder-google-drive: IASTLab](https://drive.google.com/drive/folders/1MEaVeBwm0gDWSt0ibtaRSTuY5EySxaum?usp=drive_link)**] trước buổi thảo luận 24 giờ.
     - Các thành viên còn lại có trách nhiệm đọc trước tài liệu và chuẩn bị câu hỏi phản biện.
 
-## :material-calendar: Scheduler {: #scheduler-section }
+^^*:fontawesome-solid-warning: Hằng tuần các thành viên trong nhóm có trách nhiệm báo cáo tiến độ và đăng kí tối thiểu 1 nội dung seminar.*^^
+
+
+## :material-calendar-outline: Scheduler {: #scheduler-section }
 ---
 
-=== "List View (Lịch trình)"
+=== "Weekly Seminar"
 
     | Date | Speaker | Topic | Status |
     | :--- | :------ | :---- | :----: |
-    | 06/12/2025 | **Nguyễn Thái Học** | Phân tích dữ liệu y tế - Drug-drug interactions | :material-close-circle: Cancelled</span> |
-    | 13/12/2025 | **Sùng A Khua** | [Paper] U-Net Architecture | :material-clock-outline: Upcoming |
+    | 13/12/2025 | **Nguyễn Thái Học** | Overview for Large Language Models (LLMs) and Attention Is All You Need | :material-clock-outline: ==Upcoming== |
+    |  | **Sùng A Khua** | Very Deep Convolutional Networks for Lagre-Scale Image Recognition (VGG19) | :material-clock-outline: ==Upcoming== |
+    |  | **Vũ Ngọc Thiện** | Very Deep Convolutional Networks for Lagre-Scale Image Recognition (VGG16) | :material-clock-outline: ==Upcoming== |
+    |  | **Trần Đặng V.Q Long** | MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications | :material-clock-outline: ==Upcoming== |
 
-=== "Calendar View (Lịch toàn cảnh)"
+=== "Calendar View"
 
     <div style="text-align: center;">
         <iframe src="https://calendar.google.com/calendar/embed?src=thaihocit02%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 
 
-## :material-database: Resources
+## :material-database-outline: Resources
 ---
 
 ### :material-link-plus: Quick Links
 
-### :material-book: Materials
+Cổng truy cập nhanh các tài nguyên số, kho dữ liệu dùng chung và phòng họp trực tuyến của IAST Lab:
 
+<div class="grid cards" markdown>
+
+-   :material-folder-google-drive: **IAST Storage**
+    
+    ---
+    [:octicons-arrow-right-24: View](https://drive.google.com/drive/folders/1MEaVeBwm0gDWSt0ibtaRSTuY5EySxaum?usp=drive_link)
+
+-   :simple-googlemeet: **Meeting Room**
+    
+    ---
+    [:octicons-arrow-right-24: View](https://meet.google.com/ych-juck-mwh)
+
+-   :material-table-edit: **Paper List**
+    
+    ---
+    [:octicons-arrow-right-24: View](https://docs.google.com/spreadsheets/d/1rLwiwSMnBNsj-SEgDYBTchc7u9wENrCx97TL6-DyzYA/edit?usp=drive_link)
+
+-   :octicons-mark-github-16: **Source Code**
+    
+    ---
+    [:octicons-arrow-right-24: View](#)
+
+</div>
+
+<!-- ### :material-book: Materials
+
+
+ -->
+&nbsp;
+&nbsp; 
+&nbsp;
+
+<div class="footer-garden">
+    <span>🌾</span><span>🌿</span><span>🌻</span><span>🌿</span><span>🌾</span>
+</div>
 ---
