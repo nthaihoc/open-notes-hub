@@ -195,6 +195,6 @@ cython_debug/
 
 # hide folder path
 docs/research/pronunciation-scoring/
-.base/
 .DS_Store
 **/.DS_Store
+.base/
