@@ -1,0 +1,132 @@
+:root {
+  --md-primary-fg-color:        #0033a0;
+  --md-primary-fg-color--light: #009cde;
+  --md-primary-fg-color--dark:  #0072ce;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.md-typeset .admonition {
+  font-size: 15px;
+}
+
+.md-typeset a {
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+.md-grid {
+  max-width: 1012px;
+}
+
+.md-typeset {
+  font-family: "Roboto";
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.md-typeset h1 {
+  margin-bottom: -0.5em;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  line-height: 1.5;
+}
+
+.md-typeset mark {
+  color: #2E7D32;
+  background-color: #E8F5E9; 
+  font-weight: bold;
+}
+
+.md-typeset ins {
+  text-decoration: None;
+  font-style: normal;
+  font-weight: bold;
+  color: #C62828;
+}
+
+.md-typeset ins.critic {
+  color: #6A1B9A;             
+  background-color: #F3E5F5; 
+}
+
+.md-footer__title {
+  font-size: 15px;
+}
+
+.md-typeset hr {
+  border: 0; 
+  height: 1px; 
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #0033a0, rgba(0, 0, 0, 0));
+  margin: 0em 0; 
+}
+
+.hero-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+}
+
+
+.md-typeset table:not([class]) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0em 0;
+    font-size: 0.95em;
+    display: table;
+    border: 1px solid #eee; 
+}
+
+.md-typeset table:not([class]) th {
+    background-color: #fff;
+    color: #0033a0; 
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+.md-typeset table:not([class]) td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+    background-color: #f8f9fa; 
+}
+
+.md-typeset table:not([class]) tr:hover td {
+    background-color: #e9ecef;
+    transition: 0.2s;
+}
+
+.footer-garden {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    user-select: none;
+    cursor: default;
+}
+.footer-garden span {
+    margin: 0 10px;
+}
