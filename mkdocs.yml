@@ -100,9 +100,13 @@ plugins:
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
       users:
         - login: nthaihoc
-          email: thaihocit02@gmail.com
-        - login: nthaihoc
           email: 178376783+nthaihoc@users.noreply.github.com
+        - login: nthaihoc
+          email: thaihoc.ictu@gmail.com
+        - login: nthaihoc
+          email: thaihoc.it02@gmail.com
+        - login: nthaihoc
+          email: thaihocit02@gmail.com
 
 copyright: ©️ 2025 by Thai-Hoc Nguyen
 
