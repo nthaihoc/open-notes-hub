@@ -1,7 +1,6 @@
 # 01. setup title with the name of the site
 site_name: OpenNotesHub
 
-# 02. setup logo, icon, format, etc.
 theme:
   favicon: octicons/book-24
   palette:
