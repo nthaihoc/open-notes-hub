@@ -96,6 +96,9 @@ plugins:
   - git-committers:
       repository: nthaihoc/open-notes-hub
       branch: main
+      users:
+        - login: nthaihoc
+          email: thaihocit02@gmail.com
 
 copyright: ©️ 2025 by Thai Hoc Nguyen
 
