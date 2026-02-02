@@ -81,8 +81,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.blocks.definition
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji  
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg 
   - tables
   - pymdownx.tabbed:
       alternate_style: true
@@ -93,12 +93,16 @@ plugins:
       type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
+
   - git-committers:
       repository: nthaihoc/open-notes-hub
       branch: main
+      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
       users:
         - login: nthaihoc
           email: thaihocit02@gmail.com
+        - login: nthaihoc
+          email: 178376783+nthaihoc@users.noreply.github.com
 
 copyright: ©️ 2025 by Thai-Hoc Nguyen
 
