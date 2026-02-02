@@ -5,7 +5,7 @@ site_name: OpenNotesHub
 theme:
   favicon: octicons/book-24
   palette:
-    primary: white
+    primary: deep orange
     accent: red
   
   font:
@@ -89,6 +89,13 @@ markdown_extensions:
 plugins:
   - macros
   - search
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - git-committers:
+      repository: nthaihoc/open-notes-hub
+      branch: main
 
 copyright: ©️ 2025 by Thai Hoc Nguyen
 
@@ -109,7 +116,7 @@ nav:
 
     # - Pronunciation Scoring:
     #   - Overview: research/pronunciation-scoring/README.md
-    #   - Report 01 - Introduction: research/pronunciation-scoring/experiments/report01.md
+    #   - Report 01 - Introduction: research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
     #   - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/experiments/report02.md
 
   - Course Notes:
@@ -119,7 +126,7 @@ nav:
 
     - Large Language Models:
       - Large Language Models: courses/large-language-models/README.md
-      - Lesson 03. Attention Mechanisms: courses/large-language-models/lesson-03-attention_mechanisms_knowledge_base.md
+      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessson/lesson-03-attention_mechanisms.md
       
   - Knowledge Base:
     - Knowledge Base: knowledge-base/README.md

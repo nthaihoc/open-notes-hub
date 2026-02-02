@@ -1,6 +1,5 @@
 ---
-hide:
-    - toc
+icon: simple/researchgate
 ---
 
 <div class="hero-banner" style="background-image: url('../assets/images/rice-terraces.jpg')"></div>
@@ -59,7 +58,4 @@ Toàn bộ tài liệu kỹ thuật, nhật ký thực nghiệm và báo cáo ch
 | **Hệ thống hỗ trợ ra quyết định lâm sàng (CDSS)** | :material-close: | Xây dựng hệ thống AI cảnh báo, tư vấn và quản lý thông tin liên quan đến tương tác thuốc trong điều trị. |
 | **Chẩn đoán bệnh học ung thư đại trực tràng** | :material-close: | Triển khai giải pháp hỗ trợ phân loại mô bệnh học, chuẩn hóa dữ liệu gán nhãn và xây dựng cơ sở tri thức y khoa. |
 
-<div class="footer-garden">
-    <span>🌾</span><span>🌿</span><span>🌻</span><span>🌿</span><span>🌾</span>
-</div>
 ---

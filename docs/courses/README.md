@@ -1,6 +1,5 @@
 ---
-hide:
-    - toc
+icon: fontawesome/solid/graduation-cap
 ---
 
 <div class="hero-banner" style="background-image: url('../../assets/images/rice.jpg')"></div>
@@ -72,7 +71,4 @@ Mọi ý kiến đóng góp nhằm hoàn thiện nội dung hoặc báo lỗi k�
 * **Report Issue:** [github.com/nthaihoc/open-notes/issues](https://github.com/nthaihoc/open-notes/issues)
 * **Pull Request:** [github.com/nthaihoc/open-notes/pulls](https://github.com/nthaihoc/open-notes/pulls)
 
-<div class="footer-garden">
-    <span>🌾</span><span>🌿</span><span>🌻</span><span>🌿</span><span>🌾</span>
-</div>
 ---

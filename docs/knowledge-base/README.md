@@ -1,6 +1,6 @@
 ---
-hide:
-    - toc
+icon: material/brain
+title: fastpait tutorials
 ---
 
 <div style="

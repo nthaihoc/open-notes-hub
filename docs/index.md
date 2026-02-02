@@ -1,7 +1,7 @@
 ---
+icon: octicons/home-16
 hide: 
-    - navigation
-    - toc
+
 ---
 
 <div class="hero-banner" style="background-image: url('assets/images/field.jpg');"></div>
@@ -43,35 +43,35 @@ hide:
 
 ## 👀 About Me
 ---
-👋 Xin chào! Tôi là [Nguyễn Thái Học](https://nthaihoc.github.io/about-me) - kỹ sư nghiên cứu Trí tuệ nhân tạo (AI Researcher) tại [Viện Khoa học & Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), trực thuộc [Trường Đại học Công nghệ Thông tin & Truyền thông (ICTU)](https://ictu.edu.vn). Tôi bắt đầu theo học chương trình kỹ sư chuyên nghành Khoa học dữ liệu & Trí tuệ nhân tạo (Data Science & Artificial Intelligence) tại ICTU vào năm 2020 và tốt nghiệp vào năm 2025. Niềm đam mê với AI của tôi chỉ thực sự bùng nổ vào cuối năm thứ ba đại học, khi tôi bắt đầu tiếp cận sâu hơn các môn học chuyên nghành.
 
-🏣 Tháng 08/2023, tôi tham gia nghiên cứu tại Viện IAST với vai trò thực tập sinh thị giác máy tính (Computer Vision Intern). Tại đây, tôi vừa củng cố kiến thức nền tảng vừa trực tiếp nghiên cứu và phát triển một số ứng dụng AI trong lĩnh vực chăm sóc sức khỏe (healthcare) và giáo dục (education). Hiện tại, tôi đang tập trung vào việc nghiên cứu và phát triển các ứng dụng Machine Learning và Computer Vision nhằm giải quyết các bài toán thực tiễn trong lĩnh vực chăm sóc sức khỏe và giáo dục trực tuyến.
-    
-Bên cạnh đó, tôi cũng làm việc với các mô hình ngôn ngữ lớn (Large Language Models) và mô hình kết hợp giữa ngôn ngữ và thị giác (Vision-Language Models) với mục tiêu nâng cao chất lượng và hiệu quả cho các giải pháp công nghệ ứng dụng trong đời sống. Bên cạnh đó, tôi cũng quan tâm và có sở thích nghiên cứu ở một số lĩnh vực như: (1) Ứng dụng MLOps, DLOps, LLMOps để tối ưu hóa quy trình phát triển, triển khai và vận hành các mô hình AI và (2) Nghiên cứu các kỹ thuật AI tiên tiến như xử lý hình ảnh 3D, xe tự lái và xử lý dữ liệu lớn.
+👋 Xin chào, tôi là [Nguyễn Thái Học](https://nthaihoc.github.io/about-me).
 
-## ⚙️ OpenNotesHub
+Hiện tôi là Kỹ sư nghiên cứu Trí tuệ nhân tạo (AI Researcher) tại [Viện Khoa học & Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), trực thuộc [Trường Đại học CNTT & TT (ICTU)](https://ictu.edu.vn). Hành trình của tôi với AI bắt đầu từ năm 2020, nhưng chính những bài toán hóc búa từ năm thứ ba đại học đã thực sự khơi dậy trong tôi niềm đam mê mãnh liệt với lĩnh vực này.
+
+Bắt đầu từ vị trí Computer Vision Intern vào tháng 08/2023, tôi đã chuyển mình từ việc nắm vững lý thuyết sang trực tiếp phát triển các giải pháp AI thực tiễn cho Y tế (Healthcare) và Giáo dục (Education). Hiện tại, trọng tâm nghiên cứu của tôi xoay quanh việc khai phá tiềm năng của Machine Learning và Computer Vision để giải quyết các thách thức trong đời sống.
+
+Không dừng lại ở đó, tôi đang mở rộng ranh giới nghiên cứu sang các mô hình ngôn ngữ lớn (LLMs) và mô hình đa phương thức (Vision-Language Models), đồng thời định hướng tối ưu hóa quy trình triển khai thông qua MLOps/LLMOps. Với tôi, AI không chỉ là thuật toán, mà là công cụ để tạo ra những thay đổi tích cực cho xã hội.
+
+## 🚀 OpenNotesHub
 ---
-[OpenNotesHub](https://nthaihoc.github.io/open-notes) là một không gian nhỏ mà tôi tạo ra chủ yếu là để tập hợp nhiều ghi chú và tài liệu phục vụ cho mục đích học tập, nghiên cứu và chia sẻ kiến thức. Trong đó:
+[OpenNotesHub](https://nthaihoc.github.io/open-notes-hub) không chỉ là nơi lưu trữ, mà là một "*Digital Garden*" - nơi tôi vun đắp, hệ thống hóa và chia sẻ những lát cắt trong hành trình nghiên cứu của mình. Đây là nỗ lực của tôi trong việc biến dữ liệu thô thành tri thức hữu dụng thông qua 3 trụ cột chính:
 
-- [Research Logs.](research/README.md) Tổng hợp các tài liệu, ghi chú và kết quả thực nghiệm liên quan đến phương pháp và kỹ thuật nghiên cứu trong quá trình làm việc.
+- [Research Logs.](research/README.md) Lưu trữ tiến trình thực nghiệm, những thất bại có giá trị và các kỹ thuật nghiên cứu chuyên sâu được đúc kết từ thực tế làm việc tại Lab.
 
-- [Course Notes.](courses/README.md) Sắp xếp và tổng hợp lại những ghi chú trong suốt quá trình nghiên cứu và học tập, sau đó biên soạn lại thành những khóa học ngắn gọn, dễ tiếp cận.
+- [Course Notes.](courses/README.md) Chuyển hóa những ghi chú học thuật phức tạp thành các khóa học ngắn gọn, tinh gọn và dễ tiếp cận cho cộng đồng.
 
-- [Knowledge Base.](knowledge-base/README.md) Bao gồm các kiến thực nền tảng và tài liệu tham khảo ở nhiều lĩnh vực khác nhau, được hệ thống hóa hỗ trợ cho việc học tập và nghiên cứu.
+- [Knowledge Base.](knowledge-base/README.md) Kho tàng kiến thức nền tảng đa lĩnh vực, được cấu trúc hóa để hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.
 
-🚀 Tôi hy vọng nơi đây sẽ trở thành một nguồn tài nguyên hữu ích – nơi bạn có thể tìm thấy điều mình đang tìm kiếm, hoặc đơn giản là cùng tôi học thêm điều mới mỗi ngày.
+Hy vọng nơi này sẽ mang lại giá trị cho bạn trên con đường chinh phục công nghệ. Hãy cùng tôi học thêm điều mới mỗi ngày!
 
 ## ☎️ Contact
 ---
-Bạn có thể xem thêm thông tin hoặc kết nối với tôi qua những nền tảng dưới dây:
+Tôi luôn sẵn sàng thảo luận về các ý tưởng nghiên cứu, dự án công nghệ hoặc đơn giản là chia sẻ kiến thức trong lĩnh vực AI. Bạn có thể kết nối với tôi qua các kênh sau:
 
-| Kênh | Liên kết |
+| Kênh | Chi tiết |
 |------|----------|
 | ✉️ Email | [thaihoc.it02@gmail.com](mailto:thaihoc.ictu@gmail.com) |
-| 💬 Facebook | [facebook.com/nthaihoc02](https://facebook.com/nthaihoc02) |
-| 🌐 Website | [nthaihoc.github.io/about-me](https://nthaihoc.github.io/about-me) |
+| 💬 Social | [facebook.com/nthaihoc02](https://facebook.com/nthaihoc02) |
+| 🌐 Portfolio | [nthaihoc.github.io/about-me](https://nthaihoc.github.io/about-me) |
 
-<div class="footer-garden">
-    <span>🌾</span><span>🌿</span><span>🌻</span><span>🌿</span><span>🌾</span>
-</div>
 ---
