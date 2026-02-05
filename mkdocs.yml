@@ -47,10 +47,14 @@ repo_url: https://github.com/nthaihoc/open-notes-hub
 
 extra_css:
   - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - javascripts/mathjax.js  
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  # - javascripts/mathjax.js  
+  # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 # 03. setup markdown extensions
 markdown_extensions:
@@ -146,8 +150,8 @@ nav:
       - FastAPI Tutorials: knowledge-base/fastapi/README.md
       - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
 
-  - IAST Lab:
-    - Introduction: iast-lab/README.md
+  - IAI Lab:
+    - Introduction: iai-lab/README.md
 
 # 05. setup other configurations
 extra:
