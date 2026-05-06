@@ -74,16 +74,14 @@ p {
 }
 
 .hero-banner {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: 100%;
+    display: block;
+    width: auto;      
+    height: auto;    
+    max-width: 100%;  
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow:  0 4px 12px rgba(0,0,0,0.15);
     margin-bottom: 2rem;
 }
-
 
 .md-typeset table:not([class]) {
     width: 100%;
@@ -107,7 +105,6 @@ p {
     border-bottom: 1px solid #eee;
     color: #555;
 }
-
 
 .md-typeset table:not([class]) tr:nth-child(even) {
     background-color: #f8f9fa; 

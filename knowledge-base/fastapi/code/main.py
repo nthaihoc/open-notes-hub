@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.exceptions import ResponseValidationError
 from fastapi.responses import PlainTextResponse
 from starlette.responses import JSONResponse
+from fastapi.responses import PlainTextResponse, JSONResponse
 from models import Book, BookResponse
 import json
 
@@ -40,6 +41,7 @@ async def read_all_books() -> list[BookResponse]:
     return [
         {"id": 1, "title": "Machine Learning", "author": "Chip Huyen"},
         {"Id": 2, "title": "Computer Vision", "author": "Kaparthy"}
+        {"id": 2, "title": "Computer Vision", "author": "Kaparthy"}
     ]
 
 @app.post("/book")
