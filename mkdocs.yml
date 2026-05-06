@@ -2,7 +2,7 @@
 site_name: OpenNotesHub
 
 theme:
-  logo: assets/logos/logo.png
+  logo: assets/images/opennoteshub_logo.jpg
   favicon: octicons/book-24
   palette:
     scheme: default
