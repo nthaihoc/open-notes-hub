@@ -17,7 +17,7 @@ title: IAI Lab
 ## :material-hub-outline: About Us
 ---
 
-Lấy tên gọi từ nơi làm việc chung [Viện Trí tuệ Nhân tạo - IAI](https://iai.ictu.edu.vn), IAI Lab thực chất là một góc nhỏ để các anh em nghiên cứu viên tại Viện cùng ngồi lại với nhau thay vì làm việc độc lập. Chúng tôi tổ chức các buổi gặp gỡ định kỳ hàng tuần để cùng review những bài báo khoa học hay, gỡ rối các vấn đề kỹ thuật phát sinh trong dự án và chia sẻ những nguồn tài liệu hữu ích cho nhau. Mục tiêu của nhóm rất đơn giản, đó là xây dựng một môi trường gần gũi để mọi người cùng chia sẻ kiến thức, giải quyết khó khăn và cùng nhau hoàn thiện kỹ năng nghiên cứu mỗi ngày.
+Được thành lập dưới sự bảo trợ của [Institute of Artificial Intelligence (Viện Trí tuệ Nhân tạo - IAI)](https://iai.ictu.edu.vn). IAI Lab là không gian nghiên cứu. gian nghiên cứu chuyên sâu, nơi hội tụ các nghiên cứu viên tâm huyết nhằm thúc đẩy văn hóa hợp tác thay vì làm việc độc lập. Tại đây, chúng tôi duy trì các hoạt động sinh hoạt chuyên môn định kỳ hàng tuần: từ việc phân tích các công trình khoa học tiên tiến, thảo luận giải pháp cho các bài toán kỹ thuật phức tạp, đến việc chia sẻ tài nguyên tri thức. Sứ mệnh của IAI Lab là kiến tạo một môi trường học thuật cởi mở, nơi tri thức được lan tỏa và năng lực nghiên cứu của mỗi thành viên được hoàn thiện từng ngày.
 
 ## :material-account-group-outline: Members
 ---
@@ -29,19 +29,20 @@ Lấy tên gọi từ nơi làm việc chung [Viện Trí tuệ Nhân tạo - IA
     ^^Nguyễn Thái Học^^
 
     ---
-    🌴 **Team Lead**
+    🌴 **Team Lead / AI Reseacher**
 
     ==Focus:==
 
-    - Computer Vision 
+    - Computer Vision & Speech Processing
     - Large Language Models
     - Multimodal Learning
     - AI in Healthcare & Education
 
     [:octicons-home-16:](https://nthaihoc.github.io/about-me) &nbsp;&nbsp; 
     [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp; 
-    [:octicons-mark-github-16:](https://github.com/nthaihoc) &nbsp;&nbsp; 
-    [:material-school:](https://)
+    [:simple-github:](https://github.com/nthaihoc) &nbsp;&nbsp; 
+    [:material-school:](https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi) &nbsp;&nbsp;
+    [:material-file-account:](../assets/files/curriculum_vitae.pdf)
 
 -   <img src="images/sung_a_khua.jpg" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto; border: 3px solid #e0e0e0">
 
@@ -49,7 +50,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Trí tuệ Nhân tạo - IA
 
     ---
 
-    🌱 **Research Intern**
+    🌱 **AI Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
     [:material-email:](sungkhua13204@gmail.com) &nbsp;&nbsp; 
@@ -60,7 +61,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Trí tuệ Nhân tạo - IA
 
     ---
 
-    🌱 **Research Intern**
+    🌱 **AI Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
     [:material-email:](vungocthien843@gmail.com) &nbsp;&nbsp; 
@@ -71,7 +72,7 @@ Lấy tên gọi từ nơi làm việc chung [Viện Trí tuệ Nhân tạo - IA
 
     ---
 
-    🌱 **Research Intern**
+    🌱 **AI Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
     [:material-email:](mailto:thaihocit02@gmail.com) &nbsp;&nbsp; 

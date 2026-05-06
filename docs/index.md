@@ -1,45 +1,34 @@
 ---
+title: "☘️ OpenNotesHub"
 icon: octicons/home-16
-hide: 
-
+quote: 
+  - "Be kind. Be curious. Be courageou"
+  - "What I cannot create, I do not understand"
 ---
 
-<div class="hero-banner" style="background-image: url('assets/images/field.jpg');"></div>
+{% include 'includes/hero.html' %}
 
-<div align="center">
-    <h1 style="margin-bottom: 10px; font-size: 2.5em;">☘️ OpenNotesHub</h1>
-    
-    <div style="font-style: italic; color: #666; margin-bottom: 25px; line-height: 1.6;">
-        "Be kind. Be curious. Be courageous"<br>
-        "What I cannot create, I do not understand"
-    </div>
+<p style="text-align: center;">
+    <a href="https://nthaihoc.github.io/about-me">
+        <img src="https://img.shields.io/badge/Portfolio-005571?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio">
+    </a>
+    <a href="mailto:thaihoc.ictu@gmail.com">
+        <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+    </a>
+    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi">
+        <img src="https://img.shields.io/badge/Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Scholar">
+    </a>
+    <a href="https://www.facebook.com/nthoc02">
+        <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
+    </a>
+    <a href="https://www.kaggle.com/nguyenthaihoc">
+        <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle">
+    </a>
+    <a href="https://github.com/nthaihoc">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+    </a>
+</p>
 
-    <p style="text-align: center;">
-      <a href="https://nthaihoc.github.io/about-me">
-        <img src="https://img.shields.io/badge/Portfolio-24292e?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio">
-      </a>
-      
-      <a href="mailto:thaihoc.ictu@gmail.com">
-        <img src="https://img.shields.io/badge/Email-24292e?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-      </a>
-      
-      <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi">
-        <img src="https://img.shields.io/badge/Scholar-24292e?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar">
-      </a>
-
-      <a href="https://www.facebook.com/nthoc02">
-        <img src="https://img.shields.io/badge/Facebook-24292e?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
-      </a>
-
-      <a href="https://www.kaggle.com/nguyenthaihoc">
-        <img src="https://img.shields.io/badge/Kaggle-24292e?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle">
-      </a>
-
-      <a href="https://github.com/nthaihoc">
-        <img src="https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-      </a>
-    </p>
-</div>
 
 ## 👀 About Me
 ---
@@ -54,13 +43,15 @@ Không dừng lại ở đó, tôi đang mở rộng ranh giới nghiên cứu s
 
 ## 🚀 OpenNotesHub
 ---
-[OpenNotesHub](https://nthaihoc.github.io/open-notes-hub) không chỉ là nơi lưu trữ, mà là một "*Digital Garden*" - nơi tôi vun đắp, hệ thống hóa và chia sẻ những lát cắt trong hành trình nghiên cứu của mình. Đây là nỗ lực của tôi trong việc biến dữ liệu thô thành tri thức hữu dụng thông qua 3 trụ cột chính:
+[OpenNotesHub](https://nthaihoc.github.io/open-notes-hub) không chỉ là nơi lưu trữ, mà là một "*Digital Garden*" - nơi tôi vun đắp, hệ thống hóa và chia sẻ những lát cắt trong hành trình nghiên cứu của mình. Đây là nỗ lực của tôi trong việc biến dữ liệu thô thành tri thức hữu dụng thông qua các trụ cột chính:
 
-- [Research Logs.](research/README.md) Lưu trữ tiến trình thực nghiệm, những thất bại có giá trị và các kỹ thuật nghiên cứu chuyên sâu được đúc kết từ thực tế làm việc tại Lab.
+<!-- - [Research Logs.](research/README.md) Lưu trữ tiến trình thực nghiệm, những thất bại có giá trị và các kỹ thuật nghiên cứu chuyên sâu được đúc kết từ thực tế làm việc tại Lab. -->
 
-- [Course Notes.](courses/README.md) Chuyển hóa những ghi chú học thuật phức tạp thành các khóa học ngắn gọn, tinh gọn và dễ tiếp cận cho cộng đồng.
+- [Course Notes.](courses/README.md) Chuyển đổi những ghi chú học thuật phức tạp thành các bài học tinh gọn, dễ hiểu và dễ tiếp cận.
 
-- [Knowledge Base.](knowledge-base/README.md) Kho tàng kiến thức nền tảng đa lĩnh vực, được cấu trúc hóa để hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.
+- [Knowledge Base.](knowledge-base/README.md) Hệ thống kiến thức đa lĩnh vực, được cấu trúc hóa để hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.
+
+- [Resources.](https://) Kho tổng hợp các tài nguyên, công cụ và tài liệu giá trị, bám sát các xu hướng công nghệ lõi và Trí tuệ Nhân tạo.
 
 Hy vọng nơi này sẽ mang lại giá trị cho bạn trên con đường chinh phục công nghệ. Hãy cùng tôi học thêm điều mới mỗi ngày!
 

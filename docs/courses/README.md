@@ -1,48 +1,39 @@
 ---
+title: 📚 Course Notes
 icon: fontawesome/solid/graduation-cap
+quote:
+  - "Live as if you were to die tomorrow. Learn as if you were to live forever."
+  - "The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." 
 ---
 
-<div class="hero-banner" style="background-image: url('../../assets/images/rice.jpg')"></div>
+{% include 'includes/hero.html' %}
 
-<div align="center">
-    <h1 style="margin-bottom: 10px; font-size: 2.8em;">📚 Course Notes</h1>
-    
-    <div style="font-style: italic; color: #555; margin-bottom: 25px; line-height: 1.8; font-family: sans-serif;">
-        "Live as if you were to die tomorrow. Learn as if you were to live forever." <br>
-        "The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." 
-    </div>
-
-    <p style="text-align: center;">
-      <a href="https://www.python.org">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-      </a>
-      
-      <a href="https://numpy.org">
-        <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
-      </a>
-      <a href="https://pandas.pydata.org">
-        <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
-      </a>
-
-      <a href="https://scikit-learn.org/">
-        <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn">
-      </a>
-      <a href="https://pytorch.org">
-        <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
-      </a>
-
-      <a href="https://huggingface.co">
-        <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-FFD21E?style=for-the-badge&logoColor=black" alt="HuggingFace">
-      </a>
-      <a href="https://mlflow.org">
-        <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLFlow">
-      </a>
-
-      <a href="https://colab.research.google.com">
-        <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Google Colab">
-      </a>
-    </p>
-</div>
+<p style="text-align: center;">
+  <a href="https://www.python.org">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  </a>
+  <a href="https://numpy.org">
+    <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  </a>
+  <a href="https://pandas.pydata.org">
+    <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  </a>
+  <a href="https://scikit-learn.org/">
+    <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn">
+  </a>
+  <a href="https://pytorch.org">
+    <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch">
+  </a>
+  <a href="https://huggingface.co">
+    <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face">
+  </a>
+  <a href="https://mlflow.org">
+    <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
+  </a>
+  <a href="https://colab.research.google.com">
+    <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Colab">
+  </a>
+</p>
 
 ## I. Giới thiệu
 ---

@@ -2,9 +2,11 @@
 site_name: OpenNotesHub
 
 theme:
+  logo: assets/logos/logo.png
   favicon: octicons/book-24
   palette:
-    primary: deep orange
+    scheme: default
+    primary: black
     accent: red
   
   font:
@@ -27,9 +29,11 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
     repo: fontawesome/brands/github
-    logo: octicons/book-16
+
   features:
     - content.code.annotate 
+    - content.code.copy
+    - content.code.select
     - content.footnote.tooltips
     - navigation.tabs
     - navigation.instant
@@ -96,20 +100,12 @@ plugins:
       type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
+      enable_git_follow: false 
 
   - git-committers:
       repository: nthaihoc/open-notes-hub
       branch: main
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
-      users:
-        - login: nthaihoc
-          email: 178376783+nthaihoc@users.noreply.github.com
-        - login: nthaihoc
-          email: thaihoc.ictu@gmail.com
-        - login: nthaihoc
-          email: thaihoc.it02@gmail.com
-        - login: nthaihoc
-          email: thaihocit02@gmail.com
 
 copyright: ©️ 2025 by Thai-Hoc Nguyen
 
@@ -120,18 +116,10 @@ nav:
   - Research Logs:
     - Introduction: research/README.md
     
-    - Cervical Cancer Cytology:
-      - Project Overview: research/cervical-cancer-cytology/README.md
-      - Experiments:
-        - 01. Ensemble Learning: research/cervical-cancer-cytology/experiments/01-ensemble_learning.md
-        - 02. Self-Supervised Learning: research/cervical-cancer-cytology/experiments/02-self_supervised_learning.md
-      - Literature Review:
-        - Datasets: research/cervical-cancer-cytology/literature-review/01-datasets_survey.md
-
-    # - Pronunciation Scoring:
-    #   - Overview: research/pronunciation-scoring/README.md
-    #   - Report 01 - Introduction: research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
-    #   - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/experiments/report02.md
+    - Pronunciation Scoring:
+      - Overview: research/pronunciation-scoring/README.md
+      - Report 01 - Introduction: research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
+      - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/literature-review/related_work.md
 
   - Course Notes:
     - Course Notes: courses/README.md
@@ -149,9 +137,17 @@ nav:
     - FastAPI Tutorials:
       - FastAPI Tutorials: knowledge-base/fastapi/README.md
       - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
+    
+    - Interview AI:
+      - Cheetsheat AI for VinUI: knowledge-base/interview-ai/interview_vinui.md
 
-  - IAI Lab:
-    - Introduction: iai-lab/README.md
+  # - IAI Lab:
+  #   - IAI Lab: iai-lab/README.md
+  #   - Operational Framework: iai-lab/tracks.md
+  #   - Guidelines: iai-lab/guidelines.md
+
+  # - Resources:
+  #   - Overview: resources/README.md
 
 # 05. setup other configurations
 extra:
