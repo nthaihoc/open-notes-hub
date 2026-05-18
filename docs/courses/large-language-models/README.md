@@ -1,9 +1,10 @@
 ---
-title: Large Language Models (LLMs)
+title: "Large Language Models (LLMs)"
 icon: material/message
-hide:
+url_img: "../../assets/images/ods_stickers.jpg"
+color: "#ff6b6b"   
 ---
 
-# Large Language Models (LLMs)
----
+{% include 'includes/banner.html' %}
 
+## Up comming!

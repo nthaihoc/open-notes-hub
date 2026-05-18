@@ -2,8 +2,8 @@
 site_name: OpenNotesHub
 
 theme:
-  logo: assets/images/opennoteshub_logo.jpg
-  favicon: octicons/book-24
+  logo: assets/images/logo.jpg
+  favicon: assets/images/favicon.png
   palette:
     scheme: default
     primary: black
@@ -37,13 +37,15 @@ theme:
     - content.footnote.tooltips
     - navigation.tabs
     - navigation.instant
+    - navigation.instant.preview
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.indexes
     - navigation.path
     - toc.follow
     - search.suggest
     - navigation.top
     - navigation.footer
-    - navigation.instant.preview
     - navigation.tracking
 
 repo_name: nthaihoc/open-notes-hub
@@ -65,6 +67,8 @@ markdown_extensions:
   - abbr
   - admonition
   - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - md_in_html
   - attr_list
   - footnotes
@@ -103,10 +107,10 @@ plugins:
       enable_git_follow: false 
 
   - git-committers:
+      enabled: !ENV [CI, false] 
       repository: nthaihoc/open-notes-hub
       branch: main
-      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
-
+      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 copyright: ©️ 2025 by Thai-Hoc Nguyen
 
 # 04. setup navigation
@@ -124,12 +128,27 @@ nav:
   - Course Notes:
     - Course Notes: courses/README.md
 
-    - Applied Machine Learning: courses/applied-machine-learning/README.md
+    - Applied Machine Learning: 
+      - Applied Machine Learning: courses/applied-machine-learning/README.md
+      - Lesson 01: lesson.md
+      - Lesson 02: lesson.md
+      - Lesson 03: lesson.md
+      - Lesson 04: lesson.md
+      - Lesson 05: lesson.md
+      - Lesson 06: lesson.md
+      - Lesson 07: lesson.md
+      - Lesson 08. Support Vector Machine: courses/applied-machine-learning/lesson/lesson-08-support_vector_machine.md
 
     - Large Language Models:
       - Large Language Models: courses/large-language-models/README.md
+      - Lesson 01: lesson.md
+      - Lesson 02: lesson.md
       - Lesson 03. Attention Mechanisms: courses/large-language-models/lessson/lesson-03-attention_mechanisms.md
-      
+      - Lesson 04: lesson.md
+      - Lesson 05: lesson.md
+      - Lesson 06: lesson.md
+      - Lesson 07: lesson.md
+  
   - Knowledge Base:
     - Knowledge Base: knowledge-base/README.md
 
@@ -138,9 +157,6 @@ nav:
       - FastAPI Tutorials: knowledge-base/fastapi/README.md
       - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
     
-    - Interview AI:
-      - Cheetsheat AI for VinUI: knowledge-base/interview-ai/interview_vinui.md
-
   # - IAI Lab:
   #   - IAI Lab: iai-lab/README.md
   #   - Operational Framework: iai-lab/tracks.md
@@ -165,9 +181,9 @@ extra:
       link: mailto:thaihoc.ictu@gmail.com
       name: Email
     - icon: material/github
-      link: https://github.com/nthaihoc?tab=repositories
+      link: https://github.com/nthaihoc
       name: Github
     - icon: material/facebook
-      link: https://www.facebook.com/nthaihoc.02
+      link: https://www.facebook.com/nthoc.02
       name: Facebook
       

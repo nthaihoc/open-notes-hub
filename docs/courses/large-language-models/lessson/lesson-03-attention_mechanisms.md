@@ -1,6 +1,5 @@
 ---
 title: Lesson 03. Attention Mechanisms Knowledge Base
-icon: material/numeric-3-circle
 ---
 
 # Lesson 03: Attention Mechanisms Knowledge Base

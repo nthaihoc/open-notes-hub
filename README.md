@@ -1,12 +1,4 @@
----
-title: "Research Logs"
-icon: octicons/home-16
-quote: 
-  - "Be kind. Be curious. Be courageou"
-  - "What I cannot create, I do not understand"
----
-
-{% include 'includes/hero.html' %}
+# ☘️ OpenNotesHub
 
 <p style="text-align: center;">
     <a href="https://nthaihoc.github.io/about-me">
