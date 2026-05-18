@@ -1,6 +1,7 @@
 ---
 title: "☘️ OpenNotesHub"
 icon: octicons/home-16
+url_img: "assets/images/ods_stickers.jpg"
 quote: 
   - "Be kind. Be curious. Be courageou."
   - "What I cannot create, I do not understand."
