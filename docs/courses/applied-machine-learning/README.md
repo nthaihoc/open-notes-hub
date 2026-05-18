@@ -1,64 +1,42 @@
 ---
-title: Applied Machine Learning (AML)
+title: "Applied Machine Learning (AML)"
 icon: material/slot-machine
-hide:
-  - toc
+url_img: "../../assets/images/aml.jpg"
+width_img: "350"
+color: "#ff6b6b"   
 ---
 
-<div class="hero-banner" style="background-image: url('images/background_aml.png')"></div>
-
-<h1>
-  <span style="color:#87ceeb;">🐎 A</span>pplied 
-  <span style="color:#87ceeb;">M</span>achine 
-  <span style="color:#87ceeb;">L</span>earning 
-  (<span style="color:#87ceeb;">AML</span>)
-</h1>
-<br>
->🌟 **"Success is not an accident. It’s hard work, learning, and persistence."**
->
->🚀 **"Start where you are. Use what you have. Do what you can."**
-
-![Static Badge](https://img.shields.io/badge/lecture_notes-blue?style=for-the-badge&logo=notepad%2B%2B&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Code-red?style=for-the-badge&logo=lintcode&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Materials-yellow?style=for-the-badge&logo=bookstack)
+{% include 'includes/banner.html' %}
 
 ## I. Course Introduction
 ---
 
-**Mô tả.** Applied Machine Learning (AML) được ghi chú và tổng hợp theo định dạng một khóa học, nhằm cung cấp cho người học cái nhìn tổng quan và toàn diện về lĩnh vực Machine Learning (ML) - từ lý thuyết cốt lõi đến thực hành triển khai. Toàn bộ nội dung tập trung vào các kỹ thuật và thuật toán nền tảng, giúp bạn nắm vững cách thức thu thập dữ liệu, tiền xử lý, và xây dựng các mô hình học máy một cách bài bản và có hệ thống. Khóa học không chỉ chú trọng vào kiến thức lý thuyết mà còn hướng dẫn người học từng bước triển khai, huấn luyện và đánh giá mô hình ML từ đầu đến cuối, qua các bài tập thực hành và dự án thực tế.
+^^Mô tả.^^ Applied Machine Learning (AML) cung cấp cho người học cái nhìn tổng quan và toàn diện về lĩnh vực Machine Learning (ML) -- từ lý thuyết cốt lõi đến thực hành triển khai. Toàn bộ nội dung tập trung vào các kỹ thuật và thuật toán nền tảng, giúp người học nắm vững cách thức thu thập dữ liệu, tiền xử lý, và xây dựng các mô hình Học Máy một cách bài bản và có hệ thống. Khóa học không chỉ chú trọng vào kiến thức lý thuyết mà còn hướng dẫn người học từng bước triển khai, huấn luyện và đánh giá mô hình ML từ đầu đến cuối, qua các bài tập thực hành thực tế.
 
-**Đối tượng.** Khóa học phù hợp với người mới bắt đầu làm quen với Trí tuệ Nhân tạo và Học máy. Ngoài ra, những người đã có kiến thức nền tảng cũng có thể sử dụng tài liệu này như một nguồn tham khảo hệ thống và thực tiễn.
+^^Đối tượng.^^ Khóa học phù hợp với người mới bắt đầu làm quen với Trí tuệ Nhân tạo và Học máy. Ngoài ra, những người đã có kiến thức nền tảng cũng có thể sử dụng tài liệu này như một nguồn tham khảo hệ thống và thực tiễn.
 
-**Cấu trúc khóa học.** Khóa học được tổng hợp và chia nhỏ thành 5 Module chính, xây dựng từ nền tảng lý thuyết cho đến thực hành triển khai toàn bộ hệ thống ML trong thực tế. Cụ thể:
+^^Cấu trúc khóa học.^^ Khóa học được tổng hợp và chia nhỏ thành 5 Module chính, xây dựng từ nền tảng lý thuyết cho đến thực hành triển khai toàn bộ hệ thống ML trong thực tế. Chi tiết nội dung bài học của từng Module được mô tả chi tiết trong [[Syllabus](#iv-syllabus){ data-preview }].
 
-- Module 01. Introduction to ML & Development Environment (Tổng quan về Học máy và Môi trường phát triển)
-- Module 02. Data Preprocessing & Exploratory Data Analysis (Tiền xử lý và Khám phá dữ liệu)
-- Module 03. Supervised Learning Algorithms (Các thuật toán học có giám sát)
-- Module 04. Unsupervised Learning Algorithms (Các thuật toán học không giám sát)
-- Module 05: ML Pipelines & Deployment (Đường ống ML và Triển khai hệ thống)
-
-Chi tiết nội dung bài học của từng Module được mô tả chi tiết trong [[**syllabus**](#iv-syllabus)]
-
-**Liên kết nhanh:** Toàn bộ nội dung khóa học bao gồm ghi chú bài học (notes), mã chương trình (code) và tài liệu tham khảo (materials) được tổng hợp và có thể truy cập nhanh tại những địa chỉ sau:
-
-- [**Lecture notes**](https://)
-- [**Code for Course**](https://)
-- [**Materials for Course**](https://)
+- **Module 01.Introduction to ML & Development Environment** -- Tổng quan về Học máy và môi trường phát triển. 
+- **Module 02. Data Preprocessing & Exploratory Data Analysis** -- Tiền xử lý và khám phá dữ liệu.
+- **Module 03. Supervised Learning Algorithms** -- Các thuật toán học có giám sát.
+- **Module 04. Unsupervised Learning Algorithms** -- Các thuật toán học không giám sát.
+- **Module 05: ML Pipelines & Deployment** -- Đường ống ML và triển khai hệ thống.
 
 ## II. What will you learn?
 ---
 
 Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập được những tri thức dưới đây: 
 
-- Nắm vững các thuật toán học máy cơ bản như Linear Regression, Support Vector Machine, Decision Trees, K-mean Clustering, v.v.
+- [x] Nắm vững các thuật toán học máy cơ bản như Linear Regression, Support Vector Machine, Decision Trees, K-mean Clustering, $\dots$
 
-- Thành thạo quy trình xây dựng mô hình ML từ dữ liệu thô đến đánh giá kết quả.
+- [x] Hiểu và áp dụng kỹ thuật thu thập, tiền xử lý và trực quan hóa dữ liệu.
 
-- Hiểu và áp dụng kỹ thuật thu thập, tiền xử lý và trực quan hóa dữ liệu.
+- [x] Thành thạo quy trình xây dựng mô hình ML từ dữ liệu thô đến đánh giá kết quả.
 
-- Thực hành triển khai mô hình bằng Python và các thư viện như: Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn, v.v.
+- [x] Thực hành triển khai mô hình bằng Python và các thư viện như: Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn, v.v.
 
-- Áp dụng mô hình vào các bài toán thực tế qua mini-projects và case studies.
+- [x] Áp dụng mô hình vào các bài tập thực hành thực tế qua mini-projects và case studies.
 
 ## III. Requirements
 ---
@@ -75,9 +53,9 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 ## IV. Syllabus
 ---
 
-| Module | Topic | Content & Key Concepts | 
+| Module | Topic | Key Concepts | 
 | :--- | :--- | :--- |
-| *Module 01 <br> Overview & Environment* | **Lecture 01. Introduction to ML** <br> [[notes](https://)] [[code](https://)] | <ul><li>Định nghĩa & Phân loại: Supervised, Unsupervised, RL</li><li>Thách thức trong triển khai thực tế</li><li>Quy trình phát triển dự án ML chuẩn</li></ul> |
+| *Module 01 <br> Overview & Environment* | **Lecture 01. Introduction to ML** <br> [[notes](https://)] [[code](https://)] | <ul><li>ML Taxonomy, Supervised Learning, Unsupervised Learning.</li><li>ML Workflow, Real-world Challenges.</li></ul>|
 | | **Lecture 02. ML Development Roadmap** | <ul><li>Vòng đời phát triển (ML Lifecycle)</li><li>Các yếu tố cốt lõi: Data, Model, Compute</li><li>Giới thiệu về MLOps cơ bản</li></ul> |
 | | **Lecture 03. Python for Data Science** | <ul><li>Thiết lập môi trường: Anaconda, Jupyter, Colab</li><li>Hệ sinh thái: NumPy (Đại số), Pandas (Dữ liệu), Matplotlib (Vẽ biểu đồ)</li></ul> |
 | | | | |
