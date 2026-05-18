@@ -73,46 +73,56 @@ p {
   margin: 0em 0; 
 }
 
-.hero-banner {
+.hero {
     display: block;
     width: auto;      
     height: auto;    
     max-width: 100%;  
     border-radius: 15px;
     box-shadow:  0 4px 12px rgba(0,0,0,0.15);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;  
+    border-radius: 15px;
+    box-shadow:  0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .md-typeset table:not([class]) {
     width: 100%;
-    border-collapse: collapse;
-    margin: 0em 0;
-    font-size: 0.95em;
     display: table;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.95em;
     border: 1px solid #eee; 
 }
 
 .md-typeset table:not([class]) th {
+    padding: 15px;
     background-color: #fff;
     color: #0033a0; 
     font-weight: bold;
-    padding: 15px;
     border-bottom: 2px solid #eee;
 }
 
 .md-typeset table:not([class]) td {
     padding: 12px 15px;
-    border-bottom: 1px solid #eee;
     color: #555;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease-in-out; 
 }
 
-.md-typeset table:not([class]) tr:nth-child(even) {
+.md-typeset table:not([class]) tr:nth-child(even) td {
     background-color: #f8f9fa; 
 }
 
 .md-typeset table:not([class]) tr:hover td {
     background-color: #e9ecef;
-    transition: 0.2s;
 }
 
 .footer-garden {
@@ -127,3 +137,43 @@ p {
 .footer-garden span {
     margin: 0 10px;
 }
+
+.figure-environment {
+        margin: 1rem auto;
+        max-width: 100%;
+    }
+    
+    .subfigure-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        gap: 20px; 
+    }
+    
+    .subfigure {
+        flex: 1 1 45%; 
+        margin: 0; 
+        text-align: center;
+    }
+    
+    .subfigure img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+    }
+    
+    .sub-caption {
+        margin-top: 10px;
+        font-size: 0.9em;
+        font-style: italic;
+        color: #555;
+    }
+    
+  .main-caption {
+      text-align: center;
+      font-weight: italic;
+      margin-top: -15px; 
+      color: #222;
+      padding-top: 0;
+    }
