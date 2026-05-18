@@ -16,9 +16,8 @@ Support Vector Machine (SVM) là một mô hình Học Máy mạnh mẽ và linh
 Ý tưởng cơ bản của SVM là tạo ra một siêu mặt phẳng (hyperplane) không chỉ tách biệt hai lớp dữ liệu mà còn giữ khoảng cách xa nhất có thể tới các mẫu huấn luyện gần nhất của từng lớp. Ta có thể hình dung rằng mô hình SVM cố gắng tìm một con đường rộng nhất có thể chạy giữa các lớp. Do đó, kỹ thuật này còn được gọi là phân loại lề lớn (Large Margin Classification).
 
 <div class="figure-environment">
-    <div class="subfigure-container">
-        <figure class="subfigure">
-            <img src="../../../../assets/images/aml_l08_svm.png" alt="">
+    <div class="subfigure-container"> <figure class="subfigure">
+            <img src="../../../../assets/images/aml_l08_svm.png" alt="" style="width: 70%; height: auto;">
         </figure>
     </div>
 </div>
@@ -54,7 +53,7 @@ Như đã đề cập ở phần trước đó, phân loại biên cứng yêu c
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="../../../../assets/images/aml_l08_soft_hard_margin.png" alt="">
+            <img src="/../../assets/images/aml_l08_soft_hard_margin.png" alt="">
         </figure>
     </div>
 </div>
@@ -550,6 +549,7 @@ Việc chuyển đổi SVM về dạng một hàm mất mát duy nhất $\mathca
         Khi áp dụng các hàm hạt nhân phi tuyến tính (như RBF), ranh giới phân quyết trở thành một chiếc "hộp đen" (black-box), khó giải thích và trực quan hóa hơn nhiều so với các mô hình tuyến tính.
         - **Tiêu tốn bộ nhớ (Memory-Intensive):**
         Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với các Support Vectors, việc lưu trữ lượng lớn các vector này cho các tập dữ liệu đồ sộ có thể gây tràn hoặc cạn kiệt bộ nhớ.
+
 
 ## 5. Resources
 ---
