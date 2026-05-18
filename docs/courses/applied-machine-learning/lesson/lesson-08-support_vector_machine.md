@@ -18,7 +18,7 @@ Support Vector Machine (SVM) là một mô hình Học Máy mạnh mẽ và linh
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="/../../assets/images/aml_l08_svm.png" alt="">
+            <img src="../../../../assets/images/aml_l08_svm.png" alt="">
         </figure>
     </div>
 </div>
@@ -54,7 +54,7 @@ Như đã đề cập ở phần trước đó, phân loại biên cứng yêu c
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="/../../assets/images/aml_l08_soft_hard_margin.png" alt="">
+            <img src="../../../../assets/images/aml_l08_soft_hard_margin.png" alt="">
         </figure>
     </div>
 </div>

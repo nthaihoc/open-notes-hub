@@ -1,7 +1,7 @@
 ---
 title: "Applied Machine Learning (AML)"
 icon: material/slot-machine
-url_img: "../../assets/images/aml.jpg"
+url_img: "../../../assets/images/aml.jpg"
 width_img: "350"
 color: "#ff6b6b"   
 ---
