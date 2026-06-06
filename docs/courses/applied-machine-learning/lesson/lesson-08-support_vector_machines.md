@@ -45,15 +45,14 @@ $$
 \end{equation}
 $$
 
-
 ### 1.2 Soft-margin Classification
 ---
-Như đã đề cập ở phần trước đó, phân loại biên cứng yêu cầu dữ liệu phải có sự tách biệt tuyến tính, tuy nhiên trong thực tế dữ liệu có chứa rất nhiều nhiễu và chồng chéo lên nhau. Để khắc phục điểm yếu chí mạng này, khái niệm **Soft-margin SVM (SVM Biên mềm)** được giới thiệu (Hình 2). Bằng cách nới lỏng các ràng buộc, thuật toán cho phép một vài điểm dữ liệu được phép vi phạm ranh giới (phân loại sai), từ đó tìm ra một siêu phẳng phân tách linh hoạt và có tính tổng quát hóa cao hơn.
+Như đã đề cập ở phần trước đó, phân loại biên cứng yêu cầu dữ liệu phải có sự tách biệt tuyến tính, tuy nhiên trong thực tế dữ liệu có chứa rất nhiều nhiễu và chồng chéo lên nhau. Để khắc phục điểm yếu chí mạng này, khái niệm **Soft-margin (Biên mềm)** được giới thiệu (Hình 2). Bằng cách nới lỏng các ràng buộc, thuật toán cho phép một vài điểm dữ liệu được phép vi phạm ranh giới (phân loại sai), từ đó tìm ra một siêu phẳng phân tách linh hoạt và có tính tổng quát hóa cao hơn.
 
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="/../../assets/images/aml_l08_soft_hard_margin.png" alt="">
+            <img src="../../../../assets/images/aml_l08_soft_hard_margin.png" alt="">
         </figure>
     </div>
 </div>
@@ -457,99 +456,87 @@ Việc chuyển đổi SVM về dạng một hàm mất mát duy nhất $\mathca
 
 ## 3. Assessment
 ---
-***Bạn đọc hãy trả lời các câu hỏi tình huống sau trước khi mở xem đáp án để củng cố lại toàn bộ kiến thức về SVM.***
+==***Bạn đọc hãy trả lời các câu hỏi tình huống sau trước khi mở xem đáp án để củng cố lại toàn bộ kiến thức về SVM.***==
 
-!!! question "Question 1"
-    Thiết lập các tham số quy hoạch toàn phương $\left(\mathbf{H}, \mathbf{f}, \mathbf{A}, b \right)$ để giải bài toán SVM phân loại biên mềm (Soft-margin) bằng một bộ giải QP tiêu chuẩn?
 
-    ??? check "Đáp án"
+**Question 1.** Thiết lập các tham số quy hoạch toàn phương $\left(\mathbf{H}, \mathbf{f}, \mathbf{A}, b \right)$ để giải bài toán SVM phân loại biên mềm (Soft-margin) bằng một bộ giải QP tiêu chuẩn?
 
-!!! question "Question 2"
-    Tại sao việc chuẩn hóa và co giãn đặc trưng đầu vào (Feature Scaling) lại mang tính sống còn khi huấn luyện mô hình SVM?
+**Question 2.** Tại sao việc chuẩn hóa và co giãn đặc trưng đầu vào (Feature Scaling) lại mang tính sống còn khi huấn luyện mô hình SVM?
 
-    ??? check "Đáp án"
+**Question 4.** Về bản chất, hàm quyết định của SVM chỉ trả về nhãn (+1 hoặc -1). Vậy bộ phân loại SVM có thể trả về độ tin cậy dưới dạng xác suất (Probability) khi phân loại một mẫu dữ liệu không?
 
-!!! question "Question 3"
-    Về bản chất, hàm quyết định của SVM chỉ trả về nhãn (+1 hoặc -1). Vậy bộ phân loại SVM có thể trả về độ tin cậy dưới dạng xác suất (Probability) khi phân loại một mẫu dữ liệu không?
+**Question 5.** Theo bạn, nên sử dụng biểu diễn dạng gốc (Primal) hay đối ngẫu (Dual) cho bài toán SVM để huấn luyện trên tập dữ liệu có hàng triệu mẫu và hàng trăm đặc trưng?
 
-    ??? check "Đáp án"
+**Question 6.** Giả sử bạn vừa huấn luyện một bộ phân loại SVM với hạt nhân RBF, nhưng mô hình bị underfitting. Bạn nên tăng hay giảm các tham số $\gamma$ và $C$?
 
-!!! question "Question 4"
-    Theo bạn, nên sử dụng biểu diễn dạng gốc hay đối ngẫu cho bài toán SVM để huấn luyện trên tập dữ iệu có hàng triệu mẫu và hàng trăm đặc trưng?
-
-    ??? check "Đáp án"
-
-!!! question "Question 5"
-    Giả sử bạn vừa huấb luyện một bộ phân loại SVM với hạt nhân RBF, nhưng mô hình bị underfitting. Bạn nên tăng hay giảm các tham số $\gamma$ và $C$?
-
-    ??? check "Đáp án"
-
-## 4. FAQ?
+## 4. FAQs
 ---
-***Tổng hợp các thắc mắc phổ biến về bản chất toán học và cách thức triển khai SVM trong thực tế các dự án Machine Learning.***
 
-!!! danger "FAQ 1."
-    **Q: Có bao nhiêu Kernel Functions phổ biến?**
+==***Tổng hợp các thắc mắc phổ biến về bản chất toán học và cách thức triển khai SVM trong thực tế các dự án Machine Learning.***===
+
+<u>^^FAQ 1.^^</u>
+
+**Q: Có bao nhiêu Kernel Functions phổ biến?**
     
-    **A:** Có 4 hàm Kernel phổ biến:
+**A:** Có 4 hàm Kernel phổ biến:
 
-    1. Linear Kernel
-    $$
-    K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \mathbf{x}_i^\top \mathbf{x}_j
-    $$
+1. Linear Kernel
+$$
+K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \mathbf{x}_i^\top \mathbf{x}_j
+$$
 
-        - Thích hợp cho dữ liệu có thể phân tách tuyến tính.
-        - Không có phép biến đổi không gian rõ ràng nào được thực hiện.
+    - Thích hợp cho dữ liệu có thể phân tách tuyến tính.
+    - Không có phép biến đổi không gian rõ ràng nào được thực hiện.
 
-    2. Polynomial Kernel
-    $$
-    K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \left(\mathbf{x}_i^\top \mathbf{x}_j + c\right)^d
-    $$
+2. Polynomial Kernel
+$$
+K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \left(\mathbf{x}_i^\top \mathbf{x}_j + c\right)^d
+$$
 
-        - $c$: Hằng số kiểm soát độ linh hoạt.
-        - $d$: Bậc của đa thức.
-        - Nắm bắt các mối quan hệ đa thức giữa các đặc trưng, giúp tăng cường khả năng phân tách của ranh giới.
+    - $c$: Hằng số kiểm soát độ linh hoạt.
+    - $d$: Bậc của đa thức.
+    - Nắm bắt các mối quan hệ đa thức giữa các đặc trưng, giúp tăng cường khả năng phân tách của ranh giới.
 
-    3. Radial Basis Function (RBF) hoặc Gaussian Kernel
-    $$
-    K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \exp\left(-\gamma \left\|\mathbf{x}_i - \mathbf{x}_j\right\|^2\right)
-    $$
+3. Radial Basis Function (RBF) hoặc Gaussian Kernel
+$$
+K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \exp\left(-\gamma \left\|\mathbf{x}_i - \mathbf{x}_j\right\|^2\right)
+$$
 
-        - $\gamma$: Siêu tham số kiểm soát phạm vi ảnh hưởng của từng điểm dữ liệu.
-        - Ánh xạ dữ liệu vào một không gian vô hạn chiều.
-        - Cực kỳ hiệu quả đối với các ranh giới phân quyết phi tuyến tính và phức tạp.
+    - $\gamma$: Siêu tham số kiểm soát phạm vi ảnh hưởng của từng điểm dữ liệu.
+    - Ánh xạ dữ liệu vào một không gian vô hạn chiều.
+    - Cực kỳ hiệu quả đối với các ranh giới phân quyết phi tuyến tính và phức tạp.
 
-    4. Sigmoid Kernel
-    $$
-    K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \tanh\left(\alpha \mathbf{x}_i^\top \mathbf{x}_j + c\right)
-    $$
+4. Sigmoid Kernel
+$$
+K\left(\mathbf{x}_i, \mathbf{x}_j\right) = \tanh\left(\alpha \mathbf{x}_i^\top \mathbf{x}_j + c\right)
+$$
 
-        - Được lấy cảm hứng từ các hàm kích hoạt (activation functions) trong mạng nơ-ron nhân tạo.
-        - Các tham số $\alpha$ và $c$ quyết định hình dáng của ranh giới phân quyết.
-        - Có thể xấp xỉ hành vi của mạng nơ-ron dưới các thiết lập tham số cụ thể.
+    - Được lấy cảm hứng từ các hàm kích hoạt (activation functions) trong mạng nơ-ron nhân tạo.
+    - Các tham số $\alpha$ và $c$ quyết định hình dáng của ranh giới phân quyết.
+    - Có thể xấp xỉ hành vi của mạng nơ-ron dưới các thiết lập tham số cụ thể.
 
-!!! danger "FAQ 2."
-    **Q: Những ưu điểm và hạn chế cốt lõi của thuật toán SVM khi áp dụng vào thực tế là gì?**
+<u>^^FAQ 2.^^</u>
+
+**Q: Những ưu điểm và hạn chế cốt lõi của thuật toán SVM khi áp dụng vào thực tế là gì?**
     
-    **A:**
+**A:**
 
-    1. **Ưu điểm (Pros):**
+1. Ưu điểm (Pros):
 
-        - **Hiệu quả trong không gian đa chiều (High Dimensions):** SVM hoạt động cực kỳ mạnh mẽ với các tập dữ liệu có số lượng đặc trưng (features) lớn, ngay cả khi số chiều lớn hơn số lượng mẫu dữ liệu.
-        - **Kháng rủi ro quá khớp (Robust to Overfitting):** Thuật toán đặc biệt hiệu quả và an toàn trong các kịch bản phân lớp mà dữ liệu có biên lề phân cách (margin) rõ ràng.
-        - **Tính linh hoạt cao (Versatility):** Thông qua sức mạnh của thủ thuật hạt nhân (Kernel Trick), SVM có khả năng bẻ cong không gian để xử lý triệt để các ranh giới phi tuyến tính phức tạp.
-        - **Cấu trúc nghiệm thưa (Sparse Solutions):** Hàm dự đoán của mô hình chỉ phụ thuộc vào một lượng nhỏ các vector hỗ trợ (Support Vectors), giúp giảm thiểu đáng kể khối lượng tính toán ở pha dự đoán (Inference).
+    - **Hiệu quả trong không gian đa chiều (High Dimensions):** SVM hoạt động cực kỳ mạnh mẽ với các tập dữ liệu có số lượng đặc trưng (features) lớn, ngay cả khi số chiều lớn hơn số lượng mẫu dữ liệu.
+    - **Kháng rủi ro quá khớp (Robust to Overfitting):** Thuật toán đặc biệt hiệu quả và an toàn trong các kịch bản phân lớp mà dữ liệu có biên lề phân cách (margin) rõ ràng.
+    - **Tính linh hoạt cao (Versatility):** Thông qua sức mạnh của thủ thuật hạt nhân (Kernel Trick), SVM có khả năng bẻ cong không gian để xử lý triệt để các ranh giới phi tuyến tính phức tạp.
+    - **Cấu trúc nghiệm thưa (Sparse Solutions):** Hàm dự đoán của mô hình chỉ phụ thuộc vào một lượng nhỏ các vector hỗ trợ (Support Vectors), giúp giảm thiểu đáng kể khối lượng tính toán ở pha dự đoán (Inference).
 
-    2. **Nhược điểm (Cons):**
+2. Nhược điểm (Cons):
 
-        - **Khả năng mở rộng kém (Scalability):** SVM truyền thống rất tốn kém về mặt tính toán đối với các tập dữ liệu khổng lồ do phải xử lý bài toán quy hoạch toàn phương (Quadratic Programming).
-        - **Nhạy cảm với siêu tham số (Choice of Kernel):**
-        Hiệu suất của mô hình phụ thuộc hoàn toàn vào quá trình thử nghiệm để chọn ra hàm Kernel phù hợp, cũng như việc tinh chỉnh các siêu tham số (như $C$, $\gamma$, bậc $d$).
-        - **Thiếu tính diễn giải (Interpretability):**
-        Khi áp dụng các hàm hạt nhân phi tuyến tính (như RBF), ranh giới phân quyết trở thành một chiếc "hộp đen" (black-box), khó giải thích và trực quan hóa hơn nhiều so với các mô hình tuyến tính.
-        - **Tiêu tốn bộ nhớ (Memory-Intensive):**
-        Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với các Support Vectors, việc lưu trữ lượng lớn các vector này cho các tập dữ liệu đồ sộ có thể gây tràn hoặc cạn kiệt bộ nhớ.
-
+    - **Khả năng mở rộng kém (Scalability):** SVM truyền thống rất tốn kém về mặt tính toán đối với các tập dữ liệu khổng lồ do phải xử lý bài toán quy hoạch toàn phương (Quadratic Programming).
+    - **Nhạy cảm với siêu tham số (Choice of Kernel):**
+    Hiệu suất của mô hình phụ thuộc hoàn toàn vào quá trình thử nghiệm để chọn ra hàm Kernel phù hợp, cũng như việc tinh chỉnh các siêu tham số (như $C$, $\gamma$, bậc $d$).
+    - **Thiếu tính diễn giải (Interpretability):**
+    Khi áp dụng các hàm hạt nhân phi tuyến tính (như RBF), ranh giới phân quyết trở thành một chiếc "hộp đen" (black-box), khó giải thích và trực quan hóa hơn nhiều so với các mô hình tuyến tính.
+    - **Tiêu tốn bộ nhớ (Memory-Intensive):**
+    Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với các Support Vectors, việc lưu trữ lượng lớn các vector này cho các tập dữ liệu đồ sộ có thể gây tràn hoặc cạn kiệt bộ nhớ.
 
 ## 5. Resources
 ---
@@ -557,18 +544,25 @@ Việc chuyển đổi SVM về dạng một hàm mất mát duy nhất $\mathca
 1. **Blog & Web**
 
     1. [Convex sets và convex functions](https://machinelearningcoban.com/2017/03/12/convexity/)
+
     2. [Convex Optimization Problems](https://machinelearningcoban.com/2017/03/19/convexopt/)
+
     3. [Duality](https://machinelearningcoban.com/2017/04/02/duality/)
+    
     4. [Support Vector Machine](https://machinelearningcoban.com/2017/04/09/smv/)
     5. [Soft Margin Support Vector Machine](https://machinelearningcoban.com/2017/04/13/softmarginsmv/)
+
     6. [Kernel Support Vector Machine](https://machinelearningcoban.com/2017/04/22/kernelsmv/)
+
     7. [Giới thiệu về SVM](https://phamdinhkhanh.github.io/deepai-book/ch_ml/index_SVM.html)
 
-2. **Textbooks**
+2. **Books**
 
-    1. **Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow** (Aurélien Géron) Chapter 5: Support Vector Machines.
-    2. **Pattern Recognition and Machine Learning - PRML** (Christopher M. Bishop) Chapter 7: Sparse Kernel Machines.
-    3. **The Elements of Statistical Learning - ESL** (Trevor Hastie, Robert Tibshirani, Jerome Friedman) Chapter 12: Support Vector Machines and Flexible Discriminants.
+    1. *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (Aurélien Géron) - Chapter 5.Support Vector Machines.*
+
+    2. *Pattern Recognition and Machine Learning - PRML (Christopher M. Bishop) - Chapter 7.Sparse Kernel Machines.*
+
+    3. *The Elements of Statistical Learning - ESL (Trevor Hastie, Robert Tibshirani, Jerome Friedman) - Chapter 12.Support Vector Machines and Flexible Discriminants.*
 
 ---
 <!-- <div class="figure-environment">

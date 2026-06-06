@@ -137,7 +137,8 @@ nav:
       - Lesson 05: lesson.md
       - Lesson 06: lesson.md
       - Lesson 07: lesson.md
-      - Lesson 08. Support Vector Machine: courses/applied-machine-learning/lesson/lesson-08-support_vector_machine.md
+      - Lesson 08. Support Vector Machine: courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
+      - Lesson 09. Decision Trees: courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
 
     - Large Language Models:
       - Large Language Models: courses/large-language-models/README.md
