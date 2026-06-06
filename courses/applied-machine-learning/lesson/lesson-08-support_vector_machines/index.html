@@ -12,7 +12,7 @@
         <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../../../large-language-models/">
+        <link rel="next" href="../lesson-09-decision_trees/">
       
       
         
@@ -758,6 +758,8 @@
       
         
       
+        
+      
     
     
     
@@ -1193,10 +1195,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-faq" class="md-nav__link">
+  <a href="#4-faqs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. FAQ?
+        4. FAQs
       
     </span>
   </a>
@@ -1218,6 +1220,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-09-decision_trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 09. Decision Trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1849,10 +1879,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-faq" class="md-nav__link">
+  <a href="#4-faqs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. FAQ?
+        4. FAQs
       
     </span>
   </a>
@@ -1992,12 +2022,12 @@
 \]</div>
 <h3 id="12-soft-margin-classification">1.2 Soft-margin Classification</h3>
 <hr />
-<p>Như đã đề cập ở phần trước đó, phân loại biên cứng yêu cầu dữ liệu phải có sự tách biệt tuyến tính, tuy nhiên trong thực tế dữ liệu có chứa rất nhiều nhiễu và chồng chéo lên nhau. Để khắc phục điểm yếu chí mạng này, khái niệm <strong>Soft-margin SVM (SVM Biên mềm)</strong> được giới thiệu (Hình 2). Bằng cách nới lỏng các ràng buộc, thuật toán cho phép một vài điểm dữ liệu được phép vi phạm ranh giới (phân loại sai), từ đó tìm ra một siêu phẳng phân tách linh hoạt và có tính tổng quát hóa cao hơn.</p>
+<p>Như đã đề cập ở phần trước đó, phân loại biên cứng yêu cầu dữ liệu phải có sự tách biệt tuyến tính, tuy nhiên trong thực tế dữ liệu có chứa rất nhiều nhiễu và chồng chéo lên nhau. Để khắc phục điểm yếu chí mạng này, khái niệm <strong>Soft-margin (Biên mềm)</strong> được giới thiệu (Hình 2). Bằng cách nới lỏng các ràng buộc, thuật toán cho phép một vài điểm dữ liệu được phép vi phạm ranh giới (phân loại sai), từ đó tìm ra một siêu phẳng phân tách linh hoạt và có tính tổng quát hóa cao hơn.</p>
 <figure>
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="/../../assets/images/aml_l08_soft_hard_margin.png" alt="">
+            <img src="../../../../assets/images/aml_l08_soft_hard_margin.png" alt="">
         </figure>
     </div>
 </div>
@@ -2342,47 +2372,16 @@ b = \frac{1}{n_s} \sum_{i \in \text{SV}} \left( t^{(i)} - \sum_{j=1}^m \alpha_j 
 </span></code></pre></div>
 <h2 id="3-assessment">3. Assessment</h2>
 <hr />
-<p><strong><em>Bạn đọc hãy trả lời các câu hỏi tình huống sau trước khi mở xem đáp án để củng cố lại toàn bộ kiến thức về SVM.</em></strong></p>
-<div class="admonition question">
-<p class="admonition-title">Question 1</p>
-<p>Thiết lập các tham số quy hoạch toàn phương <span class="arithmatex">\(\left(\mathbf{H}, \mathbf{f}, \mathbf{A}, b \right)\)</span> để giải bài toán SVM phân loại biên mềm (Soft-margin) bằng một bộ giải QP tiêu chuẩn?</p>
-<details class="check">
-<summary>Đáp án</summary>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question 2</p>
-<p>Tại sao việc chuẩn hóa và co giãn đặc trưng đầu vào (Feature Scaling) lại mang tính sống còn khi huấn luyện mô hình SVM?</p>
-<details class="check">
-<summary>Đáp án</summary>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question 3</p>
-<p>Về bản chất, hàm quyết định của SVM chỉ trả về nhãn (+1 hoặc -1). Vậy bộ phân loại SVM có thể trả về độ tin cậy dưới dạng xác suất (Probability) khi phân loại một mẫu dữ liệu không?</p>
-<details class="check">
-<summary>Đáp án</summary>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question 4</p>
-<p>Theo bạn, nên sử dụng biểu diễn dạng gốc hay đối ngẫu cho bài toán SVM để huấn luyện trên tập dữ iệu có hàng triệu mẫu và hàng trăm đặc trưng?</p>
-<details class="check">
-<summary>Đáp án</summary>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question 5</p>
-<p>Giả sử bạn vừa huấb luyện một bộ phân loại SVM với hạt nhân RBF, nhưng mô hình bị underfitting. Bạn nên tăng hay giảm các tham số <span class="arithmatex">\(\gamma\)</span> và <span class="arithmatex">\(C\)</span>?</p>
-<details class="check">
-<summary>Đáp án</summary>
-</details>
-</div>
-<h2 id="4-faq">4. FAQ?</h2>
+<p><mark><strong><em>Bạn đọc hãy trả lời các câu hỏi tình huống sau trước khi mở xem đáp án để củng cố lại toàn bộ kiến thức về SVM.</em></strong></mark></p>
+<p><strong>Question 1.</strong> Thiết lập các tham số quy hoạch toàn phương <span class="arithmatex">\(\left(\mathbf{H}, \mathbf{f}, \mathbf{A}, b \right)\)</span> để giải bài toán SVM phân loại biên mềm (Soft-margin) bằng một bộ giải QP tiêu chuẩn?</p>
+<p><strong>Question 2.</strong> Tại sao việc chuẩn hóa và co giãn đặc trưng đầu vào (Feature Scaling) lại mang tính sống còn khi huấn luyện mô hình SVM?</p>
+<p><strong>Question 4.</strong> Về bản chất, hàm quyết định của SVM chỉ trả về nhãn (+1 hoặc -1). Vậy bộ phân loại SVM có thể trả về độ tin cậy dưới dạng xác suất (Probability) khi phân loại một mẫu dữ liệu không?</p>
+<p><strong>Question 5.</strong> Theo bạn, nên sử dụng biểu diễn dạng gốc (Primal) hay đối ngẫu (Dual) cho bài toán SVM để huấn luyện trên tập dữ liệu có hàng triệu mẫu và hàng trăm đặc trưng?</p>
+<p><strong>Question 6.</strong> Giả sử bạn vừa huấn luyện một bộ phân loại SVM với hạt nhân RBF, nhưng mô hình bị underfitting. Bạn nên tăng hay giảm các tham số <span class="arithmatex">\(\gamma\)</span> và <span class="arithmatex">\(C\)</span>?</p>
+<h2 id="4-faqs">4. FAQs</h2>
 <hr />
-<p><strong><em>Tổng hợp các thắc mắc phổ biến về bản chất toán học và cách thức triển khai SVM trong thực tế các dự án Machine Learning.</em></strong></p>
-<div class="admonition danger">
-<p class="admonition-title">FAQ 1.</p>
+<p><mark><strong><em>Tổng hợp các thắc mắc phổ biến về bản chất toán học và cách thức triển khai SVM trong thực tế các dự án Machine Learning.</em></strong>=</mark></p>
+<p><u><ins>FAQ 1.</ins></u></p>
 <p><strong>Q: Có bao nhiêu Kernel Functions phổ biến?</strong></p>
 <p><strong>A:</strong> Có 4 hàm Kernel phổ biến:</p>
 <ol>
@@ -2430,14 +2429,12 @@ $$</p>
 </ul>
 </li>
 </ol>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">FAQ 2.</p>
+<p><u><ins>FAQ 2.</ins></u></p>
 <p><strong>Q: Những ưu điểm và hạn chế cốt lõi của thuật toán SVM khi áp dụng vào thực tế là gì?</strong></p>
 <p><strong>A:</strong></p>
 <ol>
 <li>
-<p><strong>Ưu điểm (Pros):</strong></p>
+<p>Ưu điểm (Pros):</p>
 <ul>
 <li><strong>Hiệu quả trong không gian đa chiều (High Dimensions):</strong> SVM hoạt động cực kỳ mạnh mẽ với các tập dữ liệu có số lượng đặc trưng (features) lớn, ngay cả khi số chiều lớn hơn số lượng mẫu dữ liệu.</li>
 <li><strong>Kháng rủi ro quá khớp (Robust to Overfitting):</strong> Thuật toán đặc biệt hiệu quả và an toàn trong các kịch bản phân lớp mà dữ liệu có biên lề phân cách (margin) rõ ràng.</li>
@@ -2446,7 +2443,7 @@ $$</p>
 </ul>
 </li>
 <li>
-<p><strong>Nhược điểm (Cons):</strong></p>
+<p>Nhược điểm (Cons):</p>
 <ul>
 <li><strong>Khả năng mở rộng kém (Scalability):</strong> SVM truyền thống rất tốn kém về mặt tính toán đối với các tập dữ liệu khổng lồ do phải xử lý bài toán quy hoạch toàn phương (Quadratic Programming).</li>
 <li><strong>Nhạy cảm với siêu tham số (Choice of Kernel):</strong>
@@ -2458,28 +2455,47 @@ Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với c
 </ul>
 </li>
 </ol>
-</div>
 <h2 id="5-resources">5. Resources</h2>
 <hr />
 <ol>
 <li>
 <p><strong>Blog &amp; Web</strong></p>
 <ol>
-<li><a href="https://machinelearningcoban.com/2017/03/12/convexity/">Convex sets và convex functions</a></li>
-<li><a href="https://machinelearningcoban.com/2017/03/19/convexopt/">Convex Optimization Problems</a></li>
-<li><a href="https://machinelearningcoban.com/2017/04/02/duality/">Duality</a></li>
-<li><a href="https://machinelearningcoban.com/2017/04/09/smv/">Support Vector Machine</a></li>
-<li><a href="https://machinelearningcoban.com/2017/04/13/softmarginsmv/">Soft Margin Support Vector Machine</a></li>
-<li><a href="https://machinelearningcoban.com/2017/04/22/kernelsmv/">Kernel Support Vector Machine</a></li>
-<li><a href="https://phamdinhkhanh.github.io/deepai-book/ch_ml/index_SVM.html">Giới thiệu về SVM</a></li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/03/12/convexity/">Convex sets và convex functions</a></p>
+</li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/03/19/convexopt/">Convex Optimization Problems</a></p>
+</li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/04/02/duality/">Duality</a></p>
+</li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/04/09/smv/">Support Vector Machine</a></p>
+</li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/04/13/softmarginsmv/">Soft Margin Support Vector Machine</a></p>
+</li>
+<li>
+<p><a href="https://machinelearningcoban.com/2017/04/22/kernelsmv/">Kernel Support Vector Machine</a></p>
+</li>
+<li>
+<p><a href="https://phamdinhkhanh.github.io/deepai-book/ch_ml/index_SVM.html">Giới thiệu về SVM</a></p>
+</li>
 </ol>
 </li>
 <li>
-<p><strong>Textbooks</strong></p>
+<p><strong>Books</strong></p>
 <ol>
-<li><strong>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</strong> (Aurélien Géron) Chapter 5: Support Vector Machines.</li>
-<li><strong>Pattern Recognition and Machine Learning - PRML</strong> (Christopher M. Bishop) Chapter 7: Sparse Kernel Machines.</li>
-<li><strong>The Elements of Statistical Learning - ESL</strong> (Trevor Hastie, Robert Tibshirani, Jerome Friedman) Chapter 12: Support Vector Machines and Flexible Discriminants.</li>
+<li>
+<p><em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (Aurélien Géron) - Chapter 5.Support Vector Machines.</em></p>
+</li>
+<li>
+<p><em>Pattern Recognition and Machine Learning - PRML (Christopher M. Bishop) - Chapter 7.Sparse Kernel Machines.</em></p>
+</li>
+<li>
+<p><em>The Elements of Statistical Learning - ESL (Trevor Hastie, Robert Tibshirani, Jerome Friedman) - Chapter 12.Support Vector Machines and Flexible Discriminants.</em></p>
+</li>
 </ol>
 </li>
 </ol>
@@ -2522,7 +2538,7 @@ Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với c
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 18, 2026 21:47:23 UTC"><span class="timeago" datetime="2026-05-18T21:47:23+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 18, 2026 21:47:23 UTC">2026-05-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 6, 2026 23:24:08 UTC"><span class="timeago" datetime="2026-06-06T23:24:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 6, 2026 23:24:08 UTC">2026-06-06</span>
   </span>
 
     
@@ -2532,7 +2548,7 @@ Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với c
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 18, 2026 20:56:34 UTC"><span class="timeago" datetime="2026-05-18T20:56:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 18, 2026 20:56:34 UTC">2026-05-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 6, 2026 23:24:08 UTC"><span class="timeago" datetime="2026-06-06T23:24:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 6, 2026 23:24:08 UTC">2026-06-06</span>
   </span>
 
     
@@ -2607,13 +2623,13 @@ Vì pha dự đoán yêu cầu lưu trữ và tính toán khoảng cách với c
         
         
           
-          <a href="../../../large-language-models/" class="md-footer__link md-footer__link--next" aria-label="Next: Large Language Models">
+          <a href="../lesson-09-decision_trees/" class="md-footer__link md-footer__link--next" aria-label="Next: Lesson 09. Decision Trees">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Large Language Models
+                Lesson 09. Decision Trees
               </div>
             </div>
             <div class="md-footer__button md-icon">
