@@ -32,7 +32,8 @@ jobs:
           pip install mkdocs-material \
               mkdocs-macros-plugin \
               mkdocs-git-revision-date-localized-plugin \
-              mkdocs-git-committers-plugin-2
+              mkdocs-git-committers-plugin-2 \
+              pip install mkdocs-static-i18n
 
       - run: mkdocs gh-deploy --force
         env:

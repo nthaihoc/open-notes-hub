@@ -21,39 +21,63 @@
     </a>
 </p>
 
-## 👀 About Me
+## Bio
+---
+👋 Hello, I am **Nguyễn Thái Học** -- an **AI Engineer** at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), under the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn). My journey with AI began in 2020, but it was the challenging problems during my junior year of university that truly ignited my profound passion for this field.
+
+Starting as a **Computer Vision** Intern in August 2023 and subsequently taking on the official role of **AI Engineer**, I have transitioned from mastering theoretical foundations to directly developing practical AI solutions for Healthcare and Education. Currently, my research focus revolves around unlocking the potential of **Machine Learning** and **Computer Vision** to solve real-world challenges.
+
+Not stopping there, I am expanding my research boundaries into **Large Language Models (LLMs)** and **Vision-Language Models (VLMs)**, while aiming to optimize deployment pipelines through **MLOps/LLMOps**. To me, AI is not just about algorithms; it is a tool to create positive changes for society.
+
+## News
+---
+- **[05/2026:]** Admitted as a student for the second cohort of the **AI IN ACTION** training program at VinUniversity.
+
+- **[08/2024:]** Official **AI Engineer** at [IAST](https://iast.ictu.edu.vn).
+
+- **[07/2024:]** Two papers accepted for publication and presentation at the ICTA conference in Phu Tho.
+
+- **[08/2023:]** **Computer Vision** Intern at [IAST](https://iast.ictu.edu.vn).
+
+## Tech Stack & Skills
 ---
 
-👋 Xin chào, tôi là [Nguyễn Thái Học](https://nthaihoc.github.io/about-me).
+*   **:material-code-tags: Programming Languages:** `Python` `C/C++` `LaTeX` `Markdown`.
+*   **:material-brain: ML/DL Frameworks & Architectures:** `PyTorch` `TensorFlow` `Scikit-Learn` `HuggingFace` `Langchain`.
+*   **:material-database: Data Processing & Big Data:** `Pandas` `NumPy` `Hadoop` `Spark` `PostgreSQL` `MongoDB`.
+*   **:material-toolbox: IDEs, Tools & Ops:** `VS Code` `Git/GitHub` `Docker` `FastAPI` `Linux` `MLflow` `Streamlit`. 
 
-Hiện tôi là Kỹ sư nghiên cứu Trí tuệ nhân tạo (AI Researcher) tại [Viện Khoa học & Công nghệ Ứng dụng (IAST)](https://iast.ictu.edu.vn), trực thuộc [Trường Đại học CNTT & TT (ICTU)](https://ictu.edu.vn). Hành trình của tôi với AI bắt đầu từ năm 2020, nhưng chính những bài toán hóc búa từ năm thứ ba đại học đã thực sự khơi dậy trong tôi niềm đam mê mãnh liệt với lĩnh vực này.
-
-Bắt đầu từ vị trí Computer Vision Intern vào tháng 08/2023, tôi đã chuyển mình từ việc nắm vững lý thuyết sang trực tiếp phát triển các giải pháp AI thực tiễn cho Y tế (Healthcare) và Giáo dục (Education). Hiện tại, trọng tâm nghiên cứu của tôi xoay quanh việc khai phá tiềm năng của Machine Learning và Computer Vision để giải quyết các thách thức trong đời sống.
-
-Không dừng lại ở đó, tôi đang mở rộng ranh giới nghiên cứu sang các mô hình ngôn ngữ lớn (LLMs) và mô hình đa phương thức (Vision-Language Models), đồng thời định hướng tối ưu hóa quy trình triển khai thông qua MLOps/LLMOps. Với tôi, AI không chỉ là thuật toán, mà là công cụ để tạo ra những thay đổi tích cực cho xã hội.
-
-## 🚀 OpenNotesHub
+## Publications
 ---
-[OpenNotesHub](https://nthaihoc.github.io/open-notes-hub) không chỉ là nơi lưu trữ, mà là một "*Digital Garden*" - nơi tôi vun đắp, hệ thống hóa và chia sẻ những lát cắt trong hành trình nghiên cứu của mình. Đây là nỗ lực của tôi trong việc biến dữ liệu thô thành tri thức hữu dụng thông qua các trụ cột chính:
 
-<!-- - [Research Logs.](research/README.md) Lưu trữ tiến trình thực nghiệm, những thất bại có giá trị và các kỹ thuật nghiên cứu chuyên sâu được đúc kết từ thực tế làm việc tại Lab. -->
+<div class="grid cards" markdown>
 
-- [Course Notes.](courses/README.md) Chuyển đổi những ghi chú học thuật phức tạp thành các bài học tinh gọn, dễ hiểu và dễ tiếp cận.
+- <img style="width: 100%; height: 330px;" src="../assets/images/icta_01.png" class="pub-img" alt="ICTA 01">
 
-- [Knowledge Base.](knowledge-base/README.md) Hệ thống kiến thức đa lĩnh vực, được cấu trúc hóa để hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.
+    **01.** [A Study on Ensemble Learning for Cervical Cytology Classification](https://)
 
-- [Resources.](https://) Kho tổng hợp các tài nguyên, công cụ và tài liệu giá trị, bám sát các xu hướng công nghệ lõi và Trí tuệ Nhân tạo.
+    ---
 
-Hy vọng nơi này sẽ mang lại giá trị cho bạn trên con đường chinh phục công nghệ. Hãy cùng tôi học thêm điều mới mỗi ngày!
+    **Van-Khanh Tran**, **<u>Thai-Hoc Nguyen</u>**, **Chi-Cuong Nghiem**, **Xuan-Lam Dinh**
 
-## ☎️ Contact
+    *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
+
+    **Keywords:** `Ensemble Learning` `Cervical Cancer Cytology` `Deep Learning`
+
+- <img src="../assets/images/icta_02.png" class="pub-img" alt="ICTA 02">
+
+    **02.** [An automatic machine learning based customer segmentation model with RFM analysis](https://)
+
+    ---
+
+    **Xuan-Thi Tran**, **<u>Thai-Hoc Nguyen</u>**
+
+    *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
+
+    **Keywords:** `Customer Segmentation` `RFM` `K-means Clustering` `Hadoop` `Spark`
+
+</div>
+
 ---
-Tôi luôn sẵn sàng thảo luận về các ý tưởng nghiên cứu, dự án công nghệ hoặc đơn giản là chia sẻ kiến thức trong lĩnh vực AI. Bạn có thể kết nối với tôi qua các kênh sau:
-
-| Kênh | Chi tiết |
-|------|----------|
-| ✉️ Email | [thaihoc.it02@gmail.com](mailto:thaihoc.ictu@gmail.com) |
-| 💬 Social | [facebook.com/nthaihoc02](https://facebook.com/nthaihoc02) |
-| 🌐 Portfolio | [nthaihoc.github.io/about-me](https://nthaihoc.github.io/about-me) |
 
 ---
