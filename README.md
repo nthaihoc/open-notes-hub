@@ -1,4 +1,4 @@
-<center markdown># ☘️ OpenNotesHub</center>
+<center markdown>#☘️OpenNotesHub</center>
 
 <p style="text-align: center;" markdown>
     <a href="https://nthaihoc.github.io/about-me">
