@@ -30,10 +30,10 @@ jobs:
       - run: | 
           pip install --upgrade pip
           pip install mkdocs-material \
+              mkdocs-static-i18n \
               mkdocs-macros-plugin \
               mkdocs-git-revision-date-localized-plugin \
-              mkdocs-git-committers-plugin-2 \
-              pip install mkdocs-static-i18n
+              mkdocs-git-committers-plugin-2
 
       - run: mkdocs gh-deploy --force
         env:
