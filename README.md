@@ -1,6 +1,6 @@
-<center markdown>#☘️OpenNotesHub</center>
+<h1 style="text-align: center;">☘️OpenNotesHub</h1>
 
-<p style="text-align: center;" markdown>
+<p style="text-align: center;">
     <a href="https://nthaihoc.github.io/about-me">
         <img src="https://img.shields.io/badge/Portfolio-005571?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio">
     </a>
