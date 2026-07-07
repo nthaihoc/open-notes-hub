@@ -1,17 +1,19 @@
-# 01. setup title with the name of the site
 site_name: OpenNotesHub
+
+repo_name: nthaihoc/open-notes-hub
+repo_url: https://github.com/nthaihoc/open-notes-hub
 
 theme:
   logo: assets/images/logo.jpg
   favicon: assets/images/favicon.png
   palette:
     scheme: default
-    primary: black
+    primary: white
     accent: red
   
   font:
     text: Roboto
-    code: Roboto Mono
+    code: JetBrains Mono
     
   name: material
   icon:
@@ -41,6 +43,7 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.indexes
+    - navigation.sections
     - navigation.path
     - toc.follow
     - search.suggest
@@ -48,21 +51,16 @@ theme:
     - navigation.footer
     - navigation.tracking
 
-repo_name: nthaihoc/open-notes-hub
-repo_url: https://github.com/nthaihoc/open-notes-hub
-
 extra_css:
   - stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  # - javascripts/mathjax.js  
-  # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
-# 03. setup markdown extensions
+
 markdown_extensions:
   - abbr
   - admonition
@@ -97,39 +95,45 @@ markdown_extensions:
   - tables
   - pymdownx.tabbed:
       alternate_style: true
+
 plugins:
   - macros
   - search
+  - i18n:
+      docs_structure: suffix 
+      fallback_to_default: true 
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: vi
+          name: Tiếng Việt
+          build: true
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
       enable_git_follow: false 
-
   - git-committers:
       enabled: !ENV [CI, false] 
       repository: nthaihoc/open-notes-hub
       branch: main
       token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
-copyright: ©️ 2025 by Thai-Hoc Nguyen
 
-# 04. setup navigation
 nav:
   - Home: index.md
-
+  - About Me: about-me/README.md
   - Research Logs:
-    - Introduction: research/README.md
-    
-    - Pronunciation Scoring:
-      - Overview: research/pronunciation-scoring/README.md
-      - Report 01 - Introduction: research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
-      - Report 02 - Baseline Models & Error Analysis: research/pronunciation-scoring/literature-review/related_work.md
+    - research/README.md
+    - "Pronunciation Scoring":
+      - research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
+      - research/pronunciation-scoring/literature-review/related_work.md
 
   - Course Notes:
-    - Course Notes: courses/README.md
-
-    - Applied Machine Learning: 
-      - Applied Machine Learning: courses/applied-machine-learning/README.md
+    - courses/README.md
+    - "Applied Machine Learning": 
+      - courses/applied-machine-learning/README.md
       - Lesson 01: lesson.md
       - Lesson 02: lesson.md
       - Lesson 03: lesson.md
@@ -137,8 +141,8 @@ nav:
       - Lesson 05: lesson.md
       - Lesson 06: lesson.md
       - Lesson 07: lesson.md
-      - Lesson 08. Support Vector Machine: courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
-      - Lesson 09. Decision Trees: courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
+      - courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
+      - courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
 
     - Large Language Models:
       - Large Language Models: courses/large-language-models/README.md
@@ -151,22 +155,12 @@ nav:
       - Lesson 07: lesson.md
   
   - Knowledge Base:
-    - Knowledge Base: knowledge-base/README.md
+    - knowledge-base/README.md
+    - "❄️ FastAPI Tutorials": 
+        - knowledge-base/fastapi/lesson-01-overview.md
+    - "🔎 RAG Framework":
+        - knowledge-base/ai-in-action/vallina_rag.md
 
-    # - MLOps Tutorials: knowledge-base/mlops-tutorials/README.md
-    - FastAPI Tutorials:
-      - FastAPI Tutorials: knowledge-base/fastapi/README.md
-      - Lesson 01. FastAPI Overview and Project Setup: knowledge-base/fastapi/lesson-01-overview.md
-    
-  # - IAI Lab:
-  #   - IAI Lab: iai-lab/README.md
-  #   - Operational Framework: iai-lab/tracks.md
-  #   - Guidelines: iai-lab/guidelines.md
-
-  # - Resources:
-  #   - Overview: resources/README.md
-
-# 05. setup other configurations
 extra:
   social:
     - icon: material/school
@@ -187,4 +181,16 @@ extra:
     - icon: material/facebook
       link: https://www.facebook.com/nthoc.02
       name: Facebook
+  generator: false
+  alternate:
+      - name: English
+        link: /
+        lang: en
+      - name: Vietnamese
+        link: /vi/
+        lang: vi
+
+copyright: >
+  ©️ 2025 by Thai-Hoc Nguyen.
+  Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
       

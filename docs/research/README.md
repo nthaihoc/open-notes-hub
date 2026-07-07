@@ -1,6 +1,6 @@
 ---
 title: 🌴 Research Logs
-icon: simple/researchgate
+url_img: "../../assets/images/ods_stickers.jpg"
 quote:
   - "Dream big. Start small. Act now"
   - "The expert in anything was once a beginner"

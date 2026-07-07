@@ -1,6 +1,6 @@
 ---
 title: 🫒 Knowledge Base
-icon: material/brain
+url_img: "../../assets/images/ods_stickers.jpg"
 quote:
     - "Live as if you were to die tomorrow. Learn as if you were to live forever"
     - "Dreams don't work unless you do"

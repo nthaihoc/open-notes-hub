@@ -1,16 +1,8 @@
 ---
-title: Lesson 01. FastAPI Overview and Project Setup
-hide:
-    - toc
+title: Lesson 01. Overview and Project Setup
 ---
 
-# ❄️ Lesson 01. FastAPI Overview and Project Setup
-<br>
-!!! tip "Table of Contents"
-
-    [**1. Technical requirements**](#technical-requirements)
-
-    [**2. Setting up development environment**](#setting-up-development-environment)
+<center markdown># Lesson 01. Overview and Project Setup</center>
 
 ## 1. Technical requirements
 ---
@@ -73,7 +65,7 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
-## Creating a FastAPI project
+## 3. Creating a FastAPI project
 
 Bắt đầu bằng việc khởi tạo một project folder với tên mà bạn thích (đây sẽ là nơi chứa toàn bộ mã nguồn dự án). Trước hết, bạn cần tạo một môi trường ảo:
 
@@ -103,7 +95,7 @@ $ pip install fastapi uvicorn
 
 Sau khi FastAPI đã được cài đặt, hãy mở thư mục dự án và tạo một file có tên là `main.py`. File này sẽ là nơi ứng dụng FastAPI của bạn bắt đầu.
 
-```python
+```python linenums="1"
 # import module FastAPI
 from fastapi import FastAPI
 
@@ -113,13 +105,13 @@ app = FastAPI()
 
 Định nghĩa router đầu tiên trong ứng dụng. Router trong FastAPI giống như biến chỉ đường, giúp điều hướng request đến đúng function.
 
-```python
+```python linenums="1"
 @app.get("/")
 def read_root(): 
     return {"Hello" : "World"}
 ```
 
-## Structure project
+## 4. Structure project
 
 Trong bất kể dự án nào, việc sắp xếp mã nguồn theo một cấu trúc rõ ràng không chỉ là vấn đề gọn gàng mà còn là việc tạo ra một môi trường bền vững và có khả năng mở rộng. Điều này có nghĩa là bạn cần tổ chức dự án theo cách tách biệt các phần khác nhau của ứng dụng một cách logic và hiệu quả.
 
@@ -131,7 +123,7 @@ Không có một cấu trúc duy nhất và hoàn hảo cho mọi dự án FastA
 
 - **docs:** Tải liệu là rất quan trọng với bất kỳ dự án nào, phần này sẽ bao gồm hướng dẫn cài đặt, hướng dẫn sử dụng,v.v. Việc có một thư mục dành riêng cho tài liệu giúp dự án rõ ràng và dễ duy trì hơn.
 
-## Basic concepts of FastAPI
+## 5. Basic concepts of FastAPI
 
 **Khái niệm và đặc điểm chính của FastAPI.** FastAPI là một framework web hiện đại và nhanh để để xây dựng API với Python, dựa trên type hints tiêu chuẩn của Python. Một số đặc điểm chính của FastAPI:
 
@@ -152,7 +144,7 @@ Không có một cấu trúc duy nhất và hoàn hảo cho mọi dự án FastA
 Lập trình bất đồng bộ là một kiểu lập trình concurrent programming (chạy đồng thời), trong đó các tác vụ được thực hiện mà không chặn luồng xử lý chính.
 
 
-```python
+```python linenums="1"
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -166,7 +158,7 @@ async def read_root():
 
 **Endpoints.** Là những điểm mà tại đó diễn ra sự tương tác với API. Trong FastAPI, một endpoint được tạo ra bằng cách trang trí (decorating) một hàm với một HTTP method, chẳng hạn như `app.get("/")`. Điều này có nghĩa là một yêu cầu GET sẽ được gửi tới root `("/")` của ứng dụng.
 
-```python
+```python linenums="1"
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -182,7 +174,7 @@ Trong đoạn code này, chúng ta đang định nghĩa một endpoint cho URL g
 
 Để định nghĩa một router, trước hết hãy tạo một file mới trong thư mục dự án của bạn với tên `router.py`. Sau đó, tạo router như sau:
 
-```python
+```python linenums="1"
 from fastapi import APIRouter
 
 router = APIRouter()
@@ -194,7 +186,7 @@ async def read_item(item_id: int):
 
 Giờ đây bạn có thể tái sử dụng router này và gắn chúng vào instance FastAPI trong file `main.py`.
 
-```python
+```python linenums="1"
 from fastapi import FastAPI
 import routers
 
@@ -225,13 +217,13 @@ Một trong những tính năng thú vị nhất của FastAPI là tài liệu t
 
 Hai giao diện này cung cấp một cách tương tác trực quan để khám phá API và kiểm thử các chức năng của chúng.
 
-## Defining first API endpoint
+## 6. Defining first API endpoint
 
 Khi bạn đã nắm được những kiến thức cơ bản về FastAPI và môi trường phát triển đã sẵn sàng, bây giờ chúng ta sẽ đi chi tiết về việc khởi tạo endpoint đầu tiên. Đây chính là nơi sức mạnh thật sự của FastAPI, bạn có thể xây dựng được một endpoint API hoạt động, sẵn sàng phản hồi các HTTP request một cách dễ dàng. 
 
 Trong web API, GET request có lẽ là phổ biến nhất. Chúng được sử dụng để lấy dữ liệu từ server. Trong FastAPI, việc xử lý một GET request rất đơn giản và trực quan. Giả sử bạn đang xây dựng API cho một cửa hàng sách. Endpoint đầu tiên sẽ cung cấp thông tin về một cuốn sách dựa trên ID.
 
-```python
+```python linenums="1"
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -255,13 +247,13 @@ Sau khi định nghĩa endpoint GET, bạn có thể chạy ứng dụng FastAPI
 
 **Sử dụng ứng dụng Postman.** Postman là một API client cho phép xây dựng, kiểm thử tài liệu hóa API một cách chi tiết hơn. Tải và cài đặt Postman từ [[https://www.postman.com/downloads/](https://www.postman.com/downloads/)]. Sau khi cài đặt: (1) tạo một request mới; (2) chọn method là GET; (3) đặt URL là endpoint FastAPI của bạn `http://127.0.0.1:8000/books/1`; (4) Nhấn send và nhận phản hồi từ server FastAPI.
 
-## Path parameters and query parameters
+## 7. Path parameters and query parameters
 
 Một trong những khía cạnh quan trọng của phát triển API là xử lý paramters. Parameters cho phép API nhận input từ người dùng, giúp endpoints trở nên động và linh hoạt hơn. 
 
 **Path parameters.** Là những phần trong URL được kỳ vọng sẽ thay đổi. Ở đây với endpoint `/authors/{author_id}`, thì `author_id` chính là một parameter. FastAPI cho phép lấy giá trị của parameter này một cách dễ dàng và sử dụng trong hàm của mình. Giá trị `name` không thay đổi, nhưng `author_id` sẽ là giá trị được truyền vào từ request.
 
-```python
+```python linenums="1"
 @app.get("/authors/{author_id}")
 async def read_author(author_id: int):
     return {
@@ -272,7 +264,7 @@ async def read_author(author_id: int):
 
 **Query parameters.** Được dùng để tinh chỉnh hoặc tùy biến phản hồi của API, chúng được thêm vào URL sau dấu ?. Ví dụ `/books?genre=ai&year=2025` có thể trả về danh sách những sách phát hành năm 2025 và thuộc thể loại AI. 
 
-```python
+```python linenums="1"
 @app.get("/books")
 async def read_book(year: int=None):
     if year:
@@ -286,13 +278,13 @@ async def read_book(year: int=None):
 
 Ở đây, `year` là một query parameter tùy chọn, khi gán giá trị mặc định là `None` chúng trở thành optional, nếu người dùng truyền `year` endpoint sẽ trả về danh sách của năm đó, nêu không chúng sẽ trả về tất cả các sách.
 
-## Defining request and respone models
+## 8. Defining request and respone models
 
 **Pydantic models.** Pydantic models là một tính năng mạnh mẽ cho việc xác thực và chuyển đổi dữ liệu. Chúng cho phép bạn định nghĩa cấu trúc, kiểu dữ liệu, và các ràng buộc của dữ liệu mà ứng dụng xử lý, cả cho request đến và response đi.
 
 **Tạo models.** Tạo một class kế thừa BaseModel của Pydantic cho ứng dụng của bạn trong file có tên là `models.py`.
 
-```python
+```python linenums="1"
 from pydantic import BaseModel
 
 class Book(BaseModel):
@@ -305,7 +297,7 @@ class Book(BaseModel):
 
 **Request body.** Trong FastAPI, các Pydantic models không chỉ được dùng để xác thực mà còn đóng vai trò là request body.
 
-```python
+```python linenums="1"
 from models import Book
 
 @app.post("/book")
@@ -317,7 +309,7 @@ Trong endpoint này, khi người dùng gửi một POST request đến endpoint
 
 **Xác thực dữ liệu request.** Pydantic còn cung cấp các tính năng xác thực nâng cao. Ví dụ, có thể thêm regex validation, giá trị mặc định...
 
-```python
+```python linenums="1"
 from pydantic import BaseModel, Field
 
 class Book(BaseModel):
@@ -330,7 +322,7 @@ Bạn có thể xem chi tiết các tính năng xác thực ở tài liệu chí
 
 **Quản lý response formats.** FastAPI cho phép định nghĩa response models một cách rõ ràng, đảm bảo dữ liệu được trả về bởi API của bạn khớp với một schema cụ thể. Điều này rất cần thiết trong việc loại bỏ dữ liệu nhạy cảm hoặc tái cấu trúc response.
 
-```python
+```python linenums="1"
 from pydantic import BaseModel
 
 class BookResponse(BaseModel):
@@ -349,7 +341,7 @@ Phần `-> list[BookReponse]` trong khai báo kiểu trả về của hàm cho F
 
 Ngoài ra, bạn có thể chỉ định response trực tiếp trong decorator của endpoint như sau:
 
-```python
+```python linenums="1"
 @app.get("/allbooks", response_model=list[BookResponse])
 async def read_all_books() -> Any:
     return [
@@ -358,11 +350,11 @@ async def read_all_books() -> Any:
     ]
 ```
 
-## Handling errors and exceptions
+## 9. Handling errors and exceptions
 
 FastAPI cung cấp và hỗ trợ cho việc xử lý ngoại lệ và lỗi. Khi một lỗi xảy ra, FastAPI trả về một phản hồi JSON chứa chi tiết về lỗi, điều này rất hữu ích cho việc gỡ lỗi. Tuy nhiên, có những tình huống bạn có thể muốn tùy chỉnh các phản hồi lỗi này để mang lại trải nghiệm người dùng tốt hơn hoặc đảm bảo bảo mật.
 
-```python
+```python linenums="1"
 from fastapi import FastAPI, HTTPException
 from starlette.responses import JSONResponse
 
@@ -379,7 +371,7 @@ async def http_exception_handler(request, exc):
 
 Trong ví dụ này, hàm `http_exception_handler` sẽ được dùng để xử lý các lỗi `HTTPException`. Bất cứ khi nào một lỗi `HTTPException` được raise ở bất kỳ đâu trong ứng dụng của bạn, FastAPI sẽ dùng bộ xử lý này để trả về một phản hồi tùy chỉnh.
 
-```python
+```python linenums="1"
 @app.get("/error_endpoint")
 async def raise_exception():
     raise HTTPException(status_code=400)
@@ -389,7 +381,7 @@ Endpoint này sẽ ném ra phản hồi lỗi HTTP để minh họa thông báo 
 
 Như đã thảo luận trong phần Pydantic, FastAPI sử dụng cac model của Pydantic để xác thực dữ liệu. Khi một request đươc gửi với dữ liệu không tuân theo model đã định nghĩa, FastAPI sẽ raise một ngoại lệ và trả về phản hồi lỗi. Trong một số trường hợp, bạn có thể muốn tùy chỉnh phản hồi cho các lỗi xác thực.
 
-```python
+```python linenums="1"
 import json
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.exceptions import ResponseValidationError
@@ -409,7 +401,7 @@ async def validation_exception_handler(
 
 Bộ xử lý tùy chỉnh này sẽ bắt bất kỳ lỗi RequestValidationError nào và trả về một phản hồi chi tiết của lỗi. Giả sử bạn thử gọi endpoint `POST /book` với giá trị title là một số thay vì một chuỗi, bạn sẽ nhận được phản hồi với mã lỗi trạng thái 422.
 
-```python
+```python linenums="1"
 @app.post("/book")
 async def create_book(book: Book):
     return ({
@@ -418,3 +410,6 @@ async def create_book(book: Book):
     })
 ```
 
+---
+
+---

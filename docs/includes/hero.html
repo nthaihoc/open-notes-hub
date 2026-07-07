@@ -1,10 +1,10 @@
 <img class="hero" 
-    src="{{ page.meta.url_img | default('../assets/images/ods_stickers.jpg', true) }}" 
+    src="{{ page.meta.url_img | default('', true) }}" 
     alt="">
 </img>
 
 <div align="center">
-    <h1 style="margin-bottom: 10px; font-size: 2.5em;">{{ page.meta.title | default("OpenNotesHub") }}</h1>
+    <h1 style="margin-bottom: 10px; font-size: 2.5em;">{{ page.meta.title | default('', true) }}</h1>
     
     <div style="font-style: italic; color: #666; margin-bottom: 25px; line-height: 1.6;">
         {% if page.meta.quote %}
@@ -14,7 +14,6 @@
                 {{ page.meta.quote | join('<br>') | safe }}
             {% endif %}
         {% else %}
-            "Be kind. Be curious. Be courageous"
         {% endif %}
     </div>
 </div>

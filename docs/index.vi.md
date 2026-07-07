@@ -12,7 +12,7 @@ url_img: "assets/images/ods_stickers.jpg"
 <div class="hero-title"><a href="https://nthaihoc.github.io/open-notes-hub">OpenNotesHub</a></div>
 
 <p class="hero-slogan">
-Not just a repository, but a space I cultivate, systematize, and share the most authentic slices of my AI research journey. Forging knowledge from raw data.
+Không chỉ là nơi lưu trữ, mà là không gian tôi vun đắp, hệ thống hóa và chia sẻ những lát cắt chân thực nhất trong hành trình nghiên cứu AI của mình. Kiến tạo tri thức từ dữ liệu thô.
 </p>
 
 <p style="text-align: center;">      
@@ -66,26 +66,26 @@ Not just a repository, but a space I cultivate, systematize, and share the most 
 
 <div class="button-group" markdown>
 
-[Explore Now :octicons-arrow-right-24:](#pillars-of-knowledge){ .md-button .md-button--primary }
+[Khám phá ngay :octicons-arrow-right-24:](#tru-cot-tri-thuc){ .md-button .md-button--primary }
 
 </div>
 
 
 <div class="grid cards" markdown>
 
--   <span class="stats-num" style="color: #007cf0;">30+</span>
+-   <span class="stats-num" style="color: #007cf0;">12+</span>
     
     ---
     
     <p class="stats-text">`Lecture Notes`</p>
 
--   <span class="stats-num" style="color: #00b4d8;">30+</span>
+-   <span class="stats-num" style="color: #00b4d8;">150+</span>
     
     ---
     
     <p class="stats-text">`Knowledge Base Topics`</p>
 
--   <span class="stats-num" style="color: #52b788;">30+</span>
+-   <span class="stats-num" style="color: #52b788;">80+</span>
     
     ---
     
@@ -95,7 +95,7 @@ Not just a repository, but a space I cultivate, systematize, and share the most 
 
 <br>
 
-## 🚀 Pillars of Knowledge
+## 🚀 Trụ cột Tri thức
 ---
 
 <div class="grid cards" markdown>
@@ -106,9 +106,9 @@ Not just a repository, but a space I cultivate, systematize, and share the most 
     
     **:material-notebook-edit-outline: ==Course Notes==**
     
-    *Transforming complexity into simplicity. Converting in-depth academic notes into the most intuitive and easy-to-understand lessons.*
+    *Biến sự phức tạp thành tinh gọn. Chuyển đổi những ghi chú học thuật chuyên sâu thành các bài học dễ hiểu và trực quan nhất.*
     
-    [Start Learning :octicons-arrow-right-24:](courses/README.md){ .md-button }
+    [Bắt đầu học :octicons-arrow-right-24:](courses/README.md){ .md-button }
 
 -   ![Knowledge Base Cover](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=400&fit=crop)
     
@@ -116,9 +116,9 @@ Not just a repository, but a space I cultivate, systematize, and share the most 
     
     **:material-brain: ==Knowledge Base==**
     
-    *Systematizing thought. A clearly structured, multi-disciplinary knowledge network that supports quick lookups and shapes long-term research thinking.*
+    *Hệ thống hóa tư duy. Mạng lưới kiến thức đa lĩnh vực được cấu trúc rõ ràng, hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.*
     
-    [Search Now :octicons-arrow-right-24:](knowledge-base/README.md){ .md-button }
+    [Tra cứu ngay :octicons-arrow-right-24:](knowledge-base/README.md){ .md-button }
 
 -   ![Resources Cover](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=400&fit=crop)
     
@@ -126,9 +126,9 @@ Not just a repository, but a space I cultivate, systematize, and share the most 
     
     **:material-toolbox-outline: ==Resources==**
     
-    *Core Tools & Resources. A curated repository of valuable materials, closely tracking core technology trends and the evolution of Artificial Intelligence.*
+    *Công cụ & Tài nguyên cốt lõi. Kho tổng hợp các tài liệu giá trị, bám sát các xu hướng công nghệ lõi và sự phát triển của Trí tuệ Nhân tạo.*
     
-    [View Resources :octicons-arrow-right-24:](https://){ .md-button }
+    [Xem tài nguyên :octicons-arrow-right-24:](https://){ .md-button }
 
 </div>
 
