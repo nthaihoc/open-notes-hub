@@ -1,3 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/"/>
+    </url>
+    <url>
+        <loc>Noneabout-me/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneabout-me/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/about-me/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/applied-machine-learning/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/applied-machine-learning/lesson/lesson-08-support_vector_machines/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/lesson/lesson-08-support_vector_machines/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/lesson/lesson-08-support_vector_machines/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/applied-machine-learning/lesson/lesson-09-decision_trees/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/lesson/lesson-09-decision_trees/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/lesson/lesson-09-decision_trees/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/computer-vision-foundations/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/computer-vision-foundations/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/computer-vision-foundations/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/large-language-models/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/large-language-models/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/large-language-models/"/>
+    </url>
+    <url>
+        <loc>Nonecourses/large-language-models/lessson/lesson-03-attention_mechanisms/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/large-language-models/lessson/lesson-03-attention_mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/large-language-models/lessson/lesson-03-attention_mechanisms/"/>
+    </url>
+    <url>
+        <loc>Noneiai-lab/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/"/>
+    </url>
+    <url>
+        <loc>Noneiai-lab/guidelines/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/guidelines/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/guidelines/"/>
+    </url>
+    <url>
+        <loc>Noneiai-lab/tracks/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/tracks/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/tracks/"/>
+    </url>
+    <url>
+        <loc>Noneknowledge-base/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/"/>
+    </url>
+    <url>
+        <loc>Noneknowledge-base/ai-in-action/vallina_rag/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/ai-in-action/vallina_rag/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/ai-in-action/vallina_rag/"/>
+    </url>
+    <url>
+        <loc>Noneknowledge-base/fastapi/lesson-01-overview/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/fastapi/lesson-01-overview/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/fastapi/lesson-01-overview/"/>
+    </url>
+    <url>
+        <loc>Noneknowledge-base/mlops/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/mlops/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/mlops/"/>
+    </url>
+    <url>
+        <loc>Noneresearch/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/research/"/>
+    </url>
+    <url>
+        <loc>Noneresearch/draft/ssl_pronscore_mdd_outline/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch/draft/ssl_pronscore_mdd_outline/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/research/draft/ssl_pronscore_mdd_outline/"/>
+    </url>
+    <url>
+        <loc>Noneresources/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/resources/"/>
+    </url>
+    <url>
+        <loc>Nonevi/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+    </url>
+    <url>
+        <loc>Nonevi/about-me/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneabout-me/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/applied-machine-learning/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/applied-machine-learning/lesson/lesson-08-support_vector_machines/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/lesson/lesson-08-support_vector_machines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/lesson/lesson-08-support_vector_machines/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/applied-machine-learning/lesson/lesson-09-decision_trees/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/applied-machine-learning/lesson/lesson-09-decision_trees/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/applied-machine-learning/lesson/lesson-09-decision_trees/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/computer-vision-foundations/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/computer-vision-foundations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/computer-vision-foundations/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/large-language-models/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/large-language-models/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/large-language-models/"/>
+    </url>
+    <url>
+        <loc>Nonevi/courses/large-language-models/lessson/lesson-03-attention_mechanisms/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/courses/large-language-models/lessson/lesson-03-attention_mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonecourses/large-language-models/lessson/lesson-03-attention_mechanisms/"/>
+    </url>
+    <url>
+        <loc>Nonevi/iai-lab/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/"/>
+    </url>
+    <url>
+        <loc>Nonevi/iai-lab/guidelines/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/guidelines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/guidelines/"/>
+    </url>
+    <url>
+        <loc>Nonevi/iai-lab/tracks/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/iai-lab/tracks/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneiai-lab/tracks/"/>
+    </url>
+    <url>
+        <loc>Nonevi/knowledge-base/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/"/>
+    </url>
+    <url>
+        <loc>Nonevi/knowledge-base/ai-in-action/vallina_rag/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/ai-in-action/vallina_rag/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/ai-in-action/vallina_rag/"/>
+    </url>
+    <url>
+        <loc>Nonevi/knowledge-base/fastapi/lesson-01-overview/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/fastapi/lesson-01-overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/fastapi/lesson-01-overview/"/>
+    </url>
+    <url>
+        <loc>Nonevi/knowledge-base/mlops/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/knowledge-base/mlops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneknowledge-base/mlops/"/>
+    </url>
+    <url>
+        <loc>Nonevi/research/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/research/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch/"/>
+    </url>
+    <url>
+        <loc>Nonevi/research/draft/ssl_pronscore_mdd_outline/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/research/draft/ssl_pronscore_mdd_outline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch/draft/ssl_pronscore_mdd_outline/"/>
+    </url>
+    <url>
+        <loc>Nonevi/resources/</loc>
+        <lastmod>2026-07-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="Nonevi/resources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/"/>
+    </url>
 </urlset>

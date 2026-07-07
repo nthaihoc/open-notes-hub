@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+          <link rel="alternate" href="../../../../research/draft/ssl_pronscore_mdd_outline/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="vi">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Cascaded Acoustic-Phonetic Representation Transfer for Multi-Aspect Pronunciation Assessment - OpenNotesHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cascaded-acoustic-phonetic-representation-transfer-for-multi-aspect-pronunciation-assessment" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../" title="OpenNotesHub" class="md-header__button md-logo" aria-label="OpenNotesHub" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenNotesHub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cascaded Acoustic-Phonetic Representation Transfer for Multi-Aspect Pronunciation Assessment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Chọn ngôn ngữ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../research/draft/ssl_pronscore_mdd_outline/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="vi" class="md-select__link">
+              Vietnamese
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nthaihoc/open-notes-hub" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nthaihoc/open-notes-hub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Research Logs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../courses/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Course Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../knowledge-base/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="OpenNotesHub" class="md-nav__button md-logo" aria-label="OpenNotesHub" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    OpenNotesHub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nthaihoc/open-notes-hub" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nthaihoc/open-notes-hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Logs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Logs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pronunciation Scoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pronunciation Scoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/pronunciation-scoring/literature-review/related_work.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Notes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Course Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../courses/applied-machine-learning/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m5 12 2-4V7H4v1h2l-2 4m5 0 2-4V7H8v1h2l-2 4m5 0 2-4V7h-3v1h2l-2 4m9-10c-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7V17h-3v-2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1h-3.8c-.8-1.2-2.2-2-3.7-2s-2.9.8-3.7 2H2c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1v7h15v-3h3c1.1 0 2-.9 2-2V5.7c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2m-8 17H6v-2h7zm3-6H3V6h13z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Applied Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Applied Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/applied-machine-learning/lesson/lesson-08-support_vector_machines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Vector Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/applied-machine-learning/lesson/lesson-09-decision_trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../courses/large-language-models/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Large Language Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/large-language-models/lessson/lesson-03-attention_mechanisms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 03. Attention Mechanisms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 05
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 06
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lesson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../knowledge-base/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge Base
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❄️ FastAPI Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❄️ FastAPI Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../knowledge-base/fastapi/lesson-01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 01. Overview and Project Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔎 RAG Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔎 RAG Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../knowledge-base/ai-in-action/vallina_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 01. Vallina RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Motivation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Datasets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-thong-tin-chung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Thông tin chung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setup-bo-du-lieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Setup bộ dữ liệu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-preprocessing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Preprocessing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Methodology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-research-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. Research Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-experimental-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. Experimental Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cascaded-acoustic-phonetic-representation-transfer-for-multi-aspect-pronunciation-assessment">Cascaded Acoustic-Phonetic Representation Transfer for Multi-Aspect Pronunciation Assessment</h1>
+<h2 id="i-motivation">I. Motivation</h2>
+<hr />
+<p>Đánh giá phát âm tự động (CAPT) đa khía cạnh đòi hỏi hệ thống không chỉ nắm bắt được đặc tính vật lý nguyên bản của âm thanh (để chấm độ trôi chảy, ngữ điệu) mà còn phải hiểu sâu sắc về ngữ nghĩa và âm vị học (để chấm độ chính xác). Các hệ thống End-to-End hiện tại gặp nhiều khó khăn khi cố gắng dự đoán trực tiếp điểm số từ đặc trưng âm thanh gốc do thiếu hụt dữ liệu gán nhãn lớn và hiện tượng nhiễu chéo đặc trưng.</p>
+<p>Nghiên cứu này đề xuất khung học chuyển giao tuần tự hai luồng (Cascaded Dual-Stream Framework). Cụ thể, mô hình khai thác tri thức lỗi âm vị từ tập dữ liệu chuyên biệt (L2-Arctic), sau đó đóng băng tri thức này và dung hợp song song với đặc trưng âm thanh gốc để dự đoán điểm số trên tập SpeechOcean762. Cách tiếp cận này giúp cô lập luồng thông tin, giảm thiểu nhiễu và tăng độ chính xác của toàn hệ thống.</p>
+<p>Danh sách các phương pháp, nghiên cứu liên quan: [<a href="https://docs.google.com/spreadsheets/d/16DlLrI1dq6fAb7VFoXNRrisnw9JxYDQN3AXDFnYEyYM/edit?usp=sharing">related work</a>].</p>
+<h2 id="ii-datasets">II. Datasets</h2>
+<hr />
+<h3 id="1-thong-tin-chung">1. Thông tin chung</h3>
+<hr />
+<p>Nghiên cứu sử dụng hai bộ dataset về âm thanh là [<a href="https://psi.engr.tamu.edu/l2-arctic-corpus/">L2-Arctic</a>] và [<a href="https://www.openslr.org/101/">SpeechOcean762</a>]. Trong khuôn khổ kiến trúc Cascaded Dual-Stream đề xuất, tập L2-Arctic sẽ được sử dụng độc lập ở Giai đoạn 1 (Stage 1) để tinh chỉnh khả năng nhận thức âm vị học. Trong khi đó, tập SpeechOcean762 được sử dụng ở Giai đoạn 2 (Stage 2) để huấn luyện bộ kết hợp và dự đoán điểm số đa khía cạnh.</p>
+<ul>
+<li>
+<p><strong>L2-Arctic:</strong> Là bộ dữ liệu chỉ chứa nhãn lỗi âm vị (phoneme-level). Được thu thập từ 24 người nói (không phải tiếng mẹ đẻ) đến từ nhiều quốc gia như: Ấn Độ, Hàn Quốc, Tây Ban Nha, v.v. Bộ dữ liệu này cung cấp 4 nhãn âm vị chính là</p>
+<ul>
+<li><code>a (addition/insertion)</code></li>
+<li><code>s (substitution)</code>, </li>
+<li><code>d (deletion)</code></li>
+<li>còn lại là phát âm đúng.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Định dạng mãu dữ liệu L2-Arctic</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">bắ</span><span class="kc">t</span><span class="w"> </span><span class="err">đầu</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="err">audio</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">kế</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">húc</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="err">audio</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kc">t</span><span class="err">iers?</span><span class="w"> </span><span class="err">&lt;exis</span><span class="kc">ts</span><span class="err">&gt;</span><span class="w"> </span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="err">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">i</span><span class="kc">te</span><span class="err">m</span><span class="w"> </span><span class="p">[]:</span><span class="w"> </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="err">i</span><span class="kc">te</span><span class="err">m</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="err">class</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;IntervalTier&quot;</span><span class="w"> </span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;words&quot;</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">gá</span><span class="kc">n</span><span class="w"> </span><span class="kc">n</span><span class="err">hã</span><span class="kc">n</span><span class="w"> </span><span class="err">cấp</span><span class="w"> </span><span class="err">độ</span><span class="w"> </span><span class="kc">t</span><span class="err">ừ</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="p">:</span><span class="w"> </span><span class="err">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.04</span><span class="w"> </span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.04</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">bắ</span><span class="kc">t</span><span class="w"> </span><span class="err">đầu</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="kc">t</span><span class="err">ừ</span><span class="w"> </span><span class="kc">tr</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">audio</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.28</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">kế</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">húc</span><span class="w"> </span><span class="kc">t</span><span class="err">ừ</span><span class="w"> </span><span class="kc">tr</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">audio</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;there&quot;</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">ừ</span><span class="w"> </span><span class="err">xuấ</span><span class="kc">t</span><span class="w"> </span><span class="err">hiệ</span><span class="kc">n</span><span class="w"> </span><span class="kc">tr</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">khoả</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="kc">n</span><span class="err">ày.</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.28</span><span class="w"> </span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.53</span><span class="w"> </span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;was&quot;</span><span class="w"> </span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.53</span><span class="w"> </span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.64</span><span class="w"> </span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.64</span><span class="w"> </span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.01</span><span class="w"> </span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;change&quot;</span><span class="w"> </span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.01</span><span class="w"> </span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.44</span><span class="w"> </span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;now&quot;</span><span class="w"> </span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.44</span><span class="w"> </span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="err">i</span><span class="kc">te</span><span class="err">m</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="err">class</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;IntervalTier&quot;</span><span class="w"> </span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;phones&quot;</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">gá</span><span class="kc">n</span><span class="w"> </span><span class="kc">n</span><span class="err">hã</span><span class="kc">n</span><span class="w"> </span><span class="err">cấp</span><span class="w"> </span><span class="err">độ</span><span class="w"> </span><span class="err">âm</span><span class="w"> </span><span class="err">vị</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">        </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="p">:</span><span class="w"> </span><span class="err">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.04</span><span class="w"> </span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;sil&quot;</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">viế</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">ắ</span><span class="kc">t</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="err">sile</span><span class="kc">n</span><span class="err">ce</span><span class="w"> </span><span class="err">(khoả</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">lặ</span><span class="kc">n</span><span class="err">g)</span><span class="w"> </span><span class="err">khô</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">có</span><span class="w"> </span><span class="kc">t</span><span class="err">iế</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="kc">n</span><span class="err">ói</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.04</span><span class="w"> </span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.11</span><span class="w"> </span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;DH&quot;</span><span class="w"> </span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.11</span><span class="w"> </span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;EH1&quot;</span><span class="w"> </span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">bắ</span><span class="kc">t</span><span class="w"> </span><span class="err">đầu</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="err">âm</span><span class="w"> </span><span class="err">vị</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.28</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="kc">t</span><span class="err">hời</span><span class="w"> </span><span class="err">gia</span><span class="kc">n</span><span class="w"> </span><span class="err">kế</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">húc</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="err">âm</span><span class="w"> </span><span class="err">vị</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;R,AH0,s&quot;</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">R</span><span class="p">[</span><span class="err">âm</span><span class="w"> </span><span class="err">vị</span><span class="w"> </span><span class="err">đú</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">cầ</span><span class="kc">n</span><span class="w"> </span><span class="err">phá</span><span class="kc">t</span><span class="w"> </span><span class="err">âm</span><span class="p">]</span><span class="err">;</span><span class="w"> </span><span class="err">AH</span><span class="mi">0</span><span class="err">(âm</span><span class="w"> </span><span class="err">vị</span><span class="w"> </span><span class="kc">t</span><span class="err">hực</span><span class="w"> </span><span class="kc">t</span><span class="err">ế</span><span class="w"> </span><span class="kc">n</span><span class="err">gười</span><span class="w"> </span><span class="err">dù</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">phá</span><span class="kc">t</span><span class="w"> </span><span class="err">âm);</span><span class="w"> </span><span class="err">s</span><span class="p">[</span><span class="err">lỗi</span><span class="w"> </span><span class="err">subs</span><span class="kc">t</span><span class="err">i</span><span class="kc">tut</span><span class="err">io</span><span class="kc">n</span><span class="p">]</span><span class="err">.</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.28</span><span class="w"> </span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.34</span><span class="w"> </span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;W&quot;</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.34</span><span class="w"> </span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.44</span><span class="w"> </span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;AH1&quot;</span><span class="w"> </span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.44</span><span class="w"> </span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.53</span><span class="w"> </span>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;Z,S,s&quot;</span><span class="w"> </span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.53</span><span class="w"> </span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.64</span><span class="w"> </span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;AH0&quot;</span><span class="w"> </span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.64</span><span class="w"> </span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;CH&quot;</span><span class="w"> </span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w"> </span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;EY1&quot;</span><span class="w"> </span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w"> </span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.94</span><span class="w"> </span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;N&quot;</span><span class="w"> </span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.94</span><span class="w"> </span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.01</span><span class="w"> </span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;JH,CH,s&quot;</span><span class="w"> </span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.01</span><span class="w"> </span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.16</span><span class="w"> </span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;N&quot;</span><span class="w"> </span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.16</span><span class="w"> </span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.44</span><span class="w"> </span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;AW1&quot;</span><span class="w"> </span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.44</span><span class="w"> </span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6</span><span class="w"> </span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;sp&quot;</span><span class="w"> </span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6</span><span class="w"> </span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="w">    </span><span class="err">i</span><span class="kc">te</span><span class="err">m</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">        </span><span class="err">class</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;IntervalTier&quot;</span><span class="w"> </span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">        </span><span class="kc">na</span><span class="err">me</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;IPA&quot;</span><span class="w"> </span>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="w">        </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="w">        </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">1.6214965986394558</span><span class="w"> </span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="p">:</span><span class="w"> </span><span class="err">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span>
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span>
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a><span class="w">        </span><span class="err">i</span><span class="kc">nter</span><span class="err">vals</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a><span class="w">            </span><span class="err">xmi</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span>
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a><span class="w">            </span><span class="err">xmax</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.28</span><span class="w"> </span>
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a><span class="w">            </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;É¹,É™,s&quot;</span><span class="w"> </span>
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a><span class="w">        </span><span class="err">...</span>
+</span></code></pre></div>
+</div>
+<ul>
+<li>
+<p><strong>SpeechOcean762:</strong> Bộ dữ liệu này cung cấp điểm số ở mức câu (sentence-level) với nhãn là 4 tiêu chí điểm: </p>
+<ul>
+<li><code>accuracy (độ chính xác)</code></li>
+<li><code>fluency (trôi chảy)</code></li>
+<li><code>prosodic (ngữ điệu)</code></li>
+<li><code>completeness (đầy đủ)</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Một mẫu dữ liệu của SpeechOcean762</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="err">&#39;accuracy&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">điểm</span><span class="w"> </span><span class="err">chí</span><span class="kc">n</span><span class="err">h</span><span class="w"> </span><span class="err">xác</span><span class="w"> </span><span class="kc">t</span><span class="err">oà</span><span class="kc">n</span><span class="w"> </span><span class="err">câu</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="err">&#39;comple</span><span class="kc">teness</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">điểm</span><span class="w"> </span><span class="err">đầy</span><span class="w"> </span><span class="err">đủ</span><span class="w"> </span><span class="kc">t</span><span class="err">oà</span><span class="kc">n</span><span class="w"> </span><span class="err">câu</span><span class="w"> </span><span class="err">(khô</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">phá</span><span class="kc">t</span><span class="w"> </span><span class="err">âm</span><span class="w"> </span><span class="kc">t</span><span class="err">hiếu</span><span class="w"> </span><span class="err">âm</span><span class="w"> </span><span class="err">vị/</span><span class="kc">t</span><span class="err">ừ</span><span class="w"> </span><span class="kc">n</span><span class="err">ào)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="err">&#39;</span><span class="kc">fluen</span><span class="err">cy&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">điểm</span><span class="w"> </span><span class="kc">tr</span><span class="err">ôi</span><span class="w"> </span><span class="err">chảy</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="kc">t</span><span class="err">oà</span><span class="kc">n</span><span class="w"> </span><span class="err">câu</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="err">&#39;prosodic&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">điểm</span><span class="w"> </span><span class="kc">n</span><span class="err">gữ</span><span class="w"> </span><span class="err">điệu</span><span class="w"> </span><span class="kc">t</span><span class="err">oà</span><span class="kc">n</span><span class="w"> </span><span class="err">câu</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="err">&#39;</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;MARK</span><span class="w"> </span><span class="err">IS</span><span class="w"> </span><span class="err">GOING</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">SEE</span><span class="w"> </span><span class="err">ELEPHANT&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">câu</span><span class="w"> </span><span class="kc">n</span><span class="err">ói</span><span class="w"> </span><span class="err">của</span><span class="w"> </span><span class="kc">n</span><span class="err">gười</span><span class="w"> </span><span class="err">dù</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">phá</span><span class="kc">t</span><span class="w"> </span><span class="err">âm</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="err">&#39;</span><span class="kc">t</span><span class="err">o</span><span class="kc">tal</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">điểm</span><span class="w"> </span><span class="kc">t</span><span class="err">ổ</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">cho</span><span class="w"> </span><span class="kc">t</span><span class="err">oà</span><span class="kc">n</span><span class="w"> </span><span class="err">câu</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="err">&#39;words&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">&#39;accuracy&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="err">&#39;pho</span><span class="kc">nes</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;M&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;AA</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;K&#39;</span><span class="p">],</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="err">&#39;pho</span><span class="kc">nes</span><span class="mi">-</span><span class="err">accuracy&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.8</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">],</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="err">&#39;s</span><span class="kc">tress</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="err">&#39;</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;MARK&#39;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="err">&#39;</span><span class="kc">t</span><span class="err">o</span><span class="kc">tal</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="err">&#39;mispro</span><span class="kc">nun</span><span class="err">cia</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[]},</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="err">...</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="err">&#39;speaker&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">0003</span><span class="err">&#39;</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="err">&#39;ge</span><span class="kc">n</span><span class="err">der&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;m&#39;</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="err">&#39;age&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="err">&#39;audio&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&#39;pa</span><span class="kc">t</span><span class="err">h&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mf">000030012.</span><span class="err">wav&#39;</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="err">&#39;array&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">array(</span><span class="p">[</span><span class="mf">-0.00119019</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.00500488</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.00283813</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w">  </span><span class="mf">0.00274658</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="mf">0.</span><span class="w">        </span><span class="p">,</span><span class="w">  </span><span class="mf">0.00125122</span><span class="p">]</span><span class="err">)</span><span class="p">,</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="err">&#39;sampli</span><span class="kc">n</span><span class="err">g_ra</span><span class="kc">te</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">16000</span><span class="p">}}</span>
+</span></code></pre></div>
+</div>
+<h3 id="2-setup-bo-du-lieu">2. Setup bộ dữ liệu</h3>
+<hr />
+<p>Vì nghiên cứu này hướng tới hai nhiệm vụ chính là đánh giá hiệu suất phát hiện, chẩn đoán lỗi phát âm (Mispronunciation Detection Diagnosis - MDD) và chấm điểm phát âm toàn câu (Pronunciation Scoring), bộ dữ liệu cần được cài đặt và phân chia một cách phù hợp để đảm bảo tính công bằng và phản ánh đúng hiệu suất của mô hình.</p>
+<ol>
+<li>
+<p><strong>Phân chia dữ liệu L2-Arctic (Cho nhiệm vụ MDD - Stage 1)</strong>. Cài đặt mặc định bám sát các nghiên cứu tiền nhiệm để đảm bảo tính công bằng khi so sánh:</p>
+<ul>
+<li><strong>Test set:</strong> Lựa chọn 6 người nói (NJS, TLV, TNI, TXHC, YKWK, ZHAA) để đánh giá.</li>
+<li><strong>Training set:</strong> Dữ liệu từ các người nói còn lại được gộp chung để tiến hành huấn luyện.</li>
+<li><strong>Development (Valid) set:</strong> Trích xuất một tập con nhỏ từ Training set để tinh chỉnh các siêu tham số (hyperparameters).</li>
+</ul>
+</li>
+<li>
+<p><strong>Phân chia dữ liệu SpeechOcean762 (Cho nhiệm vụ Scoring - Stage 2)</strong></p>
+<ul>
+<li>Sử dụng chuẩn phân chia gốc của bộ dữ liệu (2500 câu phát âm dành cho huấn luyện và 2500 câu dành cho kiểm thử).</li>
+<li>Đảm bảo kiểm soát chặt chẽ để không có sự rò rỉ dữ liệu (data leakage) giữa tập train và test về mặt danh tính người nói.</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-data-preprocessing-pipeline">3. Data Preprocessing Pipeline</h3>
+<hr />
+<p>Để tương thích với kiến trúc mạng đầu vào của phương pháp đề xuất, dữ liệu từ TextGrid và JSON được chuẩn hóa qua một pipeline đồng nhất:</p>
+<ul>
+<li><strong>Xử lý nhãn L2-Arctic:</strong> Ánh xạ (mapping) chuỗi TextGrid thành các chuỗi nhãn 1D. Các nhãn lỗi (<code>a</code>, <code>s</code>, <code>d</code>) kết hợp với âm vị thực tế (ví dụ: <code>AH0</code>, <code>EH1</code>) được chuyển đổi thành một từ điển số nguyên (Integer Dictionary) phục vụ cho việc tối ưu hóa hàm mất mát CTC (Connectionist Temporal Classification).</li>
+<li><strong>Đồng bộ hóa khung thời gian (Time-alignment):</strong> Do dữ liệu âm thanh là chuỗi liên tục nhưng nhãn lại có tính thời điểm (từ khoảng <span class="arithmatex">\(t_{\text{start}}\)</span> đến <span class="arithmatex">\(t_{\text{end}}\)</span>), một cơ chế gióng hàng (alignment) được áp dụng để ép khớp các mốc thời gian <code>xmin</code>, <code>xmax</code> trong dữ liệu gốc với các khung hình (frames) đầu ra tương ứng của mô hình âm thanh học tự giám sát.</li>
+</ul>
+<p>Bộ dữ liệu sau khi đã được tiền xử lý và làm sạch: [<a href="https://drive.google.com/drive/u/0/folders/1MuBH31ibGJDRGcRYjwvOf8n4r_CNYhC3">L2arctic</a>] và [<a href="https://drive.google.com/drive/u/0/folders/1MuBH31ibGJDRGcRYjwvOf8n4r_CNYhC3">SpeechOcean762</a>].</p>
+<h2 id="iii-methodology">III. Methodology</h2>
+<hr />
+<p>Kiến trúc đề xuất được chia làm hai giai đoạn độc lập:</p>
+<p><ins>Stage 01. Phonetic Representation Learning (Học biểu diễn âm vị)</ins></p>
+<ul>
+<li>Sử dụng Wav2Vec2/HuBERT/Whisper fine-tune trên L2-Arctic với hàm mất mát CTC (Connectionist Temporal Classification).</li>
+<li>Mục tiêu tạo ra một chuyên gia phát hiện lỗi âm vị.</li>
+</ul>
+<p><ins>Stage 02. Stage 2: Dual-Stream Decoupled Extraction &amp; Fusion</ins></p>
+<p>Giả sử tại một khung hình thời gian <span class="arithmatex">\(T\)</span>, sau khi đi qua luồng trích xuất, ta thu được hai ma trận đặc trưng:</p>
+<ul>
+<li><strong>Đặc trưng âm học (Acoustic):</strong> <span class="arithmatex">\(F_{A} \in \mathbb{R}^{T \times d_{a}}\)</span> (với <span class="arithmatex">\(d_{a}\)</span> là số chiều của luồng SSL gốc).</li>
+<li><strong>Đặc trưng âm vị (Phonetic):</strong> <span class="arithmatex">\(F_{P} \in \mathbb{R}^{T \times d_{p}}\)</span> (với <span class="arithmatex">\(d_{p}\)</span> là số chiều xác suất hậu nghiệm từ luồng MDD).</li>
+</ul>
+<p>Quá trình kết hợp và dự đoán điểm số diễn ra qua 4 bước tuần tự như sau:</p>
+<ul>
+<li><strong>Bước 1: Ghép nối và Đồng bộ không gian (Feature Concatenation &amp; Projection)</strong> Đầu tiên, hai ma trận được ghép nối dọc theo chiều đặc trưng. Vì số chiều ghép nối có thể rất lớn, sử dụng một lớp tuyến tính (Linear layer) để chiếu (project) chúng về cùng một không gian ẩn (hidden space) có kích thước <span class="arithmatex">\(d_{model}\)</span>:</li>
+</ul>
+<div class="arithmatex">\[X = \text{Linear}(\text{Concat}(F_{A}, F_{P})) \in \mathbb{R}^{T \times d_{model}}\]</div>
+<ul>
+<li><strong>Bước 2: Học tương quan ngữ cảnh (Contextual Fusion với Transformer)</strong> Chuỗi đặc trưng <span class="arithmatex">\(X\)</span> được cộng thêm Positional Encoding (<span class="arithmatex">\(PE\)</span>) nhằm giữ thông tin về vị trí và thứ tự thời gian của các âm tiết, trước khi đưa vào mạng Transformer Encoder (gồm 2 layers, 4 attention heads). Cơ chế Self-Attention tại đây làm nhiệm vụ phân tích sự phụ thuộc chéo trong không gian thời gian. <em>Ví dụ: Mô hình sẽ học được cách chú ý xem một lỗi sai âm vị ở giây thứ 2 có làm đứt gãy âm thanh ở giây thứ 3 hay không.</em></li>
+</ul>
+<div class="arithmatex">\[H = \text{TransformerEncoder}(X + PE) \in \mathbb{R}^{T \times d_{model}}\]</div>
+<ul>
+<li><strong>Bước 3: Trích xuất đặc trưng toàn câu (Temporal Pooling)</strong> Để chuyển từ chuỗi đặc trưng cấp độ khung hình dọc theo trục <span class="arithmatex">\(T\)</span> sang một vector đại diện duy nhất cho toàn bộ câu nói (sentence-level representation), sử dụng phép toán Mean Pooling:</li>
+</ul>
+<div class="arithmatex">\[v = \frac{1}{T} \sum_{t=1}^{T} H_{t} \in \mathbb{R}^{d_{model}}\]</div>
+<ul>
+<li><strong>Bước 4: Mạng dự đoán đa nhánh (Multi-Branch Scoring Heads)</strong> Đây là mạng đầu ra cuối cùng. Vector <span class="arithmatex">\(v\)</span> được truyền vào 4 nhánh mạng truyền thẳng độc lập (Multi-Layer Perceptrons - MLPs). Mỗi nhánh đại diện cho một bộ đánh giá chuyên biệt nhằm chấm điểm một tiêu chí cụ thể. Cấu trúc của mỗi nhánh MLP bao gồm: <code>Linear Layer</code> <span class="arithmatex">\(\to\)</span> <code>ReLU Activation</code> <span class="arithmatex">\(\to\)</span> <code>Dropout (0.1)</code> <span class="arithmatex">\(\to\)</span> <code>Linear Output Layer</code>.</li>
+</ul>
+<div class="arithmatex">\[\text{Score}_{Acc} = \text{MLP}_{Acc}(v)\]</div>
+<div class="arithmatex">\[\text{Score}_{Flu} = \text{MLP}_{Flu}(v)\]</div>
+<div class="arithmatex">\[\text{Score}_{Pros} = \text{MLP}_{Pros}(v)\]</div>
+<div class="arithmatex">\[\text{Score}_{Comp} = \text{MLP}_{Comp}(v)\]</div>
+<p>Toàn bộ mạng ở Stage 2 này được tối ưu hóa thông qua hàm mất mát L2 (Mean Squared Error - MSE) tính trên tổng sai số của cả 4 tiêu chí dự đoán so với nhãn gốc (ground-truth scores).</p>
+<h2 id="iv-research-questions">IV. Research Questions</h2>
+<hr />
+<ol>
+<li>
+<p><strong>RQ1 (Nền tảng):</strong> Mô hình học tự giám sát (SSL) khi được tinh chỉnh có khả năng phát hiện lỗi và chẩn đoán âm vị (MDD) tốt như thế nào trên tập dữ liệu L2-Arctic so với các phương pháp Baseline?</p>
+</li>
+<li>
+<p><strong>RQ2 (Tác động chéo):</strong> Việc bổ sung kiến thức âm vị học (được trích xuất từ mô hình đã giải quyết RQ1) có giúp cải thiện hiệu năng chấm điểm phát âm đa khía cạnh trên tập SpeechOcean762 không?</p>
+</li>
+<li>
+<p><strong>RQ3 (Ablation Study):</strong> Việc tách biệt hai luồng trích xuất (Dual-Stream) có thực sự ngăn chặn hiện tượng "Task-Specific Representation Shift" (nhiễu đặc trưng âm học) so với việc dùng chung một mô hình hay không?</p>
+</li>
+<li>
+<p><strong>RQ4 (Độ nhạy của tiêu chí):</strong> Tiêu chí chấm điểm nào (trong 4 tiêu chí) có sự tương quan mạnh mẽ nhất và được hưởng lợi nhiều nhất từ độ chính xác của bộ trích xuất âm vị học?</p>
+</li>
+</ol>
+<h2 id="v-experimental-results">V. Experimental Results</h2>
+<hr />
+<p>Nghiên cứu này sử dụng hai nhóm độ đo chính:</p>
+<ul>
+<li>MDD Task: PER (Phoneme Error Rate - càng thấp càng tốt) và F1-Score (càng cao càng tốt).</li>
+<li>Scoring Task: PCC (Pearson Correlation Coefficient - tương quan càng gần 1 càng tốt).</li>
+</ul>
+<p><strong>RQ1. Đánh giá hiệu năng phát hiện lỗi âm vị (Stage 1 trên L2-Arctic).</strong></p>
+<blockquote>
+<p>Mục tiêu: Chứng minh mô hình Stage 1 là chuyên gia đủ tốt trong việc bắt lỗi âm vị trước khi đóng băng chúng để làm bộ trích xuất cho Stage 2.</p>
+</blockquote>
+<figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">PER (%)</th>
+<th style="text-align: center;">F1-Score (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GOP</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">42.42</td>
+</tr>
+<tr>
+<td style="text-align: left;">CTC-ATT</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">56.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">CNN-RNN-CTC</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">56.08</td>
+</tr>
+<tr>
+<td style="text-align: left;">w2v2.0-XLSR</td>
+<td style="text-align: center;">16.20</td>
+<td style="text-align: center;">60.44</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(MV_{multi} - MT_{seq}\)</span></td>
+<td style="text-align: center;"><strong>14.13</strong></td>
+<td style="text-align: center;">60.31</td>
+</tr>
+<tr>
+<td style="text-align: left;">xlsr-ctc</td>
+<td style="text-align: center;">15.47</td>
+<td style="text-align: center;">59.10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ours (Wav2Vec2-large-xlsr)</strong></td>
+<td style="text-align: center;">15.20</td>
+<td style="text-align: center;"><strong>61.11</strong></td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p><strong>Bảng 1.</strong> Đánh giá hiệu suất mô hình cho tác vụ MDD trên tập dữ liệu L2-Arctic.</p>
+</figcaption>
+</figure>
+<p>Hiệu suất tổng thể được trình bày trong <strong>Bảng 1</strong>, phương pháp tinh chỉnh đề xuất (Ours: Wav2Vec2-large-xlsr) đạt mức F1-Score cao nhất là 61.11%, vượt qua hoàn toàn các phương pháp cơ sở như CNN-RNN-CTC (56.08%) hay các biến thể kiến trúc tinh vi hơn như <span class="arithmatex">\(MV_{multi} - MT_{seq}\)</span> (60.31%).</p>
+<p>Mặc dù mô hình đạt mức PER (15.20%) cao hơn một chút so với <span class="arithmatex">\(MV_{multi} - MT_{seq}\)</span> (14.13%), nhưng độ đo F1-Score lại cho thấy sự vượt trội. Trong bài toán chẩn đoán lỗi phát âm (MDD) trên tập L2-Arctic, dữ liệu có sự mất cân bằng lớp nghiêm trọng (âm vị phát âm đúng chiếm đa số, lỗi phát âm chiếm thiểu số). F1-Score là một độ đo khắt khe và toàn diện hơn PER vì nó đánh giá sự cân bằng giữa Precision và Recall trên các lớp thiểu số. Việc đạt F1-Score kỷ lục chứng minh mô hình không bị thiên lệch (bias) vào lớp đa số, mà thực sự có khả năng bắt trúng các lỗi phát âm tinh vi.</p>
+<p>Việc cải thiện F1-Score lên ngưỡng lớn hơn 61% đồng thời duy trì mức PER ổn định (~15%) từ một mô hình SSL gốc đảm bảo rằng trình huấn luyện đã hội tụ tốt. Các ma trận xác suất hậu nghiệm (posterior probabilities) sinh ra từ mô hình này hoàn toàn đủ độ tin cậy và sự phong phú về thông tin lỗi sai để đóng vai trò làm bộ trích xuất đặc trưng âm vị học (Phonetic feature extractor) cho mạng dự đoán điểm số ở Stage 2.</p>
+<p><strong>RQ2 &amp; RQ4: Đánh giá tổng thể hiệu năng chấm điểm trên SpeechOcean762</strong></p>
+<blockquote>
+<p>Mục tiêu: Chứng minh phương pháp đề xuất vượt qua các baseline và đánh giá sự ảnh hưởng của Stage 1 tới hiệu suất Scoring.</p>
+</blockquote>
+<figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">Acc (%)</th>
+<th style="text-align: center;">Flu (%)</th>
+<th style="text-align: center;">Pro (%)</th>
+<th style="text-align: center;">Comp (%)</th>
+<th style="text-align: center;">Total (%)</th>
+<th style="text-align: center;">PCC (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GOPT</td>
+<td style="text-align: center;">71.40</td>
+<td style="text-align: center;">75.30</td>
+<td style="text-align: center;">76.00</td>
+<td style="text-align: center;">74.20</td>
+<td style="text-align: center;">74.20</td>
+<td style="text-align: center;">61.20</td>
+</tr>
+<tr>
+<td style="text-align: left;">Joint-CAPT</td>
+<td style="text-align: center;">71.90</td>
+<td style="text-align: center;">77.50</td>
+<td style="text-align: center;">77.30</td>
+<td style="text-align: center;">74.30</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">HCB</td>
+<td style="text-align: center;">77.20</td>
+<td style="text-align: center;"><strong>79.10</strong></td>
+<td style="text-align: center;"><strong>83.60</strong></td>
+<td style="text-align: center;">82.60</td>
+<td style="text-align: center;"><strong>79.60</strong></td>
+<td style="text-align: center;"><strong>80.04</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ours</strong></td>
+<td style="text-align: center;"><strong>78.85</strong></td>
+<td style="text-align: center;">74.50</td>
+<td style="text-align: center;">77.80</td>
+<td style="text-align: center;"><strong>84.33</strong></td>
+<td style="text-align: center;">79.10</td>
+<td style="text-align: center;">79.66</td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p><strong>Bảng 2.</strong> Đánh giá hiệu suất mô hình cho tác vụ chấm điểm tổng thể toàn câu trên tập dữ liệu SpeechOcean762.</p>
+</figcaption>
+</figure>
+<p>Như được thể hiện trong <strong>Bảng 2</strong>, mô hình đề xuất (Ours) đạt mức tương quan (PCC) cao nhất ở tiêu chí Accuracy (78.85%) và Completeness (84.33%), vượt qua hoàn toàn các baseline mạnh như GOPT và HCB. Điều này thiết lập một mối tương quan nhân quả trực tiếp với kết quả từ RQ1. Việc mô hình Giai đoạn 1 có khả năng nhận diện xuất sắc các lỗi phát âm với F1-Score 61.11% đã cung cấp một nguồn tri thức hậu nghiệm vô cùng phong phú. Nhờ luồng tri thức này, Giai đoạn 2 có cơ sở vững chắc để phát hiện chính xác các hiện tượng nuốt âm hoặc sai âm, từ đó dự đoán điểm số Accuracy và Completeness sát với đánh giá của chuyên gia con người nhất.</p>
+<p>Mặc dù vượt trội ở nhóm điểm phát âm từ vựng, phương pháp đề xuất ghi nhận kết quả thấp hơn mô hình HCB ở tiêu chí Fluency (74.50% vs 79.10%) và Prosody (77.80% vs 83.60%). Về mặt ngôn ngữ học, độ trôi chảy và ngữ điệu phụ thuộc chủ yếu vào đặc tính vật lý nguyên bản của âm thanh chứ không bị ảnh hưởng quá nhiều bởi lỗi sai của một vài âm vị đơn lẻ. Việc sử dụng phép ghép nối trực tiếp (Concatenation) ở module Fusion có thể đã gây ra hiện tượng nhiễu thông tin cục bộ, khiến các đặc trưng lỗi âm vị làm mờ đi một phần thông tin vật lý, dẫn đến sự suy giảm nhẹ ở hai tiêu chí này.</p>
+<p>Mức điểm tổng thể (Total PCC) đạt 79.66%, tiệm cận rất sát với mức cao nhất của mô hình HCB (80.04%) và bỏ xa các phương pháp khác, chứng minh tính khả thi, hiệu quả và sự cân bằng của khung học chuyển giao tuần tự (Cascaded Dual-Stream).</p>
+<p><strong>RQ3: Ablation Study thiết kế luồng đặc trưng</strong></p>
+<blockquote>
+<p>Mục tiêu: Chứng minh sự cần thiết của cấu trúc Dual-Stream.</p>
+</blockquote>
+<figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Extraction Strategy</th>
+<th style="text-align: center;">Acc (%)</th>
+<th style="text-align: center;">Flu (%)</th>
+<th style="text-align: center;">Pro (%)</th>
+<th style="text-align: center;">Comp (%)</th>
+<th style="text-align: center;">PCC (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Single-Shared</td>
+<td style="text-align: center;">73.90</td>
+<td style="text-align: center;">71.50</td>
+<td style="text-align: center;">71.20</td>
+<td style="text-align: center;">73.50</td>
+<td style="text-align: center;">72.52</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dual-Stream</strong></td>
+<td style="text-align: center;"><strong>78.85</strong></td>
+<td style="text-align: center;"><strong>74.50</strong></td>
+<td style="text-align: center;"><strong>77.80</strong></td>
+<td style="text-align: center;"><strong>84.33</strong></td>
+<td style="text-align: center;"><strong>79.66</strong></td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p><strong>Bảng 3.</strong> So sánh hiệu suất giữa phương pháp dùng chung một mô hình và tách luồng.</p>
+</figcaption>
+</figure>
+<p>Khi sử dụng duy nhất mô hình đã fine-tune MDD (Single-Shared) để trích xuất cả hai luồng đặc trưng, điểm Fluency và Prosody sụt giảm nghiêm trọng (ví dụ: Fluency giảm từ 74.50% xuống 71.50%). Điều này củng cố giả thuyết rằng việc tối ưu hóa PER ở Stage 1 đã làm biến dạng các đặc tính vật lý nguyên bản của âm thanh. Giải pháp Dual-Stream giải quyết hoàn toàn nút thắt này bằng cơ chế phân lập: sử dụng một mô hình SSL gốc (chưa fine-tune) chuyên biệt để giữ nguyên vẹn đặc trưng âm học đầu vào, kết hợp song song với mô hình MDD để trích xuất lỗi âm vị.</p>
+<hr />
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Cập nhật lần cuối">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 6, 2026 23:27:34 UTC"><span class="timeago" datetime="2026-06-06T23:27:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 6, 2026 23:27:34 UTC">2026-06-06</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Tạo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 6, 2026 23:27:34 UTC"><span class="timeago" datetime="2026-06-06T23:27:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 6, 2026 23:27:34 UTC">2026-06-06</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/nthaihoc" class="md-author" title="@nthaihoc">
+          
+          <img src="https://avatars.githubusercontent.com/u/178376783?v=4&size=72" alt="nthaihoc">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©️ 2025 by Thai-Hoc Nguyen. Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
+    
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://ictu.edu.vn" target="_blank" rel="noopener" title="Thai Nguyen University of Information and Technology Communication" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://iast.ictu.edu.vn" target="_blank" rel="noopener" title="Institute of Applied Science Technology" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 15h-2v2h2m0-6h-2v2h2m2 6h-8v-2h2v-2h-2v-2h2v-2h-2V9h8M10 7H8V5h2m0 6H8V9h2m0 6H8v-2h2m0 6H8v-2h2M6 7H4V5h2m0 6H4V9h2m0 6H4v-2h2m0 6H4v-2h2m6-10V3H2v18h20V7z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://nthaihoc.github.io/about-me" target="_blank" rel="noopener" title="Profile" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:thaihoc.ictu@gmail.com" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 6v14h18v2H2c-1.105 0-2-.89-2-2V6zm22-2c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0-8 5-8-5zm0 12H6V6l8 5 8-5z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/nthaihoc" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.facebook.com/nthoc.02" target="_blank" rel="noopener" title="Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "navigation.tabs", "navigation.instant", "navigation.instant.preview", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.indexes", "navigation.sections", "navigation.path", "toc.follow", "search.suggest", "navigation.top", "navigation.footer", "navigation.tracking"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
