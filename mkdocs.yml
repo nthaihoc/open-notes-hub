@@ -60,7 +60,6 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
-
 markdown_extensions:
   - abbr
   - admonition
@@ -95,6 +94,11 @@ markdown_extensions:
   - tables
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - macros
@@ -110,16 +114,16 @@ plugins:
         - locale: vi
           name: Tiếng Việt
           build: true
-  - git-revision-date-localized:
-      type: timeago
-      enable_creation_date: true
-      fallback_to_build_date: true
-      enable_git_follow: false 
-  - git-committers:
-      enabled: !ENV [CI, false] 
-      repository: nthaihoc/open-notes-hub
-      branch: main
-      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
+  # - git-revision-date-localized:
+  #     type: timeago
+  #     enable_creation_date: true
+  #     fallback_to_build_date: true
+  #     enable_git_follow: false 
+  # - git-committers:
+  #     enabled: !ENV [CI, false] 
+  #     repository: nthaihoc/open-notes-hub
+  #     branch: main
+  #     token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
 nav:
   - Home: index.md
@@ -160,6 +164,7 @@ nav:
         - knowledge-base/fastapi/lesson-01-overview.md
     - "🔎 RAG Framework":
         - knowledge-base/ai-in-action/vallina_rag.md
+        - knowledge-base/ai-in-action/implementation_rag_pipeline.md
 
 extra:
   social:

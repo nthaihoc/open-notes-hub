@@ -1,8 +1,9 @@
 ---
-title: Lesson 01. Vallina RAG
+title: Lecture 01. Vallina RAG
+icon: material/numeric-1
 ---
 
-<center markdown># Lesson 01. Vallina RAG</center>
+<center markdown># Lecture 01. Vallina RAG</center>
 
 ## 1. Brief
 ---
@@ -255,20 +256,9 @@ Cách tối ưu hoá hậu truy xuất được thực hiện duy nhất trên d
 
 Tất cả các kỹ thuật được đề cập ở phía trên đểu không phải là danh sách đầy đủ tất cả các giải pháp tiềm năng. Đây chỉ là những ví dụ để có cái nhìn trực giác về những gì mà chúng ta có thể hoặc nên tối ưu trong toàn bộ pipeline RAG. Các kỹ thuật này thay đổi rất nhiều tuỳ thuộc vào từng loại dữ liệu. Các kỹ thuật phía trê sẽ không hoạt động nếu như làm việc với dữ liệu đa phương thức vì chúng chỉ được thiết kế cho văn bản.
 
-
-
 ---
 
 ---
-
-
-
-
-
-
-
-
-
 
 <!-- <div class="figure-environment">
     <div class="subfigure-container"> <figure class="subfigure">
