@@ -1,83 +1,103 @@
-<h1 style="text-align: center;">☘️OpenNotesHub</h1>
-
-<p style="text-align: center;">
-    <a href="https://nthaihoc.github.io/about-me">
-        <img src="https://img.shields.io/badge/Portfolio-005571?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio">
-    </a>
-    <a href="mailto:thaihoc.ictu@gmail.com">
-        <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-    </a>
-    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi">
-        <img src="https://img.shields.io/badge/Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Scholar">
-    </a>
-    <a href="https://www.facebook.com/nthoc02">
-        <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
-    </a>
-    <a href="https://www.kaggle.com/nguyenthaihoc">
-        <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle">
-    </a>
-    <a href="https://github.com/nthaihoc">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-    </a>
-</p>
-
-## Bio
----
-👋 Hello, I am **Nguyễn Thái Học** -- an **AI Engineer** at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), under the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn). My journey with AI began in 2020, but it was the challenging problems during my junior year of university that truly ignited my profound passion for this field.
-
-Starting as a **Computer Vision** Intern in August 2023 and subsequently taking on the official role of **AI Engineer**, I have transitioned from mastering theoretical foundations to directly developing practical AI solutions for Healthcare and Education. Currently, my research focus revolves around unlocking the potential of **Machine Learning** and **Computer Vision** to solve real-world challenges.
-
-Not stopping there, I am expanding my research boundaries into **Large Language Models (LLMs)** and **Vision-Language Models (VLMs)**, while aiming to optimize deployment pipelines through **MLOps/LLMOps**. To me, AI is not just about algorithms; it is a tool to create positive changes for society.
-
-## News
----
-- **[05/2026:]** Admitted as a student for the second cohort of the **AI IN ACTION** training program at VinUniversity.
-
-- **[08/2024:]** Official **AI Engineer** at [IAST](https://iast.ictu.edu.vn).
-
-- **[07/2024:]** Two papers accepted for publication and presentation at the ICTA conference in Phu Tho.
-
-- **[08/2023:]** **Computer Vision** Intern at [IAST](https://iast.ictu.edu.vn).
-
-## Tech Stack & Skills
----
-
-*   **:material-code-tags: Programming Languages:** `Python` `C/C++` `LaTeX` `Markdown`.
-*   **:material-brain: ML/DL Frameworks & Architectures:** `PyTorch` `TensorFlow` `Scikit-Learn` `HuggingFace` `Langchain`.
-*   **:material-database: Data Processing & Big Data:** `Pandas` `NumPy` `Hadoop` `Spark` `PostgreSQL` `MongoDB`.
-*   **:material-toolbox: IDEs, Tools & Ops:** `VS Code` `Git/GitHub` `Docker` `FastAPI` `Linux` `MLflow` `Streamlit`. 
-
-## Publications
----
-
-<div class="grid cards" markdown>
-
-- <img style="width: 100%; height: 330px;" src="../assets/images/icta_01.png" class="pub-img" alt="ICTA 01">
-
-    **01.** [A Study on Ensemble Learning for Cervical Cytology Classification](https://)
-
-    ---
-
-    **Van-Khanh Tran**, **<u>Thai-Hoc Nguyen</u>**, **Chi-Cuong Nghiem**, **Xuan-Lam Dinh**
-
-    *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
-
-    **Keywords:** `Ensemble Learning` `Cervical Cancer Cytology` `Deep Learning`
-
-- <img src="../assets/images/icta_02.png" class="pub-img" alt="ICTA 02">
-
-    **02.** [An automatic machine learning based customer segmentation model with RFM analysis](https://)
-
-    ---
-
-    **Xuan-Thi Tran**, **<u>Thai-Hoc Nguyen</u>**
-
-    *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
-
-    **Keywords:** `Customer Segmentation` `RFM` `K-means Clustering` `Hadoop` `Spark`
-
+<div align="center">
+  <h1>☘️ OpenNotesHub</h1>
+  <p><b>A Comprehensive Digital Garden for AI Research, Course Notes & Knowledge Base</b></p>
+  <p><i>Curated by <a href="https://nthaihoc.github.io/about-me"><b>Nguyễn Thái Học</b></a> — AI Engineer</i></p>
+  
+  <p>
+    <a href="https://nthaihoc.github.io/open-notes-hub/"><img src="https://img.shields.io/badge/Live_Website-4A90E2?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"></a>
+    <a href="https://nthaihoc.github.io/about-me"><img src="https://img.shields.io/badge/Portfolio-8E44AD?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"></a>
+    <a href="mailto:thaihoc.ictu@gmail.com"><img src="https://img.shields.io/badge/Email-E74C3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi"><img src="https://img.shields.io/badge/Scholar-34A853?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Scholar"></a>
+    <a href="https://github.com/nthaihoc/open-notes-hub"><img src="https://img.shields.io/github/stars/nthaihoc/open-notes-hub?style=for-the-badge&color=F1C40F&logo=github&logoColor=black" alt="Stars"></a>
+  </p>
 </div>
 
 ---
 
+## 📖 Repository Overview
+
+**OpenNotesHub** is an open-source digital space where I systematize and share my learning and research journey in Artificial Intelligence (AI). It serves as a centralized hub for core lectures, practical research logs, and specialized technical knowledge.
+
+The goal of this repository is to build an open knowledge base that not only serves personal reference needs but also provides accessible materials for the community, especially beginners exploring Machine Learning, Deep Learning, and Computer Vision.
+
+## 📂 Repository Structure
+
+The repository is strictly organized into major functional directories under `docs/`:
+
+```mermaid
+graph LR
+  %% Define styles
+  classDef rootNode fill:#005571,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+  classDef folderNode fill:#E1F5FE,stroke:#0288D1,stroke-width:2px,color:#01579B,font-weight:bold;
+  classDef fileNode fill:#F1F8E9,stroke:#689F38,stroke-width:1px,color:#33691E;
+
+  Root(("📚 docs/")):::rootNode
+
+  %% Level 1: Main Folders
+  Root --> Courses["📁 courses/"]:::folderNode
+  Root --> Research["📁 research/"]:::folderNode
+  Root --> KB["📁 knowledge-base/"]:::folderNode
+  Root --> IAILab["📁 iai-lab/"]:::folderNode
+
+  %% Level 2: Subfolders/Notes
+  Courses --> C1("Applied Machine Learning"):::fileNode
+  Courses --> C2("Computer Vision Foundations"):::fileNode
+  Courses --> C3("Large Language Models"):::fileNode
+
+  Research --> R1("Pronunciation Scoring"):::fileNode
+  Research --> R2("Drafts"):::fileNode
+
+  KB --> K1("AI In Action"):::fileNode
+  KB --> K2("FastAPI"):::fileNode
+  KB --> K3("MLOps"):::fileNode
+  
+  IAILab --> I1("Guidelines"):::fileNode
+  IAILab --> I2("Tracks"):::fileNode
+```
+
+## 🚀 Installation & Deployment
+
+This project is built using the **MkDocs** framework with the **Material for MkDocs** theme. To run this documentation website on your local machine, you need Python installed and follow these steps:
+
+**Step 1: Clone the repository**
+```bash
+git clone https://github.com/nthaihoc/open-notes-hub.git
+cd open-notes-hub
+```
+
+**Step 2: Install dependencies**
+```bash
+pip install mkdocs-material mkdocs-static-i18n
+```
+
+**Step 3: Start the development server**
+```bash
+mkdocs serve
+```
+Once the server starts, open your browser and navigate to `http://127.0.0.1:8000/open-notes-hub/` to view the website.
+
+> **📌 Credits & References:** 
+> - Core framework: [MkDocs](https://www.mkdocs.org/)
+> - Website theme: [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) (by squidfunk).
+> - Multi-language support (i18n): [mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/) (by ultrabug).
+
+## 🤝 Contribution
+
+Contributions are always welcome! Whether it's fixing a typo, adding new lecture notes, or improving the documentation structure, your help is highly appreciated. 
+
+To contribute, please follow these standard open-source steps:
+1. **Fork** this repository on GitHub.
+2. **Clone** your forked repository to your local machine.
+3. Create a **new branch** for your feature or bug fix (`git checkout -b feature/your-feature-name`).
+4. **Commit** your changes with descriptive messages.
+5. **Push** the branch to your GitHub fork.
+6. Submit a **Pull Request** to the `main` branch of this repository for review.
+
+If you encounter any bugs, broken links, or have suggestions for new content, please feel free to open an **Issue**.
+
+## ⚖️ License
+
+This repository is distributed under the **MIT License**. You are completely free to use, copy, modify, and redistribute the source code and documentation in this project, provided that the original author is credited. Please see the `LICENSE` file (if available) for more details.
+
 ---
+*Developed by **Nguyễn Thái Học** - AI Engineer.*
