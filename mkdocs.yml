@@ -1,22 +1,62 @@
+# =============================================================================
+# SITE CONFIGURATION
+# =============================================================================
 site_name: OpenNotesHub
+site_description: >
+  Kho tài liệu mở — Nơi hệ thống hóa và chia sẻ hành trình nghiên cứu AI
+  của Nguyễn Thái Học: Course Notes, Research Logs, Knowledge Base.
+site_author: Nguyễn Thái Học (Thai-Hoc Nguyen)
+site_url: https://nthaihoc.github.io/open-notes-hub
 
+# =============================================================================
+# REPOSITORY CONFIGURATION
+# =============================================================================
 repo_name: nthaihoc/open-notes-hub
 repo_url: https://github.com/nthaihoc/open-notes-hub
+edit_uri: edit/main/docs/
 
+# =============================================================================
+# THEME CONFIGURATION
+# =============================================================================
 theme:
+  name: material
   logo: assets/images/logo.jpg
   favicon: assets/images/favicon.png
-  palette:
-    scheme: default
-    primary: white
-    accent: red
   
   font:
     text: Roboto
     code: JetBrains Mono
     
-  name: material
+  palette:
+    scheme: default
+    primary: white
+    accent: red
+
+  features:
+    # --- Content ---
+    - content.code.annotate 
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    # --- Navigation ---
+    - navigation.tabs
+    # - navigation.instant
+    # - navigation.instant.preview
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    # --- Table of Contents & Search ---
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
   icon:
+    repo: fontawesome/brands/github
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
@@ -30,76 +70,10 @@ theme:
       bug: octicons/bug-16
       example: octicons/beaker-16
       quote: octicons/quote-16
-    repo: fontawesome/brands/github
 
-  features:
-    - content.code.annotate 
-    - content.code.copy
-    - content.code.select
-    - content.footnote.tooltips
-    - navigation.tabs
-    - navigation.instant
-    - navigation.instant.preview
-    - navigation.instant.prefetch
-    - navigation.instant.progress
-    - navigation.indexes
-    - navigation.sections
-    - navigation.path
-    - toc.follow
-    - search.suggest
-    - navigation.top
-    - navigation.footer
-    - navigation.tracking
-
-extra_css:
-  - stylesheets/extra.css
-  - https://unpkg.com/katex@0/dist/katex.min.css
-
-extra_javascript:
-  - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-
-markdown_extensions:
-  - abbr
-  - admonition
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - md_in_html
-  - attr_list
-  - footnotes
-  - meta
-  - toc:
-      title: Table of Contents
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.critic
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.blocks.caption
-  - pymdownx.keys
-  - pymdownx.caret
-  - pymdownx.mark 
-  - pymdownx.tilde
-  - pymdownx.details
-  - pymdownx.blocks.definition
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji  
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg 
-  - tables
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
+# =============================================================================
+# PLUGINS
+# =============================================================================
 plugins:
   - macros
   - search
@@ -114,6 +88,8 @@ plugins:
         - locale: vi
           name: Tiếng Việt
           build: true
+          
+  # --- Disabled Plugins (for local testing/speed) ---
   # - git-revision-date-localized:
   #     type: timeago
   #     enable_creation_date: true
@@ -125,48 +101,76 @@ plugins:
   #     branch: main
   #     token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
-nav:
-  - Home: index.md
-  - About Me: about-me/README.md
-  - Research Logs:
-    - research/README.md
-    - "Pronunciation Scoring":
-      - research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
-      - research/pronunciation-scoring/literature-review/related_work.md
-
-  - Course Notes:
-    - courses/README.md
-    - "Applied Machine Learning": 
-      - courses/applied-machine-learning/README.md
-      - Lesson 01: lesson.md
-      - Lesson 02: lesson.md
-      - Lesson 03: lesson.md
-      - Lesson 04: lesson.md
-      - Lesson 05: lesson.md
-      - Lesson 06: lesson.md
-      - Lesson 07: lesson.md
-      - courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
-      - courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
-
-    - Large Language Models:
-      - Large Language Models: courses/large-language-models/README.md
-      - Lesson 01: lesson.md
-      - Lesson 02: lesson.md
-      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessson/lesson-03-attention_mechanisms.md
-      - Lesson 04: lesson.md
-      - Lesson 05: lesson.md
-      - Lesson 06: lesson.md
-      - Lesson 07: lesson.md
+# =============================================================================
+# MARKDOWN EXTENSIONS
+# =============================================================================
+markdown_extensions:
+  # --- Standard Markdown ---
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      title: Table of Contents
+      
+  # --- PyMdown Extensions (UI & Formatting) ---
+  - admonition
+  - pymdownx.blocks.caption
+  - pymdownx.blocks.definition
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark 
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
   
-  - Knowledge Base:
-    - knowledge-base/README.md
-    - "❄️ FastAPI Tutorials": 
-        - knowledge-base/fastapi/lesson-01-overview.md
-    - "🔎 RAG Framework":
-        - knowledge-base/ai-in-action/vallina_rag.md
-        - knowledge-base/ai-in-action/implementation_rag_pipeline.md
+  # --- Features & Integrations ---
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji  
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg 
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# =============================================================================
+# EXTRA ASSETS & CONFIGURATION
+# =============================================================================
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 extra:
+  generator: false
+  alternate:
+    - name: English
+      link: /open-notes-hub/
+      lang: en
+    - name: Vietnamese
+      link: /open-notes-hub/vi/
+      lang: vi
+      
   social:
     - icon: material/school
       link: https://ictu.edu.vn
@@ -186,16 +190,51 @@ extra:
     - icon: material/facebook
       link: https://www.facebook.com/nthoc.02
       name: Facebook
-  generator: false
-  alternate:
-      - name: English
-        link: /
-        lang: en
-      - name: Vietnamese
-        link: /vi/
-        lang: vi
 
 copyright: >
   ©️ 2025 by Thai-Hoc Nguyen.
   Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
+
+# =============================================================================
+# NAVIGATION
+# =============================================================================
+nav:
+  - Home: index.md
+  - About Me: about-me/README.md
+  
+  - Research Logs:
+    - Overview: research/README.md
+    - "Pronunciation Scoring":
+      - research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
+      - research/pronunciation-scoring/literature-review/related_work.md
       
+  - Course Notes:
+    - Overview: courses/README.md
+    - "Applied Machine Learning": 
+      - courses/applied-machine-learning/README.md
+      # - Lesson 01: lesson.md
+      # - Lesson 02: lesson.md
+      # - Lesson 03: lesson.md
+      # - Lesson 04: lesson.md
+      # - Lesson 05: lesson.md
+      # - Lesson 06: lesson.md
+      # - Lesson 07: lesson.md
+      - courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
+      - courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
+    - "Large Language Models":
+      - courses/large-language-models/README.md
+      # - Lesson 01: lesson.md
+      # - Lesson 02: lesson.md
+      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessson/lesson-03-attention_mechanisms.md
+      # - Lesson 04: lesson.md
+      # - Lesson 05: lesson.md
+      # - Lesson 06: lesson.md
+      # - Lesson 07: lesson.md
+      
+  - Knowledge Base:
+    - Overview: knowledge-base/README.md
+    - "❄️ FastAPI Tutorials": 
+        - knowledge-base/fastapi/lesson-01-overview.md
+    - "🔎 RAG Framework":
+        - knowledge-base/ai-in-action/vallina_rag.md
+        - knowledge-base/ai-in-action/implementation_rag_pipeline.md
