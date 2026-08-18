@@ -55,7 +55,7 @@ Trong self-attention, chữ “self” ám chỉ khả năng của cơ chế nà
 
 Đây là biến thể đơn giản của self-attention, không có bất kỳ trọng số huấn luyện nào, như được mô tả trong **hình 3.1**. Mục tiêu là minh hoạ một số khái niệm chính trong self-attention trước khi thêm các trọng số có thể huấn luyện. 
 
-![](../large-language-models/images/3_1.jpg)
+<!-- ![alt text](../images/3_1.jpg) -->
 
 /// caption
 **Hình 3.1** Mô tả mục tiêu của self-attention trong việc tính toán một vector ngữ cảnh cho mỗi phần từ đầu vào, bằng cách kết hợp thông tin từ tất cả các phần từ đầu vào khác. Trong ví dụ này, chúng ta đang tính vector ngữ cảnh $z^{(2)}$. Mức độ quan trọng hay sự đóng góp của từng phần tử đầu vào trong việc tính $z^{(2)}$ được xác định bởi các trọng số attention $\alpha_{21}$ đến $\alpha_{2T}$. Khi tính $z^{(2)}$ các trọng số attention được tính toán dựa trên phần từ đầu vào $x^{(2)}$ và tất cả các phần từ đầu vào khác.

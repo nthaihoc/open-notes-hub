@@ -2,7 +2,7 @@
 hide:
     - toc
     - navigation
-url_img: "assets/images/ods_stickers.jpg"
+url_img: "../assets/images/ods_stickers.jpg"
 ---
 
 {% include 'includes/hero.html' %}

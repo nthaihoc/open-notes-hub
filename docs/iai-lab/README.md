@@ -53,7 +53,7 @@ title: IAI Lab
     🌱 **AI Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
-    [:material-email:](sungkhua13204@gmail.com) &nbsp;&nbsp; 
+    [:material-email:](mailto:sungkhua13204@gmail.com) &nbsp;&nbsp; 
 
 -   <img src="images/vu_ngoc_thien.jpg" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto;">
 
@@ -64,7 +64,7 @@ title: IAI Lab
     🌱 **AI Research Intern**
 
     [:octicons-home-16:](https://nthaihoc.github.io) &nbsp;&nbsp; 
-    [:material-email:](vungocthien843@gmail.com) &nbsp;&nbsp; 
+    [:material-email:](mailto:vungocthien843@gmail.com) &nbsp;&nbsp; 
 
 -   <img src="images/tran_dang_vuong_quoc_long.jpg" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; display: block; margin: 0 auto;">
 

@@ -177,7 +177,7 @@ Vector DB có thể lọc kết quả dựa trên các thông tin phụ. Việc 
 ## 3. Advanced RAG
 ### 3.1 Nhược điểm của vanilla RAG
 ---
-Khung RAG được trình bày trong [vanilla-rag](#i-vanilla-rag) không giải quyết được các vấn đề nền tảng có ảnh hưởng đến chất lượng truy xuất và sinh câu trả lời ở một số khía cạnh như:
+Khung RAG được trình bày trong [vanilla-rag](#2-rag-architecture) không giải quyết được các vấn đề nền tảng có ảnh hưởng đến chất lượng truy xuất và sinh câu trả lời ở một số khía cạnh như:
 
 - Các tài liệu được truy xuất có liên quan đến câu hỏi của người dùng không?
 
@@ -232,7 +232,7 @@ Các bước tiền truy xuất được thực hiện theo hai hướng:
 ### 3.3 Retrieval
 ---
 
-Tương tự như [pre-retrieval](#2-pre-retrieval) thì truy xuất cũng được tối ưu hoá theo hai hướng cơ bản:
+Tương tự như [pre-retrieval](#32-pre-retrieval) thì truy xuất cũng được tối ưu hoá theo hai hướng cơ bản:
 
 - **Embedding models.** Cải thiện các mô hình nhúng được sử dụng trong quá trình mã hoá các tài liệu đã phân mảnh và tại thời điểm suy luận (lúc người dùng đặt câu hỏi), để biến đổi đầu vào của người dùng.
 
@@ -248,7 +248,7 @@ Tuy nhiên việc fine-tune một mô hình tiêu tốn rất nhiều tài nguy�
 
 ### 3.4 Post-retrieval
 ---
-Cách tối ưu hoá hậu truy xuất được thực hiện duy nhất trên dữ liệu đã được truy xuất nhằm đảm bảo hiệu suất của LLM không bị suy giảm bởi các vấn đề như cửa sổ ngữ cảnh bị giới hạn hoặc dữ liệu nhiễu. Tương tự như hai giai đoạn [pre-retrieval](#2-pre-retrieval) và [retrieval](#3-retrieval), post-retrieval cũng có hai phương pháp phổ biến:
+Cách tối ưu hoá hậu truy xuất được thực hiện duy nhất trên dữ liệu đã được truy xuất nhằm đảm bảo hiệu suất của LLM không bị suy giảm bởi các vấn đề như cửa sổ ngữ cảnh bị giới hạn hoặc dữ liệu nhiễu. Tương tự như hai giai đoạn [pre-retrieval](#32-pre-retrieval) và [retrieval](#33-retrieval), post-retrieval cũng có hai phương pháp phổ biến:
 
 - **Prompt compression.** Loại bỏ các chi tiết không cần thiết trong khi vẫn giữ lại tinh hoa của dữ liệu.
 

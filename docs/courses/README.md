@@ -1,7 +1,7 @@
 ---
 title: 📚 Course Notes
 # icon: fontawesome/solid/graduation-cap
-url_img: "../../assets/images/ods_stickers.jpg"
+url_img: "../assets/images/ods_stickers.jpg"
 quote:
   - "Live as if you were to die tomorrow. Learn as if you were to live forever."
   - "The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." 
@@ -48,7 +48,7 @@ Mục tiêu của kho tài liệu này là xây dựng một cơ sở tri thức
 
 | Course Name | Status | Key Objectives |
 | :---------- | :---:  | :------------- |
-| **Applied Machine Learning** <br> [[Links](../course-notes/applied-machine-learning/README.md)] | :material-close: | <li> Hệ thống hóa các thuật toán Machine Learning kinh điển. <br> <li> Hướng dẫn quy trình xây dựng, huấn luyện và đánh giá mô hình từ dữ liệu thô đến triển khai thực tế. |
+| **Applied Machine Learning** <br> [[Links](applied-machine-learning/README.md)] | :material-close: | <li> Hệ thống hóa các thuật toán Machine Learning kinh điển. <br> <li> Hướng dẫn quy trình xây dựng, huấn luyện và đánh giá mô hình từ dữ liệu thô đến triển khai thực tế. |
 | **Computer Vision Foundations** | :material-close: | <li> Tập trung vào kiến thức cốt lõi của Deep Learning trong xử lý ảnh. <br><li> Phân tích nguyên lý hoạt động của mạng CNNs, các kỹ thuật tiền xử lý và thực nghiệm trên các tác vụ thị giác máy tính phổ biến. |
 | **LLMs for Beginners** | :material-close: | <li> Khám phá kiến trúc Transformers và cơ chế Attention. <br><li> Cung cấp cái nhìn toàn diện về Mô hình ngôn ngữ lớn (LLMs), từ lý thuyết nền tảng đến quy trình Fine-tuning và ứng dụng thực tiễn. |
 

@@ -1,6 +1,6 @@
 ---
 title: 🌴 Research Logs
-url_img: "../../assets/images/ods_stickers.jpg"
+url_img: "../assets/images/ods_stickers.jpg"
 quote:
   - "Dream big. Start small. Act now"
   - "The expert in anything was once a beginner"
@@ -48,8 +48,8 @@ Toàn bộ tài liệu kỹ thuật, nhật ký thực nghiệm và báo cáo ch
 
 | Topic | Status | Description |
 | :--- | :---: | :--- |
-| **Phân loại ung thư cổ tử cung tế bào học** <br> [[Links](../research-logs/cervical-cancer-cytology/README.md)] | :material-check: | Phát triển mô hình AI hỗ trợ bác sĩ sàng lọc, gán nhãn tự động và chẩn đoán dựa trên hình ảnh tế bào học. |
-| **Đánh giá phát âm tiếng Anh (EdTech)** <br> [[Links](../research-logs/pronunciation-scoring/README.md)] | :material-close: | Nghiên cứu kỹ thuật Pronunciation Scoring (PS), tối ưu hóa thuật toán chấm điểm phát âm dành riêng cho người Việt. |
+| **Phân loại ung thư cổ tử cung tế bào học** <br> (Đang cập nhật) | :material-check: | Phát triển mô hình AI hỗ trợ bác sĩ sàng lọc, gán nhãn tự động và chẩn đoán dựa trên hình ảnh tế bào học. |
+| **Đánh giá phát âm tiếng Anh (EdTech)** <br> [[Links](pronunciation-scoring/README.md)] | :material-close: | Nghiên cứu kỹ thuật Pronunciation Scoring (PS), tối ưu hóa thuật toán chấm điểm phát âm dành riêng cho người Việt. |
 | **Hệ thống hỗ trợ ra quyết định lâm sàng (CDSS)** | :material-close: | Xây dựng hệ thống AI cảnh báo, tư vấn và quản lý thông tin liên quan đến tương tác thuốc trong điều trị. |
 | **Chẩn đoán bệnh học ung thư đại trực tràng** | :material-close: | Triển khai giải pháp hỗ trợ phân loại mô bệnh học, chuẩn hóa dữ liệu gán nhãn và xây dựng cơ sở tri thức y khoa. |
 
