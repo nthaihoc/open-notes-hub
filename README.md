@@ -12,8 +12,6 @@
   </p>
 </div>
 
----
-
 ## 📖 Repository Overview
 
 **OpenNotesHub** is an open-source digital space where I systematize and share my learning and research journey in Artificial Intelligence (AI). It serves as a centralized hub for core lectures, practical research logs, and specialized technical knowledge.
@@ -61,25 +59,22 @@ This project is built using the **MkDocs** framework with the **Material for MkD
 
 **Step 1: Clone the repository**
 ```bash
-git clone https://github.com/nthaihoc/open-notes-hub.git
+$ git clone https://github.com/nthaihoc/open-notes-hub.git
 cd open-notes-hub
 ```
 
 **Step 2: Install dependencies**
 ```bash
-pip install mkdocs-material mkdocs-static-i18n
+$ pip install mkdocs-material mkdocs-static-i18n
 ```
 
 **Step 3: Start the development server**
 ```bash
-mkdocs serve
+$ mkdocs serve
 ```
+
 Once the server starts, open your browser and navigate to `http://127.0.0.1:8000/open-notes-hub/` to view the website.
 
-> **📌 Credits & References:** 
-> - Core framework: [MkDocs](https://www.mkdocs.org/)
-> - Website theme: [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) (by squidfunk).
-> - Multi-language support (i18n): [mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/) (by ultrabug).
 
 ## 🤝 Contribution
 
@@ -94,6 +89,13 @@ To contribute, please follow these standard open-source steps:
 6. Submit a **Pull Request** to the `main` branch of this repository for review.
 
 If you encounter any bugs, broken links, or have suggestions for new content, please feel free to open an **Issue**.
+
+## 👏 Acknowledgments
+
+A special thanks to the excellent open-source projects that power this documentation hub:
+- **[MkDocs](https://www.mkdocs.org/)**: The core static site generator.
+- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)**: The beautiful and highly customizable theme by squidfunk.
+- **[mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/)**: The multi-language support plugin by ultrabug.
 
 ## ⚖️ License
 
