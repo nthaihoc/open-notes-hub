@@ -90,16 +90,16 @@ plugins:
           build: true
           
   # --- Disabled Plugins (for local testing/speed) ---
-  # - git-revision-date-localized:
-  #     type: timeago
-  #     enable_creation_date: true
-  #     fallback_to_build_date: true
-  #     enable_git_follow: false 
-  # - git-committers:
-  #     enabled: !ENV [CI, false] 
-  #     repository: nthaihoc/open-notes-hub
-  #     branch: main
-  #     token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+      fallback_to_build_date: true
+      enable_git_follow: false 
+  - git-committers:
+      enabled: !ENV [CI, false] 
+      repository: nthaihoc/open-notes-hub
+      branch: main
+      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
 # =============================================================================
 # MARKDOWN EXTENSIONS
