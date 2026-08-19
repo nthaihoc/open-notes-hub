@@ -1,6 +1,10 @@
 ---
 title: Lecture 02. Implementation RAG PipeLine
 icon: material/numeric-2
+tags:
+  - rag
+  - implementation
+  - gen-ai
 ---
 
 <center markdown># Lecture 02. Implementation RAG PipeLine</center>

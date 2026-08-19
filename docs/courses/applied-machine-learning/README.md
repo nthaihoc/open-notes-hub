@@ -54,7 +54,7 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 
 | Module | Topic | Key Concepts | 
 | :--- | :--- | :--- |
-| *Module 01 <br> Overview & Environment* | **Lecture 01. Introduction to ML** <br> [[notes](https://)] [[code](https://)] | <ul><li>ML Taxonomy, Supervised Learning, Unsupervised Learning.</li><li>ML Workflow, Real-world Challenges.</li></ul>|
+| *Module 01 <br> Overview & Environment* | **Lecture 01. Introduction to ML** <br> [[notes](https://)] \| [[code](https://)] | <ul><li>ML Taxonomy, Supervised Learning, Unsupervised Learning.</li><li>ML Workflow, Real-world Challenges.</li></ul>|
 | | **Lecture 02. ML Development Roadmap** | <ul><li>Vòng đời phát triển (ML Lifecycle)</li><li>Các yếu tố cốt lõi: Data, Model, Compute</li><li>Giới thiệu về MLOps cơ bản</li></ul> |
 | | **Lecture 03. Python for Data Science** | <ul><li>Thiết lập môi trường: Anaconda, Jupyter, Colab</li><li>Hệ sinh thái: NumPy (Đại số), Pandas (Dữ liệu), Matplotlib (Vẽ biểu đồ)</li></ul> |
 | | | | |

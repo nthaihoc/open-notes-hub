@@ -1,6 +1,10 @@
 ---
 title: Lecture 01. Vallina RAG
 icon: material/numeric-1
+tags:
+  - rag
+  - ai-architecture
+  - gen-ai
 ---
 
 <center markdown># Lecture 01. Vallina RAG</center>

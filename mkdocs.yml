@@ -77,6 +77,8 @@ theme:
 plugins:
   - macros
   - search
+  - tags:
+      tags_file: tags.md
   - i18n:
       docs_structure: suffix 
       fallback_to_default: true 
@@ -153,11 +155,11 @@ markdown_extensions:
 # EXTRA ASSETS & CONFIGURATION
 # =============================================================================
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - javascripts/katex.js
+  - assets/javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
@@ -200,14 +202,6 @@ copyright: >
 # =============================================================================
 nav:
   - Home: index.md
-  - About Me: about-me/README.md
-  
-  - Research Logs:
-    - Overview: research/README.md
-    - "Pronunciation Scoring":
-      - research/pronunciation-scoring/experiments/01-ssl_for_pronscore.md
-      - research/pronunciation-scoring/literature-review/related_work.md
-      
   - Course Notes:
     - Overview: courses/README.md
     - "Applied Machine Learning": 
@@ -219,13 +213,13 @@ nav:
       # - Lesson 05: lesson.md
       # - Lesson 06: lesson.md
       # - Lesson 07: lesson.md
-      - courses/applied-machine-learning/lesson/lesson-08-support_vector_machines.md
-      - courses/applied-machine-learning/lesson/lesson-09-decision_trees.md
+      - courses/applied-machine-learning/lessons/lesson-08-support-vector-machines.md
+      - courses/applied-machine-learning/lessons/lesson-09-decision-trees.md
     - "Large Language Models":
       - courses/large-language-models/README.md
       # - Lesson 01: lesson.md
       # - Lesson 02: lesson.md
-      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessson/lesson-03-attention_mechanisms.md
+      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessons/lesson-03-attention-mechanisms.md
       # - Lesson 04: lesson.md
       # - Lesson 05: lesson.md
       # - Lesson 06: lesson.md
@@ -237,5 +231,14 @@ nav:
     - "❄️ FastAPI Tutorials": 
         - knowledge-base/fastapi/lesson-01-overview.md
     - "🔎 RAG Framework":
-        - knowledge-base/ai-in-action/vallina_rag.md
-        - knowledge-base/ai-in-action/implementation_rag_pipeline.md
+        - knowledge-base/ai-in-action/vanilla-rag.md
+        - knowledge-base/ai-in-action/implementation-rag-pipeline.md
+
+  - Research Logs:
+    - Overview: research/README.md
+    - "Pronunciation Scoring":
+      - research/pronunciation-scoring/experiments/01-ssl-for-pronscore.md
+      - research/pronunciation-scoring/literature-review/related-work.md
+
+  - Tags: tags.md
+  - About Me: about-me/README.md
