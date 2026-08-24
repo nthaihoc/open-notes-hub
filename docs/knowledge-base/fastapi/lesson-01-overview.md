@@ -4,145 +4,135 @@ title: Lesson 01. Overview and Project Setup
 
 <center markdown># Lesson 01. Overview and Project Setup</center>
 
-## 1. Technical requirements
+## 🛠️ Technical Requirements
 ---
 
-Để triển khai thành công một dự án với FastAPI, cần thiết lập một môi trường hỗ trợ phát triển Python và các chức năng của FastAPI. Một số thành phần kỹ thuật quan trọng cần cài đặt:
+Để triển khai dự án FastAPI, hệ thống cần đáp ứng các thành phần nền tảng sau:
 
-- Python: FastAPI được xây dựng trên Python, vì vậy cần một phiên bản Python tương thích với phiên bản FastAPI tương ứng.
+- **Python 3.9+**: Ngôn ngữ lập trình cốt lõi.
+- **FastAPI**: Web framework chính.
+- **Uvicorn**: Asynchronous Server Gateway Interface (ASGI) server tốc độ cao, dùng để khởi chạy ứng dụng.
+- **IDE**: Integrated Development Environment (IDE) như VS Code, PyCharm, hoặc bất kỳ trình soạn thảo mã nguồn nào hỗ trợ Python.
+- **API Client**: [Postman](https://www.postman.com/) (hoặc có thể dùng trực tiếp **Swagger UI** được tích hợp sẵn của FastAPI).
+- **Git**: Công cụ quản lý phiên bản mã nguồn.
 
-- FastAPI: Cài đặt bằng pip, trình quản lý gói của Python.
-
-- Uvicorn: FastAPI cần một ASGI server (Asynchronous Server Gateway Interface), và Uvicorn là một triển khai ASCI cực kì nhanh.
-
-- IDE (Integrated Development Environment): Một IDE như Visual Studo Code (VS Code), PyCharm,..., hỗ trợ phát triển Python trong việc viết mã và kiểm thử code.
-
-- Postman hoặc Swagger UI: Dùng để kiểm thử API endpoints. FastAPI tự động tạo và host Swagger UI, có thể sử dụng ngay mà không cần cần cấu hình gì thêm.
-
-- Git: Là công cụ được sử dụng rộng rãi cho phép quản lý phiên bản.
-
-## 2. Setting up development environment
+## 💻 Environment Setup
 ---
 
-**Cài đặt Python trên Windows.** FastAPI họat động với Python, vì vậy cần kiểm tra phiên bản Python trước khi sử dụng, đây là bước quan trọng để thiết lập FastAPI.
+### Cài đặt Python
 
-1. Truy cập trang chính thức của Python: [python.org](https://python.org), tải phiên bản Python mới nhất, hoặc tối thiểu >= 3.9.
+Tùy thuộc vào hệ điều hành, hãy thực hiện các bước dưới đây để cài đặt Python. Sau khi hoàn tất, luôn kiểm tra lại phiên bản để đảm bảo hệ thống đã nhận diện chính xác.
 
-2. Chạy file cài đặt, nhớ tích vào ô `Add Python to Path` trước khi bấm `Install Now`.
+=== "Windows"
 
-3. Sau khi cài xong, mở Command Prompt (cmd) và gõ: `python --version` để kiểm tra phiên bản.
+    - Truy cập [python.org](https://python.org) và tải file cài đặt phù hợp.
+    - Mở file vừa tải. Tại màn hình cài đặt đầu tiên, **bắt buộc** đánh dấu chọn **Add Python to PATH** trước khi nhấn **Install Now**. Điều này cho phép chạy Python từ bất kỳ đâu trong **Command Prompt**.
+    - Mở Command Prompt (`cmd`) và chạy lệnh kiểm tra. Nếu hiển thị phiên bản Python, quá trình cài đặt đã thành công:
+    
+    ```cmd
+    python --version
+    pip --version
+    ```
 
-**Cài đặt Python trên macOS/Linux.** macOS thường có sẵn Python, nhưng thường là bản cũ, bạn nên cài bản mởi bằng Homebrew.
+=== "macOS"
+    
+    - Mở **Terminal** và chạy lệnh:
+    
+    ```bash
+    brew install python
+    ```
+    
+    - Kiểm tra phiên bản Python sau khi cài đặt:
+    
+    ```bash
+    python3 --version
+    pip3 --version
+    ```
 
-Cài Homebrew (nếu chưa có):
+=== "Linux (Ubuntu/Debian)"
+   
+    - Cập nhật hệ thống và cài đặt:
+    
+    ```bash
+    sudo apt update
+    sudo apt install python3 python3-pip python3-venv
+    ```
+    
+    - Kiểm tra phiên bản Python sau khi cài đặt:
+    
+    ```bash
+    python3 --version
+    pip3 --version
+    ```
+
+### Khởi tạo Project & Môi trường ảo
+
+Môi trường ảo (virtual environment) giúp cô lập các thư viện (dependencies) của từng dự án, tránh xung đột với hệ thống. Cụ thể, nó tạo ra một thư mục riêng chứa các thư viện cần thiết, tách biệt hoàn toàn với các dự án khác. Điều này giúp việc quản lý phiên bản thư viện trở nên dễ dàng và an toàn hơn.
+
+=== "Windows"
+
+    ```cmd
+    mkdir fastapi-project
+    cd fastapi-project
+    python -m venv .venv
+    .venv\Scripts\activate
+    ```
+
+=== "macOS / Linux"
+
+    ```bash
+    mkdir fastapi-project
+    cd fastapi-project
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+Khi kích hoạt thành công, giao diện dòng lệnh (terminal) sẽ xuất hiện tiền tố `(.venv)` ở đầu dòng.
+
+### Cài đặt FastAPI & Uvicorn
+
+Chạy lệnh sau để cài đặt FastAPI cùng toàn bộ các thư viện phụ trợ được khuyến nghị (bao gồm cả `uvicorn`):
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Sau đó cài Python qua lệnh:
-
-```bash
-brew install python
-```
-Đối với Linux (Ubuntu/Debian) thực hiện cài Python bằng `apt` thông qua lệnh:
-
-```bash
-sudo apt-get install python3
+pip install "fastapi[all]"
 ```
 
-**Kiểm tra phiên bản sau khi cài đặt.** Trên macOS/Windows chạy `python --version`, trên Linux `python3 --version`. Ngoài ra, kiểm tra pip (trình quản lý gói của Python), trên macOS/Windows chạy `pip --version`, trên Linux `pip3 --version`.
+## 📂 Project Structure
+---
 
-**Cài đặt FastAPI và Uvicorn.** Sau khi cài đặt thành công Python và pip, tiếp theo sẽ cài đặt FastAPI và Uvicorn. Mở terminal/command prompt và chạy `pip install fastapi[all]`. Lệnh này sẽ cài FastAPI cùng tất cả các dependencies được khuyến nghị, bao gồm cả Uvicorn. Kiểm tra cài đặt chạy `uvicorn --version`.
+FastAPI không bắt buộc một cấu trúc thư mục cụ thể nào, nhưng dưới đây là chuẩn thiết kế phân lớp được khuyến nghị cho các dự án có khả năng mở rộng (scalable):
 
-**Thiết lập IDE.** IDE không chỉ là editor, mà còn là nơi viết code, debug, và test ứng dụng. Một số IDE phổ biến cho FastAPI mà bạn có thể tải và dùng là [VS Code](https://code.visualstudio.com) và [PyCharm](https://www.jetbrains.com/pycharm/download).
-
-**Thiết lập Git và Github.** Quản lý phiên bản (Version Control) là một khía cạnh quan trọng của phát triển phầm mềm. Git kết hợp GitHub tạo thành một bộ công cụ mạnh mẽ để theo dõi thay đổi, cộng tác nhóm và duy trì lịch sử dự án. Có thể tìm và cài đặt Git từ trang chính thức [git-scm.com](https://git-scm.com).
-
-Sau khi cài xong, cấu hình Git với tên và email của bạn trong command line:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+```text
+fastapi-project/
+├── src/                    # Chứa toàn bộ mã nguồn ứng dụng
+│   ├── core/               # Cấu hình chung (config, security, database)
+│   ├── models/             # Định nghĩa Database Models (SQLAlchemy, v.v.)
+│   ├── schemas/            # Pydantic Models (Validate Data / Response)
+│   ├── api/                # Chứa các Routers, Endpoints
+│   ├── services/           # Logic nghiệp vụ (Business logic)
+│   └── main.py             # File khởi chạy ứng dụng (Entry point)
+├── tests/                  # Mã kiểm thử (Unit tests, Integration tests)
+├── docs/                   # Tài liệu dự án
+├── .venv/                  # Môi trường ảo (không commit lên Git)
+├── .gitignore              # Các file/thư mục bỏ qua khi dùng Git
+└── requirements.txt        # Danh sách thư viện phụ thuộc
 ```
 
-## 3. Creating a FastAPI project
+## 🧠 Core Concepts
+---
 
-Bắt đầu bằng việc khởi tạo một project folder với tên mà bạn thích (đây sẽ là nơi chứa toàn bộ mã nguồn dự án). Trước hết, bạn cần tạo một môi trường ảo:
+### Lập trình Bất đồng bộ (Asynchronous)
 
-```bash
-$ python -m venv .venv
-```
+Nếu sử dụng hàm `def` thông thường, ứng dụng sẽ xử lý tuần tự. Điều này trở nên kém tối ưu khi có nhiều requests cần xử lý cùng lúc (ví dụ: request 2 phải đợi request 1 hoàn tất). FastAPI hỗ trợ mạnh mẽ `async / await`, cho phép xử lý hàng ngàn request đồng thời mà không chặn luồng chính, mang lại hiệu năng vượt trội. Về bản chất:
 
-Để kích hoạt môi trường ảo, nếu bạn sử dụng Mac or Linux:
+- `async`: Đặt từ khóa này trước hàm (`async def`) để báo cho Python biết đây không phải là hàm chạy tuần tự thông thường, mà là hàm có khả năng tạm dừng để nhường tài nguyên cho các tác vụ khác.
+- `await`: Khi gặp từ khóa `await` bên trong hàm `async`, Python sẽ tạm dừng thực thi hàm đó, chuyển sang xử lý tác vụ khác cho đến khi tác vụ đang chờ hoàn tất.
 
-```bash
-$ source .venv/bin/activate
-```
+**Lưu ý**: Khi viết một endpoint với `async def`, bên trong hàm nên có ít nhất một lệnh `await`. Nếu khai báo `async` nhưng không có `await`, hệ thống sẽ lãng phí tài nguyên vì đã kích hoạt chế độ bất đồng bộ mà không thực sự tận dụng nó.
 
-Trên hệ điều hành Windows, chạy dòng lệnh sau:
+### Endpoints
 
-```bash
-$ .venv\Scripts\activate
-```
-
-Khi môi trường ảo được kích hoạt, bạn sẽ thấy trong terminal có một chuỗi tiền tố như sau: `(.venv) $`. Từ thời điểm này, toàn bộ các module bạn cài đặt bằng pip sẽ được lưu trữ và cài đặt vào thư mục `.venv`, và chỉ sử dụng được khi môi trường này đang hoạt động.
-
-Bây giờ, bạn có thể cài đặt gói fastapi cùng với uvicorn trong môi trường ảo của mình bằng cách chạy lệnh sau:
-
-```bash
-$ pip install fastapi uvicorn
-```
-
-Sau khi FastAPI đã được cài đặt, hãy mở thư mục dự án và tạo một file có tên là `main.py`. File này sẽ là nơi ứng dụng FastAPI của bạn bắt đầu.
-
-```python linenums="1"
-# import module FastAPI
-from fastapi import FastAPI
-
-# khởi tạo instance của lớp FastAPI
-app = FastAPI()
-```
-
-Định nghĩa router đầu tiên trong ứng dụng. Router trong FastAPI giống như biến chỉ đường, giúp điều hướng request đến đúng function.
-
-```python linenums="1"
-@app.get("/")
-def read_root(): 
-    return {"Hello" : "World"}
-```
-
-## 4. Structure project
-
-Trong bất kể dự án nào, việc sắp xếp mã nguồn theo một cấu trúc rõ ràng không chỉ là vấn đề gọn gàng mà còn là việc tạo ra một môi trường bền vững và có khả năng mở rộng. Điều này có nghĩa là bạn cần tổ chức dự án theo cách tách biệt các phần khác nhau của ứng dụng một cách logic và hiệu quả.
-
-Không có một cấu trúc duy nhất và hoàn hảo cho mọi dự án FastAPI, tuy nhiên, một cách tiếp cận phổ biến là chia dự án thành một số thư mục chính:
-
-- **/src:** Đây là nơi chứa code chính của ứng dụng, bên trong có thể có các thư mục con cho những module khác nhau. Ví dụ: `models` - chứa các database models; `routes` - chứa các route của FastAPI; `services` - chứa phần logic nghiệp vụ.
-
-- **/tests:** Tách riêng ra khỏi code ứng dụng là một cách tốt, giúp dễ dàng quản lý, dồng thời đảm bảo rằng build production không bao gồm code test.
-
-- **docs:** Tải liệu là rất quan trọng với bất kỳ dự án nào, phần này sẽ bao gồm hướng dẫn cài đặt, hướng dẫn sử dụng,v.v. Việc có một thư mục dành riêng cho tài liệu giúp dự án rõ ràng và dễ duy trì hơn.
-
-## 5. Basic concepts of FastAPI
-
-**Khái niệm và đặc điểm chính của FastAPI.** FastAPI là một framework web hiện đại và nhanh để để xây dựng API với Python, dựa trên type hints tiêu chuẩn của Python. Một số đặc điểm chính của FastAPI:
-
-- Tốc độ: Đây là một trong những framework nhanh nhất để xây dựng API bằng Python, nhờ sử dụng Starlette cho phần web và Pydantic cho xử lý dữ liệu.
-
-- Dễ sử dụng: FastAPI được thiết kế để dễ học, dễ code, giúp tăng tốc độ phát triển.
-
-- Tài liệu tự động: Với FastAPI, tài liệu API được tự động sinh ra, vừa tiết kiệm thời gian, vừa cực kỳ hữu ích cho lập trình viên.
-
-**Asynchronous programming (lập trình bất đồng bộ).** Một trong những tính năng mạnh mẽ nhất của FastAPI là hỗ trợ lập trình bất đồng bộ. Cho phép:
-
-- Ứng dụng xử lý được nhiều request cùng lúc.
-
-- Tránh việc một tác vụ chặn các tác vụ khác.
-
-- Cải thiện hiệu năng tổng thể của ứng dụng.
-
-Lập trình bất đồng bộ là một kiểu lập trình concurrent programming (chạy đồng thời), trong đó các tác vụ được thực hiện mà không chặn luồng xử lý chính.
-
+Endpoint là các điểm giao tiếp nơi các tương tác API diễn ra. Trong FastAPI, một endpoint được định nghĩa bằng cách gắn decorator (ký hiệu `@`) trước một hàm. Ví dụ, `@app.get("/")` tạo ra một endpoint cơ bản trong file `src/main.py`:
 
 ```python linenums="1"
 from fastapi import FastAPI
@@ -151,264 +141,168 @@ app = FastAPI()
 
 @app.get("/")
 async def read_root():
-    return {"Hello": "World"}
+    return {"message": "Hello World"}
 ```
 
-Ở đây, ta dùng `async def` thay cho `def`, hành vi của code vẫn giống như trước, khi bạn truy cập `/`, hàm trả về `{"Hello": "World"}`. Nhưng nếu sau này bạn cần gọi các tác vụ I/O bất đồng bộ (ví dụ: gọi API khác, query DB bất đồng bộ), thì việc dùng `async` sẽ giúp ứng dụng tối ưu và nhanh hơn.
+Sử dụng lệnh `uvicorn` để khởi chạy server, với cú pháp `uvicorn <tên_module>:<tên_biến_app> --reload`:
 
-**Endpoints.** Là những điểm mà tại đó diễn ra sự tương tác với API. Trong FastAPI, một endpoint được tạo ra bằng cách trang trí (decorating) một hàm với một HTTP method, chẳng hạn như `app.get("/")`. Điều này có nghĩa là một yêu cầu GET sẽ được gửi tới root `("/")` của ứng dụng.
-
-```python linenums="1"
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+```bash
+uvicorn src.main:app --reload
 ```
 
-Trong đoạn code này, chúng ta đang định nghĩa một endpoint cho URL gốc `("/")`. Khi có một yêu cầu GET được gửi đến URL này, hàm `read_root` sẽ được gọi và trả về một phản hồi dạng JSON.
+Tùy chọn `--reload` giúp server tự động khởi động lại mỗi khi có thay đổi trong mã nguồn. Tính năng này rất hữu ích, nhưng chỉ nên dùng trong môi trường phát triển (development). 
 
-**Routers.** Khi chúng ta cần xử lý nhiều endpoint nằm ở các file khác nhau, chúng ta có thể tận dụng routers. Routers giúp nhóm các endpoint thành những module riêng biệt, từ đó làm cho codebase dễ bảo trì và dễ hiểu hơn. Ví dụ, chúng ta có thể dùng một router cho các thao tác liên quan đến users và một router khác cho các thao tác liên quan đến products.
+FastAPI tự động sinh tài liệu API dựa trên chuẩn OpenAPI. Bạn có thể truy cập **Swagger UI** tại [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) – một giao diện trực quan cho phép kiểm thử trực tiếp các API.
 
-Để định nghĩa một router, trước hết hãy tạo một file mới trong thư mục dự án của bạn với tên `router.py`. Sau đó, tạo router như sau:
+## 🔀 Routing & Parameters
+---
+
+### APIRouter
+
+Khi ứng dụng phát triển lớn hơn, việc khai báo toàn bộ API trong `main.py` là không khả thi. `APIRouter` giúp phân chia và nhóm các endpoints thành các module riêng biệt.
+
+Tạo file `src/api/items.py`:
 
 ```python linenums="1"
 from fastapi import APIRouter
 
-router = APIRouter()
+router = APIRouter(prefix="/items", tags=["Items"])
 
-@router.get("/items/{item_id}")
-async def read_item(item_id: int):
-    return {"item_id": item_id}
+@router.get("/")
+async def get_items():
+    return ["Item 1", "Item 2"]
 ```
 
-Giờ đây bạn có thể tái sử dụng router này và gắn chúng vào instance FastAPI trong file `main.py`.
+Gắn (include) router vừa tạo vào file chính `src/main.py`:
 
 ```python linenums="1"
 from fastapi import FastAPI
-import routers
+from src.api import items
 
 app = FastAPI()
-
-app.include_router(routers.router)
-
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+app.include_router(items.router)
 ```
 
-Lúc này, bạn đã có code để chạy server, trong đó bao gồm router cho endpoint `GET / items` được import từ một module khác.
+### Path & Query Parameters
 
-**Chạy server FastAPI.** Để chạy ứng dụng FastAPI, bạn chỉ cần cho Uvicorn biết instance của ứng dụng. Nếu file của bạn có tên là `main.py` và instance FastAPI được gọi là app, bạn có thể khởi động server ở cấp thư mục bằng lệnh sau:
+Trong thực tế, **Path Parameters** và **Query Parameters** thường được kết hợp để giải quyết các bài toán truy vấn dữ liệu phức tạp.
 
-```bash
-$ uvicorn main:app --reload
-```
+- **Path Parameters**: Dùng để xác định một đối tượng hoặc danh mục cụ thể. Chúng mang tính định danh và **bắt buộc** phải có mặt trên URL.
+- **Query Parameters**: Dùng để lọc (filter), sắp xếp (sort), hoặc phân trang (paginate). Chúng là **tùy chọn** và nằm sau dấu `?` trên URL.
 
-Tham số `--reload` sẽ làm cho server tự động khởi động lại sau mỗi lần thay đổi code, rất hữu ích cho lập trình viên. Khi server đã chạy, bạn có thể truy cập API của mình tại [[http://127.0.0.1.8000](http://127.0.0.1.8000)]. Nếu bạn mở URL trong trình duyệt, bạn sẽ thấy phản hồi JSON từ endpoint `"/"` mà chúng ta vừa tạo.
+**Ví dụ:** Xây dựng API cho hệ thống E-commerce, cần lấy danh sách sản phẩm thuộc danh mục `5` (`category_id = 5`), nhưng người dùng muốn:
+- Lọc sản phẩm có giá tối thiểu (`min_price`).
+- Chỉ hiện sản phẩm còn hàng (`in_stock=true`).
+- Phân trang kết quả (`skip`, `limit`).
 
-Một trong những tính năng thú vị nhất của FastAPI là tài liệu tự động. Khi bạn chạy ứng dụng FastAPI, hai giao diện tài liệu sẽ được tạo sẵn:
-
-- Swagger UI: [[http://127.0.0.1.8000/docs](http://127.0.0.1.8000/docs)]
-
-- Redoc: [[http://127.0.0.1.8000/redoc](http://127.0.0.1.8000/redoc)]
-
-Hai giao diện này cung cấp một cách tương tác trực quan để khám phá API và kiểm thử các chức năng của chúng.
-
-## 6. Defining first API endpoint
-
-Khi bạn đã nắm được những kiến thức cơ bản về FastAPI và môi trường phát triển đã sẵn sàng, bây giờ chúng ta sẽ đi chi tiết về việc khởi tạo endpoint đầu tiên. Đây chính là nơi sức mạnh thật sự của FastAPI, bạn có thể xây dựng được một endpoint API hoạt động, sẵn sàng phản hồi các HTTP request một cách dễ dàng. 
-
-Trong web API, GET request có lẽ là phổ biến nhất. Chúng được sử dụng để lấy dữ liệu từ server. Trong FastAPI, việc xử lý một GET request rất đơn giản và trực quan. Giả sử bạn đang xây dựng API cho một cửa hàng sách. Endpoint đầu tiên sẽ cung cấp thông tin về một cuốn sách dựa trên ID.
+URL thực tế sẽ có dạng:  
+`GET /categories/5/products?min_price=100&in_stock=true&skip=0&limit=20`
 
 ```python linenums="1"
+from typing import Optional
 from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/books/{book_id}")
-async def read_book(book_id: int):
+@app.get("/categories/{category_id}/products")
+async def get_products_by_category(
+    category_id: int,                # Path Parameter: Trỏ đích xác vào danh mục số 5
+    min_price: Optional[float] = 0,  # Query Parameter: Lọc giá tối thiểu
+    in_stock: bool = True,           # Query Parameter: Lọc trạng thái còn hàng (mặc định True)
+    skip: int = 0,                   # Query Parameter: Phân trang (bỏ qua X sản phẩm đầu)
+    limit: int = 20                  # Query Parameter: Giới hạn số lượng trả về
+):
     return {
-        "book_id": book_id,
-        "title": "Machine Learning Basic",
-        "author": "Scott Mc"
+        "category_id": category_id,
+        "filters_applied": {
+            "min_price": min_price,
+            "in_stock": in_stock,
+            "skip": skip,
+            "limit": limit
+        },
+        "data": ["Product A", "Product B"] 
     }
 ```
 
-Trong đoạn mã trên, decorator `@app.get("/books/{book_id}")` báo cho FastAPI rằng hàm này sẽ phản hồi các GET request tại đường dẫn `/books/{book_id}`. Phần `{book_id}` trong path được gọi là path parameter, được dùng để truyền giá trị tự động. FastAPI sẽ tự động lấy giá trị `book_id` từ URL và truyền vào hàm của bạn.
+Ở ví dụ này, `category_id` là thành phần bắt buộc của URL, trong khi các tham số sau dấu `?` giúp tinh chỉnh kết quả trả về một cách linh hoạt mà không cần tạo thêm các endpoints khác.
 
-Hãy chú ý đến `book_id: int` đây là một type hints, FastAPI sử dụng type hint này để kiểm tra dữ liệu. Nếu request gửi lên mà `book_id` không phải số nguyên, FastAPI sẽ tự động trả về lỗi kèm thông báo chi tiết. 
+## 🛡️ Data Validation với Pydantic
+---
 
-Sau khi định nghĩa endpoint GET, bạn có thể chạy ứng dụng FastAPI bằng uvicorn giống như trước. Như đã được đề cập FastAPI tự động sinh tài liệu API dạng tương tác với Swagger UI. Công cụ này cho phép kiểm thử endpoint API trực tiếp từ trình duyệt mà không cần viết thêm code. Bạn có thể dễ dàng kiểm tra ngay endpoint `/books/{book_id}` vừa tạo trong đó.
-
-**Sử dụng Swagger UI.** Truy cập [[http://127.0.0.1.8000/docs](http://127.0.0.1.8000/docs)], ở đó endpoint `/books/{book_id}`. Hãy click vào chúng và thử nhập một `book_id` bất kì, rồi chạy thử. Bạn sẽ thấy reponse API trả về.
-
-**Sử dụng ứng dụng Postman.** Postman là một API client cho phép xây dựng, kiểm thử tài liệu hóa API một cách chi tiết hơn. Tải và cài đặt Postman từ [[https://www.postman.com/downloads/](https://www.postman.com/downloads/)]. Sau khi cài đặt: (1) tạo một request mới; (2) chọn method là GET; (3) đặt URL là endpoint FastAPI của bạn `http://127.0.0.1:8000/books/1`; (4) Nhấn send và nhận phản hồi từ server FastAPI.
-
-## 7. Path parameters and query parameters
-
-Một trong những khía cạnh quan trọng của phát triển API là xử lý paramters. Parameters cho phép API nhận input từ người dùng, giúp endpoints trở nên động và linh hoạt hơn. 
-
-**Path parameters.** Là những phần trong URL được kỳ vọng sẽ thay đổi. Ở đây với endpoint `/authors/{author_id}`, thì `author_id` chính là một parameter. FastAPI cho phép lấy giá trị của parameter này một cách dễ dàng và sử dụng trong hàm của mình. Giá trị `name` không thay đổi, nhưng `author_id` sẽ là giá trị được truyền vào từ request.
+**Pydantic** là cốt lõi của FastAPI trong việc định nghĩa cấu trúc, kiểm tra tính hợp lệ (validation) và ép kiểu dữ liệu cho request/response. Bằng cách khai báo kiểu dữ liệu một lần, Pydantic sẽ đảm nhận toàn bộ quá trình kiểm lỗi.
 
 ```python linenums="1"
-@app.get("/authors/{author_id}")
-async def read_author(author_id: int):
-    return {
-        "author_id": author_id,
-        "name": "Nguyen Thai Hoc"
-    }
-```
-
-**Query parameters.** Được dùng để tinh chỉnh hoặc tùy biến phản hồi của API, chúng được thêm vào URL sau dấu ?. Ví dụ `/books?genre=ai&year=2025` có thể trả về danh sách những sách phát hành năm 2025 và thuộc thể loại AI. 
-
-```python linenums="1"
-@app.get("/books")
-async def read_book(year: int=None):
-    if year:
-        return {
-            "year" : year,
-            "books" : ["Deep Learning", "Computer Vision"]
-        }
-    
-    return {"books": ["All Books"]}
-```
-
-Ở đây, `year` là một query parameter tùy chọn, khi gán giá trị mặc định là `None` chúng trở thành optional, nếu người dùng truyền `year` endpoint sẽ trả về danh sách của năm đó, nêu không chúng sẽ trả về tất cả các sách.
-
-## 8. Defining request and respone models
-
-**Pydantic models.** Pydantic models là một tính năng mạnh mẽ cho việc xác thực và chuyển đổi dữ liệu. Chúng cho phép bạn định nghĩa cấu trúc, kiểu dữ liệu, và các ràng buộc của dữ liệu mà ứng dụng xử lý, cả cho request đến và response đi.
-
-**Tạo models.** Tạo một class kế thừa BaseModel của Pydantic cho ứng dụng của bạn trong file có tên là `models.py`.
-
-```python linenums="1"
-from pydantic import BaseModel
-
-class Book(BaseModel):
-    title: str
-    author: str
-    year: int
-```
-
-Ở đây, Book là một class kế thừa từ Pydantic BaseModel với ba trường: title, author và year. Mỗi trường được khai báo kiểu dữ liệu riêng, đảm bảo rằng bất kỳ dữ liệu nào tuân theo model này sẽ có các thuộc tính với kiểu dữ liệu đã được chỉ định.
-
-**Request body.** Trong FastAPI, các Pydantic models không chỉ được dùng để xác thực mà còn đóng vai trò là request body.
-
-```python linenums="1"
-from models import Book
-
-@app.post("/book")
-async def create_book(book: Book):
-    return book
-```
-
-Trong endpoint này, khi người dùng gửi một POST request đến endpoint `/book` với dữ liệu JSON, FastAPI sẽ tự động phân tích và xác thực dựa trên model Book. Nếu dữ liệu không hợp lệ, người dùng sẽ nhận được một phản hồi lỗi tự động.
-
-**Xác thực dữ liệu request.** Pydantic còn cung cấp các tính năng xác thực nâng cao. Ví dụ, có thể thêm regex validation, giá trị mặc định...
-
-```python linenums="1"
+from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-class Book(BaseModel):
-    title: str = Field(..., min_length=1, max_length=1000)
-    author: str = Field(..., min_length=1, max_length=1000)
-    year: int = Field(..., gt=1900, lt=2100)
-```
+app = FastAPI()
 
-Bạn có thể xem chi tiết các tính năng xác thực ở tài liệu chính thức của Pydantic [[https://docs.pydantic.dev/latest/concepts/fields/](https://docs.pydantic.dev/latest/concepts/fields/)]. 
-
-**Quản lý response formats.** FastAPI cho phép định nghĩa response models một cách rõ ràng, đảm bảo dữ liệu được trả về bởi API của bạn khớp với một schema cụ thể. Điều này rất cần thiết trong việc loại bỏ dữ liệu nhạy cảm hoặc tái cấu trúc response.
-
-```python linenums="1"
-from pydantic import BaseModel
+class BookCreate(BaseModel):
+    title: str = Field(..., min_length=1, max_length=100)
+    author: str
+    year: int = Field(..., gt=1900, lt=2100) 
 
 class BookResponse(BaseModel):
     title: str
     author: str
 
-@app.get("/allbooks")
-async def read_all_books() -> list[BookResponse]:
-    return [
-        {"id": 1, "title": "Machine Learning", "author": "Chip Huyen"},
-        {"Id": 2, "title": "Computer Vision", "author": "Kaparthy"}
-    ]
+@app.post("/books", response_model=BookResponse)
+async def create_book(book: BookCreate):
+    return book 
 ```
 
-Phần `-> list[BookReponse]` trong khai báo kiểu trả về của hàm cho FastAPI biết rằng phải sử dụng model BookReponse cho response, đảm bảo chỉ có các trường title và author được đưa vào JSON trả về.
+**Phân tích kỹ thuật:**
 
-Ngoài ra, bạn có thể chỉ định response trực tiếp trong decorator của endpoint như sau:
+- **`BookCreate`**: Định nghĩa cấu trúc dữ liệu người dùng gửi lên. `Field` được dùng để thêm các ràng buộc như giới hạn độ dài (`min_length`, `max_length`), hoặc khoảng giá trị (`gt` - lớn hơn, `lt` - nhỏ hơn).
+- **`BookResponse`**: Định nghĩa cấu trúc dữ liệu trả về. Bằng cách không khai báo trường `year`, chúng ta có thể kiểm soát và ẩn thông tin này khỏi kết quả trả về.
+- **Endpoint**: Tham số `book` tự động được xác thực theo `BookCreate`. Nếu client gửi thiếu dữ liệu hoặc sai kiểu (vd: `year` là chuỗi thay vì số), FastAPI sẽ ngắt quy trình và trả về lỗi **422 Unprocessable Entity** kèm chi tiết lỗi.
 
-```python linenums="1"
-@app.get("/allbooks", response_model=list[BookResponse])
-async def read_all_books() -> Any:
-    return [
-        {"id": 1, "title": "Machine Learning", "author": "Chip Huyen"},
-        {"Id": 2, "title": "Computer Vision", "author": "Kaparthy"}
-    ]
-```
+## ⚠️ Error Handling
+---
 
-## 9. Handling errors and exceptions
-
-FastAPI cung cấp và hỗ trợ cho việc xử lý ngoại lệ và lỗi. Khi một lỗi xảy ra, FastAPI trả về một phản hồi JSON chứa chi tiết về lỗi, điều này rất hữu ích cho việc gỡ lỗi. Tuy nhiên, có những tình huống bạn có thể muốn tùy chỉnh các phản hồi lỗi này để mang lại trải nghiệm người dùng tốt hơn hoặc đảm bảo bảo mật.
+FastAPI cung cấp ngoại lệ `HTTPException` để chủ động báo lỗi. Đồng thời, nó cho phép tùy biến (Custom Handlers) các lỗi mặc định để đảm bảo định dạng dữ liệu trả về luôn đồng nhất trên toàn hệ thống.
 
 ```python linenums="1"
 from fastapi import FastAPI, HTTPException
-from starlette.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 
-@app.exception_handler(HTTPException)
-async def http_exception_handler(request, exc):
+app = FastAPI()
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int):
+    if item_id > 100:
+        raise HTTPException(status_code=404, detail="Item không tồn tại")
+    return {"item": item_id}
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
     return JSONResponse(
-        status_code=exc.status_code,
+        status_code=400,
         content={
-            "message": "OOPs ! Something went wrong"
-        }
-    )
-
-```
-
-Trong ví dụ này, hàm `http_exception_handler` sẽ được dùng để xử lý các lỗi `HTTPException`. Bất cứ khi nào một lỗi `HTTPException` được raise ở bất kỳ đâu trong ứng dụng của bạn, FastAPI sẽ dùng bộ xử lý này để trả về một phản hồi tùy chỉnh.
-
-```python linenums="1"
-@app.get("/error_endpoint")
-async def raise_exception():
-    raise HTTPException(status_code=400)
-```
-
-Endpoint này sẽ ném ra phản hồi lỗi HTTP để minh họa thông báo đã được tùy chỉnh ở bước trước đó.
-
-Như đã thảo luận trong phần Pydantic, FastAPI sử dụng cac model của Pydantic để xác thực dữ liệu. Khi một request đươc gửi với dữ liệu không tuân theo model đã định nghĩa, FastAPI sẽ raise một ngoại lệ và trả về phản hồi lỗi. Trong một số trường hợp, bạn có thể muốn tùy chỉnh phản hồi cho các lỗi xác thực.
-
-```python linenums="1"
-import json
-from fastapi import FastAPI, HTTPException, Request, status
-from fastapi.exceptions import ResponseValidationError
-from fastapi.responses import PlainTextResponse
-
-@app.exception_handler(ResponseValidationError)
-async def validation_exception_handler(
-    request: Request,
-    exc: ResponseValidationError
-):
-    return PlainTextResponse(
-        "This is a plain text response:"
-        f"\n{json.dumps(exc.errors(), indent=2)}",
-        status_code=status.HTTP_400_BAD_REQUEST
+            "message": "Dữ liệu đầu vào không hợp lệ", 
+            "details": exc.errors()
+        },
     )
 ```
 
-Bộ xử lý tùy chỉnh này sẽ bắt bất kỳ lỗi RequestValidationError nào và trả về một phản hồi chi tiết của lỗi. Giả sử bạn thử gọi endpoint `POST /book` với giá trị title là một số thay vì một chuỗi, bạn sẽ nhận được phản hồi với mã lỗi trạng thái 422.
+**Phân tích kỹ thuật:**
 
-```python linenums="1"
-@app.post("/book")
-async def create_book(book: Book):
-    return ({
-        "message": "Book created successfully !",
-        "data": book
-    })
-```
+- **Ném lỗi chủ động (`HTTPException`)**: Dùng khi dữ liệu đầu vào đúng kiểu, nhưng không hợp lệ về mặt nghiệp vụ (vd: yêu cầu `item_id` 105 trong khi kho chỉ có 100 món). Lệnh `raise HTTPException` lập tức dừng thực thi và trả về mã lỗi **404 Not Found** cho người dùng.
+- **Tùy biến lỗi hệ thống (`exception_handler`)**: Khi người dùng gửi sai kiểu dữ liệu, Pydantic mặc định trả về lỗi 422 với cấu trúc khá phức tạp. Hàm `validation_exception_handler` sẽ "bắt" các lỗi này (`RequestValidationError`) và đóng gói lại thành định dạng JSON chuẩn hóa với mã lỗi **400 Bad Request**, tuân thủ theo thiết kế của dự án.
+
+## 📚 Resources
+---
+
+1. [Creation of virtual environments](https://docs.python.org/3/library/venv.html)
+2. [Git simple guide](https://rogerdudler.github.io/git-guide/)
+3. [Concurrency and async / await](https://fastapi.tiangolo.com/async/)
+4. [Path Parameters](https://fastapi.tiangolo.com/tutorial/path-params/)
+5. [Query Parameters](https://fastapi.tiangolo.com/tutorial/query-params/)
+6. [Pydantic](https://docs.pydantic.dev/latest/)
+7. [Response Model - Return Type](https://fastapi.tiangolo.com/tutorial/response-model/)
+8. [Handling Errors](https://fastapi.tiangolo.com/tutorial/handling-errors/)
+
 
 ---
 
