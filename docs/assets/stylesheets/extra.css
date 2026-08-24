@@ -239,3 +239,8 @@ p {
     color: var(--md-default-fg-color--light);
     margin: 0;
 }
+
+/* Modern Bullet Points Color */
+.md-typeset ul > li::marker {
+    color: #db2777;
+}
