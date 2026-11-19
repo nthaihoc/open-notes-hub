@@ -1,37 +1,34 @@
 <div style="text-align: center;">
-    <img class="banner" 
-        {% if page.meta.width_img %} width="{{ page.meta.width_img }}" {% endif %}
-        {% if page.meta.height_img %} height="{{ page.meta.height_img }}" {% endif %}
-        src="{{ page.meta.url_img }}" 
-        alt="Banner image">
+    {% if page.meta.url_img %}
+    <img class="banner"
+        src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"
+        {% if page.meta.width_img %}width="{{ page.meta.width_img }}"{% endif %}
+        {% if page.meta.height_img %}height="{{ page.meta.height_img }}"{% endif %}
+        style="max-width: 100%;"
+        alt="{{ page.meta.title | default('Banner image') }}">
+    {% endif %}
 
+    {% if page.meta.title %}
+    {% set accent_color = page.meta.color | default('var(--md-default-fg-color)') %}
     <h1 style="margin-bottom: 10px;">
-    {% set title_text = page.meta.title %}
-    {% set words = title_text.split() %}
-    {% set color = page.meta.color %}
-    
-    {% for word in words %}
-        {% if word | length > 0 %}
-            {% if word.startswith('(') and word.endswith(')') %}
-            <span style="color: {{ color }};">{{ word }}</span>
-            {% else %}
-            {% set first_char = word[0] %}
-            {% set rest = word[1:] %}
-            <span style="color: {{ color }};">{{ first_char }}</span>{{ rest }}
-            {% endif %}
-            {% if not loop.last %} {% endif %}
-        {% endif %}
-    {% endfor %}
+        {%- for word in page.meta.title.split() -%}
+            {%- if word.startswith('(') and word.endswith(')') -%}
+                <span style="color: {{ accent_color }};">{{ word }}</span>
+            {%- else -%}
+                <span style="color: {{ accent_color }};">{{ word[0] }}</span>{{ word[1:] }}
+            {%- endif -%}
+            {%- if not loop.last %} {% endif -%}
+        {%- endfor -%}
     </h1>
+    {% endif %}
 
-    <div style="font-style: italic; color: #666; margin-bottom: 25px; line-height: 1.6;">
-        {% if page.meta.quote %}
-            {% if page.meta.quote is string %}
-                {{ page.meta.quote }}
-            {% else %}
-                {{ page.meta.quote | join('<br>') | safe }}
-            {% endif %}
+    {% if page.meta.quote %}
+    <div style="font-style: italic; color: var(--md-default-fg-color--light); margin-bottom: 25px; line-height: 1.6;">
+        {% if page.meta.quote is string %}
+            {{ page.meta.quote }}
         {% else %}
+            {{ page.meta.quote | join('<br>') | safe }}
         {% endif %}
     </div>
+    {% endif %}
 </div>

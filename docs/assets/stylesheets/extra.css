@@ -202,6 +202,7 @@ p {
     font-weight: 900;
     background: linear-gradient(90deg, #007cf0, #00dfd8);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
     line-height: 1.2;
@@ -240,7 +241,6 @@ p {
     margin: 0;
 }
 
-/* Modern Bullet Points Color */
 .md-typeset ul > li::marker {
     color: #db2777;
 }

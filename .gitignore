@@ -194,7 +194,8 @@ cython_debug/
 .cursorindexingignore
 
 # hide folder path
-docs/research/pronunciation-scoring/
+docs/research/pronscore
 .DS_Store
 **/.DS_Store
 .base/
+iai-lab/

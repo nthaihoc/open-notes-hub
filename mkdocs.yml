@@ -29,7 +29,7 @@ theme:
     
   palette:
     scheme: default
-    primary: white
+    primary: orange
     accent: red
 
   features:
@@ -75,8 +75,13 @@ theme:
 # PLUGINS
 # =============================================================================
 plugins:
-  - macros
   - search
+  - markdown-exec
+  - macros
+  - bibtex:
+      bib_file: "docs/assets/files/references.bib"
+      csl_file: "docs/assets/files/ieee.csl"
+      bib_by_default: false
   - tags:
       tags_file: tags.md
   - i18n:
@@ -92,16 +97,16 @@ plugins:
           build: true
           
   # --- Disabled Plugins (for local testing/speed) ---
-  # - git-revision-date-localized:
-  #     type: timeago
-  #     enable_creation_date: true
-  #     fallback_to_build_date: true
-  #     enable_git_follow: false 
-  # - git-committers:
-  #     enabled: !ENV [CI, false] 
-  #     repository: nthaihoc/open-notes-hub
-  #     branch: main
-  #     token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+      fallback_to_build_date: true
+      enable_git_follow: false 
+  - git-committers:
+      enabled: !ENV [CI, false] 
+      repository: nthaihoc/open-notes-hub
+      branch: main
+      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
 # =============================================================================
 # MARKDOWN EXTENSIONS
@@ -177,68 +182,38 @@ extra:
     - icon: material/school
       link: https://ictu.edu.vn
       name: Thai Nguyen University of Information and Technology Communication
-    - icon: material/domain
-      link: https://iast.ictu.edu.vn
-      name: Institute of Applied Science Technology
     - icon: material/web
       link: https://nthaihoc.github.io/about-me
       name: Profile
     - icon: material/email-multiple-outline
-      link: mailto:thaihoc.ictu@gmail.com
+      link: mailto:nthoc.ictu@gmail.com
       name: Email
     - icon: material/github
       link: https://github.com/nthaihoc
       name: Github
-    - icon: material/facebook
-      link: https://www.facebook.com/nthoc.02
-      name: Facebook
 
 copyright: >
   ©️ 2025 by Thai-Hoc Nguyen.
   Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
 
-# =============================================================================
 # NAVIGATION
-# =============================================================================
 nav:
   - Home: index.md
   - Course Notes:
     - Overview: courses/README.md
     - "Applied Machine Learning": 
       - courses/applied-machine-learning/README.md
-      # - Lesson 01: lesson.md
-      # - Lesson 02: lesson.md
-      # - Lesson 03: lesson.md
-      # - Lesson 04: lesson.md
-      # - Lesson 05: lesson.md
-      # - Lesson 06: lesson.md
-      # - Lesson 07: lesson.md
-      - courses/applied-machine-learning/lessons/lesson-08-support-vector-machines.md
-      - courses/applied-machine-learning/lessons/lesson-09-decision-trees.md
+      - courses/applied-machine-learning/08-support-vector-machines.md
+      - courses/applied-machine-learning/09-decision-trees.md
     - "Large Language Models":
       - courses/large-language-models/README.md
-      # - Lesson 01: lesson.md
-      # - Lesson 02: lesson.md
-      - Lesson 03. Attention Mechanisms: courses/large-language-models/lessons/lesson-03-attention-mechanisms.md
-      # - Lesson 04: lesson.md
-      # - Lesson 05: lesson.md
-      # - Lesson 06: lesson.md
-      # - Lesson 07: lesson.md
-      # - Lesson 08: lesson.md
+      - courses/large-language-models/03-attention-mechanisms.md
       
   - Knowledge Base:
     - Overview: knowledge-base/README.md
     - "❄️ FastAPI Tutorials": 
-        - knowledge-base/fastapi/lesson-01-overview.md
+        - knowledge-base/fastapi/01-overview.md
     - "🔎 RAG Framework":
-        - knowledge-base/ai-in-action/vanilla-rag.md
-        - knowledge-base/ai-in-action/implementation-rag-pipeline.md
-
-  - Research Logs:
-    - Overview: research/README.md
-    - "Pronunciation Scoring":
-      - research/pronunciation-scoring/experiments/01-ssl-for-pronscore.md
-      - research/pronunciation-scoring/literature-review/related-work.md
-
+        - knowledge-base/01-vanilla-rag.md
   - Tags: tags.md
   - About Me: about-me/README.md

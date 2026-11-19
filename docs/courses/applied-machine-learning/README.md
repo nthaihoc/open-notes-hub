@@ -1,7 +1,7 @@
 ---
 title: "Applied Machine Learning (AML)"
 icon: material/slot-machine
-url_img: "../../assets/images/ods_stickers.jpg"
+url_img: "../../../assets/images/ods_stickers.jpg"
 color: "#ff6b6b"   
 ---
 
@@ -71,6 +71,3 @@ Sau khi đọc xong toàn bộ khóa học này, bạn có thể thu thập đư
 | | | | |
 | *Module 05 <br> Pipelines & Deployment* | **Lecture 12. Model Evaluation & Tuning** | <ul><li>Cross-Validation (K-Fold, Stratified)</li><li>Hyperparameter Tuning (GridSearch, RandomSearch)</li><li>Metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC</li></ul> |
 | | **Lecture 13. ML Pipelines & Deployment** | <ul><li>Xây dựng Pipeline với Scikit-learn</li><li>Lưu trữ mô hình (Pickle, Joblib)</li><li>Chiến lược triển khai cơ bản (API Serving)</li></ul> |
-
-## V. Materials
----
