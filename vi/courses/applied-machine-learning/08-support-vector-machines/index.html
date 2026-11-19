@@ -1,0 +1,2638 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Kho tài liệu mở — Nơi hệ thống hóa và chia sẻ hành trình nghiên cứu AI của Nguyễn Thái Học: Course Notes, Research Logs, Knowledge Base.
+">
+      
+      
+        <meta name="author" content="Nguyễn Thái Học (Thai-Hoc Nguyen)">
+      
+      
+        <link rel="canonical" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/08-support-vector-machines/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../09-decision-trees/">
+      
+      
+        
+          <link rel="alternate" href="../../../../courses/applied-machine-learning/08-support-vector-machines/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="vi">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Support Vector Machines - OpenNotesHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theoretical-foundations" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../" title="OpenNotesHub" class="md-header__button md-logo" aria-label="OpenNotesHub" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenNotesHub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Support Vector Machines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Chọn ngôn ngữ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../courses/applied-machine-learning/08-support-vector-machines/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="vi" class="md-select__link">
+              Vietnamese
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nthaihoc/open-notes-hub" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nthaihoc/open-notes-hub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Course Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../knowledge-base/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="OpenNotesHub" class="md-nav__button md-logo" aria-label="OpenNotesHub" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+
+    </a>
+    OpenNotesHub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nthaihoc/open-notes-hub" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nthaihoc/open-notes-hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Notes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Course Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m5 12 2-4V7H4v1h2l-2 4m5 0 2-4V7H8v1h2l-2 4m5 0 2-4V7h-3v1h2l-2 4m9-10c-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7V17h-3v-2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1h-3.8c-.8-1.2-2.2-2-3.7-2s-2.9.8-3.7 2H2c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1v7h15v-3h3c1.1 0 2-.9 2-2V5.7c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2m-8 17H6v-2h7zm3-6H3V6h13z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Applied Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Applied Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-3.1 3.9s-.7-.3-1-.3c-.6-.1-1 .1-1.2 1.1L12 16.8c-.2.8-.5 1.4-1 1.8-.4.3-.8.4-1.3.4-.8 0-2-.5-2-.5l.5-1.4s.8.3 1 .3c.3.1.5 0 .7-.1s.3-.4.4-.7l1.6-9.2c.1-.8.5-1.4 1-1.9.6-.4 1.3-.5 2.1-.4.7.1 1.5.5 1.5.5z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Vector Machines
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-3.1 3.9s-.7-.3-1-.3c-.6-.1-1 .1-1.2 1.1L12 16.8c-.2.8-.5 1.4-1 1.8-.4.3-.8.4-1.3.4-.8 0-2-.5-2-.5l.5-1.4s.8.3 1 .3c.3.1.5 0 .7-.1s.3-.4.4-.7l1.6-9.2c.1-.8.5-1.4 1-1.9.6-.4 1.3-.5 2.1-.4.7.1 1.5.5 1.5.5z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Vector Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theoretical Foundations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theoretical Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preliminaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-margin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard-margin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-margin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft-margin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-trick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel Trick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-linear-svm-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-linear SVM Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hinge-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hinge Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-decision-trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Trees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../large-language-models/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Large Language Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../large-language-models/03-attention-mechanisms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 03. Attention Mechanisms Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../knowledge-base/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge Base
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ❄️ FastAPI Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ❄️ FastAPI Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../knowledge-base/fastapi/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson 01. Overview and Project Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔎 RAG Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔎 RAG Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../knowledge-base/01-vanilla-rag.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theoretical Foundations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theoretical Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preliminaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-margin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard-margin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-margin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft-margin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-trick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel Trick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-linear-svm-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-linear SVM Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hinge-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hinge Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Thanh điều hướng" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Course Notes
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Applied Machine Learning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../tags/#tag:machine-learning" class="md-tag">Machine Learning</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../tags/#tag:optimization" class="md-tag">Optimization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../tags/#tag:svm" class="md-tag">SVM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../tags/#tag:supervised-learning" class="md-tag">Supervised Learning</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<div style="text-align: center;">
+
+    <img class="banner"
+        src="https://nthaihoc.github.io/open-notes-hub/assets/images/aml_l08_banner.png"
+
+
+        style="max-width: 100%;"
+        alt="Support Vector Machines">
+
+
+
+
+    <h1 style="margin-bottom: 10px;"><span style="color: var(--md-default-fg-color);">S</span>upport <span style="color: var(--md-default-fg-color);">V</span>ector <span style="color: var(--md-default-fg-color);">M</span>achines</h1>
+
+
+
+</div>
+
+<h2 id="theoretical-foundations">Theoretical Foundations</h2>
+<hr />
+<p><strong>Support Vector Machine (SVM)</strong> là một thuật toán Học Máy mạnh mẽ và linh hoạt, đặc biệt hiệu quả trên các tập dữ liệu có kích thước vừa và nhỏ. Thuật toán này có khả năng giải quyết đa dạng các bài toán từ phân loại tuyến tính, phi tuyến cho đến hồi quy và phát hiện điểm bất thường (outlier detection).</p>
+<p>Ý tưởng cốt lõi của SVM là tìm kiếm một <strong>hyperplane</strong> (siêu mặt phẳng) không chỉ phân tách hai lớp dữ liệu mà còn duy trì khoảng cách xa nhất có thể tới các điểm huấn luyện gần nhất của mỗi lớp. Ta có thể hình dung mô hình đang cố gắng mở rộng một "con đường" phân cách rộng nhất có thể giữa hai nhóm dữ liệu. Vì lý do này, SVM còn được gọi là <strong>Large Margin Classification</strong> (phân loại lề lớn).</p>
+<figure>
+<div class="figure-environment">
+    <div class="subfigure-container">
+        <figure class="subfigure">
+            <img src="../../../assets/images/aml_l08_svm.png" alt="Minh họa SVM" style="width: 70%; height: auto;">
+        </figure>
+    </div>
+</div>
+
+<figcaption>
+<p><strong>Hình 1:</strong> Minh họa không gian hai chiều của thuật toán SVM, thể hiện ranh giới quyết định tối ưu được xây dựng dựa trên nguyên lý tối đa hóa <strong>margin</strong> (lề) giữa các <strong>support vectors</strong> (vector hỗ trợ) của hai lớp dữ liệu.</p>
+</figcaption>
+</figure>
+<!-- <div class="figure-environment" markdown="1">
+<div class="subfigure-container" markdown="1">
+<figure class="subfigure" markdown="1">
+  <img src="../../../assets/images/aml_l08_soft_hard_margin.png" alt="Hard Margin SVM" style="width: 100%; height: auto;">
+  <figcaption markdown="span">(a) **Hard Margin** ($C \to \infty$)</figcaption>
+</figure>
+<figure class="subfigure" markdown="1">
+  <img src="../../../assets/images/aml_l08_soft_hard_margin.png" alt="Soft Margin SVM" style="width: 100%; height: auto;">
+  <figcaption markdown="span">(b) **Soft Margin** ($C = 1.0$)</figcaption>
+</figure>
+</div>
+</div> -->
+
+<h3 id="preliminaries">Preliminaries</h3>
+<hr />
+<p>Xét tập dữ liệu huấn luyện gồm <span class="arithmatex">\(m\)</span> mẫu <span class="arithmatex">\(\mathcal{D} = \left\{ \left[\mathbf{x}^{(i)}, y^{(i)}\right] \right\}_{i=1}^m\)</span>, trong đó mỗi điểm dữ liệu đầu vào là một vector đặc trưng <span class="arithmatex">\(\mathbf{x}^{(i)} \in \mathbb{R}^d\)</span> và nhãn nhị phân tương ứng thuộc tập đối xứng <span class="arithmatex">\(y^{(i)} \in \{-1, +1\}\)</span>. Trong thực tế lập trình, nếu nhãn đầu vào được gán là <span class="arithmatex">\(\{0, 1\}\)</span>, các thư viện sẽ tự động ánh xạ nội bộ về <span class="arithmatex">\(\{-1, +1\}\)</span> để đảm bảo tính đối xứng hình học của biên quyết định.</p>
+<p>Hàm quyết định tuyến tính của SVM được định nghĩa bởi siêu mặt phẳng phân tách <span class="arithmatex">\(f[\mathbf{x}] = 0\)</span> (<strong>Phương trình 1</strong>), với <span class="arithmatex">\(\mathbf{w} \in \mathbb{R}^d\)</span> là vector pháp tuyến (trọng số) và <span class="arithmatex">\(b \in \mathbb{R}\)</span> là hệ số chặn (bias). Dựa vào dấu của <span class="arithmatex">\(f[\mathbf{x}]\)</span>, mô hình gán nhãn dự đoán <span class="arithmatex">\(\hat{y}\)</span> cho một mẫu bất kỳ <span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^d\)</span>:</p>
+<div class="arithmatex">\[\begin{equation} 
+f[\mathbf{x}] = \mathbf{w}^\top \mathbf{x} + b, \quad \hat{y} = \text{sign}\left[f[\mathbf{x}]\right] = \begin{cases} +1 &amp; \text{nếu } f[\mathbf{x}] \ge 0 \\ -1 &amp; \text{nếu } f[\mathbf{x}] &lt; 0 \end{cases} \tag{1} 
+\end{equation}\]</div>
+<h3 id="hard-margin">Hard-margin</h3>
+<hr />
+<p>Mô hình <strong>Hard-margin</strong> (biên cứng) giả định tập dữ liệu huấn luyện có thể <strong>tách biệt tuyến tính tuyệt đối</strong> (linearly separable) — tức tồn tại ít nhất một cặp <span class="arithmatex">\((\mathbf{w}, b)\)</span> phân loại chính xác <span class="arithmatex">\(100\%\)</span> các điểm dữ liệu mà không có nhiễu hay sự chồng lấn giữa hai lớp.</p>
+<p>Về mặt hình học, khoảng cách từ một điểm <span class="arithmatex">\(\mathbf{x}^{(i)}\)</span> bất kỳ đến siêu mặt phẳng quyết định là <span class="arithmatex">\(\dfrac{\left|f[\mathbf{x}^{(i)}]\right|}{\|\mathbf{w}\|_2}\)</span>. Vì phương trình siêu mặt phẳng bất biến với phép nhân vô hướng khác <span class="arithmatex">\(0\)</span>, ta luôn có thể chuẩn hóa tỷ lệ của <span class="arithmatex">\((\mathbf{w}, b)\)</span> sao cho tại các điểm gần biên nhất (<strong>support vectors</strong>), hàm quyết định đạt giá trị <span class="arithmatex">\(\left|f[\mathbf{x}^{(i)}]\right| = 1\)</span>. Khi đó:</p>
+<ul>
+<li>Khoảng cách từ siêu mặt phẳng tới mỗi biên lề bằng <span class="arithmatex">\(\dfrac{1}{\|\mathbf{w}\|_2}\)</span>, suy ra tổng độ rộng của lề phân cách là <span class="arithmatex">\(\dfrac{2}{\|\mathbf{w}\|_2}\)</span>.</li>
+<li>Mọi mẫu dương (<span class="arithmatex">\(y^{(i)} = +1\)</span>) phải thỏa mãn <span class="arithmatex">\(\mathbf{w}^\top \mathbf{x}^{(i)} + b \ge 1\)</span> và mọi mẫu âm (<span class="arithmatex">\(y^{(i)} = -1\)</span>) phải thỏa mãn <span class="arithmatex">\(\mathbf{w}^\top \mathbf{x}^{(i)} + b \le -1\)</span>.</li>
+</ul>
+<p>Gộp hai điều kiện phân loại đúng thành một bất phương trình duy nhất, bài toán tối đa hóa độ rộng lề <span class="arithmatex">\(\dfrac{2}{\|\mathbf{w}\|_2}\)</span> tương đương với bài toán quy hoạch cực tiểu hóa chuẩn <span class="arithmatex">\(\|\mathbf{w}\|_2\)</span> sau đây (<strong>Phương trình 2</strong>):</p>
+<div class="arithmatex">\[\begin{equation} 
+\min_{\mathbf{w}, b} \frac{1}{2} \mathbf{w}^\top \mathbf{w}, \quad \text{sao cho } y^{(i)} \left[ \mathbf{w}^\top \mathbf{x}^{(i)} + b \right] \ge 1, \quad \forall i = 1, 2, \dots, m \tag{2} 
+\end{equation}\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tại sao cực tiểu hóa <span class="arithmatex">\(\frac{1}{2}\|\mathbf{w}\|_2^2\)</span> thay vì <span class="arithmatex">\(\|\mathbf{w}\|_2\)</span>?</p>
+<p>Biểu thức căn bậc hai trong chuẩn Euclid <span class="arithmatex">\(\displaystyle{\|\mathbf{w}\|_2 = \sqrt{\sum_{j=1}^d w_j^2}}\)</span> không khả vi tại gốc tọa độ và gây phức tạp cho việc tính đạo hàm. Thay vào đó, ta chuyển sang cực tiểu hóa một nửa bình phương chuẩn <span class="arithmatex">\(\displaystyle{\frac{1}{2}\|\mathbf{w}\|_2^2 = \frac{1}{2}\mathbf{w}^\top \mathbf{w}}\)</span>. Vì <span class="arithmatex">\(\|\mathbf{w}\|_2 \ge 0\)</span>, phép biến đổi đơn điệu này giữ nguyên vị trí nghiệm tối ưu nhưng biến hàm mục tiêu thành một hàm bậc hai lồi (convex quadratic) trơn tru, thuận tiện cho giải tích.</p>
+</div>
+<h3 id="soft-margin">Soft-margin</h3>
+<hr />
+<p>Trong thực tế, dữ liệu hiếm khi tách biệt tuyến tính hoàn hảo mà luôn tồn tại nhiễu và sự giao thoa giữa các lớp. Để khắc phục điểm yếu của biên cứng, <strong>Soft-margin</strong> (biên mềm) được đề xuất (<strong>Hình 2</strong>). Bằng cách nới lỏng các ràng buộc hình học, thuật toán cho phép một số điểm dữ liệu được phép lấn vào vùng lề hoặc nằm sai phía ranh giới, qua đó nâng cao khả năng tổng quát hóa của mô hình.</p>
+<figure>
+<div class="figure-environment">
+    <div class="subfigure-container">
+        <figure class="subfigure">
+            <img src="../../../assets/images/aml_l08_soft_hard_margin.png" alt="">
+        </figure>
+    </div>
+</div>
+
+<figcaption>
+<p><strong>Hình 2:</strong> So sánh trực quan giữa SVM Hard-margin và SVM Soft-margin.</p>
+</figcaption>
+</figure>
+<p>Để đo lường mức độ vi phạm ranh giới của từng mẫu huấn luyện thứ <span class="arithmatex">\(i\)</span>, mô hình đưa vào một <strong>slack variable</strong> (biến bù) <span class="arithmatex">\(\xi_i \ge 0\)</span>. Lúc này, bài toán đối mặt với hai mục tiêu xung đột nhau:</p>
+<ul>
+<li>
+<p>Cực tiểu hóa <span class="arithmatex">\(\displaystyle{\sum_{i=1}^m \xi_i}\)</span> để hạn chế tối đa các điểm vi phạm biên (giảm lỗi phân loại trên tập huấn luyện).</p>
+</li>
+<li>
+<p>Cực tiểu hóa <span class="arithmatex">\(\displaystyle{\frac{1}{2}\mathbf{w}^\top \mathbf{w}}\)</span> để giữ độ rộng lề lớn nhất có thể (giảm nguy cơ overfitting).</p>
+</li>
+</ul>
+<p>Siêu tham số phạt <span class="arithmatex">\(C &gt; 0\)</span> được đưa vào để kiểm soát sự đánh đổi (trade-off) giữa hai mục tiêu trên. Bài toán tối ưu của Soft-margin SVM trở thành:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned} 
+&amp; \min_{\mathbf{w}, b, \boldsymbol{\xi}} \left[ \frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{i=1}^m \xi_i \right], \\ 
+&amp; \text{sao cho } y^{(i)} \left[ \mathbf{w}^\top \mathbf{x}^{(i)} + b \right] \ge 1 - \xi_i, \quad \xi_i \ge 0, \quad \forall i = 1, 2, \dots, m
+\end{aligned} \tag{3}
+\end{equation}
+\]</div>
+<p>Cả bài toán Hard-margin và Soft-margin đều là bài toán quy hoạch lồi bậc hai với các ràng buộc tuyến tính. Để tìm nghiệm tối ưu cho dạng bài toán này, ta sử dụng kỹ thuật <strong>Quadratic Programming (QP)</strong>. Chi tiết cách thiết lập ma trận đầu vào cho bộ giải QP được trình bày ở <a href="#appendix-a-quadratic-programming">Appendix A</a>.</p>
+<h3 id="dual-problem">Dual Problem</h3>
+<hr />
+<p>Bài toán gốc của Soft-margin SVM bị trói buộc bởi <span class="arithmatex">\(2m\)</span> điều kiện bất đẳng thức cứng (gồm <span class="arithmatex">\(m\)</span> ràng buộc biên và <span class="arithmatex">\(m\)</span> ràng buộc không âm của biến bù <span class="arithmatex">\(\xi_i\)</span>). Các phương pháp đạo hàm thông thường không thể giải trực tiếp trên một miền nghiệm bị giới hạn bởi các bất đẳng thức như vậy.</p>
+<p>Để giải quyết nút thắt này, ta áp dụng phương pháp <strong>Nhân tử Lagrange</strong>, chuyển bài toán có ràng buộc thành một bài toán tối ưu không ràng buộc thông qua việc gán các hệ số phạt không âm cho từng điều kiện:</p>
+<ul>
+<li><strong>Ràng buộc biên:</strong> <span class="arithmatex">\(1 - \xi_i - y^{(i)}\left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right] \le 0\)</span> gắn với nhân tử <span class="arithmatex">\(\alpha_i \ge 0\)</span>.</li>
+<li><strong>Ràng buộc tính dương:</strong> <span class="arithmatex">\(-\xi_i \le 0\)</span> gắn với nhân tử <span class="arithmatex">\(\mu_i \ge 0\)</span>.</li>
+</ul>
+<p>Hàm <strong>Lagrangian</strong> <span class="arithmatex">\(\mathcal{L}\)</span> được thiết lập bằng cách cộng hàm mục tiêu gốc với các hạng tử ràng buộc:</p>
+<div class="arithmatex">\[
+\begin{equation} 
+\begin{aligned} 
+\mathcal{L} \left[\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\mu}\right] 
+=&amp; \underbrace{\frac{1}{2} \Vert{}\mathbf{w}\Vert{}^2 + C\sum^m_{i=1}\xi_i}_{\text{Hàm mục tiêu gốc}} \\ 
+&amp;+ \sum^m_{i=1}\alpha_i \underbrace{\Bigl[1 - \xi_i - y^{(i)}\left[\mathbf{w}^\top\mathbf{x}^{(i)} + b\right]\Bigr]}_{\text{Ràng buộc biên}} \\ 
+&amp;- \sum^m_{i=1}\mu_i \cdot \underbrace{\xi_i}_{\text{Ràng buộc } \xi_i \ge 0} 
+\end{aligned} \tag{4}
+\end{equation}
+\]</div>
+<p>Lúc này bài toán trở thành một trò chơi đối kháng <strong>min-max</strong>, cực tiểu hóa <span class="arithmatex">\(\mathcal{L}\)</span> theo các biến gốc <span class="arithmatex">\((\mathbf{w}, b, \boldsymbol{\xi})\)</span> và cực đại hóa <span class="arithmatex">\(\mathcal{L}\)</span> theo các nhân tử đối ngẫu <span class="arithmatex">\((\boldsymbol{\alpha}, \boldsymbol{\mu})\)</span>.</p>
+<p><strong>Áp dụng điều kiện tối ưu KKT (Karush-Kuhn-Tucker):</strong> Tại điểm yên ngựa tối ưu, đạo hàm riêng của <span class="arithmatex">\(\mathcal{L}\)</span> theo từng biến gốc phải triệt tiêu bằng <span class="arithmatex">\(0\)</span> (chi tiết khai triển xem tại <a href="#appendix-b-kkt-with-dual-problem">Appendix B</a>):</p>
+<ul>
+<li><strong>Đạo hàm theo <span class="arithmatex">\(\mathbf{w}\)</span>:</strong></li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation} 
+\frac{\partial \mathcal{L}}{\partial \mathbf{w}} = \mathbf{w} - \sum_{i=1}^m \alpha_i y^{(i)} \mathbf{x}^{(i)} = \mathbf{0} \quad \Longrightarrow \quad \mathbf{w} = \sum_{i=1}^m \alpha_i y^{(i)} \mathbf{x}^{(i)} \tag{5} 
+\end{equation}
+\]</div>
+<ul>
+<li><strong>Đạo hàm theo <span class="arithmatex">\(b\)</span>:</strong></li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation} \frac{\partial \mathcal{L}}{\partial b} = - \sum_{i=1}^m \alpha_i y^{(i)} = 0 \quad \Longrightarrow \quad \sum_{i=1}^m \alpha_i y^{(i)} = 0 \tag{6} 
+\end{equation}
+\]</div>
+<ul>
+<li><strong>Đạo hàm theo <span class="arithmatex">\(\xi_i\)</span>:</strong></li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation} 
+\frac{\partial \mathcal{L}}{\partial \xi_i} = C - \alpha_i - \mu_i = 0 \quad \Longrightarrow \quad \alpha_i + \mu_i = C \tag{7} 
+\end{equation}
+\]</div>
+<p>Thế các <strong>phương trình 5, 6, 7</strong> ngược trở lại hàm <span class="arithmatex">\(\mathcal{L}\)</span> ở <strong>phương trình 4</strong>, toàn bộ các biến gốc <span class="arithmatex">\((\mathbf{w}, b, \boldsymbol{\xi})\)</span> được khử sạch. Bài toán quy về dạng <strong>Dual Problem</strong> (bài toán đối ngẫu) chỉ còn phụ thuộc duy nhất vào vector nhân tử <span class="arithmatex">\(\boldsymbol{\alpha}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{equation} 
+\begin{aligned} 
+\max_{\boldsymbol{\alpha}} W[\boldsymbol{\alpha}] &amp;= \sum^m_{i=1} \alpha_i - \frac{1}{2} \sum^m_{i=1} \sum^m_{j=1} \alpha_i \alpha_j y^{(i)} y^{(j)} \left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(j)}; \\ 
+&amp;\text{sao cho } \sum^m_{i=1} \alpha_i y^{(i)} = 0 \quad \text{và} \quad 0 \le \alpha_i \le C, \quad \forall i = 1, \dots, m \tag{8}
+\end{aligned}
+\end{equation}
+\]</div>
+<h3 id="kernel-trick">Kernel Trick</h3>
+<hr />
+<p>Trong dạng bài toán đối ngẫu (<strong>phương trình 8</strong>), dữ liệu huấn luyện không xuất hiện độc lập mà luôn đi theo từng cặp thông qua tích vô hướng <span class="arithmatex">\(\left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(j)}\)</span>. Về mặt hình học, tích vô hướng phản ánh mức độ tương đồng giữa hai vector. Điều này bộc lộ một đặc tính quan trọng của SVM rằng thuật toán không cần biết tọa độ tuyệt đối của từng điểm dữ liệu, thứ duy nhất nó cần là thước đo mức độ giống nhau giữa các cặp điểm.</p>
+<p>Tuy nhiên, tích vô hướng <span class="arithmatex">\(\left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(j)}\)</span> chỉ nắm bắt được tương quan tuyến tính trên không gian đặc trưng gốc. Đối với các tập dữ liệu đan xen phi tuyến (<strong>Hình 3</strong>), việc tìm kiếm một siêu mặt phẳng phân tách trực tiếp là bất khả thi.</p>
+<figure>
+<div class="figure-environment">
+    <div class="subfigure-container">
+        <figure class="subfigure">
+            <img src="../../../assets/images/aml_08_svm_nonlinear.webp" alt="">
+        </figure>
+    </div>
+</div>
+
+<figcaption>
+<p><strong>Hình 3:</strong> Ranh giới quyết định của SVM trên dữ liệu phi tuyến tính.</p>
+</figcaption>
+</figure>
+<p>Giải pháp tự nhiên là sử dụng một hàm ánh xạ phi tuyến <span class="arithmatex">\(\phi \left[\mathbf{x}\right]\)</span> để chiếu dữ liệu từ không gian <span class="arithmatex">\(d\)</span> chiều ban đầu lên một không gian mới có số chiều <span class="arithmatex">\(D\)</span> lớn hơn, nơi các lớp dữ liệu có thể tách biệt tuyến tính. Khi đó, tích vô hướng ban đầu được thay thế bằng <span class="arithmatex">\(\phi \left[\mathbf{x}^{(i)}\right]^\top \phi\left[\mathbf{x}^{(j)}\right]\)</span>.</p>
+<p>Thế nhưng, việc biến đổi tường minh toàn bộ dữ liệu qua <span class="arithmatex">\(\phi \left[\mathbf{x}\right]\)</span> rồi nhân vô hướng trên không gian <span class="arithmatex">\(D\)</span> chiều tạo ra một nút thắt cổ chai nghiêm trọng về bộ nhớ và tốc độ tính toán đặc biệt khi <span class="arithmatex">\(D\)</span> lên tới hàng triệu, thậm chí vô hạn chiều. Thay vì tính toán trực tiếp trên không gian cao chiều, toán học cho phép chúng ta đi đường vòng thông qua cơ chế ánh xạ ngầm định.</p>
+<div class="admonition failure">
+<p class="admonition-title"><strong>Định lý Mercer và Cốt lõi của Kernel</strong></p>
+<p>Theo hệ quả từ <strong>Định lý Mercer</strong>, chúng ta không cần biết biểu thức tường minh của hàm ánh xạ <span class="arithmatex">\(\phi\left[\mathbf{x}\right]\)</span>, cũng không cần thực hiện phép biến đổi tọa độ dữ liệu lên không gian cao chiều. Chỉ cần xây dựng được một hàm <span class="arithmatex">\(K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(j)}\right]\)</span> nhận đầu vào trực tiếp từ không gian gốc và thỏa mãn điều kiện đối xứng, nửa xác định dương (positive semi-definite), toán học đảm bảo luôn tồn tại một không gian Hilbert và một ánh xạ <span class="arithmatex">\(\phi\)</span> tương ứng sao cho <span class="arithmatex">\(K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(j)}\right] = \phi \left[\mathbf{x}^{(i)}\right]^\top \phi\left[\mathbf{x}^{(j)}\right]\)</span>.</p>
+</div>
+<p>Hàm <span class="arithmatex">\(K\)</span> được gọi là <strong>Kernel function</strong> (hàm hạt nhân), và kỹ thuật thay thế tích vô hướng <span class="arithmatex">\(\phi \left[\mathbf{x}^{(i)}\right]^\top \phi \left[\mathbf{x}^{(j)} \right]\)</span> bằng $<span class="arithmatex">\(K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(j)}\right]\)</span>$ được gọi là <strong>Kernel Trick</strong>. Hàm mục tiêu đối ngẫu lúc này được tổng quát hóa thành:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\max_{\boldsymbol{\alpha}} W\left[\boldsymbol{\alpha}\right] = \sum^m_{i=1} \alpha_i - \frac{1}{2} \sum^m_{i=1} \sum^m_{j=1} \alpha_i \alpha_j y^{(i)} y^{(j)} K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(j)}\right]
+\tag{9}
+\end{equation}
+\]</div>
+<div class="admonition dagger">
+<p class="admonition-title">Giải phẫu cơ chế hoạt động của Kernel Trick</p>
+<p>Để thấy rõ bản chất đại số của Kernel Trick, xét Polynomial Kernel bậc 2: <span class="arithmatex">\(K\left[\mathbf{a}, \mathbf{b}\right] = \left[\mathbf{a}^\top \mathbf{b}\right]^2\)</span> cho hai vector 2 chiều <span class="arithmatex">\(\mathbf{a} = [a_1, a_2]^\top\)</span> và <span class="arithmatex">\(\mathbf{b} = [b_1, b_2]^\top\)</span>.</p>
+<p><strong>Cách 1 — Ánh xạ tường minh:</strong> Dùng hàm <span class="arithmatex">\(\phi\)</span> chiếu vector từ <span class="arithmatex">\(\mathbb{R}^2\)</span> lên <span class="arithmatex">\(\mathbb{R}^3\)</span>, sau đó tính tích vô hướng:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+\phi[\mathbf{a}]^\top \phi[\mathbf{b}] &amp;= 
+\begin{bmatrix} 
+{a_1}^2 \\[1ex]
+\sqrt{2}a_1a_2 \\[1ex] 
+{a_2}^2 
+\end{bmatrix}^\top
+\begin{bmatrix} 
+{b_1}^2 \\[1ex]
+\sqrt{2}b_1b_2 \\[1ex]
+{b_2}^2 \end{bmatrix} \\
+&amp;= {a_1}^2{b_1}^2 + 2a_1b_1a_2b_2 + {a_2}^2{b_2}^2
+\tag{10}
+\end{aligned}
+\end{equation}
+\]</div>
+<p><strong>Cách 2 — Dùng Kernel Trick:</strong> Tính tích vô hướng ngay trên không gian <span class="arithmatex">\(\mathbb{R}^2\)</span> gốc rồi bình phương kết quả:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+K[\mathbf{a}, \mathbf{b}] &amp;= \left[\mathbf{a}^\top \mathbf{b} \right]^2 \\
+&amp;= \left[ \begin{bmatrix}a_1 \\ a_2\end{bmatrix}^\top \begin{bmatrix}b_1 \\ b_2\end{bmatrix} \right]^2 \\
+&amp;= \left(a_1b_1 + a_2b_2\right)^2 \\
+&amp;= {a_1}^2{b_1}^2 + 2a_1b_1a_2b_2 + {a_2}^2{b_2}^2
+\tag{11}
+\end{aligned}
+\end{equation}
+\]</div>
+<p>Hai phép tính trả về cùng một giá trị đại số chính xác, nhưng Cách 2 hoàn toàn không cần khởi tạo hay lưu trữ các vector trung gian ở không gian 3 chiều.</p>
+</div>
+<p>Tóm lại, lợi ích lớn nhất của Kernel Trick là giúp ta tạo ra được các ranh giới phân loại phi tuyến phức tạp mà không cần bận tâm không gian đặc trưng mới có bao nhiêu chiều <span class="arithmatex">\(D\)</span>. Mọi phép tính đều được thực hiện trực tiếp trên dữ liệu <span class="arithmatex">\(d\)</span> chiều ban đầu, tránh hoàn toàn việc phải biến đổi dữ liệu sang không gian khổng lồ. Tuy nhiên, dưới góc nhìn kỹ thuật khi triển khai thực tế, phép biến đổi này đi kèm một đánh đổi rõ rệt:</p>
+<ul>
+<li>
+<p><strong>Huấn luyện chậm khi số lượng mẫu (<span class="arithmatex">\(m\)</span>) lớn:</strong> Ở pha huấn luyện vì chưa biết điểm nào là support vector, bộ giải tối ưu buộc phải tính độ tương đồng giữa tất cả các cặp điểm dữ liệu với nhau để lập thành một bảng đối chiếu kích thước <span class="arithmatex">\(m \times m\)</span>. Nếu tập dữ liệu có <span class="arithmatex">\(100.000\)</span> mẫu, bảng này sẽ chứa tới <span class="arithmatex">\(10\)</span> tỷ phần tử khiến quá trình huấn luyện tốn nhiều RAM và chạy rất chậm.</p>
+</li>
+<li>
+<p><strong>Lưu trữ sau huấn luyện rất nhẹ:</strong> Bảng <span class="arithmatex">\(m \times m\)</span> khổng lồ kể trên chỉ dùng tạm lúc tìm nghiệm tối ưu. Ngay khi huấn luyện xong, chúng được xóa sạch khỏi bộ nhớ; mô hình chỉ giữ lại một nhóm nhỏ các support vectors (<span class="arithmatex">\(\alpha_i &gt; 0\)</span>) để phục vụ cho bước dự đoán sau này.</p>
+</li>
+</ul>
+<h3 id="non-linear-svm-inference">Non-linear SVM Inference</h3>
+<hr />
+<p>Khi chuyển từ pha huấn luyện sang pha dự đoán (inference), <strong>Kernel SVM</strong> vận hành theo một cơ chế hoàn toàn khác biệt so với các mô hình tuyến tính hay mạng nơ-ron học sâu:</p>
+<ul>
+<li>
+<p><strong>Với mô hình tham số (Linear SVM, Logistic Regression, Neural Networks):</strong> Toàn bộ tri thức học được từ dữ liệu được nén gọn vào một tập trọng số cố định <span class="arithmatex">\(\mathbf{w}\)</span> và <span class="arithmatex">\(b\)</span>. Sau khi huấn luyện xong, dữ liệu gốc bị xóa bỏ hoàn toàn; khi có mẫu mới <span class="arithmatex">\(\mathbf{x}^{(new)}\)</span>, mô hình chỉ cần nhân trực tiếp <span class="arithmatex">\(\mathbf{x}^{(new)}\)</span> với trọng số <span class="arithmatex">\(\mathbf{w}\)</span> rồi cộng thêm <span class="arithmatex">\(b\)</span>.</p>
+</li>
+<li>
+<p><strong>Với Kernel SVM:</strong> Khi sử dụng các hàm kernel phổ biến như <strong>RBF Kernel</strong><sup id="fnref:rbf"><a class="footnote-ref" href="#fn:rbf">1</a></sup> để ánh xạ dữ liệu sang một không gian đặc trưng có số chiều vô hạn (<span class="arithmatex">\(\mathbf{w} \in \mathbb{R}^\infty\)</span>), máy tính không thể tính toán hay lưu trữ một vector trọng số <span class="arithmatex">\(\mathbf{w}\)</span> dài vô tận trong RAM.</p>
+</li>
+</ul>
+<p>Thay vì lưu <span class="arithmatex">\(\mathbf{w}\)</span>, mô hình Kernel SVM đã huấn luyện chỉ lưu lại 3 thành phần ngay tại không gian gốc: (1) danh sách các support vector <span class="arithmatex">\(\mathbf{x}^{(i)}\)</span> với <span class="arithmatex">\(\alpha_i &gt; 0\)</span>; (2) các hệ số đối ngẫu tương ứng <span class="arithmatex">\(\alpha_i y^{(i)}\)</span>; và (3) hệ số chặn <span class="arithmatex">\(b\)</span>.</p>
+<p><strong>Thế ngược</strong> <span class="arithmatex">\(\mathbf{w}\)</span> <strong>để dự đoán không cần không gian cao chiều.</strong></p>
+<p>Về mặt lý thuyết, hàm quyết định cho một điểm dữ liệu mới <span class="arithmatex">\(\mathbf{x}^{(new)}\)</span> có dạng:</p>
+<div class="arithmatex">\[
+\begin{equation}
+f\left[\mathbf{x}^{(new)}\right] = \mathbf{w}^\top \phi\left[\mathbf{x}^{(new)}\right] + b
+\tag{12}
+\end{equation}
+\]</div>
+<p>Từ điều kiện tối ưu KKT của bài toán đối ngẫu (<strong>phương trình 5</strong>), ta biết rằng tại điểm nghiệm tối ưu, vector trọng số <span class="arithmatex">\(\mathbf{w}\)</span> luôn bằng tổ hợp tuyến tính của các điểm dữ liệu trong không gian đặc trưng. Vì không thể tính ra con số cụ thể cho <span class="arithmatex">\(\mathbf{w}\)</span>, ta giữ nguyên biểu thức cấu thành này và thế thẳng vào hàm quyết định. Phép thế này giúp đưa <span class="arithmatex">\(\phi\left[\mathbf{x}^{(new)}\right]\)</span> vào bên trong dấu tổng để ghép cặp trực tiếp với từng <span class="arithmatex">\(\phi \left[\mathbf{x}^{(i)}\right]\)</span>:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+f\left[\mathbf{x}^{(new)}\right]
+&amp;= \left[ \sum_{i=1}^m \alpha_i y^{(i)} \phi[\mathbf{x}^{(i)}] \right]^\top \phi[\mathbf{x}^{(new)}] + b \\[1.5ex]
+&amp;= \sum_{i=1}^m \alpha_i y^{(i)} \left[ \phi[\mathbf{x}^{(i)}]^\top \phi[\mathbf{x}^{(new)}] \right] + b
+\end{aligned}
+\tag{13}
+\end{equation}
+\]</div>
+<p>Tại đây, tích vô hướng <span class="arithmatex">\(\phi[\mathbf{x}^{(i)}]^\top \phi[\mathbf{x}^{(new)}]\)</span> được thay thế ngay bằng hàm hạt nhân <span class="arithmatex">\(K[\mathbf{x}^{(i)}, \mathbf{x}^{(new)}]\)</span>, triệt tiêu hoàn toàn sự phụ thuộc vào không gian vô hạn chiều. Hơn nữa, vì đại đa số các điểm dữ liệu nằm ngoài vùng biên đều có <span class="arithmatex">\(\alpha_i = 0\)</span>, ta chỉ cần tính tổng trên tập các support vectors <span class="arithmatex">\(\mathcal{S} = \{i \mid \alpha_i &gt; 0\}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\hat{y}^{(new)} = \text{sign} \left[ \sum_{i \in \mathcal{S}} \alpha_i y^{(i)} K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(new)}\right] + b \right]
+\tag{14}
+\end{equation}
+\]</div>
+<p>Nói cách khác, thay vì so sánh <span class="arithmatex">\(\mathbf{x}^{(new)}\)</span> với một siêu mặt phẳng <span class="arithmatex">\(\mathbf{w}\)</span> cố định, Kernel SVM đem <span class="arithmatex">\(\mathbf{x}^{(new)}\)</span> đi đo độ tương đồng trực tiếp với từng support vector đã lưu, sau đó lấy tổng có trọng số <span class="arithmatex">\(\alpha_i y^{(i)}\)</span> để quyết định nhãn.</p>
+<p><strong>Tính toán hệ số chặn</strong> <span class="arithmatex">\(b\)</span></p>
+<p>Tương tự như <span class="arithmatex">\(\mathbf{w}\)</span>, hệ số <span class="arithmatex">\(b\)</span> không xuất hiện trực tiếp trong nghiệm đối ngẫu <span class="arithmatex">\(\boldsymbol{\alpha}\)</span> mà phải được suy ngược lại thông qua hàm Kernel. Về mặt hình học, sau khi đã xác định được độ nghiêng của ranh giới qua <span class="arithmatex">\(\boldsymbol{\alpha}\)</span>, ta chỉ cần tìm tọa độ của một điểm nằm chính xác trên đường biên lề để cố định vị trí của siêu mặt phẳng.</p>
+<p>Theo điều kiện lơi lỏng bù trừ của Soft-margin SVM, không phải mọi support vector đều nằm trên đường biên (những điểm nhiễu có <span class="arithmatex">\(\alpha_i = C\)</span> thường nằm lấn vào bên trong vùng lề). Chỉ những support vectors thỏa mãn điều kiện <strong><span class="arithmatex">\(0 &lt; \alpha_s &lt; C\)</span></strong> (tương ứng biến bù <span class="arithmatex">\(\xi_s = 0\)</span>) mới nằm đè khít lên hai đường biên <span class="arithmatex">\(+1\)</span> và <span class="arithmatex">\(-1\)</span>, tức là đạt dấu bằng tuyệt đối:</p>
+<div class="arithmatex">\[
+\begin{equation}
+y^{(s)} \left[ \sum_{i \in \mathcal{S}} \alpha_i y^{(i)} K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(s)}\right] + b \right] = 1
+\tag{15}
+\end{equation}
+\]</div>
+<p>Nhân cả hai vế với <span class="arithmatex">\(y^{(s)}\)</span> do tính chất <span class="arithmatex">\([y^{(s)}]^2 = 1\)</span> vì <span class="arithmatex">\(y^{(s)} \in \{-1, +1\}\)</span> rồi chuyển vế để cô lập <span class="arithmatex">\(b\)</span>:</p>
+<div class="arithmatex">\[
+\begin{equation}
+b = y^{(s)} - \sum_{i \in \mathcal{S}} \alpha_i y^{(i)} K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(s)}\right]
+\tag{16}
+\end{equation}
+\]</div>
+<p>Về mặt lý thuyết, mọi điểm nằm trên biên đều cho ra cùng một giá trị <span class="arithmatex">\(b\)</span>. Tuy nhiên, trong triển khai thực tế, để giảm thiểu sai số làm tròn dấu phẩy động của máy tính, hệ số <span class="arithmatex">\(b\)</span> được tính bằng trung bình cộng trên toàn bộ tập các điểm nằm đúng trên đường biên <span class="arithmatex">\(\mathcal{M} = \{s \mid 0 &lt; \alpha_s &lt; C\}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{equation}
+b = \frac{1}{|\mathcal{M}|} \sum_{s \in \mathcal{M}} \left[ y^{(s)} - \sum_{i \in \mathcal{S}} \alpha_i y^{(i)} K\left[\mathbf{x}^{(i)}, \mathbf{x}^{(s)}\right] \right]
+\tag{17}
+\end{equation}
+\]</div>
+<p>Toàn bộ vòng đời của Kernel SVM hoàn toàn không cần sự tồn tại của vector <span class="arithmatex">\(\mathbf{w}\)</span>. Tuy nhiên, cái giá phải trả là thời gian dự đoán cho một mẫu mới tỷ lệ thuận với số lượng support vectors. Dữ liệu càng nhiều nhiễu, số lượng support vectors phải lưu lại càng lớn, kéo theo dung lượng file mô hình phình to và tốc độ dự đoán chậm đi đáng kể.</p>
+<h3 id="hinge-loss">Hinge Loss</h3>
+<hr />
+<p>Xuyên suốt các phần trước, chúng ta đã tiếp cận và giải quyết SVM dưới góc độ quy hoạch toàn phương thông qua bài toán đối ngẫu. Phương pháp này mang lại sự chặt chẽ về mặt toán học và mở đường cho thủ thuật Kernel. Tuy nhiên, khi áp dụng vào thực tiễn với các tập dữ liệu lớn, cách tiếp cận này vấp phải hai rào cản kỹ thuật:</p>
+<ul>
+<li>
+<p><strong>Độ phức tạp tính toán:</strong> Giải bài toán đối ngẫu đòi hỏi việc lưu trữ và xử lý ma trận Kernel kích thước <span class="arithmatex">\(m \times m\)</span>. Độ phức tạp thời gian từ <span class="arithmatex">\(O(m^2)\)</span> đến <span class="arithmatex">\(O(m^3)\)</span> dễ dàng gây tràn bộ nhớ khi <span class="arithmatex">\(m\)</span> lên tới hàng triệu mẫu.</p>
+</li>
+<li>
+<p><strong>Thiếu tính linh hoạt:</strong> Các bộ giải quy hoạch toàn phương truyền thống hoạt động theo cơ chế học theo lô (Batch Learning), yêu cầu nạp toàn bộ dữ liệu cùng một lúc. Khi có thêm dữ liệu mới, ta buộc phải huấn luyện lại từ đầu thay vì cập nhật trực tuyến (Online Learning).</p>
+</li>
+</ul>
+<p>Để phá vỡ rào cản này , ta quay lại bài toán gốc ở <strong>phương trình</strong> <strong>3</strong>. Thay vì dùng nhân tử Lagrange để xử lý các bất đẳng thức ràng buộc, ta rút điều kiện <span class="arithmatex">\(\xi_i \ge 1 - y^{(i)}\left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right]\)</span> kết hợp với <span class="arithmatex">\(\xi_i \ge 0\)</span> thành <span class="arithmatex">\(\xi_i = \max\left[0, 1 - y^{(i)}\left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right]\right]\)</span> rồi thế thẳng vào hàm mục tiêu. Bài toán SVM lúc này trở thành một hàm mục tiêu không ràng buộc duy nhất:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\mathcal{J}[\mathbf{w}, b] = \frac{1}{2} \left\|\mathbf{w}\right\|^2 + C \sum^m_{i=1} \max \left[0, 1 - y^{(i)} \left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right]\right]
+\tag{18}
+\end{equation}
+\]</div>
+<p><strong>Phương trình 18</strong> tách cấu trúc của SVM tuyến tính thành hai thành phần độc lập:</p>
+<ul>
+<li>
+<p>Cụm <span class="arithmatex">\(\displaystyle{\frac{1}{2} \Vert{}\mathbf{w}\Vert{}^2}\)</span> chính là kỹ thuật điều chuẩn L2 (L2 Regularization), giúp cực đại hóa độ rộng lề và kiểm soát độ phức tạp của mô hình để ngăn ngừa overfitting.</p>
+</li>
+<li>
+<p>Thành phần <span class="arithmatex">\(\max \left[0, 1 - y^{(i)} \left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right] \right]\)</span> được gọi là <strong>Hinge Loss</strong>, đo lường mức độ vi phạm lề của từng mẫu dữ liệu. Nếu điểm dữ liệu nằm đúng phía và ngoài vùng biên an toàn <span class="arithmatex">\(y^{(i)}\left[\mathbf{w}^\top \mathbf{x}^{(i)} + b\right] \ge 1\)</span>, hàm trả về <span class="arithmatex">\(0\)</span> (không phạt), ngược lại mức phạt tăng tuyến tính theo độ sâu vi phạm.</p>
+</li>
+</ul>
+<p>Việc đưa SVM về dạng hàm mất mát không ràng buộc <span class="arithmatex">\(\mathcal{J}[\mathbf{w}, b]\)</span> cho phép ta sử dụng các thuật toán tối ưu dựa trên đạo hàm bậc nhất như <strong>Stochastic Gradient Descent (SGD)</strong> hoặc <strong>Coordinate Descent</strong>, giúp huấn luyện nhanh trên các tập dữ liệu khổng lồ nhưng vẫn đảm bảo tối ưu chi phí tài nguyên.</p>
+<h2 id="implementation">Implementation</h2>
+<hr />
+<p>Sau khi đã nắm vững nền tảng toán học của bài toán tối ưu lề lớn và thủ thuật Kernel Trick, bước tiếp theo là hiện thực hóa thuật toán bằng Python. Trong phần này, chúng ta sẽ sử dụng lớp <code>SVC</code> từ thư viện <code>scikit-learn</code> để huấn luyện và đánh giá mô hình SVM trên bộ dữ liệu kinh điển <strong>Iris</strong><sup id="fnref:iris"><a class="footnote-ref" href="#fn:iris">2</a></sup>.</p>
+<p><strong>Lộ trình thực nghiệm:</strong></p>
+<ol>
+<li>Kiểm tra môi trường và nạp các module cần thiết từ <code>scikit-learn</code>.</li>
+<li>Tải dữ liệu Iris, trích xuất không gian đặc trưng <span class="arithmatex">\(2\)</span> chiều và phân chia tập huấn luyện/kiểm thử theo cơ chế stratifiled (phân tầng). </li>
+<li>Chuẩn hóa đặc trưng về cùng thang đo tiêu chuẩn nhằm đảm bảo tính ổn định cho bài toán tối ưu lồi.</li>
+<li>Khởi tạo mô hình <code>SVC</code> với các tham số điều chuẩn <span class="arithmatex">\(C\)</span>, hàm nhân tương ứng và trực quan hóa kết quả phân loại.</li>
+</ol>
+<p><strong>Thiết lập môi trường &amp; Nạp dữ liệu.</strong> Đầu tiên, ta nạp các thư viện tính toán khoa học cốt lõi cùng các công cụ tiền xử lý, mô hình hóa và đánh giá từ <code>scikit-learn</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sklearn</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"NumPy version: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pandas version: </span><span class="si">{</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Scikit-learn version: </span><span class="si">{</span><span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>NumPy version: 2.5.5
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Pandas version: 3.1.1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Scikit-learn version: 1.9.1
+</span></code></pre></div>
+</div>
+<p>Mỗi mẫu hoa trong bộ dữ liệu Iris vốn được biểu diễn trong không gian <span class="arithmatex">\(4\)</span> chiều <span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^4\)</span> gồm: <em>sepal length</em> (chiều dài đài hoa), <em>sepal width</em> (chiều rộng đài hoa), <em>petal length</em> (chiều dài cánh hoa) và <em>petal width</em> (chiều rộng cánh hoa). Để dễ dàng quan sát trực quan sự phân bố các điểm dữ liệu trên mặt phẳng <span class="arithmatex">\(2D\)</span>, ta chỉ trích xuất hai đặc trưng giàu thông tin nhất của cánh hoa là chiều dài và chiều rộng cánh hoa đưa vào ma trận đặc trưng <span class="arithmatex">\(\mathbf{X} \in \mathbb{R}^{150 \times 2}\)</span>, trong khi vector nhãn mục tiêu <span class="arithmatex">\(\mathbf{y}\)</span> lưu trữ mã số của ba loài hoa (<code>0</code>, <code>1</code>, <code>2</code>):</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Full feature vector (sample 0): </span><span class="si">{</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class labels: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X shape: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> | y shape: </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Selected features (sample 0): </span><span class="si">{</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> -&gt; Class: </span><span class="si">{</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Full feature vector (sample 0): [5.1 3.5 1.4 0.2]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Class labels: [0 1 2]
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>X shape: (150, 2) | y shape: (150,)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Selected features (sample 0): [1.4 0.2] -&gt; Class: 0
+</span></code></pre></div>
+</div>
+<p><strong>Phân chia tập dữ liệu &amp; Chuẩn hóa đặc trưng.</strong> Để đánh giá khách quan khả năng tổng quát hóa của mô hình trên dữ liệu chưa từng thấy, ta dùng hàm <code>train_test_split</code> với <code>test_size=0.3</code> để tách dữ liệu gốc thành <span class="arithmatex">\(70\%\)</span> cho tập huấn luyện (<code>X_train</code>) và <span class="arithmatex">\(30\%\)</span> cho tập kiểm thử (<code>X_test</code>). Trong đó, tham số <code>random_state=42</code> cố định hạt giống ngẫu nhiên nhằm đảm bảo tính tái lặp, còn <code>stratify=y</code> kích hoạt cơ chế lấy mẫu phân tầng<sup id="fnref:sta"><a class="footnote-ref" href="#fn:sta">3</a></sup> giúp giữ nguyên tỷ lệ phân bố các lớp hoa ở cả hai tập con:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X_train: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> | y_train: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X_test:  </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">  | y_test:  </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class counts in y:       </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class counts in y_train: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class counts in y_test:  </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>X_train: (105, 2) | y_train: (105,)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>X_test:  (45, 2)  | y_test:  (45,)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Class counts in y:       [50 50 50]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Class counts in y_train: [35 35 35]
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Class counts in y_test:  [15 15 15]
+</span></code></pre></div>
+</div>
+<p>Kết quả từ hàm <code>np.bincount</code> xác nhận mỗi lớp đều có đúng <span class="arithmatex">\(35\)</span> mẫu ở tập huấn luyện và <span class="arithmatex">\(15\)</span> mẫu ở tập kiểm thử. Tiếp theo, vì SVM tối ưu khoảng cách hình học dựa trên chuẩn Euclid <span class="arithmatex">\(\Vert{}\mathbf{w}\Vert{}_2\)</span>, các đặc trưng có miền giá trị lớn sẽ lấn át các đặc trưng có miền giá trị nhỏ. Do đó, ta dùng lớp <code>StandardScaler</code> để đưa toàn bộ đặc trưng về phân phối chuẩn có trung bình <span class="arithmatex">\(\mu = 0\)</span> và độ lệch chuẩn <span class="arithmatex">\(\sigma = 1\)</span>:</p>
+<div class="arithmatex">\[x_{\text{std}}^{(i)} = \frac{x^{(i)} - \mu}{\sigma}\]</div>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">sc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">X_train_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">X_test_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Standardized X_train[0]: </span><span class="si">{</span><span class="n">X_train_std</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Standardized X_test[0]:  </span><span class="si">{</span><span class="n">X_test_std</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Standardized X_train[0]: [-0.4419858  -0.13661044]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Standardized X_test[0]:  [1.41660741 0.76797223]
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Nguyên tắc chống rò rỉ dữ liệu (Data Leakage)</p>
+<p>Phương thức <code>fit</code> chỉ được phép gọi duy nhất trên tập <code>X_train</code> để ước lượng các tham số thống kê <span class="arithmatex">\((\mu_{\text{train}}, \sigma_{\text{train}})\)</span>. Đối với tập kiểm thử <code>X_test</code>, ta chỉ gọi <code>transform</code> nhằm áp dụng đúng bộ tham số đã học từ tập huấn luyện, đảm bảo cả hai tập dữ liệu nằm trên cùng một hệ quy chiếu hình học và mô hình không nhìn trộm phân phối của dữ liệu tương lai.</p>
+</div>
+<p><strong>Huấn luyện mô hình &amp; Đánh giá kết quả.</strong> Bây giờ ta khởi tạo bộ phân loại <code>SVC</code> và gọi phương thức <code>fit</code> trên dữ liệu đã chuẩn hóa. Đối chiếu lại phần lý thuyết (<strong>phương trình 3</strong>), ta thiết lập <code>kernel="linear"</code> để sử dụng hàm nhân tuyến tính <span class="arithmatex">\(K[\mathbf{x}^{(i)}, \mathbf{x}^{(j)}] = {\mathbf{x}^{(i)}}^\top \mathbf{x}^{(j)}\)</span>, kết hợp cùng tham số điều chuẩn <code>C=1.0</code> để kiểm soát mức phạt đối với các điểm vi phạm lề. Giá trị <span class="arithmatex">\(C\)</span> càng lớn thì biên lề càng hẹp và phạt nặng sai số huấn luyện, ngược lại <span class="arithmatex">\(C\)</span> nhỏ cho phép lề rộng hơn để chấp nhận nhiễu biên:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"linear"</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_std</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">df_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="s2">"y_true"</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="s2">"y_pred"</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="s2">"correct"</span><span class="p">:</span> <span class="n">y_test</span> <span class="o">==</span> <span class="n">y_pred</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">})</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test Accuracy: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">df_results</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Test Accuracy: 91.11%
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   y_true  y_pred  correct
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>0       2       2     True
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>1       1       1     True
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>2       2       1    False
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>3       1       1     True
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>4       2       2     True
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>5       2       2     True
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>6       1       1     True
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>7       1       1     True
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>8       0       0     True
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>9       2       2     True
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Cách <code>SVC</code> xử lý bài toán phân loại đa lớp (Multi-class)</p>
+<p>Mặc dù công thức toán học gốc của SVM được thiết kế cho phân loại nhị phân <span class="arithmatex">\(y \in \{-1, +1\}\)</span>, lớp <code>SVC</code> trong <code>scikit-learn</code> tự động mở rộng sang bài toán <span class="arithmatex">\(K\)</span> lớp (<span class="arithmatex">\(K=3\)</span> trên tập Iris) thông qua chiến lược <strong>One-vs-One (OvO)</strong>: huấn luyện <span class="arithmatex">\(\displaystyle{\frac{K(K-1)}{2} = 3}\)</span> bộ phân loại nhị phân cho từng cặp lớp và tổng hợp nhãn cuối cùng bằng cơ chế bỏ phiếu đa số.</p>
+</div>
+<p>Quan sát bảng đối chiếu <span class="arithmatex">\(10\)</span> mẫu đầu tiên từ <code>df_results</code>, mô hình dự đoán chính xác <span class="arithmatex">\(9/10\)</span> mẫu (chỉ nhầm lẫn duy nhất ở mẫu có chỉ số <code>2</code> thuộc vùng chồng lấn giữa <em>Versicolor</em> và <em>Virginica</em>). Trên toàn bộ <span class="arithmatex">\(45\)</span> mẫu kiểm thử, hàm <code>accuracy_score</code> trả về độ chính xác đạt <strong><span class="arithmatex">\(91.11\%\)</span></strong>.</p>
+<p>Cuối cùng, ta trực quan hóa kết quả phân loại của mô hình trên không gian đặc trưng đã chuẩn hóa:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">File</span> <span class="s2">"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/markdown_exec/_internal/formatters/python.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">219</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_run_python</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">exec_python</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">code_block_id</span><span class="p">,</span> <span class="n">exec_globals</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">File</span> <span class="s2">"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/markdown_exec/_internal/formatters/_exec_python.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">27</span><span class="p">,</span> <span class="ow">in</span> <span class="n">exec_python</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">exec</span><span class="p">(</span><span class="n">compiled</span><span class="p">,</span> <span class="n">exec_globals</span><span class="p">)</span>  <span class="c1"># noqa: S102</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="n">File</span> <span class="s2">"&lt;code block: session svm; n16&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"Agg"</span><span class="p">)</span>  <span class="c1"># markdown-exec: hide</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     <span class="o">^^^^^^^^^^</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">'matplotlib'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</span></code></pre></div>
+<p><strong>Mở rộng sang bài toán phi tuyến với Kernel RBF.</strong> Trên tập dữ liệu Iris vừa rồi, biên phân tách tuyến tính đã hoạt động khá tốt (<span class="arithmatex">\(91.11\%\)</span>). Tuy nhiên, trong thực tế, dữ liệu thường phân bố phi tuyến phức tạp. Để thấy rõ sức mạnh của Kernel Trick, ta dùng <code>np.logical_xor</code> tạo một tập dữ liệu tổng hợp mô phỏng cổng logic <strong>XOR</strong> gồm <span class="arithmatex">\(200\)</span> mẫu ngẫu nhiên, nơi không tồn tại bất kỳ đường thẳng nào có thể phân tách hai lớp dữ liệu:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">X_xor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">y_xor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_xor</span><span class="p">(</span><span class="n">X_xor</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">X_xor</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">y_xor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_xor</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">svm_linear_xor</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"linear"</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">svm_rbf_xor</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"rbf"</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">svm_linear_xor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_xor</span><span class="p">,</span> <span class="n">y_xor</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">svm_rbf_xor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_xor</span><span class="p">,</span> <span class="n">y_xor</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Linear SVM accuracy on XOR: </span><span class="si">{</span><span class="n">svm_linear_xor</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_xor</span><span class="p">,</span><span class="w"> </span><span class="n">y_xor</span><span class="p">)</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"RBF SVM accuracy on XOR: </span><span class="si">{</span><span class="n">svm_rbf_xor</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_xor</span><span class="p">,</span><span class="w"> </span><span class="n">y_xor</span><span class="p">)</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Linear SVM accuracy on XOR: 63.00%
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>RBF SVM accuracy on XOR: 91.00%
+</span></code></pre></div>
+</div>
+<p>Kết quả từ phương thức <code>score</code> cho thấy mô hình tuyến tính chỉ đạt độ chính xác <span class="arithmatex">\(63.00\%\)</span>, trong khi chỉ cần chuyển sang <code>kernel="rbf"</code>, SVM ánh xạ ngầm dữ liệu lên không gian vô hạn chiều và phân loại chính xác tới <strong><span class="arithmatex">\(91.00\%\)</span></strong> mẫu dữ liệu XOR:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">File</span> <span class="s2">"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/markdown_exec/_internal/formatters/python.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">219</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_run_python</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">exec_python</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">code_block_id</span><span class="p">,</span> <span class="n">exec_globals</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">File</span> <span class="s2">"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/markdown_exec/_internal/formatters/_exec_python.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">27</span><span class="p">,</span> <span class="ow">in</span> <span class="n">exec_python</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">exec</span><span class="p">(</span><span class="n">compiled</span><span class="p">,</span> <span class="n">exec_globals</span><span class="p">)</span>  <span class="c1"># noqa: S102</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="n">File</span> <span class="s2">"&lt;code block: session svm; n18&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">plot_predictions</span><span class="p">(</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     <span class="o">^^^^^^^^^^^^^^^^</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">'plot_predictions'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</span></code></pre></div>
+<p>Quan sát trực quan hai biểu đồ dự đoán trên tập dữ liệu XOR cho thấy rõ sự khác biệt về bản chất hình học giữa hai hàm nhân. Do bị giới hạn bởi một siêu mặt phẳng duy nhất trong không gian <span class="arithmatex">\(\mathbb{R}^2\)</span>, mô hình <code>kernel="linear"</code> buộc phải chia cắt mặt phẳng theo một đường chéo thẳng, khiến toàn bộ cụm điểm thuộc góc phần tư thứ III (nơi cả <code>Feature 1</code> và <code>Feature 2</code> đều âm) bị phân loại nhầm sang <code>Class 1</code> (<strong>Hình 1</strong>). Ngược lại, bằng cách ánh xạ ngầm dữ liệu lên không gian chiều cao hơn qua <code>kernel="rbf"</code>, mô hình nắm bắt trọn vẹn cấu trúc đối xứng bốn góc phần tư của hàm <strong>XOR</strong>, tách biệt chính xác hai nhóm điểm cùng dấu (<code>Class 0</code>) ở góc phần tư thứ I, III với hai nhóm điểm trái dấu (<code>Class 1</code>) ở góc phần tư thứ II, IV và chỉ mắc sai số nhỏ tại vùng giao nhau sát gốc tọa độ (<strong>Hình 2</strong>).</p>
+<p><strong>Ảnh hưởng của siêu tham số <span class="arithmatex">\(\gamma\)</span> tới độ phức tạp mô hình.</strong> Trong hàm nhân Gaussian RBF, tham số <span class="arithmatex">\(\gamma\)</span> kiểm soát bán kính ảnh hưởng của từng điểm dữ liệu huấn luyện lên biên quyết định: khi <span class="arithmatex">\(\gamma\)</span> nhỏ (như <code>gamma=0.2</code>), phạm vi ảnh hưởng rộng tạo ra biên phân tách trơn mượt dễ dẫn đến underfitting, ngược lại khi <span class="arithmatex">\(\gamma\)</span> lớn (như <code>gamma=100.0</code>), bán kính ảnh hưởng co hẹp khiến biên uốn lượn ôm sát từng điểm riêng lẻ và gây ra overfitting. Ta kiểm chứng trực tiếp hiện tượng này trên tập Iris bằng cách theo dõi đồng thời số lượng vector hỗ trợ qua thuộc tính <code>support_</code> và độ chính xác <code>score</code> khi tăng dần <code>gamma</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">for</span> <span class="n">gamma_val</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">]:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="n">svm_gamma</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"rbf"</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="n">gamma_val</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="n">svm_gamma</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">train_acc</span> <span class="o">=</span> <span class="n">svm_gamma</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">test_acc</span> <span class="o">=</span> <span class="n">svm_gamma</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_std</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">n_sv</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">svm_gamma</span><span class="o">.</span><span class="n">support_</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="nb">print</span><span class="p">(</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="sa">f</span><span class="s2">"gamma=</span><span class="si">{</span><span class="n">gamma_val</span><span class="si">:</span><span class="s2">&lt;5</span><span class="si">}</span><span class="s2"> | Support Vectors: </span><span class="si">{</span><span class="n">n_sv</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">/105 | "</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="sa">f</span><span class="s2">"Train Acc: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2"> | Test Acc: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gamma=0.2   | Support Vectors:  36/105 | Train Acc: 98.10% | Test Acc: 91.11%
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>gamma=10.0  | Support Vectors:  37/105 | Train Acc: 98.10% | Test Acc: 95.56%
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>gamma=100.0 | Support Vectors:  74/105 | Train Acc: 98.10% | Test Acc: 91.11%
+</span></code></pre></div>
+</div>
+<p>Kết quả thực nghiệm thể hiện rõ sự đánh đổi qua ba ngưỡng <span class="arithmatex">\(\gamma\)</span>: </p>
+<ul>
+<li>
+<p>ở <code>gamma=0.2</code>, mô hình chỉ huy động <span class="arithmatex">\(36/105\)</span> vector hỗ trợ với biên quyết định quá trơn nên độ chính xác kiểm thử dừng ở <strong><span class="arithmatex">\(91.11\%\)</span></strong>.</p>
+</li>
+<li>
+<p>Tại điểm cân bằng <code>gamma=10.0</code>, số lượng vector hỗ trợ giữ ổn định ở mức <span class="arithmatex">\(37/105\)</span> nhưng độ cong của biên khớp vừa vặn với phân bố phi tuyến giúp nâng độ chính xác kiểm thử lên <strong><span class="arithmatex">\(95.56\%\)</span></strong>.</p>
+</li>
+<li>
+<p>Ngưỡng <code>gamma=100.0</code>, số vector hỗ trợ tăng vọt lên <span class="arithmatex">\(74/105\)</span> (hơn <span class="arithmatex">\(70\%\)</span> tập huấn luyện) do mô hình cô lập từng điểm riêng lẻ, kéo độ chính xác kiểm thử tụt ngược về <strong><span class="arithmatex">\(91.11\%\)</span></strong>.</p>
+</li>
+</ul>
+<p><strong>Kiến trúc thực thi &amp; Tối ưu quy mô lớn.</strong> Dưới góc độ kỹ thuật phần mềm, lớp <code>SVC</code> trong <code>scikit-learn</code> thực chất là một lớp bọc gọi xuống thư viện <strong>LIBSVM</strong> viết bằng C/C++ để giải bài toán quy hoạch toàn phương, nhưng giải thuật này có độ phức tạp bộ nhớ và thời gian tăng nhanh theo số lượng mẫu (<span class="arithmatex">\(\mathcal{O}(m^2)\)</span> đến <span class="arithmatex">\(\mathcal{O}(m^3)\)</span>). Khi làm việc với các tập dữ liệu lớn không thể nạp trọn vào bộ nhớ RAM, <code>scikit-learn</code> cung cấp giải pháp thay thế thông qua lớp <code>SGDClassifier</code> nhằm tối ưu trực tiếp hàm mất mát <strong>Hinge Loss</strong> bằng thuật toán <strong>Stochastic Gradient Descent</strong> và hỗ trợ học trực tuyến.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SGDClassifier</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">svm_sgd</span> <span class="o">=</span> <span class="n">SGDClassifier</span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">loss</span><span class="o">=</span><span class="s2">"hinge"</span><span class="p">,</span> 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">svm_sgd</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"SGD Linear SVM | Test Accuracy: </span><span class="si">{</span><span class="n">svm_sgd</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_std</span><span class="p">,</span><span class="w"> </span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="result">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SGD Linear SVM | Test Accuracy: 82.22%
+</span></code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Lựa chọn công cụ phù hợp với quy mô dữ liệu</p>
+<ul>
+<li><strong>Dữ liệu vừa và nhỏ (<span class="arithmatex">\(m &lt; 50{,}000\)</span>), cần biên phi tuyến phức tạp:</strong> Ưu tiên dùng <code>SVC(kernel="rbf")</code> trên nền tảng <code>LIBSVM</code>.</li>
+<li><strong>Dữ liệu lớn hoặc luồng dữ liệu trực tuyến (streaming data):</strong> Chuyển sang <code>SGDClassifier(loss="hinge")</code> hoặc <code>LinearSVC</code> trên nền tảng <code>LIBLINEAR</code> để tối ưu tốc độ và tài nguyên bộ nhớ.</li>
+</ul>
+</div>
+<!-- ## Appendix A: Quadratic Programming
+---
+Một bộ giải quy hoạch toàn phương (Quadratic Programming - QP) tiêu chuẩn không biết khái niệm siêu mặt phẳng hay biên lề; nó chỉ nhận đầu vào theo một khuôn mẫu ma trận cố định:
+
+$$
+\begin{equation}
+\min_{\mathbf{p}} \frac{1}{2}\mathbf{p}^\top \mathbf{H}\mathbf{p} + \mathbf{f}^\top \mathbf{p}, \quad \text{sao cho } \mathbf{A}\mathbf{p} \le \mathbf{b}_{qp}
+\tag{18}
+\end{equation}
+$$
+
+Trong bài toán Hard-margin SVM với $d$ đặc trưng, ta cần tìm hệ số chặn $b$ và vector trọng số $\mathbf{w} = [w_1, w_2, \dots, w_d]^\top$, nhưng bộ giải QP chỉ nhận một vector ẩn duy nhất $\mathbf{p}$. Do đó, ta gộp chúng thành một vector cột kích thước $n_p = d + 1$:
+
+$$\mathbf{p} = \left[ b, w_1, \dots, w_d \right]^\top$$
+
+SVM cần cực tiểu hóa $\frac{1}{2}\|\mathbf{w}\|^2$ mà không phạt độ lớn của $b$. Để cụm $\mathbf{p}^\top \mathbf{H}\mathbf{p}$ sinh ra đúng tổng bình phương các trọng số $w_1^2 + \dots + w_d^2$ và triệt tiêu $b$, ma trận $\mathbf{H}$ kích thước $(d+1) \times (d+1)$ được thiết lập là ma trận đơn vị với phần tử đầu tiên $\mathbf{H}_{00} = 0$:
+
+$$
+\begin{equation}
+\mathbf{H} \cdot \mathbf{p} =
+\begin{bmatrix}
+0 & 0 & \dots & 0 \\
+0 & 1 & \dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & 1
+\end{bmatrix}
+\begin{bmatrix}
+b \\
+w_1 \\
+\vdots \\
+w_d
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 \\
+w_1 \\
+\vdots \\
+w_d
+\end{bmatrix}
+\tag{19}
+\end{equation}
+$$
+
+Nhân tiếp với $\mathbf{p}^\top$ ở bên trái:
+
+$$
+\begin{equation}
+\mathbf{p}^\top (\mathbf{H}\mathbf{p}) =
+\left[ b, w_1, \dots, w_d \right]
+\begin{bmatrix}
+0 \\
+w_1 \\
+\vdots \\
+w_d
+\end{bmatrix}
+= 0 + w_1^{2} + \dots + w_d^{2} = \|\mathbf{w}\|^2
+\tag{20}
+\end{equation}
+$$
+
+Thêm hệ số $\frac{1}{2}$, ta thu được chính xác hàm mục tiêu của SVM. Đồng thời, ta gán vector $\mathbf{f} = \mathbf{0} \in \mathbb{R}^{d+1}$ để loại bỏ hoàn toàn hạng tử bậc nhất $\mathbf{f}^\top \mathbf{p}$.
+
+Về phần ràng buộc, điều kiện gốc của SVM là $y^{(i)}(\mathbf{w}^\top \mathbf{x}^{(i)} + b) \ge 1$. Vì bộ giải QP yêu cầu dấu bất đẳng thức nhỏ hơn hoặc bằng ($\le$), ta nhân cả hai vế với $-1$:
+
+$$-y^{(i)} \left( \mathbf{w}^\top \mathbf{x}^{(i)} + b \right) \le -1$$
+
+Vế trái chính là tích vô hướng giữa hàng thứ $i$ của ma trận $\mathbf{A}$ (ký hiệu $\mathbf{a}^{(i)}$) với vector cột $\mathbf{p}$. Bằng cách thêm phần tử $1$ vào đầu vector đặc trưng $\mathbf{x}^{(i)} = [x_1^{(i)}, \dots, x_d^{(i)}]$, ta có:
+
+$$
+\begin{equation}
+\left[ 1, x_1^{(i)}, x_2^{(i)}, \dots, x_d^{(i)} \right]
+\begin{bmatrix}
+b \\
+w_1 \\
+w_2 \\
+\vdots \\
+w_d
+\end{bmatrix}
+=
+b + x_1^{(i)}w_1 + x_2^{(i)}w_2 + \dots + x_d^{(i)}w_d
+\tag{21}
+\end{equation}
+$$
+
+Nhân hàng này với $-y^{(i)}$, ta thu được cấu trúc chuẩn cho hàng thứ $i$ của ma trận $\mathbf{A}$: $\mathbf{a}^{(i)} = -y^{(i)} \left[ 1, x_1^{(i)}, x_2^{(i)}, \dots, x_d^{(i)} \right]$. Kiểm chứng lại bằng phép nhân với $\mathbf{p}$:
+
+$$
+\begin{equation}
+\mathbf{a}^{(i)} \mathbf{p} = \left( -y^{(i)} \left[ 1, x_1^{(i)}, x_2^{(i)}, \dots, x_d^{(i)} \right] \right)
+\begin{bmatrix}
+b \\
+w_1 \\
+\vdots \\
+w_d
+\end{bmatrix}
+=
+-y^{(i)} \left( b + x_1^{(i)}w_1 + \dots + x_d^{(i)}w_d \right)
+\tag{22}
+\end{equation}
+$$
+
+Tổng hợp lại, bài toán tìm vector tối ưu $\mathbf{p}^* = \left[ b^*, w_1^*, \dots, w_d^* \right]^\top$ được đưa về hệ quy hoạch toàn phương hoàn chỉnh:
+
+$$
+\begin{equation}
+\min_{\mathbf{p}} \frac{1}{2}\mathbf{p}^\top \mathbf{H}\mathbf{p} + \mathbf{f}^\top \mathbf{p}, \quad
+\text{sao cho } \mathbf{A}\mathbf{p} \le \mathbf{b}_{qp}
+\tag{23}
+\end{equation}
+$$
+
+Trong đó bộ 4 tham số đầu vào được định nghĩa chặt chẽ như sau:
+
+* $\mathbf{H}$: Ma trận vuông kích thước $(d+1) \times (d+1)$, với $\mathbf{H}_{00} = 0$ và các phần tử trên đường chéo chính còn lại bằng $1$.
+* $\mathbf{f}$: Vector cột kích thước $(d+1) \times 1$ chứa toàn bộ giá trị $0$.
+* $\mathbf{A}$: Ma trận ràng buộc kích thước $m \times (d+1)$ (với $m$ là số mẫu huấn luyện), mỗi hàng có dạng theo ****phương trình** 22**.
+* $\mathbf{b}_{qp}$: Vector cột kích thước $m \times 1$ chứa toàn bộ giá trị $-1$.
+
+Khi nạp bộ tham số $(\mathbf{H}, \mathbf{f}, \mathbf{A}, \mathbf{b}_{qp})$ này vào các thư viện tối ưu như `CVXOPT`, bộ giải sẽ trả về vector nghiệm $\mathbf{p}^*$. Từ đó, phần tử đầu tiên chính là hệ số chặn $b^*$ và $d$ phần tử còn lại là vector trọng số $\mathbf{w}^*$. Cách thiết lập tương tự cũng được mở rộng cho Soft-margin SVM bằng cách nối thêm $m$ biến bù $\xi_i$ vào vector ẩn $\mathbf{p}$.
+
+## Appendix B: KKT with Dual Problem
+---
+
+Để chuẩn bị cho việc lấy đạo hàm riêng, ta phá ngoặc ****phương trình** 4** và gom nhóm các hạng tử theo từng biến gốc $(\mathbf{w}, b, \boldsymbol{\xi})$:
+
+$$
+\begin{equation}
+\begin{aligned}
+\mathcal{L}(\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\mu}) =& \ \frac{1}{2}\|\mathbf{w}\|^2
+ + C \sum_{i=1}^m \xi_i \\
+&+ \sum_{i=1}^m \alpha_i
+ - \sum_{i=1}^m \alpha_i \xi_i
+ - \sum_{i=1}^m \alpha_i y^{(i)} \mathbf{w}^\top \mathbf{x}^{(i)} 
+ - \sum_{i=1}^m \alpha_i y^{(i)} b \\
+&- \sum_{i=1}^m \mu_i \xi_i \\
+=& \ \frac{1}{2}\|\mathbf{w}\|^2 - \left( \sum^m_{i=1}\alpha_i y^{(i)} \mathbf{x}^{(i)} \right)^\top \mathbf{w} \\
+&- b \sum_{i=1}^m \alpha_i y^{(i)} \\
+&+ \sum_{i=1}^m \xi_i \left( C - \alpha_i - \mu_i \right) \\
+&+ \sum_{i=1}^m \alpha_i
+\end{aligned}
+\tag{24}
+\end{equation}
+$$
+
+Áp dụng điều kiện dừng KKT, ta lần lượt tính đạo hàm riêng của $\mathcal{L}$ theo các biến gốc và cho bằng $0$:
+
+**Đạo hàm theo $\mathbf{w}$:**
+
+$$ 
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial \mathbf{w}} = \mathbf{w} - \sum_{i=1}^m \alpha_i y^{(i)} \mathbf{x}^{(i)} = \mathbf{0} \quad \Longrightarrow \quad \mathbf{w} = \sum_{i=1}^m \alpha_i y^{(i)} \mathbf{x}^{(i)} 
+\tag{25}
+\end{equation}
+$$
+
+**phương trình** này cho thấy vector trọng số tối ưu $\mathbf{w}$ luôn là một tổ hợp tuyến tính của các điểm dữ liệu huấn luyện. Những điểm nằm ngoài vùng biên an toàn có $\alpha_i = 0$ sẽ không đóng góp vào $\mathbf{w}$; chỉ những điểm có $\alpha_i > 0$ mới tham gia định hình siêu mặt phẳng phân tách và được gọi là **Support Vectors**.
+
+**Đạo hàm theo $b$:**
+
+$$ 
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial b} = - \sum_{i=1}^m \alpha_i y^{(i)} = 0 \quad \Longrightarrow \quad \sum_{i=1}^m \alpha_i y^{(i)} = 0 
+\tag{26}
+\end{equation}
+$$
+
+Điều kiện này đảm bảo sự cân bằng lực giữa hai lớp: tổng trọng số $\alpha_i$ của các Support Vectors thuộc lớp dương ($y^{(i)} = +1$) luôn bằng tổng trọng số $\alpha_i$ của các Support Vectors thuộc lớp âm ($y^{(i)} = -1$).
+
+**Đạo hàm theo $\xi_i$:**
+
+$$ 
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial \xi_i} = C - \alpha_i - \mu_i = 0 \quad \Longrightarrow \quad \alpha_i + \mu_i = C 
+\tag{27}
+\end{equation}
+$$
+
+Vì cả hai nhân tử Lagrange đều không âm ($\alpha_i \ge 0$ và $\mu_i \ge 0$), **phương trình** này giới hạn chặt giá trị của $\alpha_i$ trong đoạn $[0, C]$: $0 \le \alpha_i \le C$. Nhờ đó, ngay cả khi một điểm nhiễu (outlier) vi phạm biên nghiêm trọng, mức độ ảnh hưởng tối đa của nó lên siêu mặt phẳng vẫn bị khóa trần ở ngưỡng $C$. Bên cạnh đó, nghiệm tối ưu còn phải thỏa mãn điều kiện lơi lỏng bù trừ (Complementary Slackness):
+1. $\alpha_i \left[ 1 - \xi_i - y^{(i)}(\mathbf{w}^\top \mathbf{x}^{(i)} + b) \right] = 0$
+2. $\mu_i \xi_i = 0$
+
+Tiếp theo, ta thế ngược các điều kiện đạo hàm trở lại hàm $\mathcal{L}$ để triệt tiêu toàn bộ biến gốc $(\mathbf{w}, b, \boldsymbol{\xi})$. Trước hết, thay ****phương trình** 26** và ****phương trình** 27** vào **biểu thức 24**, các hạng tử chứa $b$ và $\xi_i$ tự động bằng $0$:
+
+$$
+\begin{equation}
+\mathcal{L} = \frac{1}{2} \left\|\mathbf{w}\right\|^2 - \left(\sum^m_{i=1} \alpha_i y^{(i)} \mathbf{x}^{(i)}\right)^\top \mathbf{w} + \sum^m_{i=1} \alpha_i
+\tag{28}
+\end{equation}
+$$
+
+Thay tiếp biểu thức của $\mathbf{w}$ từ ****phương trình** 25** vào cụm tổng trong **công thức 28**:
+
+$$
+\begin{equation}
+\mathcal{L} = \frac{1}{2} \left\|\mathbf{w}\right\|^2 - \mathbf{w}^\top \mathbf{w} + \sum^m_{i=1} \alpha_i
+\tag{29}
+\end{equation}
+$$
+
+Vì $\mathbf{w}^\top \mathbf{w} = \|\mathbf{w}\|^2$, biểu thức rút gọn thành:
+
+$$
+\begin{equation}
+\mathcal{L} = \sum^m_{i=1} \alpha_i - \frac{1}{2} \left\|\mathbf{w}\right\|^2
+\tag{30}
+\end{equation}
+$$
+
+Cuối cùng, khai triển $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$ theo ****phương trình** 25**:
+
+$$
+\begin{equation}
+\left\|\mathbf{w}\right\|^2 = \left(\sum^m_{i=1} \alpha_i y^{(i)} \mathbf{x}^{(i)}\right)^\top \left(\sum^m_{j=1} \alpha_j y^{(j)} \mathbf{x}^{(j)}\right) =
+\sum^m_{i=1} \sum^m_{j=1} \alpha_i \alpha_j y^{(i)} y^{(j)} (\mathbf{x}^{(i)})^\top \mathbf{x}^{(j)}
+\tag{31}
+\end{equation}
+$$
+
+Thế ****phương trình** 31** vào ****phương trình** 30**, ta thu được hàm mục tiêu đối ngẫu hoàn chỉnh $W(\boldsymbol{\alpha})$:
+
+$$
+\begin{equation}
+\begin{aligned}
+\max_{\boldsymbol{\alpha}} W(\boldsymbol{\alpha}) &= \sum^m_{i=1} \alpha_i - \frac{1}{2} \sum^m_{i=1} \sum^m_{j=1} \alpha_i \alpha_j y^{(i)} y^{(j)} (\mathbf{x}^{(i)})^\top \mathbf{x}^{(j)} \\
+&\text{sao cho } \sum^m_{i=1} \alpha_i y^{(i)} = 0 \quad \text{và} \quad 0 \le \alpha_i \le C, \quad \forall i = 1, \dots, m
+\end{aligned}
+\tag{32}
+\end{equation}
+$$ -->
+
+<h2 id="references">References</h2>
+<hr />
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:rbf">
+<p><strong>RBF Kernel (Radial Basis Function - Hàm cơ sở xuyên tâm):</strong> Có dạng <span class="arithmatex">\(K\left[\mathbf{x}, \mathbf{z}\right] = \exp\left[-\gamma \Vert{}\mathbf{x} - \mathbf{z}\Vert{}^2\right]\)</span>, dùng để đo mức độ tương đồng giữa hai điểm dữ liệu dựa trên khoảng cách Euclidean của chúng (càng gần nhau giá trị càng tiến về <span class="arithmatex">\(1\)</span>, càng xa càng tiến về <span class="arithmatex">\(0\)</span>).&#160;<a class="footnote-backref" href="#fnref:rbf" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:iris">
+<p>Bộ dữ liệu <strong>Iris</strong> được nhà thống kê và thực vật học <strong>Ronald Fisher</strong> giới thiệu vào năm 1936. Tập dữ liệu bao gồm <span class="arithmatex">\(150\)</span> mẫu hoa thuộc ba loài khác nhau: <em>Iris setosa</em>, <em>Iris versicolor</em> và <em>Iris virginica</em> (mỗi loài <span class="arithmatex">\(50\)</span> mẫu), được mô tả qua bốn đặc trưng hình thái học (chiều dài và chiều rộng của đài hoa, cánh hoa). Đây là bộ dữ liệu tiêu chuẩn dùng để kiểm chứng trực quan các thuật toán phân loại.&#160;<a class="footnote-backref" href="#fnref:iris" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sta">
+<p>https://www.geeksforgeeks.org/machine-learning/how-to-implement-stratified-sampling-with-scikit-learn/&#160;<a class="footnote-backref" href="#fnref:sta" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Cập nhật lần cuối">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 19, 2026 15:33:35 UTC"><span class="timeago" datetime="2026-11-19T15:33:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 19, 2026 15:33:35 UTC">2026-11-19</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Tạo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 19, 2026 15:33:35 UTC"><span class="timeago" datetime="2026-11-19T15:33:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 19, 2026 15:33:35 UTC">2026-11-19</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/nthaihoc" class="md-author" title="@nthaihoc">
+          
+          <img src="https://avatars.githubusercontent.com/u/178376783?v=4&size=72" alt="nthaihoc">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Chân trang" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Trước: Applied Machine Learning (AML)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Trước
+              </span>
+              <div class="md-ellipsis">
+                Applied Machine Learning (AML)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-decision-trees/" class="md-footer__link md-footer__link--next" aria-label="Sau: Decision Trees">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Sau
+              </span>
+              <div class="md-ellipsis">
+                Decision Trees
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©️ 2025 by Thai-Hoc Nguyen. Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://ictu.edu.vn" target="_blank" rel="noopener" title="Thai Nguyen University of Information and Technology Communication" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://nthaihoc.github.io/about-me" target="_blank" rel="noopener" title="Profile" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:nthoc.ictu@gmail.com" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 6v14h18v2H2c-1.105 0-2-.89-2-2V6zm22-2c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0-8 5-8-5zm0 12H6V6l8 5 8-5z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/nthaihoc" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "navigation.tabs", "navigation.indexes", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

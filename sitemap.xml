@@ -2,310 +2,282 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/tags/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/tags/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/tags/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/about-me/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/about-me/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/about-me/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/courses/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/08-support-vector-machines/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/08-support-vector-machines/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/08-support-vector-machines/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-09-decision-trees/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/09-decision-trees/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-09-decision-trees/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-09-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/09-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/09-decision-trees/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/"/>
     </url>
     <url>
+        <loc>https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/01-dl-loss-function/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/01-dl-loss-function/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/01-dl-loss-function/"/>
+    </url>
+    <url>
+        <loc>https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/02-optimization/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/02-optimization/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/02-optimization/"/>
+    </url>
+    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/lessons/lesson-03-attention-mechanisms/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/03-attention-mechanisms/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/lessons/lesson-03-attention-mechanisms/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/lessons/lesson-03-attention-mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/03-attention-mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/03-attention-mechanisms/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/iai-lab/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/iai-lab/guidelines/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/guidelines/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/guidelines/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/iai-lab/tracks/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/tracks/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/tracks/"/>
-    </url>
-    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/implementation-rag-pipeline/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/01-overview/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/implementation-rag-pipeline/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/implementation-rag-pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/01-overview/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/01-overview/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/vanilla-rag/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/rag/01-vanilla-rag/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/vanilla-rag/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/vanilla-rag/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/lesson-01-overview/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/lesson-01-overview/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/lesson-01-overview/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/mlops/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/mlops/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/mlops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/rag/01-vanilla-rag/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/rag/01-vanilla-rag/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/research/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/"/>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/draft/aac_rag_prd/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/research/report/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/draft/aac_rag_prd/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/draft/aac_rag_prd/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/report/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/report/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/draft/ssl_pronscore_mdd_outline/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/draft/ssl_pronscore_mdd_outline/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/draft/ssl_pronscore_mdd_outline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/resources/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/resources/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/resources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/tags/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/tags/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/tags/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/about-me/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/about-me/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/about-me/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/08-support-vector-machines/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-08-support-vector-machines/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/08-support-vector-machines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/08-support-vector-machines/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-09-decision-trees/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/09-decision-trees/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/lessons/lesson-09-decision-trees/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/lessons/lesson-09-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/applied-machine-learning/09-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/applied-machine-learning/09-decision-trees/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/"/>
     </url>
     <url>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/01-dl-loss-function/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/01-dl-loss-function/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/01-dl-loss-function/"/>
+    </url>
+    <url>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/02-optimization/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/computer-vision-foundations/02-optimization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/computer-vision-foundations/02-optimization/"/>
+    </url>
+    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/lessons/lesson-03-attention-mechanisms/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/03-attention-mechanisms/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/lessons/lesson-03-attention-mechanisms/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/lessons/lesson-03-attention-mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/03-attention-mechanisms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/03-attention-mechanisms/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/guidelines/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/guidelines/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/guidelines/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/tracks/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/tracks/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/tracks/"/>
-    </url>
-    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/implementation-rag-pipeline/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/01-overview/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/implementation-rag-pipeline/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/implementation-rag-pipeline/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/01-overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/01-overview/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/vanilla-rag/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/rag/01-vanilla-rag/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/ai-in-action/vanilla-rag/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/ai-in-action/vanilla-rag/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/lesson-01-overview/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/fastapi/lesson-01-overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/fastapi/lesson-01-overview/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/mlops/</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/mlops/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/mlops/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/rag/01-vanilla-rag/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/rag/01-vanilla-rag/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/draft/aac_rag_prd/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/report/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/draft/aac_rag_prd/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/draft/aac_rag_prd/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/report/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/report/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/draft/ssl_pronscore_mdd_outline/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/draft/ssl_pronscore_mdd_outline/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/draft/ssl_pronscore_mdd_outline/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/resources/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/</loc>
+        <lastmod>2026-11-19</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/resources/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/resources/"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/"/>
     </url>
 </urlset>

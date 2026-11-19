@@ -202,6 +202,7 @@ p {
     font-weight: 900;
     background: linear-gradient(90deg, #007cf0, #00dfd8);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
     line-height: 1.2;
@@ -238,4 +239,8 @@ p {
     text-align: center;
     color: var(--md-default-fg-color--light);
     margin: 0;
+}
+
+.md-typeset ul > li::marker {
+    color: #db2777;
 }
