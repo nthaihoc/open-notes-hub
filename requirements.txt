@@ -2,7 +2,7 @@ mkdocs-material
 mkdocs-static-i18n
 mkdocs-macros-plugin
 mkdocs-git-revision-date-localized-plugin
-kdocs-git-committers-plugin-2
+mkdocs-git-committers-plugin-2
 markdown-exec
 mkdocs-bibtex
 pypandoc-binary
