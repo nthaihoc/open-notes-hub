@@ -159,7 +159,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="red">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -422,7 +422,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1186,10 +1188,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ky-nang-cong-nghe" class="md-nav__link">
+  <a href="#cong-nghe-ky-nang" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kỹ năng &amp; Công nghệ
+        Công nghệ &amp; Kỹ năng
       
     </span>
   </a>
@@ -1222,6 +1224,8 @@
               </div>
             
             
+              
+                
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
@@ -1266,10 +1270,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ky-nang-cong-nghe" class="md-nav__link">
+  <a href="#cong-nghe-ky-nang" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kỹ năng &amp; Công nghệ
+        Công nghệ &amp; Kỹ năng
       
     </span>
   </a>
@@ -1300,6 +1304,8 @@
               
                 
 
+  
+
 
 
   
@@ -1309,6 +1315,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -1323,7 +1331,7 @@
     object-fit: cover; 
     display: block; 
     margin: 0 auto; 
-    border: 4px solid #e0e0e0;
+    border: 3px solid var(--md-primary-fg-color--light, #e0e0e0);
 }
 .pub-img {
     width: 100%;       
@@ -1332,8 +1340,8 @@
     object-position: center; 
     display: block;
     margin: 0 auto;
-    border: 4px solid #e0e0e0;
-    border-radius: 4px;
+    border: 2px solid var(--md-primary-fg-color--light, #e0e0e0);
+    border-radius: 10px;
 }
 
 .text-center {
@@ -1351,70 +1359,58 @@
 <ul>
 <li>
 <p><img src="../../assets/images/nguyen_thai_hoc.jpeg" class="profile-img" alt="Nguyen Thai Hoc Avatar"></p>
-<p><p class="text-center"><b>🌴 AI Researcher | AI builder | AI trainer</b></p></p>
+<p><p class="text-center"><b>🌴 AI Research Engineer</b></p></p>
 <p><p class="text-center icon-row">
     <a href="https://nthaihoc.github.io/about-me" title="Portfolio"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.906.664a1.75 1.75 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z"/></svg></span></a>
     <a href="mailto:thaihocit02@gmail.com" title="Email"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg></span></a>
     <a href="https://github.com/nthaihoc" title="GitHub"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span></a>
     <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi" title="Google Scholar"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg></span></a>
-    <a href="https://www.facebook.com/nthoc02" title="Facebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a>
     <a href="../assets/files/curriculum_vitae.pdf" title="CV"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19.11 12.11 17H7v-2h7v.12L16.12 13H7v-2h10v1.12l1.24-1.23c.48-.48 1.11-.75 1.8-.75.33 0 .66.07.96.19V5a2 2 0 0 0-2-2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5zM7 7h10v2H7zm14.7 7.35-1 1-2.05-2.05 1-1a.55.55 0 0 1 .77 0l1.28 1.28c.21.21.21.56 0 .77M12 19.94l6.06-6.06 2.05 2.05L14.06 22H12z"/></svg></span></a>
 </p></p>
 </li>
 </ul>
 </div>
 <h2 id="gioi-thieu">Giới thiệu</h2>
-<hr />
-<p>👋 Xin chào, tôi là <strong>Nguyễn Thái Học</strong> -- một <strong>AI Engineer</strong> tại <a href="https://iast.ictu.edu.vn">Viện Khoa học và Công nghệ Ứng dụng (IAST)</a>, trực thuộc <a href="https://ictu.edu.vn">Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU)</a>. Hành trình với AI của tôi bắt đầu từ năm 2020, nhưng chính những bài toán đầy thách thức trong năm thứ 3 đại học đã thực sự thắp sáng ngọn lửa đam mê sâu sắc của tôi với lĩnh vực này.</p>
-<p>Bắt đầu với vai trò Thực tập sinh <strong>Computer Vision</strong> vào tháng 8/2023 và sau đó chính thức đảm nhận vị trí <strong>AI Engineer</strong>, tôi đã chuyển mình từ việc nắm vững các nền tảng lý thuyết sang trực tiếp phát triển các giải pháp AI thực tiễn trong lĩnh vực Y tế và Giáo dục. Hiện tại, trọng tâm nghiên cứu của tôi xoay quanh việc khai phá tiềm năng của <strong>Machine Learning</strong> và <strong>Computer Vision</strong> để giải quyết các bài toán trong thế giới thực.</p>
-<p>Không dừng lại ở đó, tôi đang mở rộng ranh giới nghiên cứu của mình sang <strong>Large Language Models (LLMs)</strong> và <strong>Vision-Language Models (VLMs)</strong>, đồng thời hướng tới việc tối ưu hóa quy trình triển khai mô hình thông qua <strong>MLOps/LLMOps</strong>. Đối với tôi, AI không chỉ là những thuật toán khô khan; nó là công cụ để tạo ra những thay đổi tích cực cho xã hội.</p>
+<p>👋 Xin chào! Tôi là <strong>Nguyễn Thái Học</strong>, một <strong>AI Research Engineer</strong> tập trung chuyên sâu vào <em>Thị giác Máy tính (Computer Vision)</em> và <strong>Học máy (Machine Learning)</strong>. Hành trình của tôi với Trí tuệ Nhân tạo bắt đầu từ năm 2020, và chính việc giải quyết các bài toán thực tiễn phức tạp vào năm thứ ba đại học tại <a href="https://ictu.edu.vn">Trường Đại học Công nghệ Thông tin và Truyền thông (ICTU)</a> đã biến sự tò mò ban đầu ấy thành con đường sự nghiệp gắn bó lâu dài.</p>
+<p>Trước đây, tôi từng công tác tại <a href="https://iast.ictu.edu.vn">Viện Khoa học và Công nghệ Ứng dụng (IAST)</a>, phát triển từ vị trí Thực tập sinh Thị giác Máy tính (tháng 8/2023) lên Kỹ sư AI chính thức (tháng 8/2024), chuyển dịch từ việc nắm vững nền tảng lý thuyết sang trực tiếp xây dựng các giải pháp AI thực tiễn cho lĩnh vực <strong>Y tế</strong> và <strong>Giáo dục</strong>. Bổ trợ cho nền tảng nghiên cứu này, tôi cũng đã hoàn thành kỳ thực chiến chuyên sâu kéo dài hai tháng tại <strong>VinSmart Future</strong> thông qua chương trình <strong>AI in Action</strong>, qua đó trau dồi khả năng thiết kế kỹ thuật và triển khai các hệ thống AI sẵn sàng vận hành thực tế trong môi trường tốc độ cao.</p>
+<p>Không dừng lại ở các quy trình thị giác máy tính và học máy truyền thống, tôi đang tích cực mở rộng kiến thức sang <strong>Các mô hình Ngôn ngữ Lớn (LLMs)</strong> và <strong>Các mô hình Thị giác - Ngôn ngữ (VLMs)</strong>, đồng thời tìm hiểu sâu về <strong>MLOps/LLMOps</strong> nhằm tối ưu hóa quy trình triển khai mô hình đầu-cuối (end-to-end). Với tôi, AI không chỉ dừng lại ở những thuật toán mà còn là công cụ để tạo ra những thay đổi tích cực và bền vững cho xã hội.</p>
 <h2 id="tin-tuc">Tin tức</h2>
-<hr />
 <ul>
-<li>
-<p><strong>[05/2026:]</strong> Trở thành học viên khóa 2 của chương trình đào tạo <strong>AI Thực Chiến</strong> tại VinUniversity.</p>
-</li>
-<li>
-<p><strong>[08/2024:]</strong> Chính thức trở thành <strong>AI Engineer</strong> tại <a href="https://iast.ictu.edu.vn">IAST</a>.</p>
-</li>
-<li>
-<p><strong>[07/2024:]</strong> Có hai bài báo được chấp nhận xuất bản và báo cáo tại Hội thảo Quốc tế ICTA, Phú Thọ.</p>
-</li>
-<li>
-<p><strong>[08/2023:]</strong> Bắt đầu làm Thực tập sinh <strong>Computer Vision</strong> tại <a href="https://iast.ictu.edu.vn">IAST</a>.</p>
-</li>
+<li><strong>[10/2026]</strong> Tốt nghiệp chương trình đào tạo chuyên sâu AI IN ACTION tại Đại học VinUni, bao gồm hai tháng thực chiến kỹ thuật trực tiếp tại VinSmart Future.</li>
+<li><strong>[09/2026]</strong> Một bài báo khoa học được chấp nhận đăng tại <strong>Hội nghị Quốc tế lần thứ 5 về Những tiến bộ trong Công nghệ Thông tin và Truyền thông (ICTA 2026)</strong> tại Hạ Long.</li>
+<li><strong>[05/2026]</strong> Trúng tuyển khóa thứ hai của chương trình đào tạo AI IN ACTION tại <strong>Đại học VinUni</strong>.</li>
+<li><strong>[08/2024]</strong> Chính thức đảm nhận vị trí Kỹ sư AI tại <a href="https://iast.ictu.edu.vn">IAST</a>.</li>
+<li><strong>[07/2024]</strong> Hai bài báo khoa học được chấp nhận đăng và trình bày trực tiếp tại Hội nghị Quốc tế lần thứ 3 về Những tiến bộ trong Công nghệ Thông tin và Truyền thông (ICTA 2024) tại Phú Thọ.</li>
+<li><strong>[08/2023]</strong> Gia nhập <a href="https://iast.ictu.edu.vn">IAST</a> với vai trò Thực tập sinh Thị giác Máy tính (Computer Vision Intern).</li>
 </ul>
-<h2 id="ky-nang-cong-nghe">Kỹ năng &amp; Công nghệ</h2>
-<hr />
+<h2 id="cong-nghe-ky-nang">Công nghệ &amp; Kỹ năng</h2>
 <ul>
-<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg></span> Ngôn ngữ lập trình:</strong> <code>Python</code> <code>C/C++</code> <code>LaTeX</code> <code>Markdown</code>.</li>
-<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg></span> Framework &amp; Kiến trúc ML/DL:</strong> <code>PyTorch</code> <code>TensorFlow</code> <code>Scikit-Learn</code> <code>HuggingFace</code> <code>Langchain</code>.</li>
-<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg></span> Xử lý dữ liệu &amp; Big Data:</strong> <code>Pandas</code> <code>NumPy</code> <code>Hadoop</code> <code>Spark</code> <code>PostgreSQL</code> <code>MongoDB</code>.</li>
-<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16h-2v-1H8v1H6v-1H2v5h20v-5h-4zm2-8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v4h4v-2h2v2h8v-2h2v2h4v-4c0-1.1-.9-2-2-2m-5 0H9V6h6z"/></svg></span> IDE, Công cụ &amp; Ops:</strong> <code>VS Code</code> <code>Git/GitHub</code> <code>Docker</code> <code>FastAPI</code> <code>Linux</code> <code>MLflow</code> <code>Streamlit</code>. </li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg></span> Ngôn ngữ Lập trình &amp; Truy vấn:</strong> <code>Python</code> <code>C/C++</code> <code>SQL</code> <code>LaTeX</code></li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg></span> Thị giác Máy tính &amp; ML/DL:</strong> <code>PyTorch</code> <code>TensorFlow</code> <code>OpenCV</code> <code>Scikit-Learn</code> <code>Hugging Face</code></li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.59 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4m6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23zm0-4.55c-1.3.95-3.58 1.55-6 1.55s-4.7-.6-6-1.55V9.64c1.47.83 3.61 1.36 6 1.36s4.53-.53 6-1.36zM12 9C8.13 9 6 7.5 6 7s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2"/></svg></span> Xử lý &amp; Lưu trữ Dữ liệu:</strong> <code>NumPy</code> <code>Pandas</code> <code>Apache Spark</code> <code>Hadoop</code> <code>PostgreSQL</code> <code>MongoDB</code></li>
+<li><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> Triển khai &amp; Công cụ Kỹ thuật:</strong> <code>Docker</code> <code>FastAPI</code> <code>MLflow</code> <code>Streamlit</code> <code>Git / GitHub</code> <code>Linux</code></li>
 </ul>
 <h2 id="cong-bo-khoa-hoc">Công bố Khoa học</h2>
-<hr />
 <div class="grid cards">
 <ul>
 <li>
-<p><img style="width: 100%; height: 330px;" src="../../assets/images/icta_01.png" class="pub-img" alt="ICTA 01"></p>
+<p><img style="width: 100%; height: 330px;" src="../assets/images/icta_01.png" class="pub-img" alt="ICTA 01"></p>
 <p><strong>01.</strong> <a href="https://">A Study on Ensemble Learning for Cervical Cytology Classification</a></p>
 <hr />
-<p><strong>Van-Khanh Tran</strong>, <strong><u>Thai-Hoc Nguyen</u></strong>, <strong>Chi-Cuong Nghiem</strong>, <strong>Xuan-Lam Dinh</strong></p>
+<p>Van-Khanh Tran, <strong><u>Thai-Hoc Nguyen</u></strong>, Chi-Cuong Nghiem, Xuan-Lam Dinh</p>
 <p><em>International Conference on Advances in Information and Communication Technology (ICTA), 2024.</em></p>
 <p><strong>Từ khóa:</strong> <code>Ensemble Learning</code> <code>Cervical Cancer Cytology</code> <code>Deep Learning</code></p>
 </li>
 <li>
-<p><img src="../../assets/images/icta_02.png" class="pub-img" alt="ICTA 02"></p>
+<p><img src="../assets/images/icta_02.png" class="pub-img" alt="ICTA 02"></p>
 <p><strong>02.</strong> <a href="https://">An automatic machine learning based customer segmentation model with RFM analysis</a></p>
 <hr />
-<p><strong>Xuan-Thi Tran</strong>, <strong><u>Thai-Hoc Nguyen</u></strong></p>
+<p>Xuan-Thi Tran, <strong><u>Thai-Hoc Nguyen</u></strong></p>
 <p><em>International Conference on Advances in Information and Communication Technology (ICTA), 2024.</em></p>
 <p><strong>Từ khóa:</strong> <code>Customer Segmentation</code> <code>RFM</code> <code>K-means Clustering</code> <code>Hadoop</code> <code>Spark</code></p>
 </li>
 </ul>
 </div>
-<hr />
 <hr />
 
 
@@ -1438,7 +1434,7 @@
     <span class="md-icon" title="Cập nhật lần cuối">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="7 tháng 7, 2026 01:52:39 UTC"><span class="timeago" datetime="2026-07-07T01:52:39+00:00" locale="vi"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="7 tháng 7, 2026 01:52:39 UTC">2026-07-07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="20 tháng 11, 2026 13:44:04 UTC"><span class="timeago" datetime="2026-11-20T13:44:04+00:00" locale="vi"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="20 tháng 11, 2026 13:44:04 UTC">2026-11-20</span>
   </span>
 
     
@@ -1483,6 +1479,58 @@
   
 
 
+  
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this note helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This note was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This note could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Glad this note was helpful.
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help improve this note by <a href="https://github.com/nthaihoc/open-notes-hub/issues/new?title=[Feedback]%20About%20Me&body=**Page:**%20/vi/about-me/%0A%0A**What%20could%20be%20improved%20(typo,%20math%20derivation,%20code%20example,%20etc.)?:**%0A" target="_blank" rel="noopener">opening an issue on GitHub</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 
                 
@@ -1504,6 +1552,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Chân trang" >
         
