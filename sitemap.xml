@@ -85,13 +85,6 @@
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/03-attention-mechanisms/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/iai-lab/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/"/>
-    </url>
-    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/knowledge-base/</loc>
         <lastmod>2026-11-20</lastmod>
         <changefreq>daily</changefreq>
@@ -195,13 +188,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/courses/large-language-models/03-attention-mechanisms/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/courses/large-language-models/03-attention-mechanisms/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/iai-lab/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/iai-lab/"/>
     </url>
     <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/</loc>
