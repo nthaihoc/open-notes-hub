@@ -1,6 +1,4 @@
-# =============================================================================
-# SITE CONFIGURATION
-# =============================================================================
+# site configuration
 site_name: OpenNotesHub
 site_description: >
   Kho tài liệu mở — Nơi hệ thống hóa và chia sẻ hành trình nghiên cứu AI
@@ -8,16 +6,12 @@ site_description: >
 site_author: Nguyễn Thái Học (Thai-Hoc Nguyen)
 site_url: https://nthaihoc.github.io/open-notes-hub
 
-# =============================================================================
-# REPOSITORY CONFIGURATION
-# =============================================================================
+# repo configuration
 repo_name: nthaihoc/open-notes-hub
 repo_url: https://github.com/nthaihoc/open-notes-hub
 edit_uri: edit/main/docs/
 
-# =============================================================================
-# THEME CONFIGURATION
-# =============================================================================
+# theme configuration
 theme:
   name: material
   logo: assets/images/logo.jpg
@@ -29,8 +23,8 @@ theme:
     
   palette:
     scheme: default
-    primary: orange
-    accent: red
+    primary: deep orange
+    accent: cyan
 
   features:
     # --- Content ---
@@ -71,9 +65,7 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
 
-# =============================================================================
-# PLUGINS
-# =============================================================================
+# plugins configuration
 plugins:
   - search
   - markdown-exec
@@ -108,9 +100,7 @@ plugins:
       branch: main
       token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
-# =============================================================================
-# MARKDOWN EXTENSIONS
-# =============================================================================
+# markdown extensions configuration
 markdown_extensions:
   # --- Standard Markdown ---
   - abbr
@@ -156,9 +146,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
-# =============================================================================
-# EXTRA ASSETS & CONFIGURATION
-# =============================================================================
+# extra configuration
 extra_css:
   - assets/stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
@@ -172,6 +160,20 @@ extra:
   analytics:
     provider: google
     property: G-VHD93VYSM7
+    feedback:
+          title: Was this note helpful?
+          ratings:
+            - icon: material/emoticon-happy-outline
+              name: This note was helpful
+              data: 1
+              note: >-
+                Thanks for your feedback! Glad this note was helpful.
+            - icon: material/emoticon-sad-outline
+              name: This note could be improved
+              data: 0
+              note: >-
+                Thanks for your feedback! Help improve this note by
+                <a href="https://github.com/nthaihoc/open-notes-hub/issues/new?title=[Feedback]%20{title}&body=**Page:**%20{url}%0A%0A**What%20could%20be%20improved%20(typo,%20math%20derivation,%20code%20example,%20etc.)?:**%0A" target="_blank" rel="noopener">opening an issue on GitHub</a>.
 
   generator: false
   alternate:
@@ -200,7 +202,7 @@ copyright: >
   ©️ 2025 by Thai-Hoc Nguyen.
   Built with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.
 
-# NAVIGATION
+# navigation configuration
 nav:
   - Home: index.md
   - Course Notes:
@@ -209,6 +211,7 @@ nav:
       - courses/applied-machine-learning/README.md
       - courses/applied-machine-learning/08-support-vector-machines.md
       - courses/applied-machine-learning/09-decision-trees.md
+
     - "Large Language Models":
       - courses/large-language-models/README.md
       - courses/large-language-models/03-attention-mechanisms.md

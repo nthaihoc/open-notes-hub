@@ -1,5 +1,12 @@
-# Tags
+---
+title: Tags and Topic Index
+hide:
+    - navigation
+url_img: "../assets/images/ods_stickers.jpg"
+---
 
-Đây là trang tổng hợp tất cả các thẻ (tags) được sử dụng trong hệ thống tài liệu.
+{% include 'includes/hero.html' %}
 
 [TAGS]
+
+---

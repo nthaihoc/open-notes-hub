@@ -89,7 +89,7 @@ p {
 }
 
 .md-footer__title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -214,6 +214,7 @@ p {
     max-width: 750px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
+    text-align: center;
 }
 
 .button-group {

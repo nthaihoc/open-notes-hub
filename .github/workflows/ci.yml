@@ -33,18 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material \
-              mkdocs-static-i18n \
-              mkdocs-macros-plugin \
-              mkdocs-git-revision-date-localized-plugin \
-              mkdocs-git-committers-plugin-2 \
-              markdown-exec \
-              mkdocs-bibtex \
-              pypandoc-binary \
-              numpy \
-              pandas \
-              matplotlib \
-              scikit-learn
+          pip install -r requirements.txt
 
       - name: Deploy MkDocs
         run: mkdocs gh-deploy --force

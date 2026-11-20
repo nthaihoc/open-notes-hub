@@ -1,4 +1,5 @@
 ---
+date: 2023-11-20
 title: "Support Vector Machines"
 icon: material/math-integral-box
 url_img: assets/images/aml_l08_banner.png
@@ -369,10 +370,16 @@ Sau khi đã nắm vững nền tảng toán học của bài toán tối ưu l�
 **Thiết lập môi trường & Nạp dữ liệu.** Đầu tiên, ta nạp các thư viện tính toán khoa học cốt lõi cùng các công cụ tiền xử lý, mô hình hóa và đánh giá từ `scikit-learn`:
 
 ```python linenums="1" exec="1" session="svm" source="material-block" result="text"
+import io  # markdown-exec: hide
+import base64  # markdown-exec: hide
+
 import numpy as np
 import pandas as pd
-import sklearn
+import matplotlib
+matplotlib.use("Agg")  # markdown-exec: hide
 import matplotlib.pyplot as plt
+
+import sklearn
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -460,10 +467,6 @@ Quan sát bảng đối chiếu $10$ mẫu đầu tiên từ `df_results`, mô h
 Cuối cùng, ta trực quan hóa kết quả phân loại của mô hình trên không gian đặc trưng đã chuẩn hóa:
 
 ```python exec="on" source="material-block" session="svm" html="1"
-import io  # markdown-exec: hide
-import base64  # markdown-exec: hide
-matplotlib.use("Agg")  # markdown-exec: hide
-
 def plot_predictions(X, y_predicted, class_names=None, xlabel="Petal length", ylabel="Petal width", title="SVM Classification Results on Iris Test Set"):
     styles = [
         ("#e41a1c", "o"),

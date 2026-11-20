@@ -1,105 +1,106 @@
 <div align="center">
   <h1>☘️ OpenNotesHub</h1>
-  <p><b>A Comprehensive Digital Garden for AI Research, Course Notes & Knowledge Base</b></p>
-  <p><i>Curated by <a href="https://nthaihoc.github.io/about-me"><b>Nguyễn Thái Học</b></a> — AI Engineer</i></p>
-  
+  <p><b>A Curated Digital Garden for AI Engineering, Course Notes & Technical Knowledge</b></p>
+  <p><i>Maintained by <a href="https://nthaihoc.github.io/about-me"><b>Nguyễn Thái Học</b></a> - AI Engineer</i></p>
+
   <p>
-    <a href="https://nthaihoc.github.io/open-notes-hub/"><img src="https://img.shields.io/badge/Live_Website-4A90E2?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"></a>
-    <a href="https://nthaihoc.github.io/about-me"><img src="https://img.shields.io/badge/Portfolio-8E44AD?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"></a>
-    <a href="mailto:thaihoc.ictu@gmail.com"><img src="https://img.shields.io/badge/Email-E74C3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi"><img src="https://img.shields.io/badge/Scholar-34A853?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Scholar"></a>
-    <a href="https://github.com/nthaihoc/open-notes-hub"><img src="https://img.shields.io/github/stars/nthaihoc/open-notes-hub?style=for-the-badge&color=F1C40F&logo=github&logoColor=black" alt="Stars"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22C55E?style=flat-square&labelColor=1F2937&logo=opensourceinitiative&logoColor=white" alt="License"></a>
+    <a href="https://github.com/nthaihoc/open-notes-hub/actions"><img src="https://img.shields.io/github/actions/workflow/status/nthaihoc/open-notes-hub/ci.yml?style=flat-square&label=build&labelColor=1F2937&logo=githubactions&logoColor=white" alt="Build"></a>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&labelColor=1F2937&logo=python&logoColor=white" alt="Python"></a>
+    <a href="https://squidfunk.github.io/mkdocs-material/"><img src="https://img.shields.io/badge/mkdocs--material-9.x-526CFE?style=flat-square&labelColor=1F2937&logo=materialformkdocs&logoColor=white" alt="MkDocs Material"></a>
+    <a href="https://github.com/nthaihoc/open-notes-hub/stargazers"><img src="https://img.shields.io/github/stars/nthaihoc/open-notes-hub?style=flat-square&labelColor=1F2937&color=FBBF24&logo=github&logoColor=white" alt="Stars"></a>
+  </p>
+
+  <p>
+    <a href="https://nthaihoc.github.io/open-notes-hub/"><img src="https://img.shields.io/badge/Live_Website-2563EB?style=flat-square&logo=google-chrome&logoColor=white" alt="Live Website"></a>
+    <a href="https://nthaihoc.github.io/about-me"><img src="https://img.shields.io/badge/Portfolio-7C3AED?style=flat-square&logo=aboutdotme&logoColor=white" alt="Portfolio"></a>
+    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi"><img src="https://img.shields.io/badge/Scholar-34A853?style=flat-square&logo=google-scholar&logoColor=white" alt="Google Scholar"></a>
+    <a href="mailto:thaihoc.ictu@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
   </p>
 </div>
 
-## 📖 Repository Overview
+## 📖 Overview
 
-**OpenNotesHub** is an open-source digital space where I systematize and share my learning and research journey in Artificial Intelligence (AI). It serves as a centralized hub for core lectures, practical research logs, and specialized technical knowledge.
+**OpenNotesHub** is an open-source digital garden where I systematize and document my continuous learning journey in Artificial Intelligence (AI). It serves as a centralized repository for structured lecture notes, mathematical foundations, and practical software engineering references.
 
-The goal of this repository is to build an open knowledge base that not only serves personal reference needs but also provides accessible materials for the community, especially beginners exploring Machine Learning, Deep Learning, and Computer Vision.
+Designed with clarity and accessibility in mind, this knowledge base supports both personal long-term reference and the broader AI community - particularly students and practitioners exploring **Machine Learning**, **Computer Vision**, **Large Language Models**, and **Backend Engineering**.
 
 ## 📂 Repository Structure
 
-The repository is strictly organized into major functional directories under `docs/`:
+The repository keeps CI/CD automation and site configuration at the root, while all documentation content lives under `docs/`:
 
-```mermaid
-graph LR
-  %% Define styles
-  classDef rootNode fill:#005571,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
-  classDef folderNode fill:#E1F5FE,stroke:#0288D1,stroke-width:2px,color:#01579B,font-weight:bold;
-  classDef fileNode fill:#F1F8E9,stroke:#689F38,stroke-width:1px,color:#33691E;
-
-  Root(("📚 docs/")):::rootNode
-
-  %% Level 1: Main Folders
-  Root --> Courses["📁 courses/"]:::folderNode
-  Root --> Research["📁 research/"]:::folderNode
-  Root --> KB["📁 knowledge-base/"]:::folderNode
-  Root --> IAILab["📁 iai-lab/"]:::folderNode
-
-  %% Level 2: Subfolders/Notes
-  Courses --> C1("Applied Machine Learning"):::fileNode
-  Courses --> C2("Computer Vision Foundations"):::fileNode
-  Courses --> C3("Large Language Models"):::fileNode
-
-  Research --> R1("Pronunciation Scoring"):::fileNode
-  Research --> R2("Drafts"):::fileNode
-
-  KB --> K1("AI In Action"):::fileNode
-  KB --> K2("FastAPI"):::fileNode
-  KB --> K3("MLOps"):::fileNode
-  
-  IAILab --> I1("Guidelines"):::fileNode
-  IAILab --> I2("Tracks"):::fileNode
+```text
+open-notes-hub/
+├── .github/workflows/       # CI/CD pipelines
+├── docs/
+│   ├── courses/             # Structured course notes
+│   │   ├── applied-ml/      # Applied Machine Learning
+│   │   ├── computer-vision/ # Computer Vision
+│   │   └── llms/            # Large Language Models
+│   └── knowledge-base/      # Practical engineering references
+│       └── fastapi/         # FastAPI guides
+├── mkdocs.yml
+├── requirements.txt
+├── LICENSE
+└── README.md
 ```
 
-## 🚀 Installation & Deployment
+## 🚀 Local Development & Installation
 
-This project is built using the **MkDocs** framework with the **Material for MkDocs** theme. To run this documentation website on your local machine, you need Python installed and follow these steps:
+This site is built with **[MkDocs](https://www.mkdocs.org/)** and the **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** theme. To preview or edit the documentation locally, ensure you have **Python 3.10+** installed and follow these steps:
 
 **Step 1: Clone the repository**
 ```bash
-$ git clone https://github.com/nthaihoc/open-notes-hub.git
+git clone https://github.com/nthaihoc/open-notes-hub.git
 cd open-notes-hub
 ```
 
-**Step 2: Install dependencies**
+**Step 2: Create a virtual environment and install dependencies**
 ```bash
-$ pip install mkdocs-material mkdocs-static-i18n
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-**Step 3: Start the development server**
+**Step 3: Start the local development server**
 ```bash
-$ mkdocs serve
+mkdocs serve
 ```
 
-Once the server starts, open your browser and navigate to `http://127.0.0.1:8000/open-notes-hub/` to view the website.
+Once the server is running, open your browser and visit `http://127.0.0.1:8000/` to preview the live site with hot-reload enabled.
 
+## 🤝 Contributing
 
-## 🤝 Contribution
+Contributions from the community are warmly welcomed! Whether you are fixing a typo, clarifying a mathematical derivation, adding code examples, or expanding an existing topic, every improvement helps make this resource better.
 
-Contributions are always welcome! Whether it's fixing a typo, adding new lecture notes, or improving the documentation structure, your help is highly appreciated. 
+### How to Contribute
+1. **Fork** the repository to your own GitHub account.
+2. **Clone** your fork locally and create a dedicated branch for your changes:
+   ```bash
+   git checkout -b docs/your-topic-name
+   ```
+3. **Make your edits** inside the `docs/` directory and verify how they render locally using `mkdocs serve`.
+4. **Commit** your changes with a clear, descriptive message (following [Conventional Commits](https://www.conventionalcommits.org/) is encouraged, e.g., `docs(cv): fix typo in convolution formula`).
+5. **Push** your branch to your fork and open a **Pull Request** against the `main` branch.
 
-To contribute, please follow these standard open-source steps:
-1. **Fork** this repository on GitHub.
-2. **Clone** your forked repository to your local machine.
-3. Create a **new branch** for your feature or bug fix (`git checkout -b feature/your-feature-name`).
-4. **Commit** your changes with descriptive messages.
-5. **Push** the branch to your GitHub fork.
-6. Submit a **Pull Request** to the `main` branch of this repository for review.
-
-If you encounter any bugs, broken links, or have suggestions for new content, please feel free to open an **Issue**.
+### Reporting Issues & Suggestions
+Found a broken link, rendering bug, or have a request for a new lecture topic? Please open a [GitHub Issue](https://github.com/nthaihoc/open-notes-hub/issues) with a brief description so we can discuss it.
 
 ## 👏 Acknowledgments
 
-A special thanks to the excellent open-source projects that power this documentation hub:
-- **[MkDocs](https://www.mkdocs.org/)**: The core static site generator.
-- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)**: The beautiful and highly customizable theme by squidfunk.
-- **[mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/)**: The multi-language support plugin by ultrabug.
+This project is made possible thanks to the incredible open-source tools and maintainers in the Python and documentation ecosystem:
+
+- **[MkDocs](https://www.mkdocs.org/)** — Fast, simple static site generator geared towards building project documentation.
+- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** — Modern, responsive, and feature-rich documentation framework by [@squidfunk](https://github.com/squidfunk).
+- **[mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/)** — Seamless multi-language documentation plugin by [@ultrabug](https://github.com/ultrabug).
+- **Open-Source Contributors** — Everyone who takes the time to read, share feedback, and submit pull requests.
 
 ## ⚖️ License
 
-This repository is distributed under the **MIT License**. You are completely free to use, copy, modify, and redistribute the source code and documentation in this project, provided that the original author is credited. Please see the `LICENSE` file (if available) for more details.
+This repository is licensed under the **[MIT License](LICENSE)**. You are free to use, copy, modify, and distribute the content and source code for personal or educational purposes, provided that proper attribution is given to the original author.
 
 ---
-*Developed by **Nguyễn Thái Học** - AI Engineer.*
+
+<div align="center">
+  <sub>Built with ❤️ by <a href="https://github.com/nthaihoc"><b>Nguyễn Thái Học</b></a> — AI Engineer</sub>
+</div>

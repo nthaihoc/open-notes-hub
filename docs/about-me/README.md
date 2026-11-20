@@ -1,5 +1,6 @@
 ---
 hide:
+- navigation
 ---
 
 <style>
@@ -10,7 +11,7 @@ hide:
     object-fit: cover; 
     display: block; 
     margin: 0 auto; 
-    border: 4px solid #e0e0e0;
+    border: 3px solid var(--md-primary-fg-color--light, #e0e0e0);
 }
 .pub-img {
     width: 100%;       
@@ -19,8 +20,8 @@ hide:
     object-position: center; 
     display: block;
     margin: 0 auto;
-    border: 4px solid #e0e0e0;
-    border-radius: 4px;
+    border: 2px solid var(--md-primary-fg-color--light, #e0e0e0);
+    border-radius: 10px;
 }
 
 .text-center {
@@ -38,47 +39,43 @@ hide:
 
 - <img src="../assets/images/nguyen_thai_hoc.jpeg" class="profile-img" alt="Nguyen Thai Hoc Avatar">
 
-    <p class="text-center"><b>🌴 AI Researcher | AI builder | AI trainer</b></p>
+    <p class="text-center"><b>🌴 AI Research Engineer</b></p>
 
     <p class="text-center icon-row">
         <a href="https://nthaihoc.github.io/about-me" title="Portfolio">:octicons-home-16:</a>
         <a href="mailto:thaihocit02@gmail.com" title="Email">:material-email:</a>
         <a href="https://github.com/nthaihoc" title="GitHub">:simple-github:</a>
         <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi" title="Google Scholar">:material-school:</a>
-        <a href="https://www.facebook.com/nthoc02" title="Facebook">:simple-facebook:</a>
         <a href="../assets/files/curriculum_vitae.pdf" title="CV">:material-text-box-edit:</a>
     </p>
 
 </div>
 
 ## Bio
----
-👋 Hello, I am **Nguyễn Thái Học** -- an **AI Engineer** at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), under the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn). My journey with AI began in 2020, but it was the challenging problems during my junior year of university that truly ignited my profound passion for this field.
 
-Starting as a **Computer Vision** Intern in August 2023 and subsequently taking on the official role of **AI Engineer**, I have transitioned from mastering theoretical foundations to directly developing practical AI solutions for Healthcare and Education. Currently, my research focus revolves around unlocking the potential of **Machine Learning** and **Computer Vision** to solve real-world challenges.
+👋 Hello! I am **Nguyễn Thái Học**, an **AI Research Engineer** with a core focus on *Computer Vision* and **Machine Learning**. My journey with AI began in 2020, and tackling complex, real-world problems during my junior year at the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn) turned that initial curiosity into a dedicated career path.
 
-Not stopping there, I am expanding my research boundaries into **Large Language Models (LLMs)** and **Vision-Language Models (VLMs)**, while aiming to optimize deployment pipelines through **MLOps/LLMOps**. To me, AI is not just about algorithms; it is a tool to create positive changes for society.
+Previously, I worked at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), where I progressed from a Computer Vision Intern (August 2023) to an official AI Engineer (August 2024), transitioning from theoretical foundations to building practical AI solutions for **Healthcare** and **Education**. Complementing this research background, I also completed a two-month intensive, hands-on stint at **VinSmart Future** through the **AI in Action** program, sharpening my ability to engineer and deliver production-ready AI systems in fast-paced environments.
+
+Not stopping at traditional vision and machine learning pipelines, I am actively expanding my knowledge into **Large Language Models (LLMs)** and **Vision-Language Models (VLMs)**, while exploring **MLOps/LLMOps** to optimize end-to-end model deployment. To me, AI is more than just algorithms it is a tool to create positive, lasting change for society.
 
 ## News
----
-- **[05/2026:]** Admitted as a student for the second cohort of the **AI IN ACTION** training program at VinUniversity.
 
-- **[08/2024:]** Official **AI Engineer** at [IAST](https://iast.ictu.edu.vn).
-
-- **[07/2024:]** Two papers accepted for publication and presentation at the ICTA conference in Phu Tho.
-
-- **[08/2023:]** **Computer Vision** Intern at [IAST](https://iast.ictu.edu.vn).
+- **[10/2026]** Graduated from the AI IN ACTION intensive training program at VinUniversity, including a two-month hands-on engineering stint at VinSmart Future.
+- **[09/2026]** One research paper accepted for publication at the **5th International Conference on Advances in Information and Communication Technology (ICTA 2026)** in Ha Long.
+- **[05/2026]** Admitted to the second cohort of the AI IN ACTION training program at **VinUniversity**.
+- **[08/2024]** Promoted to official AI Engineer at [IAST](https://iast.ictu.edu.vn).
+- **[07/2024]** Two research papers accepted for publication and oral presentation at the 3rd International Conference on Advances in Information and Communication Technology (ICTA 2024) in Phu Tho.
+- **[08/2023]** Joined [IAST](https://iast.ictu.edu.vn) as a Computer Vision Intern.
 
 ## Tech Stack & Skills
----
 
-*   **:material-code-tags: Programming Languages:** `Python` `C/C++` `LaTeX` `Markdown`.
-*   **:material-brain: ML/DL Frameworks & Architectures:** `PyTorch` `TensorFlow` `Scikit-Learn` `HuggingFace` `Langchain`.
-*   **:material-database: Data Processing & Big Data:** `Pandas` `NumPy` `Hadoop` `Spark` `PostgreSQL` `MongoDB`.
-*   **:material-toolbox: IDEs, Tools & Ops:** `VS Code` `Git/GitHub` `Docker` `FastAPI` `Linux` `MLflow` `Streamlit`. 
+- **:material-code-tags: Programming & Query Languages:** `Python` `C/C++` `SQL` `LaTeX`
+- **:material-eye-outline: Computer Vision & ML/DL:** `PyTorch` `TensorFlow` `OpenCV` `Scikit-Learn` `Hugging Face`
+- **:material-database-outline: Data Processing & Storage:** `NumPy` `Pandas` `Apache Spark` `Hadoop` `PostgreSQL` `MongoDB`
+- **:material-docker: Deployment & Engineering Tools:** `Docker` `FastAPI` `MLflow` `Streamlit` `Git / GitHub` `Linux`
 
 ## Publications
----
 
 <div class="grid cards" markdown>
 
@@ -88,7 +85,7 @@ Not stopping there, I am expanding my research boundaries into **Large Language 
 
     ---
 
-    **Van-Khanh Tran**, **<u>Thai-Hoc Nguyen</u>**, **Chi-Cuong Nghiem**, **Xuan-Lam Dinh**
+    Van-Khanh Tran, **<u>Thai-Hoc Nguyen</u>**, Chi-Cuong Nghiem, Xuan-Lam Dinh
 
     *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
 
@@ -100,14 +97,12 @@ Not stopping there, I am expanding my research boundaries into **Large Language 
 
     ---
 
-    **Xuan-Thi Tran**, **<u>Thai-Hoc Nguyen</u>**
+    Xuan-Thi Tran, **<u>Thai-Hoc Nguyen</u>**
 
     *International Conference on Advances in Information and Communication Technology (ICTA), 2024.*
 
     **Keywords:** `Customer Segmentation` `RFM` `K-means Clustering` `Hadoop` `Spark`
 
 </div>
-
----
 
 ---
