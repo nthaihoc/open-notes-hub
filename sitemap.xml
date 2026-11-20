@@ -113,34 +113,6 @@
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/rag/01-vanilla-rag/"/>
     </url>
     <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/report/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/report/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/report/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/"/>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/"/>
-    </url>
-    <url>
         <loc>https://nthaihoc.github.io/open-notes-hub/vi/</loc>
         <lastmod>2026-11-20</lastmod>
         <changefreq>daily</changefreq>
@@ -251,33 +223,5 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/knowledge-base/rag/01-vanilla-rag/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/knowledge-base/rag/01-vanilla-rag/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/report/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/report/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/report/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/00-proposed-method/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/00-proposed-method/"/>
-    </url>
-    <url>
-        <loc>https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="vi" href="https://nthaihoc.github.io/open-notes-hub/vi/research/cmla/skills/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://nthaihoc.github.io/open-notes-hub/research/cmla/skills/"/>
     </url>
 </urlset>
