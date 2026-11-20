@@ -194,8 +194,8 @@ cython_debug/
 .cursorindexingignore
 
 # hide folder path
-docs/research/pronscore
+docs/research/
 .DS_Store
 **/.DS_Store
 .base/
-iai-lab/
+docs/iai-lab/

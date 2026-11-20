@@ -172,6 +172,7 @@ extra:
   analytics:
     provider: google
     property: G-VHD93VYSM7
+
   generator: false
   alternate:
     - name: English
