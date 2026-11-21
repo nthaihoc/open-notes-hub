@@ -1,6 +1,5 @@
 ---
 hide:
-    - toc
     - navigation
     - feedback
 url_img: "assets/images/ods_stickers.jpg"

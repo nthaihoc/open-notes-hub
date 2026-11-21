@@ -1,12 +1,12 @@
 <div align="center">
   <h1>☘️ OpenNotesHub</h1>
   <p><b>A Curated Digital Garden for AI Engineering, Course Notes & Technical Knowledge</b></p>
-  <p><i>Maintained by <a href="https://nthaihoc.github.io/about-me"><b>Nguyễn Thái Học</b></a> - AI Engineer</i></p>
+  <p><i>Maintained by <a href="https://nthaihoc.github.io/about-me"><b>Thai-Hoc Nguyen</b></a> - AI Engineer</i></p>
 
   <p>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22C55E?style=flat-square&labelColor=1F2937&logo=opensourceinitiative&logoColor=white" alt="License"></a>
     <a href="https://github.com/nthaihoc/open-notes-hub/actions"><img src="https://img.shields.io/github/actions/workflow/status/nthaihoc/open-notes-hub/ci.yml?style=flat-square&label=build&labelColor=1F2937&logo=githubactions&logoColor=white" alt="Build"></a>
-    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&labelColor=1F2937&logo=python&logoColor=white" alt="Python"></a>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.12%2B-3776AB?style=flat-square&labelColor=1F2937&logo=python&logoColor=white" alt="Python"></a>
     <a href="https://squidfunk.github.io/mkdocs-material/"><img src="https://img.shields.io/badge/mkdocs--material-9.x-526CFE?style=flat-square&labelColor=1F2937&logo=materialformkdocs&logoColor=white" alt="MkDocs Material"></a>
     <a href="https://github.com/nthaihoc/open-notes-hub/stargazers"><img src="https://img.shields.io/github/stars/nthaihoc/open-notes-hub?style=flat-square&labelColor=1F2937&color=FBBF24&logo=github&logoColor=white" alt="Stars"></a>
   </p>
@@ -98,8 +98,6 @@ This project is made possible thanks to the incredible open-source tools and mai
 ## ⚖️ License
 
 This repository is licensed under the **[MIT License](LICENSE)**. You are free to use, copy, modify, and distribute the content and source code for personal or educational purposes, provided that proper attribution is given to the original author.
-
----
 
 <div align="center">
   <sub>Built with ❤️ by <a href="https://github.com/nthaihoc"><b>Nguyễn Thái Học</b></a> — AI Engineer</sub>

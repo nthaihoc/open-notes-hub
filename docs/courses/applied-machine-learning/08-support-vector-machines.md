@@ -466,7 +466,7 @@ Quan sát bảng đối chiếu $10$ mẫu đầu tiên từ `df_results`, mô h
 
 Cuối cùng, ta trực quan hóa kết quả phân loại của mô hình trên không gian đặc trưng đã chuẩn hóa:
 
-```python exec="on" source="material-block" session="svm" html="1"
+```python exec="on" source="material-block" session="svm" html="1" linenums="1"
 def plot_predictions(X, y_predicted, class_names=None, xlabel="Petal length", ylabel="Petal width", title="SVM Classification Results on Iris Test Set"):
     styles = [
         ("#e41a1c", "o"),
@@ -527,7 +527,7 @@ print(f"RBF SVM accuracy on XOR: {svm_rbf_xor.score(X_xor, y_xor):.2%}")
 
 Kết quả từ phương thức `score` cho thấy mô hình tuyến tính chỉ đạt độ chính xác $63.00\%$, trong khi chỉ cần chuyển sang `kernel="rbf"`, SVM ánh xạ ngầm dữ liệu lên không gian vô hạn chiều và phân loại chính xác tới **$91.00\%$** mẫu dữ liệu XOR:
 
-```python exec="on" source="material-block" session="svm" html="1"
+```python exec="on" source="material-block" session="svm" html="1" linenums="1"
 plot_predictions(
     X_xor,
     svm_linear_xor.predict(X_xor),
