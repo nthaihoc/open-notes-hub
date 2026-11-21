@@ -1,78 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+/* ==========================================================================
+   1. GLOBAL LAYOUT & GRID
+   Mở rộng khung chứa nội dung chính giúp Grid Cards và Bảng biểu thoáng hơn
+   ========================================================================== */
+/* .md-grid {
+  max-width: 1280px;
+} */
 
-:root
-{
-  --md-text-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --md-code-font: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
-  --primary-color: #1a56db;       
-  --text-heading: #1e293b;       
-  --bg-code: #f8fafc;            
-  --border-light: #e2e8f0;      
-  --radius-md: 12px;
-  
-  --code-inline-bg: #f3f4f6;      
-  --code-inline-text: #db2777;    
-  --code-block-bg: #f6f8fa;       
-  --code-block-text: #24292f;     
-  --code-border: #d0d7de;         
-}
+/* ==========================================================================
+   2. TYPOGRAPHY & TEXT FORMATTING
+   Kế thừa font-size (0.8rem ~ 16px) và line-height (1.6) chuẩn của Material
+   ========================================================================== */
 
-p {
+/* Căn đều hai lề cho văn bản chính, loại trừ văn bản bên trong Grid Cards */
+.md-typeset p {
   text-align: justify;
   text-justify: inter-word;
-  line-height: 1.6;
 }
 
-.md-typeset .admonition {
-  font-size: 15px;
-}
-
-.md-grid {
-  max-width: 1280px;
-}
-
-.md-typeset {
-  line-height: 1.6;
-  font-size: 16px;
-}
-
+/* Tiêu đề chính tự động tương thích cả Light Mode và Dark Mode */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3 {
-  color: black;
-  font-weight: bold;
+  color: var(--md-default-fg-color);
+  font-weight: 700;
 }
 
 .md-typeset h1 {
   margin-bottom: -0.5em;
 }
 
+/* Liên kết nội dung: màu mặc định theo primary (deep orange), hover theo accent (cyan) */
 .md-typeset a {
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--md-typeset-a-color);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .md-typeset a:hover {
-  border-color: var(--primary-color); 
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
 }
 
+/* Dấu chấm đầu dòng danh sách đồng bộ theo màu chủ đạo */
+.md-typeset ul > li::marker {
+  color: var(--md-primary-fg-color);
+}
+
+/* Đường kẻ ngang phân cách (Horizontal Rule) dạng dải màu mờ hai đầu */
+.md-typeset hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--md-primary-fg-color),
+    transparent
+  );
+  margin: 0;
+}
+
+/* Tiêu đề điều hướng chân trang (Footer) */
+.md-footer__title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   3. MARKDOWN EXTENSIONS (Admonitions, Mark, Critic / Caret)
+   Tùy chỉnh hiển thị cho các khối ghi chú và cú pháp đánh dấu ==...==, ^^...^^
+   ========================================================================== */
 .md-typeset .admonition {
   font-size: 15px;
   border-radius: 6px;
   border-left-width: 4px;
 }
 
+/* Highlight với cú pháp ==text== */
 .md-typeset mark {
   color: #15803d;
-  background-color: #f0fdf4; 
+  background-color: #f0fdf4;
   padding: 0.12rem 0.25rem;
   border-radius: 4px;
 }
 
+/* Insert / Badge với cú pháp ^^text^^ */
 .md-typeset ins {
   text-decoration: none;
   font-style: normal;
@@ -84,164 +97,155 @@ p {
 }
 
 .md-typeset ins.critic {
-  color: #6b21a8;             
-  background-color: #faf5ff; 
+  color: #6b21a8;
+  background-color: #faf5ff;
 }
 
-.md-footer__title {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.md-typeset hr {
-  border: 0; 
-  height: 1px; 
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #0033a0, rgba(0, 0, 0, 0));
-  margin: 0em 0; 
-}
-
-.md-typeset ul,
-.md-typeset ol {
-  line-height: 1.6;
-}
-
-.hero {
-    display: block;
-    width: auto;      
-    height: auto;    
-    max-width: 100%;  
-    border-radius: 15px;
-    box-shadow:  0 4px 12px rgba(0,0,0,0.15);
-    margin-bottom: 1.5rem;
-}
-
-.banner {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;  
-    border-radius: 15px;
-    box-shadow:  0 4px 12px rgba(0,0,0,0.15);
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-}
-
+/* ==========================================================================
+   4. TABLES
+   Định dạng bảng dữ liệu chuẩn (loại trừ bảng đánh số dòng của khối code)
+   ========================================================================== */
 .md-typeset table:not([class]) {
-    width: 100%;
-    display: table;
-    border-collapse: collapse;
-    margin: 0;
-    font-size: 0.95em;
-    border: 1px solid #eee; 
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 0.95em;
+  border: 1px solid var(--md-default-fg-color--lightest);
 }
 
 .md-typeset table:not([class]) th {
-    padding: 15px;
-    background-color: #fff;
-    color: #0033a0; 
-    font-weight: bold;
-    border-bottom: 2px solid #eee;
+  padding: 15px;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-typeset-a-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
 }
 
 .md-typeset table:not([class]) td {
-    padding: 12px 15px;
-    color: #555;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.2s ease-in-out; 
+  padding: 12px 15px;
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  transition: background-color 0.2s ease-in-out;
 }
 
 .md-typeset table:not([class]) tr:nth-child(even) td {
-    background-color: #f8f9fa; 
+  background-color: var(--md-code-bg-color);
 }
 
 .md-typeset table:not([class]) tr:hover td {
-    background-color: #e9ecef;
+  background-color: var(--md-default-fg-color--lightest);
 }
 
+/* ==========================================================================
+   5. ACADEMIC FIGURES & SUBFIGURES
+   Bố cục hiển thị hình ảnh nhiều cột kèm chú thích kiểu LaTeX
+   ========================================================================== */
 .figure-environment {
-    margin: 1rem auto;
-    max-width: 100%;
+  margin: 1rem auto;
+  max-width: 100%;
 }
-    
+
 .subfigure-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    gap: 20px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
-    
+
 .subfigure {
-    flex: 1 1 45%; 
-    margin: 0; 
-    text-align: center;
+  flex: 1 1 45%;
+  margin: 0;
+  text-align: center;
 }
-    
+
 .subfigure img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
 }
-    
+
 .sub-caption {
-    margin-top: 10px;
-    font-size: 0.9em;
-    font-style: italic;
-    color: #555;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
 }
-    
+
 .main-caption {
-    text-align: center;
-    font-weight: italic;
-    margin-top: -15px; 
-    color: #222;
-    padding-top: 0;
+  text-align: center;
+  font-style: italic;
+  margin-top: -15px;
+  padding-top: 0;
+  color: var(--md-default-fg-color);
+}
+
+/* ==========================================================================
+   6. LANDING PAGE / PORTFOLIO COMPONENTS
+   Các thành phần giao diện dành riêng cho trang chủ (Hero, Banner, Stats)
+   ========================================================================== */
+.hero,
+.banner {
+  display: block;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.hero {
+  width: auto;
+  height: auto;
+}
+
+.banner {
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-title {
-    font-size: 3.5rem !important;
-    font-weight: 900;
-    background: linear-gradient(90deg, #007cf0, #00dfd8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-}
-
-.hero-slogan {
-    font-size: 1.15rem;
-    color: var(--md-default-fg-color--light);
-    max-width: 750px;
-    margin: 0 auto 2rem auto;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.button-group {
-    display: flex;
-    justify-content: flex-start; 
-    max-width: 750px;
-    margin: 0 0 3rem 0; 
+  font-size: 3.5rem !important;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-title a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-slogan {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 750px;
+  margin: 0 0 3rem 0;
 }
 
 .stats-num {
-    font-size: 2.2rem; 
-    font-weight: 900;
-    display: block;
-    text-align: center;
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
 }
 
 .stats-text {
-    text-align: center;
-    color: var(--md-default-fg-color--light);
-    margin: 0;
-}
-
-.md-typeset ul > li::marker {
-    color: #db2777;
+  margin: 0;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
 }
