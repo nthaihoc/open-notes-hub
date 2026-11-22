@@ -1,23 +1,18 @@
-/* ==========================================================================
-   1. GLOBAL LAYOUT & GRID
-   Mở rộng khung chứa nội dung chính giúp Grid Cards và Bảng biểu thoáng hơn
-   ========================================================================== */
-/* .md-grid {
-  max-width: 1280px;
-} */
+/* global and layout grids settings */
 
-/* ==========================================================================
-   2. TYPOGRAPHY & TEXT FORMATTING
-   Kế thừa font-size (0.8rem ~ 16px) và line-height (1.6) chuẩn của Material
-   ========================================================================== */
-
-/* Căn đều hai lề cho văn bản chính, loại trừ văn bản bên trong Grid Cards */
-.md-typeset p {
-  text-align: justify;
-  text-justify: inter-word;
+.md-main__inner:has(.md-sidebar--primary[hidden]):has(.md-sidebar--secondary[hidden]) .md-content {
+  width: 100%;
+  max-width: 736px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Tiêu đề chính tự động tương thích cả Light Mode và Dark Mode */
+/* heading setting and paragraph formatting */
+
+.md-typeset p {
+  text-align: left;
+}
+
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3 {
@@ -25,11 +20,16 @@
   font-weight: 700;
 }
 
-.md-typeset h1 {
-  margin-bottom: -0.5em;
+.md-typeset .md-content__button {
+  margin-bottom: 0.5rem;
 }
 
-/* Liên kết nội dung: màu mặc định theo primary (deep orange), hover theo accent (cyan) */
+.md-typeset h1 {
+  clear: both;
+}
+
+/* link settings, footnote, items and hover effects for links in the markdown */
+
 .md-typeset a {
   font-weight: 600;
   color: var(--md-typeset-a-color);
@@ -43,12 +43,11 @@
   border-color: var(--md-accent-fg-color);
 }
 
-/* Dấu chấm đầu dòng danh sách đồng bộ theo màu chủ đạo */
+
 .md-typeset ul > li::marker {
   color: var(--md-primary-fg-color);
 }
 
-/* Đường kẻ ngang phân cách (Horizontal Rule) dạng dải màu mờ hai đầu */
 .md-typeset hr {
   border: 0;
   height: 1px;
@@ -61,23 +60,19 @@
   margin: 0;
 }
 
-/* Tiêu đề điều hướng chân trang (Footer) */
 .md-footer__title {
   font-size: 16px;
   font-weight: 500;
 }
 
-/* ==========================================================================
-   3. MARKDOWN EXTENSIONS (Admonitions, Mark, Critic / Caret)
-   Tùy chỉnh hiển thị cho các khối ghi chú và cú pháp đánh dấu ==...==, ^^...^^
-   ========================================================================== */
+/* markdown settings for admonitions, highlights, and badges */
+
 .md-typeset .admonition {
   font-size: 15px;
   border-radius: 6px;
   border-left-width: 4px;
 }
 
-/* Highlight với cú pháp ==text== */
 .md-typeset mark {
   color: #15803d;
   background-color: #f0fdf4;
@@ -85,7 +80,6 @@
   border-radius: 4px;
 }
 
-/* Insert / Badge với cú pháp ^^text^^ */
 .md-typeset ins {
   text-decoration: none;
   font-style: normal;
@@ -101,10 +95,8 @@
   background-color: #faf5ff;
 }
 
-/* ==========================================================================
-   4. TABLES
-   Định dạng bảng dữ liệu chuẩn (loại trừ bảng đánh số dòng của khối code)
-   ========================================================================== */
+/* table settings for markdown tables without any class attribute, including width, padding, colors, and hover effects */
+
 .md-typeset table:not([class]) {
   width: 100%;
   display: table;
@@ -137,10 +129,8 @@
   background-color: var(--md-default-fg-color--lightest);
 }
 
-/* ==========================================================================
-   5. ACADEMIC FIGURES & SUBFIGURES
-   Bố cục hiển thị hình ảnh nhiều cột kèm chú thích kiểu LaTeX
-   ========================================================================== */
+/* figure styles */
+
 .figure-environment {
   margin: 1rem auto;
   max-width: 100%;
@@ -181,34 +171,22 @@
   color: var(--md-default-fg-color);
 }
 
-/* ==========================================================================
-   6. LANDING PAGE / PORTFOLIO COMPONENTS
-   Các thành phần giao diện dành riêng cho trang chủ (Hero, Banner, Stats)
-   ========================================================================== */
-.hero,
-.banner {
+/* hero, banner settings for the homepage and other pages with hero or banner sections, including layout, typography, and spacing */
+
+.hero {
   display: block;
+  clear: both;
   max-width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin-bottom: 1.5rem;
+  margin: 1rem auto 1.5rem auto;
 }
 
-.hero {
-  width: auto;
-  height: auto;
-}
-
-.banner {
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-title {
-  font-size: 3.5rem !important;
+.md-typeset .hero-title {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
   font-weight: 900;
   line-height: 1.2;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   background: linear-gradient(90deg, #007cf0, #00dfd8);
   -webkit-background-clip: text;
@@ -216,30 +194,29 @@
   -webkit-text-fill-color: transparent;
 }
 
-.hero-title a {
+.md-typeset .hero-title a {
   color: inherit;
   text-decoration: none;
+  border-bottom: none;
 }
 
-.hero-slogan {
-  font-size: 1.15rem;
+.md-typeset .hero-slogan {
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--md-default-fg-color--light);
-  max-width: 750px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1.5rem auto;
   text-align: center;
 }
 
 .button-group {
   display: flex;
   justify-content: flex-start;
-  max-width: 750px;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2.5rem 0;
 }
 
 .stats-num {
   display: block;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 900;
   text-align: center;
 }
@@ -248,4 +225,37 @@
   margin: 0;
   text-align: center;
   color: var(--md-default-fg-color--light);
+}
+
+.page-banner {
+  clear: both;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  margin: 1rem auto 1.25rem auto;
+}
+
+.md-typeset .page-banner__title {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.page-banner__quote {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
