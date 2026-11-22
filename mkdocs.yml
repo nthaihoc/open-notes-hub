@@ -92,7 +92,7 @@ plugins:
           name: Tiếng Việt
           build: true
           
-  --- Disabled Plugins (for local testing/speed) ---
+  # --- Disabled Plugins (for local testing/speed) ---
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
