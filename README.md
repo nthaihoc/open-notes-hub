@@ -1,8 +1,6 @@
 <div align="center">
   <h1>☘️ OpenNotesHub</h1>
   <p><b>A Curated Digital Garden for AI Engineering, Course Notes & Technical Knowledge</b></p>
-  <p><i>Maintained by <a href="https://nthaihoc.github.io/about-me"><b>Thai-Hoc Nguyen</b></a> - AI Engineer</i></p>
-
   <p>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22C55E?style=flat-square&labelColor=1F2937&logo=opensourceinitiative&logoColor=white" alt="License"></a>
     <a href="https://github.com/nthaihoc/open-notes-hub/actions"><img src="https://img.shields.io/github/actions/workflow/status/nthaihoc/open-notes-hub/ci.yml?style=flat-square&label=build&labelColor=1F2937&logo=githubactions&logoColor=white" alt="Build"></a>
@@ -100,5 +98,5 @@ This project is made possible thanks to the incredible open-source tools and mai
 This repository is licensed under the **[MIT License](LICENSE)**. You are free to use, copy, modify, and distribute the content and source code for personal or educational purposes, provided that proper attribution is given to the original author.
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/nthaihoc"><b>Nguyễn Thái Học</b></a> — AI Engineer</sub>
+  <sub>Built with ❤️ by <a href="https://github.com/nthaihoc"><b>Thai Hoc Nguyen</b></sub>
 </div>
