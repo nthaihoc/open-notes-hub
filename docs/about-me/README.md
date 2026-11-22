@@ -1,53 +1,76 @@
 ---
+title: About Me
 hide:
-- navigation
+  - navigation
+  - toc
+  - feedback
 ---
 
 <style>
+.md-typeset > h1:first-of-type {
+    display: none;
+}
+
+.profile-card {
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 12px;
+    background-color: var(--md-default-bg-color);
+    text-align: center;
+}
+
 .profile-img {
-    border-radius: 50%; 
-    width: 200px; 
-    height: 200px; 
-    object-fit: cover; 
-    display: block; 
-    margin: 0 auto; 
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem auto;
     border: 3px solid var(--md-primary-fg-color--light, #e0e0e0);
 }
+
 .pub-img {
-    width: 100%;       
-    height: 250px;     
-    object-fit: cover; 
-    object-position: center; 
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
     display: block;
     margin: 0 auto;
     border: 2px solid var(--md-primary-fg-color--light, #e0e0e0);
     border-radius: 10px;
 }
 
-.text-center {
+.md-typeset .text-center {
     text-align: center;
 }
-.icon-row a {
+
+.icon-row {
+    margin-bottom: 0;
+}
+
+.md-typeset .icon-row a {
     margin: 0 8px;
-    font-size: 1.2em;
+    font-size: 1.25em;
     text-decoration: none;
+    border-bottom: none;
 }
 </style>
 
-#
-<div class="grid cards" markdown>
+<div class="profile-card" markdown>
 
-- <img src="../assets/images/nguyen_thai_hoc.jpeg" class="profile-img" alt="Nguyen Thai Hoc Avatar">
+<img src="../assets/images/nguyen_thai_hoc.jpeg" class="profile-img" alt="Nguyen Thai Hoc Avatar">
 
-    <p class="text-center"><b>🌴 AI Research Engineer</b></p>
+<p class="text-center"><b>🌴 AI Research Engineer</b></p>
 
-    <p class="text-center icon-row">
-        <a href="https://nthaihoc.github.io/about-me" title="Portfolio">:octicons-home-16:</a>
-        <a href="mailto:thaihocit02@gmail.com" title="Email">:material-email:</a>
-        <a href="https://github.com/nthaihoc" title="GitHub">:simple-github:</a>
-        <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi" title="Google Scholar">:material-school:</a>
-        <a href="../assets/files/curriculum_vitae.pdf" title="CV">:material-text-box-edit:</a>
-    </p>
+<p class="text-center icon-row" markdown="span">
+    <a href="https://nthaihoc.github.io/about-me" title="Portfolio">:octicons-home-16:</a>
+    <a href="mailto:thaihocit02@gmail.com" title="Email">:material-email:</a>
+    <a href="https://github.com/nthaihoc" title="GitHub">:simple-github:</a>
+    <a href="https://scholar.google.com/citations?user=SvS3rssAAAAJ&hl=vi" title="Google Scholar">:material-school:</a>
+    <a href="../assets/files/curriculum_vitae.pdf" title="CV">:material-text-box-edit:</a>
+</p>
 
 </div>
 

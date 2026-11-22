@@ -1,26 +1,28 @@
 ---
 title: Course Notes
-url_img: "../assets/images/ods_stickers.jpg"
+hide:
+  - toc
+  - navigation
+url_img: "assets/images/ods_stickers.jpg"
 quote:
   - "Live as if you were to die tomorrow. Learn as if you were to live forever."
-  - "The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice." 
 ---
 
-{% include 'includes/hero.html' %}
+{% include 'includes/banner.html' %}
 
-<p style="text-align: center; margin-bottom: 8px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; width: 100%; margin-bottom: 8px;">
   <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://numpy.org"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a>
   <a href="https://pandas.pydata.org"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a>
   <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"></a>
-</p>
+</div>
 
-<p style="text-align: center; margin-top: 0;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; width: 100%; margin-bottom: 24px;">
   <a href="https://pytorch.org"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://huggingface.co"><img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"></a>
   <a href="https://mlflow.org"><img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow"></a>
   <a href="https://colab.research.google.com"><img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Colab"></a>
-</p>
+</div>
 
 ## I. Introduction
 

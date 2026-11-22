@@ -1,7 +1,8 @@
 ---
 hide:
-    - navigation
-    - feedback
+  - navigation
+  - feedback
+  - toc
 url_img: "assets/images/ods_stickers.jpg"
 ---
 
@@ -9,9 +10,9 @@ url_img: "assets/images/ods_stickers.jpg"
 
 <div style="text-align: center; width: 100%;">
 
-  <div class="hero-title"><a href="https://nthaihoc.github.io/open-notes-hub">OpenNotesHub</a></div>
+  <h1 class="hero-title"><a href="https://nthaihoc.github.io/open-notes-hub">OpenNotesHub</a></h1>
 
-  <p class="hero-slogan" style="text-align: center;">
+  <p class="hero-slogan">
     A curated digital garden for AI Engineering, Course Notes &amp; Technical Knowledge.
   </p>
 
@@ -31,11 +32,11 @@ url_img: "assets/images/ods_stickers.jpg"
     <a href="https://www.mkdocs.org/"><img src="https://img.shields.io/badge/MkDocs-526CFE?style=for-the-badge&logo=materialformkdocs&logoColor=white" alt="MkDocs"></a>
   </div>
 
-  <p style="max-width: 800px; margin: 30px auto; font-size: 1.05em; line-height: 1.6; text-align: justify;">
-    <b>OpenNotesHub</b> is an open-source digital garden where I systematize and document my continuous learning journey in Artificial Intelligence (AI). It serves as a centralized repository for structured lecture notes, mathematical foundations, and practical software engineering references. Whether you are exploring <b>Machine Learning</b>, diving into <b>Computer Vision</b>, or building <b>LLM applications</b>, you will find valuable resources to support your own journey.
-  </p>
-
 </div>
+
+<p style="margin: 1.5rem 0 2rem 0; text-align: justify">
+  <b>OpenNotesHub</b> is an open-source digital garden where I systematize and document my continuous learning journey in Artificial Intelligence (AI). It serves as a centralized repository for structured lecture notes, mathematical foundations, and practical software engineering references. Whether you are exploring <b>Machine Learning</b>, diving into <b>Computer Vision</b>, or building <b>LLM applications</b>, you will find valuable resources to support your own journey.
+</p>
 
 <div class="grid cards" markdown>
 
@@ -56,7 +57,7 @@ url_img: "assets/images/ods_stickers.jpg"
     ---
     
     <p class="stats-text">`Curated Resources`</p>
-    
+
 </div>
 
 ## Pillars of Knowledge
@@ -91,7 +92,7 @@ url_img: "assets/images/ods_stickers.jpg"
     
     *Core Tools & Resources. A curated repository of valuable materials, closely tracking core technology trends and the evolution of Artificial Intelligence.*
     
-    [View Resources :octicons-arrow-right-24:](https://){ .md-button }
+    [View Resources :octicons-arrow-right-24:](resources/README.md){ .md-button }
 
 </div>
 
@@ -102,8 +103,7 @@ Contributions from the community are warmly welcomed! Whether you are fixing a t
 ## Let's Keep in Touch
 
 :fontawesome-brands-github: Follow open-source projects on [$@$Github](https://github.com/nthaihoc/open-notes-hub) <br>
-:material-web: Follow my personal work on my [$@$Portfolio](https://nthaihoc/open-notes-hub/about-me)
-<br>
+:material-web: Follow my personal work on my [$@$Portfolio](https://nthaihoc.github.io/open-notes-hub/about-me) <br>
 :material-email-outline: Drop me an [$@$Email](mailto:nthoc.ictu@gmail.com)
 
 ---

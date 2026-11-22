@@ -1,16 +1,15 @@
-<div style="text-align: center;">
+<div class="page-banner">
     {% if page.meta.url_img %}
     <img class="banner"
         src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"
         {% if page.meta.width_img %}width="{{ page.meta.width_img }}"{% endif %}
         {% if page.meta.height_img %}height="{{ page.meta.height_img }}"{% endif %}
-        style="max-width: 100%;"
         alt="{{ page.meta.title | default('Banner image') }}">
     {% endif %}
 
     {% if page.meta.title %}
-    {% set accent_color = page.meta.color | default('var(--md-default-fg-color)') %}
-    <h1 style="margin-bottom: 10px;">
+    {% set accent_color = page.meta.color | default('var(--md-primary-fg-color)') %}
+    <h1 class="page-banner__title">
         {%- for word in page.meta.title.split() -%}
             {%- if word.startswith('(') and word.endswith(')') -%}
                 <span style="color: {{ accent_color }};">{{ word }}</span>
@@ -23,7 +22,7 @@
     {% endif %}
 
     {% if page.meta.quote %}
-    <div style="font-style: italic; color: var(--md-default-fg-color--light); margin-bottom: 25px; line-height: 1.6;">
+    <div class="page-banner__quote">
         {% if page.meta.quote is string %}
             {{ page.meta.quote }}
         {% else %}
