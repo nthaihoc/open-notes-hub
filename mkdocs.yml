@@ -1,25 +1,30 @@
-# site configuration
+# [SITE] Project identity, SEO metadata, and canonical deployment URL
 site_name: OpenNotesHub
 site_description: >
   Kho tài liệu mở — Nơi hệ thống hóa và chia sẻ hành trình nghiên cứu AI
   của Nguyễn Thái Học: Course Notes, Research Logs, Knowledge Base.
 site_author: Nguyễn Thái Học (Thai-Hoc Nguyen)
 site_url: https://nthaihoc.github.io/open-notes-hub/
+copyright: >
+  Built with ❤️ by <a href="https://github.com/nthaihoc">Thai Hoc Nguyen</a> <br>
+  Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
 
-# repo configuration
+# [REPOSITORY] GitHub integration for repo badge and direct page editing
 repo_name: nthaihoc/open-notes-hub
 repo_url: https://github.com/nthaihoc/open-notes-hub
 edit_uri: edit/main/docs/
 
-# theme configuration
+# [THEME] Material for MkDocs appearance, typography, palette, and UI flags
 theme:
   name: material
   favicon: assets/images/favicon.svg
 
+  # Typography (Google Fonts)
   font:
     text: Inter
     code: Geist Mono
-    
+
+  # Color schemes (light & dark mode toggle)
   palette:
     - scheme: default
       primary: black
@@ -35,31 +40,37 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+  # UI & UX behavior flags (sorted alphabetically within groups)
   features:
-    # --- Content ---
-    - content.code.annotate 
+    # Content & code actions
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
     - content.code.copy
     - content.code.select
     - content.footnote.tooltips
-    - content.action.edit
-    - content.action.view
-    # --- Navigation ---
-    - navigation.tabs
-    # - navigation.instant
-    # - navigation.instant.preview
-    # - navigation.instant.prefetch
-    # - navigation.instant.progress
-    - navigation.indexes
-    - navigation.sections
-    - navigation.path
-    - navigation.top
-    - navigation.footer
-    - navigation.tracking
-    # --- Table of Contents & Search ---
-    - toc.follow
-    - search.suggest
-    - search.highlight
 
+    # Navigation & layout
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.preview
+    # - navigation.instant.progress
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+
+    # Search
+    - search.highlight
+    - search.suggest
+
+    # Table of contents
+    - toc.follow
+
+  # Custom Material & Octicons icon overrides
   icon:
     logo: material/sprout
     repo: material/source-branch
@@ -69,32 +80,78 @@ theme:
     next: material/chevron-right
 
     admonition:
-      note: octicons/tag-16
       abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
       bug: octicons/bug-16
+      danger: octicons/zap-16
       example: octicons/beaker-16
+      failure: octicons/x-circle-16
+      info: octicons/info-16
+      note: octicons/tag-16
+      question: octicons/question-16
       quote: octicons/quote-16
+      success: octicons/check-16
+      tip: octicons/squirrel-16
+      warning: octicons/alert-16
 
-# plugins configuration
+# [MARKDOWN] Python-Markdown & PyMdown extensions (sorted alphabetically)
+markdown_extensions:
+  # Standard Python-Markdown
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - toc:
+      title: Table of Contents
+
+  # PyMdown UI, math, syntax highlighting & diagrams
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.blocks.caption
+  - pymdownx.blocks.definition
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# [PLUGINS] Build pipeline extensions (execution order preserved)
 plugins:
+  # Search & content macros
   - search
   - markdown-exec
-  - macros
+  - macros  # Must precede i18n to resolve link variables
   - bibtex:
       bib_file: "docs/assets/files/references.bib"
       csl_file: "docs/assets/files/ieee.csl"
       bib_by_default: false
 
+  # Localization & taxonomy
   - i18n:
-      docs_structure: suffix 
-      fallback_to_default: true 
+      docs_structure: suffix
+      fallback_to_default: true
       languages:
         - locale: en
           name: English
@@ -105,65 +162,19 @@ plugins:
           build: true
   - material/tags
 
-  # --- Disabled Plugins (for local testing/speed) ---
+  # Git metadata (active in CI environment for fast local builds)
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
       enable_git_follow: !ENV [CI, false]
   - git-committers:
-      enabled: !ENV [CI, false] 
+      enabled: !ENV [CI, false]
       repository: nthaihoc/open-notes-hub
       branch: main
       token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, ""]
 
-# markdown extensions configuration
-markdown_extensions:
-  # --- Standard Markdown ---
-  - abbr
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
-  - meta
-  - tables
-  - toc:
-      title: Table of Contents
-      
-  # --- PyMdown Extensions (UI & Formatting) ---
-  - admonition
-  - pymdownx.blocks.caption
-  - pymdownx.blocks.definition
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark 
-  - pymdownx.smartsymbols
-  - pymdownx.tilde
-  
-  # --- Features & Integrations ---
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji  
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg 
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-
-# extra configuration
+# [ASSETS] Custom stylesheets and KaTeX math rendering scripts
 extra_css:
   - assets/stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
@@ -173,7 +184,54 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
+# [EXTRA] Template toggles, analytics, social profiles, and route aliases
 extra:
+  generator: false  # Hide "Made with Material for MkDocs" footer notice
+
+  # Language switcher dropdown
+  alternate:
+    - name: English
+      link: /open-notes-hub/
+      lang: en
+    - name: Vietnamese
+      link: /open-notes-hub/vi/
+      lang: vi
+
+  # Google Analytics & reader feedback widget
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_KEY, ""]
+    feedback:
+      title: Was this note helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This note was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback! Glad this note was helpful.
+        - icon: material/thumb-down-outline
+          name: This note could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help improve this note by
+            <a href="https://github.com/nthaihoc/open-notes-hub/issues/new?title=[Feedback]%20{title}&body=**Page:**%20{url}%0A%0A**What%20could%20be%20improved%20(typo,%20math%20derivation,%20code%20example,%20etc.)?:**%0A" target="_blank" rel="noopener">opening an issue on GitHub</a>.
+
+  # Footer social & academic profiles
+  social:
+    - icon: material/school
+      link: https://ictu.edu.vn
+      name: Thai Nguyen University of Information and Communication Technology
+    - icon: material/web
+      link: https://nthaihoc.github.io/about-me
+      name: Profile
+    - icon: material/email-multiple-outline
+      link: mailto:nthoc.ictu@gmail.com
+      name: Email
+    - icon: material/github
+      link: https://github.com/nthaihoc
+      name: GitHub
+
+  # Internal route aliases referenced by Jinja2 macros (aligned with nav order)
   links:
     courses: courses/
     knowledge_base: knowledge-base/
@@ -184,14 +242,14 @@ extra:
       les09: courses/applied-machine-learning/09-support-vector-machines
       les10: courses/applied-machine-learning/10-decision-trees
 
-    llm:
-      root: courses/large-language-models/
-      les03: courses/large-language-models/03-attention-mechanisms
-
     cv:
       root: courses/computer-vision-foundations/
       les01: courses/computer-vision-foundations/01-dl-loss-function
       les02: courses/computer-vision-foundations/02-optimization
+
+    llm:
+      root: courses/large-language-models/
+      les03: courses/large-language-models/03-attention-mechanisms
 
     fastapi:
       les01: knowledge-base/fastapi/01-overview
@@ -199,74 +257,30 @@ extra:
     rag:
       les01: knowledge-base/rag/01-vanilla-rag
 
-  analytics:
-    provider: google
-    property: !ENV [GOOGLE_ANALYTICS_KEY, ""]
-    feedback:
-          title: Was this note helpful?
-          ratings:
-            - icon: material/thumb-up-outline
-              name: This note was helpful
-              data: 1
-              note: >-
-                Thanks for your feedback! Glad this note was helpful.
-            - icon: material/thumb-down-outline
-              name: This note could be improved
-              data: 0
-              note: >-
-                Thanks for your feedback! Help improve this note by
-                <a href="https://github.com/nthaihoc/open-notes-hub/issues/new?title=[Feedback]%20{title}&body=**Page:**%20{url}%0A%0A**What%20could%20be%20improved%20(typo,%20math%20derivation,%20code%20example,%20etc.)?:**%0A" target="_blank" rel="noopener">opening an issue on GitHub</a>.
-
-  generator: false
-  alternate:
-    - name: English
-      link: /open-notes-hub/
-      lang: en
-    - name: Vietnamese
-      link: /open-notes-hub/vi/
-      lang: vi
-      
-  social:
-    - icon: material/school
-      link: https://ictu.edu.vn
-      name: Thai Nguyen University of Information and Technology Communication
-    - icon: material/web
-      link: https://nthaihoc.github.io/about-me
-      name: Profile
-    - icon: material/email-multiple-outline
-      link: mailto:nthoc.ictu@gmail.com
-      name: Email
-    - icon: material/github
-      link: https://github.com/nthaihoc
-      name: Github
-
-copyright: >
-  Built with ❤️ by <a href="https://github.com/nthaihoc">Thai Hoc Nguyen</a> <br>
-  Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
-
-# navigation configuration  
+# [NAV] Global site navigation tree
 nav:
   - Home: index.md
+
   - Course Notes:
-    - Overview: courses/index.md
-    - "Applied Machine Learning":
-      - courses/applied-machine-learning/index.md
-      - courses/applied-machine-learning/09-support-vector-machines.md
-      - courses/applied-machine-learning/10-decision-trees.md
-    - "Computer Vision Foundations":
-      - courses/computer-vision-foundations/index.md
-      - courses/computer-vision-foundations/01-dl-loss-function.md
-      - courses/computer-vision-foundations/02-optimization.md
-    - "Large Language Models":
-      - courses/large-language-models/index.md
-      - courses/large-language-models/03-attention-mechanisms.md
+      - Overview: courses/index.md
+      - "Applied Machine Learning":
+          - courses/applied-machine-learning/index.md
+          - courses/applied-machine-learning/09-support-vector-machines.md
+          - courses/applied-machine-learning/10-decision-trees.md
+      - "Computer Vision Foundations":
+          - courses/computer-vision-foundations/index.md
+          - courses/computer-vision-foundations/01-dl-loss-function.md
+          - courses/computer-vision-foundations/02-optimization.md
+      - "Large Language Models":
+          - courses/large-language-models/index.md
+          - courses/large-language-models/03-attention-mechanisms.md
 
   - Knowledge Base:
-    - Overview: knowledge-base/index.md
-    - "FastAPI Tutorials":
-      - knowledge-base/fastapi/01-overview.md
-    - "RAG Framework":
-      - knowledge-base/rag/01-vanilla-rag.md
+      - Overview: knowledge-base/index.md
+      - "FastAPI Tutorials":
+          - knowledge-base/fastapi/01-overview.md
+      - "RAG Framework":
+          - knowledge-base/rag/01-vanilla-rag.md
 
   - Tags: tags.md
   - About Me: about-me/index.md
