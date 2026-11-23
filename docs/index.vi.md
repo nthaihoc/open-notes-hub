@@ -4,6 +4,9 @@ hide:
   - feedback
   - toc
 url_img: "assets/images/ods_stickers.jpg"
+img_credit: "Cộng đồng Open Data Science (ods.ai)"
+img_credit_url: "https://ods.ai"
+img_credit_prefix: "Hình ảnh từ"
 ---
 
 {% include 'includes/hero.html' %}
@@ -13,7 +16,7 @@ url_img: "assets/images/ods_stickers.jpg"
   <h1 class="hero-title"><a href="https://nthaihoc.github.io/open-notes-hub">OpenNotesHub</a></h1>
 
   <p class="hero-slogan">
-    Khu vườn tri thức số (Digital Garden) được chọn lọc dành cho Kỹ thuật Trí tuệ Nhân tạo (AI Engineering), Ghi chú Bài giảng (Course Notes) &amp; Kiến thức Chuyên sâu (Technical Knowledge).
+    Khu vườn tri thức số được tuyển chọn dành cho Kỹ thuật Trí tuệ Nhân tạo, Ghi chú Bài giảng &amp; Kiến thức Chuyên sâu.
   </p>
 
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; line-height: 0; width: 100%; margin-bottom: 6px;">
@@ -34,63 +37,61 @@ url_img: "assets/images/ods_stickers.jpg"
 </div>
 
 <p style="text-align: justify;">
-  <b>OpenNotesHub</b> là một khu vườn tri thức số mã nguồn mở (open-source digital garden), nơi tôi hệ thống hóa và lưu trữ hành trình học tập liên tục của mình trong lĩnh vực Trí tuệ Nhân tạo (Artificial Intelligence - AI). Đây là kho lưu trữ tập trung cho các ghi chú bài giảng có cấu trúc (lecture notes), nền tảng toán học (mathematical foundations) và tài liệu tham khảo kỹ thuật phần mềm thực tiễn (software engineering). Dù bạn đang khám phá <b>Machine Learning (Học máy)</b>, đi sâu vào <b>Computer Vision (Thị giác máy tính)</b> hay xây dựng các <b>ứng dụng LLM (Large Language Models - Mô hình ngôn ngữ lớn)</b>, bạn đều sẽ tìm thấy những tài nguyên giá trị để đồng hành trên chặng đường của riêng mình.
+  <b>OpenNotesHub</b> là một khu vườn tri thức số mã nguồn mở, nơi tôi hệ thống hóa và lưu trữ hành trình học tập liên tục của mình trong lĩnh vực <b>Trí tuệ Nhân tạo (Artificial Intelligence - AI)</b>. Đây là không gian lưu trữ tập trung cho các ghi chú bài giảng có cấu trúc, nền tảng toán học và tài liệu tham khảo kỹ thuật phần mềm thực tiễn. Dù bạn đang khám phá <b>Học máy (Machine Learning - ML)</b>, đi sâu vào <b>Thị giác máy tính (Computer Vision - CV)</b> hay xây dựng các ứng dụng dựa trên <b>Mô hình ngôn ngữ lớn (Large Language Models - LLM)</b>, bạn đều sẽ tìm thấy những tài nguyên hữu ích để đồng hành trên chặng đường học tập và nghiên cứu của riêng mình.
 </p>
 
-## Trụ cột tri thức (Pillars of Knowledge)
+## Các trụ cột tri thức
 
 <div class="grid cards" markdown>
 
--   ![Ảnh bìa Course Notes](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&h=400&fit=crop)
+-   ![Ảnh bìa Ghi chú bài giảng](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&h=400&fit=crop)
 
     ---
 
-    **:material-notebook-edit-outline: Course Notes (Ghi chú bài giảng)**
+    **:material-notebook-edit-outline: Ghi chú bài giảng**
 
-    Biến sự phức tạp thành đơn giản. Chuyển hóa các ghi chú học thuật chuyên sâu thành những bài học trực quan và dễ tiếp cận nhất.
+    Biến sự phức tạp thành đơn giản. Hệ thống hóa và chuyển hóa các ghi chú học thuật chuyên sâu thành những bài học trực quan, dễ tiếp cận nhất.
 
-    [![Lecture Notes](https://img.shields.io/badge/Lecture_Notes-30%2B-0ea5e9?style=for-the-badge&labelColor=0369a1&logo=readthedocs&logoColor=white)](courses/README.md)
+    [![Ghi chú bài giảng](https://img.shields.io/badge/B%C3%A0i_gi%E1%BA%A3ng-30%2B-0ea5e9?style=for-the-badge&labelColor=0369a1&logo=readthedocs&logoColor=white)](courses/index.md)
 
--   ![Ảnh bìa Knowledge Base](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=400&fit=crop)
-
-    ---
-
-    **:material-brain: Knowledge Base (Cơ sở tri thức)**
-
-    Hệ thống hóa tư duy. Mạng lưới kiến thức đa ngành có cấu trúc rõ ràng, hỗ trợ tra cứu nhanh và định hình tư duy nghiên cứu dài hạn.
-
-    [![Topics](https://img.shields.io/badge/Topics-30%2B-10b981?style=for-the-badge&labelColor=047857&logo=gitbook&logoColor=white)](knowledge-base/README.md)
-
--   ![Ảnh bìa Resources](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=400&fit=crop)
+-   ![Ảnh bìa Cơ sở tri thức](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=400&fit=crop)
 
     ---
 
-    **:material-toolbox-outline: Resources (Tài nguyên)**
+    **:material-brain: Cơ sở tri thức**
 
-    Kho lưu trữ chọn lọc các tài liệu giá trị, bám sát những xu hướng công nghệ cốt lõi và sự phát triển của Trí tuệ Nhân tạo (Artificial Intelligence).
+    Hệ thống hóa tư duy. Xây dựng mạng lưới kiến thức đa ngành có cấu trúc chặt chẽ, hỗ trợ tra cứu nhanh chóng và định hình tư duy nghiên cứu dài hạn.
 
-    [![Resources](https://img.shields.io/badge/Resources-30%2B-f97316?style=for-the-badge&labelColor=c2410c&logo=awesomelists&logoColor=white)](resources/README.md)
+    [![Cơ sở tri thức](https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81-30%2B-10b981?style=for-the-badge&labelColor=047857&logo=gitbook&logoColor=white)](knowledge-base/index.md)
+
+-   ![Ảnh bìa Kho tài nguyên](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=400&fit=crop)
+
+    ---
+
+    **:material-toolbox-outline: Kho tài nguyên**
+
+    Kho lưu trữ chọn lọc các tài liệu giá trị, bám sát các xu hướng công nghệ cốt lõi và sự phát triển của AI.
+
+    [![Kho tài nguyên](https://img.shields.io/badge/T%C3%A0i_nguy%C3%AAn-30%2B-f97316?style=for-the-badge&labelColor=c2410c&logo=awesomelists&logoColor=white)](resources/index.md)
 
 </div>
 
-## Đóng góp (Contributing)
+## Đóng góp
 
 <p style="text-align: justify;">
-  Mọi đóng góp (contributions) từ cộng đồng đều luôn được trân trọng chào đón! Dù bạn sửa một lỗi chính tả, làm rõ một bước biến đổi toán học (mathematical derivation), bổ sung ví dụ mã nguồn (code examples) hay mở rộng một chủ đề sẵn có, mọi cải thiện đều giúp nguồn tài nguyên này trở nên hoàn thiện hơn. Vui lòng xem hướng dẫn <a href="https://github.com/nthaihoc/open-notes-hub/blob/main/README.md#contributing"><b>How to Contribute (Cách thức đóng góp)</b></a> tại kho lưu trữ (repository).
+  Mọi đóng góp từ cộng đồng đều luôn được trân trọng chào đón! Dù là sửa một lỗi chính tả nhỏ, làm rõ một bước biến đổi toán học, bổ sung ví dụ mã nguồn hay mở rộng một chủ đề sẵn có, mọi cải thiện đều giúp kho tài liệu này ngày một hoàn thiện hơn. Vui lòng xem hướng dẫn chi tiết tại <a href="https://github.com/nthaihoc/open-notes-hub/blob/main/README.md#contributing"><b>Cách thức đóng góp</b></a> trên kho lưu trữ mã nguồn của dự án.
 </p>
 
 <div class="grid cards" markdown>
 
-  - :material-card-account-mail-outline: **Kết nối & Liên hệ (Let's Keep in Touch)**
+  - :material-card-account-mail-outline: **Kết nối &amp; Liên hệ**
 
     ---
 
-    - :fontawesome-brands-github: Theo dõi các dự án mã nguồn mở (open-source) trên [$@$Github](https://github.com/nthaihoc/open-notes-hub).
+    - :fontawesome-brands-github: Theo dõi các dự án mã nguồn mở trên [$@$GitHub](https://github.com/nthaihoc/open-notes-hub).
   
-    - :material-web: Xem các dự án và hồ sơ cá nhân tại [$@$Portfolio](https://nthaihoc.github.io/open-notes-hub/about-me).
+    - :material-web: Khám phá hồ sơ cá nhân và các dự án tại [$@$Portfolio](https://nthaihoc.github.io/open-notes-hub/about-me).
   
-    - :material-email-outline: Gửi thư liên hệ qua [$@$Email](mailto:nthoc.ictu@gmail.com).
+    - :material-email-outline: Gửi thư liên hệ trực tiếp qua [$@$Email](mailto:nthoc.ictu@gmail.com).
 
 </div>
-
----
