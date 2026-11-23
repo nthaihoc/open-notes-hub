@@ -62,7 +62,7 @@ theme:
 
   icon:
     logo: material/sprout
-    repo: material/github
+    repo: material/source-branch
     edit: material/file-edit-outline
     view: material/file-code-outline
     previous: material/chevron-left
@@ -175,10 +175,29 @@ extra_javascript:
 
 extra:
   links:
+    courses: courses/
+    knowledge_base: knowledge-base/
+
     aml:
+      root: courses/applied-machine-learning/
       syllabus: courses/applied-machine-learning/#aml-syllabus
-      les08: courses/applied-machine-learning/08-support-vector-machines
-      les09: courses/applied-machine-learning/09-decision-trees
+      les09: courses/applied-machine-learning/09-support-vector-machines
+      les10: courses/applied-machine-learning/10-decision-trees
+
+    llm:
+      root: courses/large-language-models/
+      les03: courses/large-language-models/03-attention-mechanisms
+
+    cv:
+      root: courses/computer-vision-foundations/
+      les01: courses/computer-vision-foundations/01-dl-loss-function
+      les02: courses/computer-vision-foundations/02-optimization
+
+    fastapi:
+      les01: knowledge-base/fastapi/01-overview
+
+    rag:
+      les01: knowledge-base/rag/01-vanilla-rag
 
   analytics:
     provider: google
@@ -225,26 +244,29 @@ copyright: >
   Built with ❤️ by <a href="https://github.com/nthaihoc">Thai Hoc Nguyen</a> <br>
   Made with <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
 
-# navigation configuration
+# navigation configuration  
 nav:
   - Home: index.md
   - Course Notes:
-    - Overview: courses/README.md
-    - "Applied Machine Learning": 
-      - courses/applied-machine-learning/README.md
-      - courses/applied-machine-learning/08-support-vector-machines.md
-      - courses/applied-machine-learning/09-decision-trees.md
-
+    - Overview: courses/index.md
+    - "Applied Machine Learning":
+      - courses/applied-machine-learning/index.md
+      - courses/applied-machine-learning/09-support-vector-machines.md
+      - courses/applied-machine-learning/10-decision-trees.md
+    - "Computer Vision Foundations":
+      - courses/computer-vision-foundations/index.md
+      - courses/computer-vision-foundations/01-dl-loss-function.md
+      - courses/computer-vision-foundations/02-optimization.md
     - "Large Language Models":
-      - courses/large-language-models/README.md
+      - courses/large-language-models/index.md
       - courses/large-language-models/03-attention-mechanisms.md
-      
+
   - Knowledge Base:
-    - Overview: knowledge-base/README.md
-    - "FastAPI Tutorials": 
-        - knowledge-base/fastapi/01-overview.md
+    - Overview: knowledge-base/index.md
+    - "FastAPI Tutorials":
+      - knowledge-base/fastapi/01-overview.md
     - "RAG Framework":
-        - knowledge-base/01-vanilla-rag.md
+      - knowledge-base/rag/01-vanilla-rag.md
 
   - Tags: tags.md
-  - About Me: about-me/README.md
+  - About Me: about-me/index.md

@@ -22,7 +22,7 @@ url_img: "assets/images/ods_stickers.jpg"
     <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"></a>
     <a href="https://mlflow.org"><img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLFlow"></a>
   </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; line-height: 0; width: 100%; margin-bottom: 16px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; line-height: 0; width: 100%; margin-bottom: 24px;">
     <a href="https://jupyter.org"><img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"></a>
     <a href="https://colab.research.google.com"><img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Google Colab"></a>
     <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
@@ -45,11 +45,11 @@ url_img: "assets/images/ods_stickers.jpg"
 
     ---
 
-    **:material-notebook-edit-outline: Course Notes**
+    **:material-notebook-edit-outline: Course Notes** 
 
     Transforming complexity into simplicity. Converting in-depth academic notes into the most intuitive and accessible lessons.
 
-    [![Lecture Notes](https://img.shields.io/badge/Lecture_Notes-30%2B-0ea5e9?style=for-the-badge&labelColor=0369a1&logo=readthedocs&logoColor=white)](courses/README.md)
+    [![Lecture Notes](https://img.shields.io/badge/Lecture_Notes-30%2B-0ea5e9?style=for-the-badge&labelColor=0369a1&logo=readthedocs&logoColor=white)]({{config.site_url}}{{links.courses}})
 
 -   ![Knowledge Base Cover](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=400&fit=crop)
 
@@ -59,7 +59,7 @@ url_img: "assets/images/ods_stickers.jpg"
 
     Systematizing thought. A clearly structured, multi-disciplinary network that supports quick lookups and shapes long-term research thinking.
 
-    [![Topics](https://img.shields.io/badge/Topics-30%2B-10b981?style=for-the-badge&labelColor=047857&logo=gitbook&logoColor=white)](knowledge-base/README.md)
+    [![Topics](https://img.shields.io/badge/Topics-30%2B-10b981?style=for-the-badge&labelColor=047857&logo=gitbook&logoColor=white)]({{config.site_url}}{{links.knowledge_base}})
 
 -   ![Resources Cover](https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=400&fit=crop)
 
@@ -75,7 +75,7 @@ url_img: "assets/images/ods_stickers.jpg"
 
 ## Contributing
 
-<p>
+<p style="text-align: justify;">
   Contributions from the community are warmly welcomed! Whether you are fixing a typo, clarifying a mathematical derivation, adding code examples, or expanding an existing topic, every improvement helps make this resource better. Please check out <a href="https://github.com/nthaihoc/open-notes-hub/blob/main/README.md#contributing"><b>How to Contribute</b></a> in the repository.
 </p>
 

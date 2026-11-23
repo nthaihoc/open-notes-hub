@@ -22,7 +22,7 @@ url_img: "assets/images/ods_stickers.jpg"
     <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="scikit-learn"></a>
     <a href="https://mlflow.org"><img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLFlow"></a>
   </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; line-height: 0; width: 100%; margin-bottom: 16px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; line-height: 0; width: 100%; margin-bottom: 24px;">
     <a href="https://jupyter.org"><img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"></a>
     <a href="https://colab.research.google.com"><img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Google Colab"></a>
     <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
@@ -75,7 +75,7 @@ url_img: "assets/images/ods_stickers.jpg"
 
 ## Đóng góp (Contributing)
 
-<p>
+<p style="text-align: justify;">
   Mọi đóng góp (contributions) từ cộng đồng đều luôn được trân trọng chào đón! Dù bạn sửa một lỗi chính tả, làm rõ một bước biến đổi toán học (mathematical derivation), bổ sung ví dụ mã nguồn (code examples) hay mở rộng một chủ đề sẵn có, mọi cải thiện đều giúp nguồn tài nguyên này trở nên hoàn thiện hơn. Vui lòng xem hướng dẫn <a href="https://github.com/nthaihoc/open-notes-hub/blob/main/README.md#contributing"><b>How to Contribute (Cách thức đóng góp)</b></a> tại kho lưu trữ (repository).
 </p>
 
