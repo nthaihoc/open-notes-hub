@@ -1,6 +1,5 @@
 ---
 title: Loss Function in Deep Learning
-icon: material/numeric-2
 tags:
   - classification
   - cross-entropy

@@ -1,6 +1,6 @@
 ---
-Title: Optimization
-Tag: 
+title: Optimization
+tags:
   - deep leanring
   - adam
   - gradient-descent
