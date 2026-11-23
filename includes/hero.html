@@ -1,5 +1,3 @@
 {% if page.meta.url_img %}
-<div style="clear: both;">
-    <img class="hero" src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"{% if page.meta.width_img %} width="{{ page.meta.width_img }}"{% endif %}{% if page.meta.height_img %} height="{{ page.meta.height_img }}"{% endif %} alt="{{ page.meta.title | default('OpenNotesHub Hero') }}">
-</div>
+<img class="hero" src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"{% if page.meta.width_img %} width="{{ page.meta.width_img }}"{% endif %}{% if page.meta.height_img %} height="{{ page.meta.height_img }}"{% endif %} alt="{{ page.meta.title | default('OpenNotesHub Hero') }}">
 {% endif %}
