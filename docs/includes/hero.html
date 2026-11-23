@@ -1,3 +1,8 @@
 {% if page.meta.url_img %}
-<img class="hero" src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"{% if page.meta.width_img %} width="{{ page.meta.width_img }}"{% endif %}{% if page.meta.height_img %} height="{{ page.meta.height_img }}"{% endif %} alt="{{ page.meta.title | default('OpenNotesHub Hero') }}">
+<img class="hero" src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"{% if page.meta.width_img %} width="{{ page.meta.width_img }}"{% endif %}{% if page.meta.height_img %} height="{{ page.meta.height_img }}"{% endif %} alt="{{ page.meta.title | default('OpenNotesHub Hero') }}"{% if page.meta.img_credit %} style="margin-bottom: 4px;"{% endif %}>
+{% if page.meta.img_credit %}
+<p style="text-align: center; font-size: 0.75em; color: var(--md-default-fg-color--light, #888); margin-top: -14px; margin-bottom: 20px;">
+  {{ page.meta.img_credit_prefix | default('Image:') }} <a href="{{ page.meta.img_credit_url | default('#') }}" target="_blank" rel="noopener">{{ page.meta.img_credit }}</a>
+</p>
+{% endif %}
 {% endif %}

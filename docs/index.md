@@ -4,6 +4,9 @@ hide:
   - feedback
   - toc
 url_img: "assets/images/ods_stickers.jpg"
+img_credit: "Open Data Science community (ods.ai)"
+img_credit_url: "https://ods.ai"
+img_credit_prefix: "Image courtesy of"
 ---
 
 {% include 'includes/hero.html' %}
@@ -92,5 +95,3 @@ url_img: "assets/images/ods_stickers.jpg"
     - :material-email-outline: Drop me an [$@$Email](mailto:nthoc.ictu@gmail.com).
 
 </div>
-
----
