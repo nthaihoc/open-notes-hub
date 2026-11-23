@@ -62,7 +62,7 @@ hide:
 
 <img src="../assets/images/nguyen_thai_hoc.jpeg" class="profile-img" alt="Nguyen Thai Hoc Avatar">
 
-<p class="text-center"><b>🌴 AI Research Engineer</b></p>
+<p class="text-center" markdown="span"><b>:material-head-cog-outline: AI Research Engineer</b></p>
 
 <p class="text-center icon-row" markdown="span">
     <a href="https://nthaihoc.github.io/about-me" title="Portfolio">:octicons-home-16:</a>
@@ -76,7 +76,7 @@ hide:
 
 ## Bio
 
-👋 Hello! I am **Nguyễn Thái Học**, an **AI Research Engineer** with a core focus on *Computer Vision* and **Machine Learning**. My journey with AI began in 2020, and tackling complex, real-world problems during my junior year at the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn) turned that initial curiosity into a dedicated career path.
+👋 Hello! I am **Nguyễn Thái Học**, an **AI Research Engineer** with a core focus on **Computer Vision** and **Machine Learning**. My journey with AI began in 2020, and tackling complex, real-world problems during my junior year at the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn) turned that initial curiosity into a dedicated career path.
 
 Previously, I worked at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), where I progressed from a Computer Vision Intern (August 2023) to an official AI Engineer (August 2024), transitioning from theoretical foundations to building practical AI solutions for **Healthcare** and **Education**. Complementing this research background, I also completed a two-month intensive, hands-on stint at **VinSmart Future** through the **AI in Action** program, sharpening my ability to engineer and deliver production-ready AI systems in fast-paced environments.
 

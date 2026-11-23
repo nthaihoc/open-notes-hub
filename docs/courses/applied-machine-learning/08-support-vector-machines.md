@@ -1,19 +1,17 @@
 ---
-date: 2023-11-20
 title: "Support Vector Machines"
-icon: material/math-integral-box
 url_img: assets/images/aml_l08_banner.png
 tags:
-  - Machine Learning
-  - Supervised Learning
-  - Optimization
-  - SVM
+  - machine learning
+  - supervised learning
+  - optimization
+  - svm
 ---
 
 {% include "includes/banner.html" %}
 
 ## Theoretical Foundations
----
+
 **Support Vector Machine (SVM)** là một thuật toán Học Máy mạnh mẽ và linh hoạt, đặc biệt hiệu quả trên các tập dữ liệu có kích thước vừa và nhỏ. Thuật toán này có khả năng giải quyết đa dạng các bài toán từ phân loại tuyến tính, phi tuyến cho đến hồi quy và phát hiện điểm bất thường (outlier detection).
 
 Ý tưởng cốt lõi của SVM là tìm kiếm một **hyperplane** (siêu mặt phẳng) không chỉ phân tách hai lớp dữ liệu mà còn duy trì khoảng cách xa nhất có thể tới các điểm huấn luyện gần nhất của mỗi lớp. Ta có thể hình dung mô hình đang cố gắng mở rộng một "con đường" phân cách rộng nhất có thể giữa hai nhóm dữ liệu. Vì lý do này, SVM còn được gọi là **Large Margin Classification** (phân loại lề lớn).
@@ -44,7 +42,7 @@ tags:
 </div> -->
 
 ### Preliminaries
----
+
 Xét tập dữ liệu huấn luyện gồm $m$ mẫu $\mathcal{D} = \left\{ \left[\mathbf{x}^{(i)}, y^{(i)}\right] \right\}_{i=1}^m$, trong đó mỗi điểm dữ liệu đầu vào là một vector đặc trưng $\mathbf{x}^{(i)} \in \mathbb{R}^d$ và nhãn nhị phân tương ứng thuộc tập đối xứng $y^{(i)} \in \{-1, +1\}$. Trong thực tế lập trình, nếu nhãn đầu vào được gán là $\{0, 1\}$, các thư viện sẽ tự động ánh xạ nội bộ về $\{-1, +1\}$ để đảm bảo tính đối xứng hình học của biên quyết định.
 
 Hàm quyết định tuyến tính của SVM được định nghĩa bởi siêu mặt phẳng phân tách $f[\mathbf{x}] = 0$ (**Phương trình 1**), với $\mathbf{w} \in \mathbb{R}^d$ là vector pháp tuyến (trọng số) và $b \in \mathbb{R}$ là hệ số chặn (bias). Dựa vào dấu của $f[\mathbf{x}]$, mô hình gán nhãn dự đoán $\hat{y}$ cho một mẫu bất kỳ $\mathbf{x} \in \mathbb{R}^d$:
@@ -54,7 +52,7 @@ f[\mathbf{x}] = \mathbf{w}^\top \mathbf{x} + b, \quad \hat{y} = \text{sign}\left
 \end{equation}$$
 
 ### Hard-margin
----
+
 Mô hình **Hard-margin** (biên cứng) giả định tập dữ liệu huấn luyện có thể **tách biệt tuyến tính tuyệt đối** (linearly separable) — tức tồn tại ít nhất một cặp $(\mathbf{w}, b)$ phân loại chính xác $100\%$ các điểm dữ liệu mà không có nhiễu hay sự chồng lấn giữa hai lớp.
 
 Về mặt hình học, khoảng cách từ một điểm $\mathbf{x}^{(i)}$ bất kỳ đến siêu mặt phẳng quyết định là $\dfrac{\left|f[\mathbf{x}^{(i)}]\right|}{\|\mathbf{w}\|_2}$. Vì phương trình siêu mặt phẳng bất biến với phép nhân vô hướng khác $0$, ta luôn có thể chuẩn hóa tỷ lệ của $(\mathbf{w}, b)$ sao cho tại các điểm gần biên nhất (**support vectors**), hàm quyết định đạt giá trị $\left|f[\mathbf{x}^{(i)}]\right| = 1$. Khi đó:
@@ -73,7 +71,7 @@ $$\begin{equation}
     Biểu thức căn bậc hai trong chuẩn Euclid $\displaystyle{\|\mathbf{w}\|_2 = \sqrt{\sum_{j=1}^d w_j^2}}$ không khả vi tại gốc tọa độ và gây phức tạp cho việc tính đạo hàm. Thay vào đó, ta chuyển sang cực tiểu hóa một nửa bình phương chuẩn $\displaystyle{\frac{1}{2}\|\mathbf{w}\|_2^2 = \frac{1}{2}\mathbf{w}^\top \mathbf{w}}$. Vì $\|\mathbf{w}\|_2 \ge 0$, phép biến đổi đơn điệu này giữ nguyên vị trí nghiệm tối ưu nhưng biến hàm mục tiêu thành một hàm bậc hai lồi (convex quadratic) trơn tru, thuận tiện cho giải tích.
 
 ### Soft-margin
----
+
 Trong thực tế, dữ liệu hiếm khi tách biệt tuyến tính hoàn hảo mà luôn tồn tại nhiễu và sự giao thoa giữa các lớp. Để khắc phục điểm yếu của biên cứng, **Soft-margin** (biên mềm) được đề xuất (**Hình 2**). Bằng cách nới lỏng các ràng buộc hình học, thuật toán cho phép một số điểm dữ liệu được phép lấn vào vùng lề hoặc nằm sai phía ranh giới, qua đó nâng cao khả năng tổng quát hóa của mô hình.
 
 <div class="figure-environment">
@@ -108,7 +106,6 @@ $$
 Cả bài toán Hard-margin và Soft-margin đều là bài toán quy hoạch lồi bậc hai với các ràng buộc tuyến tính. Để tìm nghiệm tối ưu cho dạng bài toán này, ta sử dụng kỹ thuật **Quadratic Programming (QP)**. Chi tiết cách thiết lập ma trận đầu vào cho bộ giải QP được trình bày ở [Appendix A](#appendix-a-quadratic-programming).
 
 ### Dual Problem
----
 
 Bài toán gốc của Soft-margin SVM bị trói buộc bởi $2m$ điều kiện bất đẳng thức cứng (gồm $m$ ràng buộc biên và $m$ ràng buộc không âm của biến bù $\xi_i$). Các phương pháp đạo hàm thông thường không thể giải trực tiếp trên một miền nghiệm bị giới hạn bởi các bất đẳng thức như vậy.
 
@@ -134,7 +131,7 @@ Lúc này bài toán trở thành một trò chơi đối kháng **min-max**, c�
 
 **Áp dụng điều kiện tối ưu KKT (Karush-Kuhn-Tucker):** Tại điểm yên ngựa tối ưu, đạo hàm riêng của $\mathcal{L}$ theo từng biến gốc phải triệt tiêu bằng $0$ (chi tiết khai triển xem tại [Appendix B](#appendix-b-kkt-with-dual-problem)):
 
-* **Đạo hàm theo $\mathbf{w}$:**
+- **Đạo hàm theo $\mathbf{w}$:**
 
 $$
 \begin{equation} 
@@ -142,14 +139,14 @@ $$
 \end{equation}
 $$
 
-* **Đạo hàm theo $b$:**
+-  **Đạo hàm theo $b$:**
 
 $$
 \begin{equation} \frac{\partial \mathcal{L}}{\partial b} = - \sum_{i=1}^m \alpha_i y^{(i)} = 0 \quad \Longrightarrow \quad \sum_{i=1}^m \alpha_i y^{(i)} = 0 \tag{6} 
 \end{equation}
 $$
 
-* **Đạo hàm theo $\xi_i$:**
+- **Đạo hàm theo $\xi_i$:**
   
 $$
 \begin{equation} 
@@ -169,7 +166,7 @@ $$
 $$
 
 ### Kernel Trick
----
+
 Trong dạng bài toán đối ngẫu (**phương trình 8**), dữ liệu huấn luyện không xuất hiện độc lập mà luôn đi theo từng cặp thông qua tích vô hướng $\left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(j)}$. Về mặt hình học, tích vô hướng phản ánh mức độ tương đồng giữa hai vector. Điều này bộc lộ một đặc tính quan trọng của SVM rằng thuật toán không cần biết tọa độ tuyệt đối của từng điểm dữ liệu, thứ duy nhất nó cần là thước đo mức độ giống nhau giữa các cặp điểm.
 
 Tuy nhiên, tích vô hướng $\left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(j)}$ chỉ nắm bắt được tương quan tuyến tính trên không gian đặc trưng gốc. Đối với các tập dữ liệu đan xen phi tuyến (**Hình 3**), việc tìm kiếm một siêu mặt phẳng phân tách trực tiếp là bất khả thi.
@@ -177,7 +174,7 @@ Tuy nhiên, tích vô hướng $\left[\mathbf{x}^{(i)}\right]^\top \mathbf{x}^{(
 <div class="figure-environment">
     <div class="subfigure-container">
         <figure class="subfigure">
-            <img src="../../../assets/images/aml_08_svm_nonlinear.webp" alt="">
+            <img src="../../../assets/images/aml_08_svm_nonlinear.png" alt="">
         </figure>
     </div>
 </div>
@@ -250,7 +247,7 @@ Tóm lại, lợi ích lớn nhất của Kernel Trick là giúp ta tạo ra đ�
 - **Lưu trữ sau huấn luyện rất nhẹ:** Bảng $m \times m$ khổng lồ kể trên chỉ dùng tạm lúc tìm nghiệm tối ưu. Ngay khi huấn luyện xong, chúng được xóa sạch khỏi bộ nhớ; mô hình chỉ giữ lại một nhóm nhỏ các support vectors ($\alpha_i > 0$) để phục vụ cho bước dự đoán sau này.
 
 ### Non-linear SVM Inference
----
+
 Khi chuyển từ pha huấn luyện sang pha dự đoán (inference), **Kernel SVM** vận hành theo một cơ chế hoàn toàn khác biệt so với các mô hình tuyến tính hay mạng nơ-ron học sâu:
 
 - **Với mô hình tham số (Linear SVM, Logistic Regression, Neural Networks):** Toàn bộ tri thức học được từ dữ liệu được nén gọn vào một tập trọng số cố định $\mathbf{w}$ và $b$. Sau khi huấn luyện xong, dữ liệu gốc bị xóa bỏ hoàn toàn; khi có mẫu mới $\mathbf{x}^{(new)}$, mô hình chỉ cần nhân trực tiếp $\mathbf{x}^{(new)}$ với trọng số $\mathbf{w}$ rồi cộng thêm $b$.
@@ -330,7 +327,7 @@ $$
 Toàn bộ vòng đời của Kernel SVM hoàn toàn không cần sự tồn tại của vector $\mathbf{w}$. Tuy nhiên, cái giá phải trả là thời gian dự đoán cho một mẫu mới tỷ lệ thuận với số lượng support vectors. Dữ liệu càng nhiều nhiễu, số lượng support vectors phải lưu lại càng lớn, kéo theo dung lượng file mô hình phình to và tốc độ dự đoán chậm đi đáng kể.
 
 ### Hinge Loss
----
+
 Xuyên suốt các phần trước, chúng ta đã tiếp cận và giải quyết SVM dưới góc độ quy hoạch toàn phương thông qua bài toán đối ngẫu. Phương pháp này mang lại sự chặt chẽ về mặt toán học và mở đường cho thủ thuật Kernel. Tuy nhiên, khi áp dụng vào thực tiễn với các tập dữ liệu lớn, cách tiếp cận này vấp phải hai rào cản kỹ thuật:
 
 - **Độ phức tạp tính toán:** Giải bài toán đối ngẫu đòi hỏi việc lưu trữ và xử lý ma trận Kernel kích thước $m \times m$. Độ phức tạp thời gian từ $O(m^2)$ đến $O(m^3)$ dễ dàng gây tràn bộ nhớ khi $m$ lên tới hàng triệu mẫu.
@@ -355,7 +352,7 @@ $$
 Việc đưa SVM về dạng hàm mất mát không ràng buộc $\mathcal{J}[\mathbf{w}, b]$ cho phép ta sử dụng các thuật toán tối ưu dựa trên đạo hàm bậc nhất như **Stochastic Gradient Descent (SGD)** hoặc **Coordinate Descent**, giúp huấn luyện nhanh trên các tập dữ liệu khổng lồ nhưng vẫn đảm bảo tối ưu chi phí tài nguyên.
 
 ## Implementation
----
+
 Sau khi đã nắm vững nền tảng toán học của bài toán tối ưu lề lớn và thủ thuật Kernel Trick, bước tiếp theo là hiện thực hóa thuật toán bằng Python. Trong phần này, chúng ta sẽ sử dụng lớp `SVC` từ thư viện `scikit-learn` để huấn luyện và đánh giá mô hình SVM trên bộ dữ liệu kinh điển **Iris**[^iris].
 
 [^iris]: Bộ dữ liệu **Iris** được nhà thống kê và thực vật học **Ronald Fisher** giới thiệu vào năm 1936. Tập dữ liệu bao gồm $150$ mẫu hoa thuộc ba loài khác nhau: *Iris setosa*, *Iris versicolor* và *Iris virginica* (mỗi loài $50$ mẫu), được mô tả qua bốn đặc trưng hình thái học (chiều dài và chiều rộng của đài hoa, cánh hoa). Đây là bộ dữ liệu tiêu chuẩn dùng để kiểm chứng trực quan các thuật toán phân loại.

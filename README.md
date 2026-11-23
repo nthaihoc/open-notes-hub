@@ -72,26 +72,36 @@ Once the server is running, open your browser and visit `http://127.0.0.1:8000/`
 Contributions from the community are warmly welcomed! Whether you are fixing a typo, clarifying a mathematical derivation, adding code examples, or expanding an existing topic, every improvement helps make this resource better.
 
 ### How to Contribute
-1. **Fork** the repository to your own GitHub account.
-2. **Clone** your fork locally and create a dedicated branch for your changes:
-   ```bash
-   git checkout -b docs/your-topic-name
-   ```
-3. **Make your edits** inside the `docs/` directory and verify how they render locally using `mkdocs serve`.
-4. **Commit** your changes with a clear, descriptive message (following [Conventional Commits](https://www.conventionalcommits.org/) is encouraged, e.g., `docs(cv): fix typo in convolution formula`).
-5. **Push** your branch to your fork and open a **Pull Request** against the `main` branch.
+
+- **Fork** the repository to your own GitHub account.
+  
+- **Clone** your fork locally and create a dedicated branch for your changes:
+
+  ```bash
+  git checkout -b docs/your-topic-name
+  ```
+
+- **Make your edits** inside the `docs/` directory and verify how they render locally using `mkdocs serve`.
+  
+- **Commit** your changes with a clear, descriptive message (following [Conventional Commits](https://www.conventionalcommits.org/) is encouraged, e.g., `docs(cv): fix typo in convolution formula`).
+  
+- **Push** your branch to your fork and open a **Pull Request** against the `main` branch.
 
 ### Reporting Issues & Suggestions
+
 Found a broken link, rendering bug, or have a request for a new lecture topic? Please open a [GitHub Issue](https://github.com/nthaihoc/open-notes-hub/issues) with a brief description so we can discuss it.
 
 ## 👏 Acknowledgments
 
 This project is made possible thanks to the incredible open-source tools and maintainers in the Python and documentation ecosystem:
 
-- **[MkDocs](https://www.mkdocs.org/)** — Fast, simple static site generator geared towards building project documentation.
-- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** — Modern, responsive, and feature-rich documentation framework by [@squidfunk](https://github.com/squidfunk).
-- **[mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/)** — Seamless multi-language documentation plugin by [@ultrabug](https://github.com/ultrabug).
-- **Open-Source Contributors** — Everyone who takes the time to read, share feedback, and submit pull requests.
+- **[MkDocs](https://www.mkdocs.org/)** - Fast, simple static site generator geared towards building project documentation.
+  
+- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** - Modern, responsive, and feature-rich documentation framework by [@squidfunk](https://github.com/squidfunk).
+  
+- **[mkdocs-static-i18n](https://ultrabug.github.io/mkdocs-static-i18n/)** - Seamless multi-language documentation plugin by [@ultrabug](https://github.com/ultrabug).
+  
+- **Open-Source Contributors** - Everyone who takes the time to read, share feedback, and submit pull requests.
 
 ## ⚖️ License
 

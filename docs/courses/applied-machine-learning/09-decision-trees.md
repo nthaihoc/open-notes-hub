@@ -10,7 +10,6 @@ hide:
 </img>
 
 ## 1. Theoretical Foundations
----
 
 Cây Quyết Định (Decision Tree) là một thuật toán Học Máy có thể thực hiện cả hai tác vụ phân loại và hồi quy, thậm chí là các tác vụ phân loại đa lớp. Thuật toán này rất mạnh mẽ, có khả năng học tốt trên các tập dữ liệu phức tạp. Đặc biệt, Cây quyết định chính là thành phần nền tảng để xây dựng nên mô hình Rừng Ngẫu Nhiên (Random Forest).
 

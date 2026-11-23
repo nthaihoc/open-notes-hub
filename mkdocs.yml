@@ -4,7 +4,7 @@ site_description: >
   Kho tài liệu mở — Nơi hệ thống hóa và chia sẻ hành trình nghiên cứu AI
   của Nguyễn Thái Học: Course Notes, Research Logs, Knowledge Base.
 site_author: Nguyễn Thái Học (Thai-Hoc Nguyen)
-site_url: https://nthaihoc.github.io/open-notes-hub
+site_url: https://nthaihoc.github.io/open-notes-hub/
 
 # repo configuration
 repo_name: nthaihoc/open-notes-hub
@@ -14,17 +14,26 @@ edit_uri: edit/main/docs/
 # theme configuration
 theme:
   name: material
-  logo: assets/images/logo.jpg
-  favicon: assets/images/favicon.png
-  
+  favicon: assets/images/favicon.svg
+
   font:
-    text: Inter 
-    code: JetBrains Mono
+    text: Inter
+    code: Geist Mono
     
   palette:
-    scheme: default
-    primary: black
-    accent: cyan
+    - scheme: default
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
   features:
     # --- Content ---
@@ -52,9 +61,13 @@ theme:
     - search.highlight
 
   icon:
-    repo: fontawesome/brands/github
-    edit: octicons/code-16
-    view: octicons/eye-16
+    logo: material/sprout
+    repo: material/github
+    edit: material/file-edit-outline
+    view: material/file-code-outline
+    previous: material/chevron-left
+    next: material/chevron-right
+
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
@@ -78,8 +91,7 @@ plugins:
       bib_file: "docs/assets/files/references.bib"
       csl_file: "docs/assets/files/ieee.csl"
       bib_by_default: false
-  - tags:
-      tags_file: tags.md
+
   - i18n:
       docs_structure: suffix 
       fallback_to_default: true 
@@ -91,13 +103,14 @@ plugins:
         - locale: vi
           name: Tiếng Việt
           build: true
-          
+  - material/tags
+
   # --- Disabled Plugins (for local testing/speed) ---
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
       fallback_to_build_date: true
-      enable_git_follow: false 
+      enable_git_follow: !ENV [CI, false]
   - git-committers:
       enabled: !ENV [CI, false] 
       repository: nthaihoc/open-notes-hub
@@ -161,6 +174,12 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 extra:
+  links:
+    aml:
+      syllabus: courses/applied-machine-learning/#aml-syllabus
+      les08: courses/applied-machine-learning/08-support-vector-machines
+      les09: courses/applied-machine-learning/09-decision-trees
+
   analytics:
     provider: google
     property: !ENV [GOOGLE_ANALYTICS_KEY, ""]
@@ -222,9 +241,10 @@ nav:
       
   - Knowledge Base:
     - Overview: knowledge-base/README.md
-    - "❄️ FastAPI Tutorials": 
+    - "FastAPI Tutorials": 
         - knowledge-base/fastapi/01-overview.md
-    - "🔎 RAG Framework":
+    - "RAG Framework":
         - knowledge-base/01-vanilla-rag.md
+
   - Tags: tags.md
   - About Me: about-me/README.md

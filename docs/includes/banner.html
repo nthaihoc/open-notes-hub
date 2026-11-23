@@ -1,33 +1,16 @@
+{% if page.meta.title or page.meta.quote or page.meta.url_img %}
 <div class="page-banner">
-    {% if page.meta.url_img %}
-    <img class="banner"
-        src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"
-        {% if page.meta.width_img %}width="{{ page.meta.width_img }}"{% endif %}
-        {% if page.meta.height_img %}height="{{ page.meta.height_img }}"{% endif %}
-        alt="{{ page.meta.title | default('Banner image') }}">
-    {% endif %}
-
     {% if page.meta.title %}
     {% set accent_color = page.meta.color | default('var(--md-primary-fg-color)') %}
-    <h1 class="page-banner__title">
-        {%- for word in page.meta.title.split() -%}
-            {%- if word.startswith('(') and word.endswith(')') -%}
-                <span style="color: {{ accent_color }};">{{ word }}</span>
-            {%- else -%}
-                <span style="color: {{ accent_color }};">{{ word[0] }}</span>{{ word[1:] }}
-            {%- endif -%}
-            {%- if not loop.last %} {% endif -%}
-        {%- endfor -%}
-    </h1>
+    <h1 class="page-banner__title">{%- for word in page.meta.title.split() -%}{%- if word.startswith('(') and word.endswith(')') -%}<span style="color: {{ accent_color }};">{{ word }}</span>{%- else -%}<span style="color: {{ accent_color }};">{{ word[0] }}</span>{{ word[1:] }}{%- endif -%}{%- if not loop.last %} {% endif -%}{%- endfor -%}</h1>
     {% endif %}
 
     {% if page.meta.quote %}
-    <div class="page-banner__quote">
-        {% if page.meta.quote is string %}
-            {{ page.meta.quote }}
-        {% else %}
-            {{ page.meta.quote | join('<br>') | safe }}
-        {% endif %}
-    </div>
+    <div class="page-banner__quote">{% if page.meta.quote is string %}{{ page.meta.quote }}{% else %}{{ page.meta.quote | join('<br>') | safe }}{% endif %}</div>
+    {% endif %}
+
+    {% if page.meta.url_img %}
+    <img class="banner" src="{{ config.site_url.rstrip('/') }}/{{ page.meta.url_img.lstrip('/') }}"{% if page.meta.width_img %} width="{{ page.meta.width_img }}"{% endif %}{% if page.meta.height_img %} height="{{ page.meta.height_img }}"{% endif %} alt="{{ page.meta.title | default('Banner image') }}">
     {% endif %}
 </div>
+{% endif %}
