@@ -201,3 +201,6 @@ docs/research/
 docs/iai-lab/
 .agents/
 docs/assets/sources/
+docs/courses/applied-machine-learning/00-support-vector-machines.md
+docs/courses/applied-machine-learning/01-decision-trees.md
+docs/courses/applied-machine-learning/10-decision-trees.md
