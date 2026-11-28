@@ -76,14 +76,19 @@ hide:
 
 ## Bio
 
-👋 Hello! I am **Nguyen Thai Hoc**, an **AI Research Engineer** with a core focus on **Computer Vision** and **Machine Learning**. My journey with AI began in 2020, and tackling complex, real-world problems during my junior year at the [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn) turned that initial curiosity into a dedicated career path.
+👋 Hello! I am **Nguyen Thai Hoc**, an **AI Research Engineer** with a core focus on **Computer Vision** and **Machine Learning**.
 
-Previously, I worked at the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), where I progressed from a Computer Vision Intern (August 2023) to an official AI Engineer (August 2024), transitioning from theoretical foundations to building practical AI solutions for **Healthcare** and **Education**. Complementing this research background, I also completed a two-month intensive, hands-on stint at **VinSmart Future** through the **AI in Action** program, sharpening my ability to engineer and deliver production-ready AI systems in fast-paced environments.
+My AI journey began in 2023 with undergraduate research at [University of Information and Communication Technology (ICTU)](https://ictu.edu.vn) under the mentorship of [**Dr. Xuan-Thi Tran**](https://scholar.google.com/citations?hl=vi&user=gSVGCr4AAAAJ&view_op=list_works&sortby=pubdate)[^ttxuan]. I then joined the [Institute of Applied Science and Technology (IAST)](https://iast.ictu.edu.vn), progressing from a Computer Vision Intern (August 2023) to an official AI Engineer (August 2024) under the guidance of [**Dr. Xuan-Lam Dinh**](https://scholar.google.com/citations?hl=vi&user=YCPMvdoAAAAJ&view_op=list_works&sortby=pubdate)[^dxlam] and [**Dr. Van-Khanh Tran**](https://scholar.google.com/citations?user=UB25SuUAAAAJ&hl=vi)[^tvkhanh], building practical AI solutions for **Healthcare** and **Education** alongside academic research.
 
-Not stopping at traditional vision and machine learning pipelines, I am actively expanding my knowledge into **Large Language Models (LLMs)** and **Vision-Language Models (VLMs)**, while exploring **MLOps/LLMOps** to optimize end-to-end model deployment. To me, AI is more than just algorithms it is a tool to create positive, lasting change for society.
+In 2026, I graduated from the **AI IN ACTION** intensive training program at **VinUniversity** (including a two-month hands-on engineering stint at **VinSmart Future**), sharpening my ability to architect and deliver production-ready AI systems. Currently, I am actively expanding into **Large Language Models (LLMs)**, **Vision-Language Models (VLMs)**, and **MLOps/LLMOps** to master the end-to-end model lifecycle. To me, AI is more than just algorithms—it is a tool to solve real-world problems cleanly and create lasting impact.
+
+[^ttxuan]: Deputy Director, International Training Institute - ICTU.
+[^dxlam]: Director, Institute of Applied Science and Technology (IAST) – ICTU.
+[^tvkhanh]: Director, Institute of Artificial Intelligence – ICTU.
 
 ## News
 
+- **[11/2026]** Delivered an oral presentation on Drug-Drug Interaction prediction at the **5th International Conference on Advances in Information and Communication Technology (ICTA 2026)** in Ha Long.
 - **[10/2026]** Graduated from the AI IN ACTION intensive training program at VinUniversity, including a two-month hands-on engineering stint at VinSmart Future.
 - **[09/2026]** One research paper accepted for publication at the **5th International Conference on Advances in Information and Communication Technology (ICTA 2026)** in Ha Long.
 - **[05/2026]** Admitted to the second cohort of the AI IN ACTION training program at **VinUniversity**.
@@ -93,7 +98,7 @@ Not stopping at traditional vision and machine learning pipelines, I am actively
 
 ## Tech Stack & Skills
 
-- **:material-code-tags: Programming & Query Languages:** `Python` `C/C++` `SQL` `LaTeX`
+- **:material-code-tags: Programming & Query Languages:** `Python` `C/C++`
 - **:material-eye-outline: Computer Vision & ML/DL:** `PyTorch` `TensorFlow` `OpenCV` `Scikit-Learn` `Hugging Face`
 - **:material-database-outline: Data Processing & Storage:** `NumPy` `Pandas` `Apache Spark` `Hadoop` `PostgreSQL` `MongoDB`
 - **:material-docker: Deployment & Engineering Tools:** `Docker` `FastAPI` `MLflow` `Streamlit` `Git / GitHub` `Linux`
@@ -102,9 +107,21 @@ Not stopping at traditional vision and machine learning pipelines, I am actively
 
 <div class="grid cards" markdown>
 
-- <img style="width: 100%; height: 330px;" src="../assets/images/icta_01.png" class="pub-img" alt="ICTA 01">
+- <img src="../assets/images/03_icta2026.png" class="pub-img" alt="ICTA 2026">
+   
+    **01. Improving Drug-Drug Interaction Prediction via SHAP-Based Feature Selection and Ensemble Learning**
 
-    **01.** [A Study on Ensemble Learning for Cervical Cytology Classification](https://)
+    ---
+
+    Ngoc-Thien Vu, **<u>Thai-Hoc Nguyen</u>**, Van-Khanh Tran
+
+    *International Conference on Advances in Information and Communication Technology (ICTA), 2026.*
+
+    **Keywords:** `Drug-Drug Interaction` `SHAP` `Feature Selection` `Ensemble Learning`
+
+- <img src="../assets/images/01_icta2024.png" class="pub-img" alt="ICTA 2026">
+
+    **02. A Study on Ensemble Learning for Cervical Cytology Classification**
 
     ---
 
@@ -114,9 +131,9 @@ Not stopping at traditional vision and machine learning pipelines, I am actively
 
     **Keywords:** `Ensemble Learning` `Cervical Cancer Cytology` `Deep Learning`
 
-- <img src="../assets/images/icta_02.png" class="pub-img" alt="ICTA 02">
+- <img src="../assets/images/02_icta2024.png" class="pub-img" alt="ICTA 02">
 
-    **02.** [An automatic machine learning based customer segmentation model with RFM analysis](https://)
+    **03. An automatic machine learning based customer segmentation model with RFM analysis**
 
     ---
 
@@ -127,5 +144,3 @@ Not stopping at traditional vision and machine learning pipelines, I am actively
     **Keywords:** `Customer Segmentation` `RFM` `K-means Clustering` `Hadoop` `Spark`
 
 </div>
-
----
